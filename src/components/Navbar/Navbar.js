@@ -5,6 +5,7 @@ import logo from "../../assets/img/logo.png";
 import { Route, Link } from "react-router-dom";
 import { FrontPage } from "../FrontPage";
 import { NavDropdown } from "../NavDropdown";
+import { Hops, HopDetail } from "../Hops";
 
 /**
  *
@@ -27,7 +28,8 @@ const Navbar = props => {
         <NavDropdown title="Database" links={links} />
       </Container>
       <Route path="/" exact component={FrontPage} />
-      {/*<Route path="/about/" component={}/>*/}
+      <Route exact path="/data/hops" component={Hops} />
+      <Route path="/data/hops/:id" component={HopDetail} />
     </Fragment>
   );
 };
