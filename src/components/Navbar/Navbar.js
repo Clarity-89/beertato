@@ -24,6 +24,7 @@ const Navbar = props => {
       <Container>
         <Link to="/">
           <Logo src={logo} />
+          Beertato
         </Link>
         <NavDropdown title="Database" links={links} />
       </Container>
@@ -41,8 +42,12 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background: white;
-  border-bottom: 1px solid #ccc;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 `;
 
 const Logo = styled.img`
