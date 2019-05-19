@@ -4,6 +4,9 @@ import { ApolloProvider } from "react-apollo";
 import { Navbar } from "./components/Navbar";
 import { BrowserRouter as Router } from "react-router-dom";
 
+// CSS
+import "semantic-ui-css/semantic.min.css";
+
 class App extends Component {
   render() {
     return (
