@@ -13,12 +13,16 @@ import { Hops, HopDetail } from "../Hops";
  *
  */
 const Navbar = props => {
-  const links = [
-    <RouterLink to="/data/hops">Hops</RouterLink>,
-    <RouterLink to="/data/malts">Malts</RouterLink>,
-    <RouterLink to="/data/yeast">Yeast</RouterLink>,
-    <RouterLink to="/data/adjuncts">Adjuncts</RouterLink>
-  ];
+  const navElements = ["Hops", "Malt", "Yeast", "Adjuncts"];
+  const links = navElements.map(element => (
+    <RouterLink
+      key={element.toLowerCase()}
+      to={`/data/${element.toLowerCase()}`}
+    >
+      {element}
+    </RouterLink>
+  ));
+
   return (
     <Fragment>
       <Container>
@@ -41,7 +45,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 16px 32px;
   background: transparent;
   position: absolute;
   top: 0;

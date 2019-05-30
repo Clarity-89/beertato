@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { client } from "../../services/api";
 import gql from "graphql-tag";
-import { List } from "../List";
+import { List } from "../../styled/List";
 import { Link } from "react-router-dom";
 
 /**
