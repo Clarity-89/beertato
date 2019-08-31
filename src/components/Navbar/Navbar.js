@@ -47,7 +47,7 @@ const Container = styled.div`
   align-items: center;
   padding: 16px 32px;
   background: transparent;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
