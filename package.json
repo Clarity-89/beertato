@@ -15,15 +15,14 @@
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.1.1",
-    "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.0",
     "styled-components": "^4.3.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject",
     "generate": "plop --plopfile src/scripts/generator/index.js"
   },
   "eslintConfig": {
@@ -36,11 +35,14 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@craco/craco": "^5.4.0",
+    "@semantic-ui-react/craco-less": "^1.1.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.capitalize": "^4.2.1",
     "lodash.kebabcase": "^4.1.1",
     "lodash.upperfirst": "^4.3.1",
     "plop": "^2.4.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "semantic-ui-less": "^2.4.1"
   }
 }

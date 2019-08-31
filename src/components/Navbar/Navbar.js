@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 import logo from "../../assets/img/logo.png";
 import { Route, Link as RouterLink } from "react-router-dom";

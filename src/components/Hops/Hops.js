@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import { client } from "../../services/api";
 import gql from "graphql-tag";
 import { Link } from "react-router-dom";
