@@ -11,6 +11,9 @@ const GET_HOPS = gql`
     hops {
       id
       name
+      description
+      purpose
+      sub_names
       origin {
         name
       }
@@ -72,6 +75,18 @@ const Hops = () => {
               <Table.Cell>
                 <Link to={`/data/hops/${hop.id}`}>{hop.name}</Link>
               </Table.Cell>
+              <Table.Cell>
+                <p>{hop.description}</p>
+              </Table.Cell>
+              <Table.Cell>
+                <p>{hop.origin.name}</p>
+              </Table.Cell>
+              <Table.Cell>
+                <p>{hop.purpose}</p>
+              </Table.Cell>
+              <Table.Cell>
+                <p>{hop.sub_names}</p>
+              </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
@@ -84,8 +99,7 @@ Hops.propTypes = {};
 
 const Container = styled.div`
   display: flex;
+  padding: 24px 48px;
 `;
-
-const HopItem = styled.li``;
 
 export default Hops;
