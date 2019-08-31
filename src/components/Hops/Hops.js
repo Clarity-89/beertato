@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { client } from "../../services/api";
 import gql from "graphql-tag";
-//import { List } from "../../styled/List";
 import { Link } from "react-router-dom";
 import { Loader, Dimmer, Table } from "semantic-ui-react";
 
@@ -58,48 +57,39 @@ const Hops = () => {
     );
   if (error) return "Error";
   return (
-    <Container>
-      <Table celled padded>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Description</Table.HeaderCell>
-            <Table.HeaderCell>Origin</Table.HeaderCell>
-            <Table.HeaderCell>Purpose</Table.HeaderCell>
-            <Table.HeaderCell>Substitutes</Table.HeaderCell>
+    <Table celled padded>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell>Name</Table.HeaderCell>
+          <Table.HeaderCell>Description</Table.HeaderCell>
+          <Table.HeaderCell>Origin</Table.HeaderCell>
+          <Table.HeaderCell>Purpose</Table.HeaderCell>
+          <Table.HeaderCell>Substitutes</Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {hops.map(hop => (
+          <Table.Row key={hop.id}>
+            <Table.Cell>
+              <Link to={`/data/hops/${hop.id}`}>{hop.name}</Link>
+            </Table.Cell>
+            <Table.Cell>
+              <p>{hop.description}</p>
+            </Table.Cell>
+            <Table.Cell>
+              <p>{hop.origin.name}</p>
+            </Table.Cell>
+            <Table.Cell>
+              <p>{hop.purpose}</p>
+            </Table.Cell>
+            <Table.Cell>
+              <p>{hop.sub_names}</p>
+            </Table.Cell>
           </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {hops.map(hop => (
-            <Table.Row key={hop.id}>
-              <Table.Cell>
-                <Link to={`/data/hops/${hop.id}`}>{hop.name}</Link>
-              </Table.Cell>
-              <Table.Cell>
-                <p>{hop.description}</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p>{hop.origin.name}</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p>{hop.purpose}</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p>{hop.sub_names}</p>
-              </Table.Cell>
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
-    </Container>
+        ))}
+      </Table.Body>
+    </Table>
   );
 };
-
-Hops.propTypes = {};
-
-const Container = styled.div`
-  display: flex;
-  padding: 24px 48px;
-`;
 
 export default Hops;

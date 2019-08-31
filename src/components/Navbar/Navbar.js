@@ -23,24 +23,31 @@ const Navbar = () => {
   ));
 
   return (
-    <Fragment>
-      <Container>
+    <Main>
+      <NavContainer>
         <Link to="/">
           <Logo src={logo} />
           Beertato
         </Link>
         <NavDropdown title="Database" links={links} />
+      </NavContainer>
+      <Container>
+        <Route path="/" exact component={FrontPage} />
+        <Route exact path="/data/hops" component={Hops} />
+        <Route path="/data/hops/:id" component={HopDetail} />
       </Container>
-      <Route path="/" exact component={FrontPage} />
-      <Route exact path="/data/hops" component={Hops} />
-      <Route path="/data/hops/:id" component={HopDetail} />
-    </Fragment>
+    </Main>
   );
 };
 
 Navbar.propTypes = {};
 
-const Container = styled.div`
+const Main = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,4 +72,9 @@ const Link = styled(RouterLink)`
   align-items: center;
 `;
 
+const Container = styled.div`
+  display: flex;
+  padding: 24px 48px;
+  max-width: 1200px;
+`;
 export default Navbar;
