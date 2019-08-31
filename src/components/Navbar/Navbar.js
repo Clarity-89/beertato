@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import logo from "../../assets/img/logo.png";
 import { Route, Link as RouterLink } from "react-router-dom";
@@ -12,7 +11,7 @@ import { Hops, HopDetail } from "../Hops";
  * Navbar
  *
  */
-const Navbar = props => {
+const Navbar = () => {
   const navElements = ["Hops", "Malt", "Yeast", "Adjuncts"];
   const links = navElements.map(element => (
     <RouterLink

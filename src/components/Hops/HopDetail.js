@@ -14,34 +14,34 @@ const HopDetail = ({ match }) => {
   const [hop, setHop] = useState({});
 
   useEffect(() => {
-    loadHop();
-  }, []);
-
-  const loadHop = async () => {
-    const { id } = match.params;
-    setPageState({ ...pageState, loading: true });
-    try {
-      const res = await client.query({
-        query: gql`
-          query Hop($id: String!) {
-            hop(id: $id) {
-              id
-              name
-              origin {
+    const loadHop = async () => {
+      const id = match.params.id;
+      setPageState(state => ({ ...state, loading: true }));
+      try {
+        const res = await client.query({
+          query: gql`
+            query Hop($id: String!) {
+              hop(id: $id) {
+                id
                 name
+                origin {
+                  name
+                }
               }
             }
-          }
-        `,
-        variables: { id: id.toString() }
-      });
-      setPageState({ ...pageState, loading: false });
-      setHop(res.data.hop);
-    } catch (e) {
-      console.error("Error loading hop", e);
-      setPageState({ loading: false, error: true });
-    }
-  };
+          `,
+          variables: { id: id.toString() }
+        });
+        setPageState(state => ({ ...state, loading: false }));
+        setHop(res.data.hop);
+      } catch (e) {
+        console.error("Error loading hop", e);
+        setPageState({ loading: false, error: true });
+      }
+    };
+
+    loadHop();
+  }, [match.params.id]);
 
   return pageState.loading ? (
     <Loader>Loading...</Loader>
