@@ -5,7 +5,7 @@ import { Route, Link as RouterLink } from "react-router-dom";
 import { FrontPage } from "../FrontPage";
 import { NavDropdown } from "../NavDropdown";
 import { Hops, HopDetail } from "../Hops";
-import { Malts, MaltDetail } from "../Malt";
+import { Grains, GrainDetail } from "../Malt";
 
 /**
  *
@@ -13,7 +13,7 @@ import { Malts, MaltDetail } from "../Malt";
  *
  */
 const Navbar = () => {
-  const navElements = ["Hops", "Malt", "Yeast", "Adjuncts"];
+  const navElements = ["Hops", "Grains", "Yeast", "Adjuncts"];
   const links = navElements.map(element => (
     <RouterLink
       key={element.toLowerCase()}
@@ -36,8 +36,8 @@ const Navbar = () => {
         <Route path="/" exact component={FrontPage} />
         <Route exact path="/data/hops" component={Hops} />
         <Route path="/data/hops/:id" component={HopDetail} />
-        <Route exact path="/data/malts" component={Malts} />
-        <Route path="/data/malts/:id" component={MaltDetail} />
+        <Route exact path="/data/grains" component={Grains} />
+        <Route path="/data/grains/:id" component={GrainDetail} />
       </Container>
     </Main>
   );
