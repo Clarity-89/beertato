@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { client } from "../../services/api";
 import gql from "graphql-tag";
 import { Link } from "react-router-dom";
-import { Loader, Dimmer, Table, Container } from "semantic-ui-react";
+import { Loader, Dimmer, Table, Container, Header } from "semantic-ui-react";
 import { ErrorMessage } from "../Alerts";
 
 const GET_HOPS = gql`
@@ -40,7 +40,6 @@ const Hops = () => {
       const res = await client.query({
         query: GET_HOPS
       });
-      console.log("got hops", res);
       setHops(res.data.hops);
       setLoading(false);
     } catch (e) {
@@ -58,7 +57,7 @@ const Hops = () => {
   if (error) return <ErrorMessage />;
   return (
     <Container textAlign="center">
-      <h2>Hops</h2>
+      <Header as="h1">Hops</Header>
       <Table celled padded>
         <Table.Header>
           <Table.Row>
