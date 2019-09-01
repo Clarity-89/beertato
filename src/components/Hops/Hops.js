@@ -2,8 +2,9 @@ import React from "react";
 import gql from "graphql-tag";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
-import { Loader, Dimmer, Table, Container, Header } from "semantic-ui-react";
+import { Table, Container, Header } from "semantic-ui-react";
 import { ErrorMessage } from "../Alerts";
+import { LoaderScreen } from "../Loader";
 
 const GET_HOPS = gql`
   {
@@ -29,11 +30,7 @@ const Hops = () => {
   const { data = {}, loading, error } = useQuery(GET_HOPS);
 
   if (loading) {
-    return (
-      <Dimmer active inverted>
-        <Loader size="large">Loading</Loader>
-      </Dimmer>
-    );
+    return <LoaderScreen />;
   }
 
   if (error) return <ErrorMessage />;

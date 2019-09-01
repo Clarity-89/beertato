@@ -5,6 +5,7 @@ import { Route, Link as RouterLink } from "react-router-dom";
 import { FrontPage } from "../FrontPage";
 import { NavDropdown } from "../NavDropdown";
 import { Hops, HopDetail } from "../Hops";
+import { Malts, MaltDetail } from "../Malt";
 
 /**
  *
@@ -35,6 +36,8 @@ const Navbar = () => {
         <Route path="/" exact component={FrontPage} />
         <Route exact path="/data/hops" component={Hops} />
         <Route path="/data/hops/:id" component={HopDetail} />
+        <Route exact path="/data/malts" component={Malts} />
+        <Route path="/data/malts/:id" component={MaltDetail} />
       </Container>
     </Main>
   );

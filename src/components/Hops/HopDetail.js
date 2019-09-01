@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useQuery } from "@apollo/react-hooks";
-import { Loader, Dimmer, Container, Header, Table } from "semantic-ui-react";
+import { Container, Header, Table } from "semantic-ui-react";
 import gql from "graphql-tag";
 import { ErrorMessage } from "../Alerts";
 import { Text } from "../../styled/typography";
+import { LoaderScreen } from "../Loader";
 
 const GET_HOP_DETAILS = gql`
   query Hop($id: String!) {
@@ -35,11 +36,7 @@ const HopDetail = ({ match }) => {
   });
 
   if (loading) {
-    return (
-      <Dimmer active inverted>
-        <Loader size="large">Loading</Loader>
-      </Dimmer>
-    );
+    return <LoaderScreen />;
   }
 
   if (error) return <ErrorMessage />;
