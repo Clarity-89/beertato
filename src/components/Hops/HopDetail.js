@@ -1,68 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-import { client } from "../../services/api";
+import { useQuery } from "@apollo/react-hooks";
+import { Loader, Dimmer, Container, Header } from "semantic-ui-react";
 import gql from "graphql-tag";
+import { ErrorMessage } from "../Alerts";
 
+const GET_HOP_DETAILS = gql`
+  query Hop($id: String!) {
+    hop(id: $id) {
+      id
+      name
+      origin {
+        name
+      }
+    }
+  }
+`;
 /**
  *
  * HopDetail
  *
  */
 const HopDetail = ({ match }) => {
-  const [pageState, setPageState] = useState({ loading: false, error: false });
-  const [hop, setHop] = useState({});
+  const { id } = match.params;
+  const { data, loading, error } = useQuery(GET_HOP_DETAILS, {
+    variables: { id: id.toString() }
+  });
 
-  useEffect(() => {
-    const loadHop = async () => {
-      const id = match.params.id;
-      setPageState(state => ({ ...state, loading: true }));
-      try {
-        const res = await client.query({
-          query: gql`
-            query Hop($id: String!) {
-              hop(id: $id) {
-                id
-                name
-                origin {
-                  name
-                }
-              }
-            }
-          `,
-          variables: { id: id.toString() }
-        });
-        setPageState(state => ({ ...state, loading: false }));
-        setHop(res.data.hop);
-      } catch (e) {
-        console.error("Error loading hop", e);
-        setPageState({ loading: false, error: true });
-      }
-    };
+  if (loading) {
+    return (
+      <Dimmer active inverted>
+        <Loader size="large">Loading</Loader>
+      </Dimmer>
+    );
+  }
 
-    loadHop();
-  }, [match.params.id]);
+  if (error) return <ErrorMessage />;
 
-  return pageState.loading ? (
-    <Loader>Loading...</Loader>
-  ) : (
-    <Container>{hop.name}</Container>
+  return (
+    <Container textAlign="center">
+      <Header as="h1">{data.hop.name}</Header>
+    </Container>
   );
 };
 
 HopDetail.propTypes = {
   match: PropTypes.object
 };
-
-const Container = styled.div`
-  display: flex;
-`;
-
-const Loader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-`;
 
 export default HopDetail;

@@ -28,13 +28,16 @@ const GET_HOPS = gql`
 const Hops = () => {
   const { data = {}, loading, error } = useQuery(GET_HOPS);
 
-  if (loading)
+  if (loading) {
     return (
       <Dimmer active inverted>
         <Loader size="large">Loading</Loader>
       </Dimmer>
     );
+  }
+
   if (error) return <ErrorMessage />;
+
   return (
     <Container textAlign="center">
       <Header as="h1">Hops</Header>
