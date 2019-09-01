@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { client } from "../../services/api";
+import React from "react";
 import gql from "graphql-tag";
 import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/react-hooks";
 import { Loader, Dimmer, Table, Container, Header } from "semantic-ui-react";
 import { ErrorMessage } from "../Alerts";
 
@@ -26,28 +26,8 @@ const GET_HOPS = gql`
  *
  */
 const Hops = () => {
-  const [hops, setHops] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const { data = {}, loading, error } = useQuery(GET_HOPS);
 
-  useEffect(() => {
-    getHops();
-  }, []);
-
-  const getHops = async () => {
-    setError(false);
-    try {
-      const res = await client.query({
-        query: GET_HOPS
-      });
-      setHops(res.data.hops);
-      setLoading(false);
-    } catch (e) {
-      setError(true);
-      setLoading(false);
-      console.error(e);
-    }
-  };
   if (loading)
     return (
       <Dimmer active inverted>
@@ -69,7 +49,7 @@ const Hops = () => {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {hops.map(hop => (
+          {data.hops.map(hop => (
             <Table.Row key={hop.id}>
               <Table.Cell>
                 <Link to={`/data/hops/${hop.id}`}>{hop.name}</Link>
