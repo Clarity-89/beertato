@@ -1,7 +1,7 @@
 const fs = require("fs");
-const path = require("path");
 
-module.exports = () => {
-  const names = fs.readdirSync(path.join(__dirname, `../../components`));
-  return names.filter(name => name !== ".DS_Store");
+module.exports = (type = "components") => {
+  console.log("t", type);
+  const names = fs.readdirSync("src/" + type);
+  return names.map(i => i.replace(".js", ""));
 };
