@@ -6,6 +6,7 @@ import { FrontPage } from "../FrontPage";
 import { NavDropdown } from "../NavDropdown";
 import { Hops, HopDetail } from "../Hops";
 import { Grains, GrainDetail } from "../Malt";
+import { Yeast, YeastDetail } from "../Yeast";
 
 /**
  *
@@ -38,6 +39,8 @@ const Navbar = () => {
         <Route path="/data/hops/:id" component={HopDetail} />
         <Route exact path="/data/grains" component={Grains} />
         <Route path="/data/grains/:id" component={GrainDetail} />
+        <Route exact path="/data/yeast" component={Yeast} />
+        <Route path="/data/yeast/:id" component={YeastDetail} />
       </Container>
     </Main>
   );
