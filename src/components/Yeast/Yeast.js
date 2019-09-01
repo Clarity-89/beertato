@@ -11,6 +11,7 @@ const GET_YEAST = gql`
     yeasts {
       id
       name
+      code
       description
       type
       lab
@@ -39,6 +40,7 @@ const Yeast = () => {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell>Code</Table.HeaderCell>
             <Table.HeaderCell>Description</Table.HeaderCell>
             <Table.HeaderCell>Type</Table.HeaderCell>
             <Table.HeaderCell>Lab</Table.HeaderCell>
@@ -49,6 +51,9 @@ const Yeast = () => {
             <Table.Row key={y.id}>
               <Table.Cell>
                 <Link to={`/data/yeast/${y.id}`}>{y.name}</Link>
+              </Table.Cell>
+              <Table.Cell>
+                <p>{y.code}</p>
               </Table.Cell>
               <Table.Cell>
                 <p>{y.description}</p>

@@ -49,6 +49,12 @@ const YeastDetail = ({ match }) => {
         <Table.Body>
           <Table.Row>
             <Table.Cell>
+              <Text bold>Code</Text>
+            </Table.Cell>
+            <Table.Cell>{yeast.code}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
               <Text bold>Description</Text>
             </Table.Cell>
             <Table.Cell>{yeast.description}</Table.Cell>
