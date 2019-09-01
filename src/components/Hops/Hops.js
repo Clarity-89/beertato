@@ -3,6 +3,7 @@ import { client } from "../../services/api";
 import gql from "graphql-tag";
 import { Link } from "react-router-dom";
 import { Loader, Dimmer, Table } from "semantic-ui-react";
+import { ErrorMessage } from "../Alerts";
 
 const GET_HOPS = gql`
   {
@@ -54,7 +55,7 @@ const Hops = () => {
         <Loader size="large">Loading</Loader>
       </Dimmer>
     );
-  if (error) return "Error";
+  if (error) return <ErrorMessage />;
   return (
     <Table celled padded>
       <Table.Header>

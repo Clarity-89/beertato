@@ -74,6 +74,8 @@ const Link = styled(RouterLink)`
 
 const Container = styled.div`
   display: flex;
+  justify-content: center;
+  width: 100%;
   padding: 24px 48px;
   max-width: 1200px;
 `;
