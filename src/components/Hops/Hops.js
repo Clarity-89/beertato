@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { client } from "../../services/api";
 import gql from "graphql-tag";
 import { Link } from "react-router-dom";
-import { Loader, Dimmer, Table } from "semantic-ui-react";
+import { Loader, Dimmer, Table, Container } from "semantic-ui-react";
 import { ErrorMessage } from "../Alerts";
 
 const GET_HOPS = gql`
@@ -57,38 +57,41 @@ const Hops = () => {
     );
   if (error) return <ErrorMessage />;
   return (
-    <Table celled padded>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>Name</Table.HeaderCell>
-          <Table.HeaderCell>Description</Table.HeaderCell>
-          <Table.HeaderCell>Origin</Table.HeaderCell>
-          <Table.HeaderCell>Purpose</Table.HeaderCell>
-          <Table.HeaderCell>Substitutes</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        {hops.map(hop => (
-          <Table.Row key={hop.id}>
-            <Table.Cell>
-              <Link to={`/data/hops/${hop.id}`}>{hop.name}</Link>
-            </Table.Cell>
-            <Table.Cell>
-              <p>{hop.description}</p>
-            </Table.Cell>
-            <Table.Cell>
-              <p>{hop.origin.name}</p>
-            </Table.Cell>
-            <Table.Cell>
-              <p>{hop.purpose}</p>
-            </Table.Cell>
-            <Table.Cell>
-              <p>{hop.sub_names}</p>
-            </Table.Cell>
+    <Container textAlign="center">
+      <h2>Hops</h2>
+      <Table celled padded>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell>Description</Table.HeaderCell>
+            <Table.HeaderCell>Origin</Table.HeaderCell>
+            <Table.HeaderCell>Purpose</Table.HeaderCell>
+            <Table.HeaderCell>Substitutes</Table.HeaderCell>
           </Table.Row>
-        ))}
-      </Table.Body>
-    </Table>
+        </Table.Header>
+        <Table.Body>
+          {hops.map(hop => (
+            <Table.Row key={hop.id}>
+              <Table.Cell>
+                <Link to={`/data/hops/${hop.id}`}>{hop.name}</Link>
+              </Table.Cell>
+              <Table.Cell>
+                <p>{hop.description}</p>
+              </Table.Cell>
+              <Table.Cell>
+                <p>{hop.origin.name}</p>
+              </Table.Cell>
+              <Table.Cell>
+                <p>{hop.purpose}</p>
+              </Table.Cell>
+              <Table.Cell>
+                <p>{hop.sub_names}</p>
+              </Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table>
+    </Container>
   );
 };
 
