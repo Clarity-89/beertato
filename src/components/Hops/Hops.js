@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import gql from "graphql-tag";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 import { Table, Container, Header } from "semantic-ui-react";
 import { ErrorMessage } from "../Alerts";
 import { LoaderScreen } from "../Loader";
+import { Search } from "../Search";
 
 const GET_HOPS = gql`
   {
@@ -27,7 +28,14 @@ const GET_HOPS = gql`
  *
  */
 const Hops = () => {
+  const [filter, setFilter] = useState("");
   const { data = {}, loading, error } = useQuery(GET_HOPS);
+
+  const filteredData = !filter
+    ? data.hops
+    : data.hops.filter(hop =>
+        hop.name.toLowerCase().includes(filter.toLowerCase())
+      );
 
   if (loading) {
     return <LoaderScreen />;
@@ -38,6 +46,7 @@ const Hops = () => {
   return (
     <Container textAlign="center">
       <Header as="h1">Hops</Header>
+      <Search getValue={value => setFilter(value)} />
       <Table celled padded>
         <Table.Header>
           <Table.Row>
@@ -49,7 +58,7 @@ const Hops = () => {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {data.hops.map(hop => (
+          {filteredData.map(hop => (
             <Table.Row key={hop.id}>
               <Table.Cell>
                 <Link to={`/data/hops/${hop.id}`}>{hop.name}</Link>
