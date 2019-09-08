@@ -8,16 +8,21 @@ import { LoaderScreen } from "../Loader";
 import { Search } from "../Search";
 
 const GET_HOPS = gql`
-  {
-    hops {
-      id
-      name
-      description
-      purpose
-      sub_names
-      origin {
+  query Hops($pageSize: Int, $after: String) {
+    hops(pageSize: $pageSize, after: $after) {
+      hops {
+        id
         name
+        description
+        purpose
+        sub_names
+        origin {
+          name
+        }
       }
+      cursor
+      hasMore
+      totalCount
     }
   }
 `;
@@ -29,11 +34,16 @@ const GET_HOPS = gql`
  */
 const Hops = () => {
   const [filter, setFilter] = useState("");
-  const { data = {}, loading, error } = useQuery(GET_HOPS);
+  const {
+    data: { hops = {}, cursor, hasMore, totalCount },
+    loading,
+    error,
+    fetchMore
+  } = useQuery(GET_HOPS);
 
   const filteredData = !filter
-    ? data.hops
-    : data.hops.filter(hop =>
+    ? hops.hops
+    : hops.hops.filter(hop =>
         hop.name.toLowerCase().includes(filter.toLowerCase())
       );
 
