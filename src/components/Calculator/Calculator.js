@@ -17,7 +17,7 @@ const Calculator = () => {
   };
 
   const convert = () => {
-    return (value * targets.current) / targets.original;
+    return ((value * targets.current) / targets.original).toFixed(2);
   };
 
   return (
