@@ -1,5 +1,7 @@
+/** @jsx jsx */
 import React from "react";
 import styled from "@emotion/styled";
+import { css, jsx } from "@emotion/core";
 import logo from "../../assets/img/logo.png";
 import { Route, Link as RouterLink } from "react-router-dom";
 import { FrontPage } from "../FrontPage";
@@ -7,6 +9,7 @@ import { NavDropdown } from "../NavDropdown";
 import { Hops, HopDetail } from "../Hops";
 import { Grains, GrainDetail } from "../Malt";
 import { Yeast, YeastDetail } from "../Yeast";
+import { Calculator } from "../Calculator";
 
 /**
  *
@@ -31,7 +34,10 @@ const Navbar = () => {
           <Logo src={logo} />
           Beertato
         </Link>
-        <NavDropdown title="Database" links={links} />
+        <NavRight>
+          <Link to="/calculator">Calculator</Link>
+          <NavDropdown title="Database" links={links} />
+        </NavRight>
       </NavContainer>
       <Container>
         <Route path="/" exact component={FrontPage} />
@@ -41,6 +47,7 @@ const Navbar = () => {
         <Route path="/data/grains/:id" component={GrainDetail} />
         <Route exact path="/data/yeast" component={Yeast} />
         <Route path="/data/yeast/:id" component={YeastDetail} />
+        <Route path="/calculator" component={Calculator} />
       </Container>
     </Main>
   );
@@ -84,5 +91,12 @@ const Container = styled.div`
   width: 100%;
   padding: 24px 48px;
   max-width: 1200px;
+`;
+
+const NavRight = styled.div`
+  display: flex;
+  ${Link} {
+    margin-right: 10px;
+  }
 `;
 export default Navbar;

@@ -38,6 +38,7 @@
   "devDependencies": {
     "@craco/craco": "^5.6.4",
     "@semantic-ui-react/craco-less": "^1.2.1",
+    "babel-plugin-emotion": "^10.0.33",
     "lodash.camelcase": "^4.3.0",
     "lodash.capitalize": "^4.2.1",
     "lodash.kebabcase": "^4.1.1",
