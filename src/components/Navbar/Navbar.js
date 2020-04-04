@@ -1,7 +1,5 @@
-/** @jsx jsx */
 import React from "react";
 import styled from "@emotion/styled";
-import { css, jsx } from "@emotion/core";
 import logo from "../../assets/img/logo.png";
 import { Route, Link as RouterLink } from "react-router-dom";
 import { FrontPage } from "../FrontPage";
