@@ -4,7 +4,7 @@ import { HttpLink } from "apollo-link-http";
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: "http://localhost:3001/api"
+  uri: "http://localhost:3002/api"
 });
 
 export const client = new ApolloClient({
