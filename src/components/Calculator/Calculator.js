@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Input } from "semantic-ui-react";
+import { css } from "@emotion/core";
 
+const labelStyle = css`
+  .label {
+    width: 150px;
+  }
+`;
 /**
  *
  * Calculator
@@ -30,6 +36,7 @@ const Calculator = () => {
           name="original"
           value={targets.original}
           onChange={updateTargets}
+          css={labelStyle}
         />
       </div>
       <div>
@@ -39,6 +46,7 @@ const Calculator = () => {
           name="current"
           value={targets.current}
           onChange={updateTargets}
+          css={labelStyle}
         />
       </div>
       <div>
@@ -46,6 +54,7 @@ const Calculator = () => {
           label="Value to convert"
           value={value}
           onChange={({ target }) => setValue(target.value)}
+          css={labelStyle}
         />
       </div>
       <div>Result: {convert()}</div>
