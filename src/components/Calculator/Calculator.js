@@ -8,6 +8,7 @@ const labelStyle = css`
     width: 150px;
   }
 `;
+
 /**
  *
  * Calculator
