@@ -58,7 +58,7 @@ const Calculator = () => {
           css={labelStyle}
         />
       </div>
-      <div>Result: {convert()}</div>
+      <Result>Result: {convert()}</Result>
     </Container>
   );
 };
@@ -66,6 +66,11 @@ const Calculator = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const Result = styled.div`
+  margin-top: 6px;
+  font-weight: bold;
 `;
 
 export default Calculator;
