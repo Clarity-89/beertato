@@ -15,8 +15,6 @@ COPY . ./
 RUN npm run build
 COPY ./build ./build
 
-RUN npm i -g serve --silent
-
 EXPOSE 5000
 
 CMD ['npm', 'run', 'serve']
