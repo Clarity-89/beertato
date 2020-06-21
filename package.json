@@ -36,7 +36,7 @@
     "test": "craco test",
     "eject": "craco eject",
     "generate": "plop --plopfile src/scripts/generator/index.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
