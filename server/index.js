@@ -2,8 +2,9 @@ const restify = require("restify");
 const expressGraphQL = require("express-graphql");
 const corsMiddleware = require("restify-cors-middleware");
 const { makeExecutableSchema } = require("graphql-tools");
-const typeDefs = require("./types/");
-const resolvers = require("./resolvers/");
+const typeDefs = require("./types");
+const resolvers = require("./resolvers");
+const { API_PORT } = require("../src/constants");
 
 // GraphQL schema
 const schema = makeExecutableSchema({
@@ -15,7 +16,6 @@ const schema = makeExecutableSchema({
 const app = restify.createServer();
 const cors = corsMiddleware({ origins: ["http://localhost:3000"] });
 
-const port = 3005;
 app.pre(cors.preflight);
 app.use(cors.actual);
 
@@ -33,6 +33,6 @@ app.post(
     graphiql: false
   })
 );
-app.listen(port, () =>
-  console.log(`Express GraphQL Server Now Running On localhost:${port}/api`)
+app.listen(API_PORT, () =>
+  console.log(`Express GraphQL Server Now Running On localhost:${API_PORT}/api`)
 );
