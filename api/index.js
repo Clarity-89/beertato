@@ -12,7 +12,7 @@ const schema = makeExecutableSchema({
   resolvers
 });
 
-// Create an express server and a GraphQL endpoint
+// Create an express api and a GraphQL endpoint
 const app = restify.createServer();
 const cors = corsMiddleware({ origins: ["http://localhost:3000"] });
 

@@ -9,10 +9,8 @@ RUN npm ci
 RUN npm run build
 COPY ./build /app/build
 
-COPY ./bin/docker_start.sh /start.sh
-RUN apt-get update && apt-get install -f -y postgresql-client
-RUN chmod +x /start.sh
+COPY /usr/local/bin/serve /usr/local/bin/serve
 
-CMD ["/start.sh"]
+CMD ['./node_modules/serve/bin/serve.js', '-s', 'build']
 
 EXPOSE 5000

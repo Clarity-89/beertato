@@ -14,11 +14,15 @@ done
 
 >&2 echo "Database is up."
 
-
+npm i -g knex knex-migrate
+cd ./server
 # Apply database migrations
 >&2 echo "Apply database migrations"
 knex-migrate up
 
-# Start server
+cd ..
+# Start api
 >&2 echo "Starting server"
 npm run server
+serve -s build
+
