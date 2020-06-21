@@ -21,7 +21,9 @@ services:
       - '3001:5000'
 
   api:
-    build: ./api
+    build:
+      context: .
+      dockerfile: Dockerfile.api
     container_name: api
     volumes:
       - ./api:/api

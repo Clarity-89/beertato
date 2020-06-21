@@ -14,8 +14,8 @@ done
 
 >&2 echo "Database is up."
 
-npm i -g knex knex-migrate
-cd ./server
+npm i -g knex knex-migrate --silent
+cd ./api
 # Apply database migrations
 >&2 echo "Apply database migrations"
 knex-migrate up
@@ -24,5 +24,4 @@ cd ..
 # Start api
 >&2 echo "Starting server"
 npm run server
-serve -s build
 
