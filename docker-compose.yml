@@ -18,7 +18,7 @@ services:
     volumes:
       - .:/bt
     ports:
-      - '3001:5000'
+      - '3000:5000'
 
   api:
     build:
