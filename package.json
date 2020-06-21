@@ -17,14 +17,26 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1",
-    "semantic-ui-react": "^0.88.2"
+    "semantic-ui-react": "^0.88.2",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql-tools": "^4.0.4",
+    "knex": "^0.20.0",
+    "knex-migrate": "^1.7.1",
+    "merge-graphql-schemas": "^1.5.8",
+    "objection": "^1.6.3",
+    "pg": "^7.8.2",
+    "restify": "^8.2.0",
+    "restify-cors-middleware": "^1.1.1"
   },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
-    "generate": "plop --plopfile src/scripts/generator/index.js"
+    "generate": "plop --plopfile src/scripts/generator/index.js",
+    "server": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,6 +58,7 @@
     "lodash.upperfirst": "^4.3.1",
     "plop": "^2.6.0",
     "prettier": "^1.19.1",
-    "semantic-ui-less": "^2.4.1"
+    "semantic-ui-less": "^2.4.1",
+    "nodemon": "^1.18.10"
   }
 }

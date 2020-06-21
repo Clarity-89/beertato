@@ -1,0 +1,1217 @@
+[
+    {
+        "hop": 1,
+        "substitute": 90,
+        "id": 0
+    },
+    {
+        "hop": 1,
+        "substitute": 52,
+        "id": 1
+    },
+    {
+        "hop": 1,
+        "substitute": 17,
+        "id": 2
+    },
+    {
+        "hop": 2,
+        "substitute": 3,
+        "id": 3
+    },
+    {
+        "hop": 2,
+        "substitute": 14,
+        "id": 4
+    },
+    {
+        "hop": 2,
+        "substitute": 116,
+        "id": 5
+    },
+    {
+        "hop": 3,
+        "substitute": 14,
+        "id": 6
+    },
+    {
+        "hop": 3,
+        "substitute": 116,
+        "id": 7
+    },
+    {
+        "hop": 3,
+        "substitute": 16,
+        "id": 8
+    },
+    {
+        "hop": 4,
+        "substitute": 54,
+        "id": 9
+    },
+    {
+        "hop": 4,
+        "substitute": 23,
+        "id": 10
+    },
+    {
+        "hop": 4,
+        "substitute": 23,
+        "id": 11
+    },
+    {
+        "hop": 4,
+        "substitute": 93,
+        "id": 12
+    },
+    {
+        "hop": 4,
+        "substitute": 102,
+        "id": 13
+    },
+    {
+        "hop": 5,
+        "substitute": 21,
+        "id": 14
+    },
+    {
+        "hop": 6,
+        "substitute": 12,
+        "id": 15
+    },
+    {
+        "hop": 7,
+        "substitute": 84,
+        "id": 16
+    },
+    {
+        "hop": 8,
+        "substitute": 21,
+        "id": 17
+    },
+    {
+        "hop": 9,
+        "substitute": 53,
+        "id": 18
+    },
+    {
+        "hop": 9,
+        "substitute": 112,
+        "id": 19
+    },
+    {
+        "hop": 10,
+        "substitute": 69,
+        "id": 20
+    },
+    {
+        "hop": 11,
+        "substitute": 23,
+        "id": 21
+    },
+    {
+        "hop": 11,
+        "substitute": 102,
+        "id": 22
+    },
+    {
+        "hop": 11,
+        "substitute": 23,
+        "id": 23
+    },
+    {
+        "hop": 11,
+        "substitute": 93,
+        "id": 24
+    },
+    {
+        "hop": 12,
+        "substitute": 53,
+        "id": 25
+    },
+    {
+        "hop": 12,
+        "substitute": 112,
+        "id": 26
+    },
+    {
+        "hop": 12,
+        "substitute": 31,
+        "id": 27
+    },
+    {
+        "hop": 12,
+        "substitute": 88,
+        "id": 28
+    },
+    {
+        "hop": 12,
+        "substitute": 19,
+        "id": 29
+    },
+    {
+        "hop": 12,
+        "substitute": 26,
+        "id": 30
+    },
+    {
+        "hop": 13,
+        "substitute": 19,
+        "id": 31
+    },
+    {
+        "hop": 13,
+        "substitute": 26,
+        "id": 32
+    },
+    {
+        "hop": 13,
+        "substitute": 12,
+        "id": 33
+    },
+    {
+        "hop": 14,
+        "substitute": 16,
+        "id": 34
+    },
+    {
+        "hop": 15,
+        "substitute": 71,
+        "id": 35
+    },
+    {
+        "hop": 15,
+        "substitute": 117,
+        "id": 36
+    },
+    {
+        "hop": 15,
+        "substitute": 84,
+        "id": 37
+    },
+    {
+        "hop": 16,
+        "substitute": 31,
+        "id": 38
+    },
+    {
+        "hop": 16,
+        "substitute": 88,
+        "id": 39
+    },
+    {
+        "hop": 16,
+        "substitute": 26,
+        "id": 40
+    },
+    {
+        "hop": 16,
+        "substitute": 54,
+        "id": 41
+    },
+    {
+        "hop": 16,
+        "substitute": 13,
+        "id": 42
+    },
+    {
+        "hop": 18,
+        "substitute": 31,
+        "id": 43
+    },
+    {
+        "hop": 18,
+        "substitute": 88,
+        "id": 44
+    },
+    {
+        "hop": 19,
+        "substitute": 31,
+        "id": 45
+    },
+    {
+        "hop": 19,
+        "substitute": 88,
+        "id": 46
+    },
+    {
+        "hop": 19,
+        "substitute": 26,
+        "id": 47
+    },
+    {
+        "hop": 19,
+        "substitute": 54,
+        "id": 48
+    },
+    {
+        "hop": 19,
+        "substitute": 13,
+        "id": 49
+    },
+    {
+        "hop": 21,
+        "substitute": 26,
+        "id": 50
+    },
+    {
+        "hop": 21,
+        "substitute": 31,
+        "id": 51
+    },
+    {
+        "hop": 21,
+        "substitute": 88,
+        "id": 52
+    },
+    {
+        "hop": 22,
+        "substitute": 29,
+        "id": 53
+    },
+    {
+        "hop": 22,
+        "substitute": 111,
+        "id": 54
+    },
+    {
+        "hop": 23,
+        "substitute": 16,
+        "id": 55
+    },
+    {
+        "hop": 25,
+        "substitute": 37,
+        "id": 56
+    },
+    {
+        "hop": 25,
+        "substitute": 38,
+        "id": 57
+    },
+    {
+        "hop": 25,
+        "substitute": 39,
+        "id": 58
+    },
+    {
+        "hop": 25,
+        "substitute": 40,
+        "id": 59
+    },
+    {
+        "hop": 26,
+        "substitute": 31,
+        "id": 60
+    },
+    {
+        "hop": 26,
+        "substitute": 88,
+        "id": 61
+    },
+    {
+        "hop": 26,
+        "substitute": 53,
+        "id": 62
+    },
+    {
+        "hop": 26,
+        "substitute": 112,
+        "id": 63
+    },
+    {
+        "hop": 26,
+        "substitute": 19,
+        "id": 64
+    },
+    {
+        "hop": 28,
+        "substitute": 25,
+        "id": 65
+    },
+    {
+        "hop": 28,
+        "substitute": 120,
+        "id": 66
+    },
+    {
+        "hop": 31,
+        "substitute": 26,
+        "id": 67
+    },
+    {
+        "hop": 31,
+        "substitute": 53,
+        "id": 68
+    },
+    {
+        "hop": 31,
+        "substitute": 112,
+        "id": 69
+    },
+    {
+        "hop": 31,
+        "substitute": 21,
+        "id": 70
+    },
+    {
+        "hop": 31,
+        "substitute": 19,
+        "id": 71
+    },
+    {
+        "hop": 33,
+        "substitute": 29,
+        "id": 72
+    },
+    {
+        "hop": 33,
+        "substitute": 111,
+        "id": 73
+    },
+    {
+        "hop": 34,
+        "substitute": 29,
+        "id": 74
+    },
+    {
+        "hop": 34,
+        "substitute": 111,
+        "id": 75
+    },
+    {
+        "hop": 35,
+        "substitute": 84,
+        "id": 76
+    },
+    {
+        "hop": 37,
+        "substitute": 25,
+        "id": 77
+    },
+    {
+        "hop": 37,
+        "substitute": 120,
+        "id": 78
+    },
+    {
+        "hop": 37,
+        "substitute": 43,
+        "id": 79
+    },
+    {
+        "hop": 37,
+        "substitute": 39,
+        "id": 80
+    },
+    {
+        "hop": 38,
+        "substitute": 49,
+        "id": 81
+    },
+    {
+        "hop": 38,
+        "substitute": 43,
+        "id": 82
+    },
+    {
+        "hop": 38,
+        "substitute": 37,
+        "id": 83
+    },
+    {
+        "hop": 38,
+        "substitute": 38,
+        "id": 84
+    },
+    {
+        "hop": 38,
+        "substitute": 39,
+        "id": 85
+    },
+    {
+        "hop": 38,
+        "substitute": 40,
+        "id": 86
+    },
+    {
+        "hop": 38,
+        "substitute": 39,
+        "id": 87
+    },
+    {
+        "hop": 39,
+        "substitute": 37,
+        "id": 88
+    },
+    {
+        "hop": 39,
+        "substitute": 38,
+        "id": 89
+    },
+    {
+        "hop": 39,
+        "substitute": 39,
+        "id": 90
+    },
+    {
+        "hop": 39,
+        "substitute": 40,
+        "id": 91
+    },
+    {
+        "hop": 39,
+        "substitute": 49,
+        "id": 92
+    },
+    {
+        "hop": 39,
+        "substitute": 43,
+        "id": 93
+    },
+    {
+        "hop": 39,
+        "substitute": 25,
+        "id": 94
+    },
+    {
+        "hop": 39,
+        "substitute": 120,
+        "id": 95
+    },
+    {
+        "hop": 40,
+        "substitute": 39,
+        "id": 96
+    },
+    {
+        "hop": 43,
+        "substitute": 37,
+        "id": 97
+    },
+    {
+        "hop": 43,
+        "substitute": 38,
+        "id": 98
+    },
+    {
+        "hop": 43,
+        "substitute": 39,
+        "id": 99
+    },
+    {
+        "hop": 43,
+        "substitute": 40,
+        "id": 100
+    },
+    {
+        "hop": 43,
+        "substitute": 25,
+        "id": 101
+    },
+    {
+        "hop": 43,
+        "substitute": 120,
+        "id": 102
+    },
+    {
+        "hop": 44,
+        "substitute": 71,
+        "id": 103
+    },
+    {
+        "hop": 44,
+        "substitute": 117,
+        "id": 104
+    },
+    {
+        "hop": 46,
+        "substitute": 19,
+        "id": 105
+    },
+    {
+        "hop": 47,
+        "substitute": 23,
+        "id": 106
+    },
+    {
+        "hop": 47,
+        "substitute": 23,
+        "id": 107
+    },
+    {
+        "hop": 47,
+        "substitute": 93,
+        "id": 108
+    },
+    {
+        "hop": 48,
+        "substitute": 71,
+        "id": 109
+    },
+    {
+        "hop": 48,
+        "substitute": 117,
+        "id": 110
+    },
+    {
+        "hop": 49,
+        "substitute": 37,
+        "id": 111
+    },
+    {
+        "hop": 49,
+        "substitute": 38,
+        "id": 112
+    },
+    {
+        "hop": 49,
+        "substitute": 39,
+        "id": 113
+    },
+    {
+        "hop": 49,
+        "substitute": 40,
+        "id": 114
+    },
+    {
+        "hop": 49,
+        "substitute": 43,
+        "id": 115
+    },
+    {
+        "hop": 49,
+        "substitute": 25,
+        "id": 116
+    },
+    {
+        "hop": 49,
+        "substitute": 120,
+        "id": 117
+    },
+    {
+        "hop": 51,
+        "substitute": 31,
+        "id": 118
+    },
+    {
+        "hop": 51,
+        "substitute": 88,
+        "id": 119
+    },
+    {
+        "hop": 52,
+        "substitute": 53,
+        "id": 120
+    },
+    {
+        "hop": 52,
+        "substitute": 112,
+        "id": 121
+    },
+    {
+        "hop": 53,
+        "substitute": 39,
+        "id": 122
+    },
+    {
+        "hop": 53,
+        "substitute": 37,
+        "id": 123
+    },
+    {
+        "hop": 53,
+        "substitute": 38,
+        "id": 124
+    },
+    {
+        "hop": 53,
+        "substitute": 39,
+        "id": 125
+    },
+    {
+        "hop": 53,
+        "substitute": 40,
+        "id": 126
+    },
+    {
+        "hop": 54,
+        "substitute": 19,
+        "id": 127
+    },
+    {
+        "hop": 55,
+        "substitute": 12,
+        "id": 128
+    },
+    {
+        "hop": 57,
+        "substitute": 62,
+        "id": 129
+    },
+    {
+        "hop": 58,
+        "substitute": 13,
+        "id": 130
+    },
+    {
+        "hop": 60,
+        "substitute": 19,
+        "id": 131
+    },
+    {
+        "hop": 60,
+        "substitute": 39,
+        "id": 132
+    },
+    {
+        "hop": 61,
+        "substitute": 101,
+        "id": 133
+    },
+    {
+        "hop": 61,
+        "substitute": 118,
+        "id": 134
+    },
+    {
+        "hop": 62,
+        "substitute": 19,
+        "id": 135
+    },
+    {
+        "hop": 62,
+        "substitute": 31,
+        "id": 136
+    },
+    {
+        "hop": 62,
+        "substitute": 88,
+        "id": 137
+    },
+    {
+        "hop": 62,
+        "substitute": 53,
+        "id": 138
+    },
+    {
+        "hop": 62,
+        "substitute": 112,
+        "id": 139
+    },
+    {
+        "hop": 63,
+        "substitute": 17,
+        "id": 140
+    },
+    {
+        "hop": 63,
+        "substitute": 52,
+        "id": 141
+    },
+    {
+        "hop": 67,
+        "substitute": 71,
+        "id": 142
+    },
+    {
+        "hop": 67,
+        "substitute": 117,
+        "id": 143
+    },
+    {
+        "hop": 68,
+        "substitute": 21,
+        "id": 144
+    },
+    {
+        "hop": 68,
+        "substitute": 31,
+        "id": 145
+    },
+    {
+        "hop": 68,
+        "substitute": 88,
+        "id": 146
+    },
+    {
+        "hop": 69,
+        "substitute": 29,
+        "id": 147
+    },
+    {
+        "hop": 69,
+        "substitute": 111,
+        "id": 148
+    },
+    {
+        "hop": 71,
+        "substitute": 44,
+        "id": 149
+    },
+    {
+        "hop": 72,
+        "substitute": 75,
+        "id": 150
+    },
+    {
+        "hop": 72,
+        "substitute": 80,
+        "id": 151
+    },
+    {
+        "hop": 72,
+        "substitute": 83,
+        "id": 152
+    },
+    {
+        "hop": 74,
+        "substitute": 31,
+        "id": 153
+    },
+    {
+        "hop": 74,
+        "substitute": 88,
+        "id": 154
+    },
+    {
+        "hop": 75,
+        "substitute": 80,
+        "id": 155
+    },
+    {
+        "hop": 75,
+        "substitute": 71,
+        "id": 156
+    },
+    {
+        "hop": 75,
+        "substitute": 117,
+        "id": 157
+    },
+    {
+        "hop": 75,
+        "substitute": 91,
+        "id": 158
+    },
+    {
+        "hop": 75,
+        "substitute": 107,
+        "id": 159
+    },
+    {
+        "hop": 77,
+        "substitute": 71,
+        "id": 160
+    },
+    {
+        "hop": 77,
+        "substitute": 117,
+        "id": 161
+    },
+    {
+        "hop": 78,
+        "substitute": 1,
+        "id": 162
+    },
+    {
+        "hop": 78,
+        "substitute": 14,
+        "id": 163
+    },
+    {
+        "hop": 78,
+        "substitute": 116,
+        "id": 164
+    },
+    {
+        "hop": 80,
+        "substitute": 71,
+        "id": 165
+    },
+    {
+        "hop": 80,
+        "substitute": 117,
+        "id": 166
+    },
+    {
+        "hop": 80,
+        "substitute": 91,
+        "id": 167
+    },
+    {
+        "hop": 80,
+        "substitute": 107,
+        "id": 168
+    },
+    {
+        "hop": 81,
+        "substitute": 71,
+        "id": 169
+    },
+    {
+        "hop": 81,
+        "substitute": 117,
+        "id": 170
+    },
+    {
+        "hop": 82,
+        "substitute": 53,
+        "id": 171
+    },
+    {
+        "hop": 82,
+        "substitute": 112,
+        "id": 172
+    },
+    {
+        "hop": 83,
+        "substitute": 25,
+        "id": 173
+    },
+    {
+        "hop": 83,
+        "substitute": 120,
+        "id": 174
+    },
+    {
+        "hop": 83,
+        "substitute": 38,
+        "id": 175
+    },
+    {
+        "hop": 84,
+        "substitute": 29,
+        "id": 176
+    },
+    {
+        "hop": 84,
+        "substitute": 111,
+        "id": 177
+    },
+    {
+        "hop": 85,
+        "substitute": 99,
+        "id": 178
+    },
+    {
+        "hop": 85,
+        "substitute": 47,
+        "id": 179
+    },
+    {
+        "hop": 85,
+        "substitute": 23,
+        "id": 180
+    },
+    {
+        "hop": 85,
+        "substitute": 23,
+        "id": 181
+    },
+    {
+        "hop": 85,
+        "substitute": 93,
+        "id": 182
+    },
+    {
+        "hop": 85,
+        "substitute": 102,
+        "id": 183
+    },
+    {
+        "hop": 88,
+        "substitute": 31,
+        "id": 184
+    },
+    {
+        "hop": 88,
+        "substitute": 88,
+        "id": 185
+    },
+    {
+        "hop": 89,
+        "substitute": 68,
+        "id": 186
+    },
+    {
+        "hop": 91,
+        "substitute": 71,
+        "id": 187
+    },
+    {
+        "hop": 91,
+        "substitute": 117,
+        "id": 188
+    },
+    {
+        "hop": 91,
+        "substitute": 75,
+        "id": 189
+    },
+    {
+        "hop": 91,
+        "substitute": 80,
+        "id": 190
+    },
+    {
+        "hop": 91,
+        "substitute": 83,
+        "id": 191
+    },
+    {
+        "hop": 92,
+        "substitute": 31,
+        "id": 192
+    },
+    {
+        "hop": 92,
+        "substitute": 88,
+        "id": 193
+    },
+    {
+        "hop": 92,
+        "substitute": 18,
+        "id": 194
+    },
+    {
+        "hop": 93,
+        "substitute": 23,
+        "id": 195
+    },
+    {
+        "hop": 93,
+        "substitute": 93,
+        "id": 196
+    },
+    {
+        "hop": 93,
+        "substitute": 102,
+        "id": 197
+    },
+    {
+        "hop": 93,
+        "substitute": 54,
+        "id": 198
+    },
+    {
+        "hop": 93,
+        "substitute": 31,
+        "id": 199
+    },
+    {
+        "hop": 93,
+        "substitute": 88,
+        "id": 200
+    },
+    {
+        "hop": 93,
+        "substitute": 19,
+        "id": 201
+    },
+    {
+        "hop": 95,
+        "substitute": 39,
+        "id": 202
+    },
+    {
+        "hop": 95,
+        "substitute": 43,
+        "id": 203
+    },
+    {
+        "hop": 95,
+        "substitute": 96,
+        "id": 204
+    },
+    {
+        "hop": 96,
+        "substitute": 43,
+        "id": 205
+    },
+    {
+        "hop": 96,
+        "substitute": 37,
+        "id": 206
+    },
+    {
+        "hop": 96,
+        "substitute": 38,
+        "id": 207
+    },
+    {
+        "hop": 96,
+        "substitute": 39,
+        "id": 208
+    },
+    {
+        "hop": 96,
+        "substitute": 40,
+        "id": 209
+    },
+    {
+        "hop": 96,
+        "substitute": 95,
+        "id": 210
+    },
+    {
+        "hop": 96,
+        "substitute": 71,
+        "id": 211
+    },
+    {
+        "hop": 96,
+        "substitute": 117,
+        "id": 212
+    },
+    {
+        "hop": 97,
+        "substitute": 39,
+        "id": 213
+    },
+    {
+        "hop": 99,
+        "substitute": 54,
+        "id": 214
+    },
+    {
+        "hop": 99,
+        "substitute": 23,
+        "id": 215
+    },
+    {
+        "hop": 99,
+        "substitute": 45,
+        "id": 216
+    },
+    {
+        "hop": 99,
+        "substitute": 113,
+        "id": 217
+    },
+    {
+        "hop": 100,
+        "substitute": 69,
+        "id": 218
+    },
+    {
+        "hop": 101,
+        "substitute": 29,
+        "id": 219
+    },
+    {
+        "hop": 101,
+        "substitute": 111,
+        "id": 220
+    },
+    {
+        "hop": 107,
+        "substitute": 71,
+        "id": 221
+    },
+    {
+        "hop": 107,
+        "substitute": 117,
+        "id": 222
+    },
+    {
+        "hop": 107,
+        "substitute": 75,
+        "id": 223
+    },
+    {
+        "hop": 107,
+        "substitute": 80,
+        "id": 224
+    },
+    {
+        "hop": 107,
+        "substitute": 83,
+        "id": 225
+    },
+    {
+        "hop": 108,
+        "substitute": 101,
+        "id": 226
+    },
+    {
+        "hop": 108,
+        "substitute": 118,
+        "id": 227
+    },
+    {
+        "hop": 110,
+        "substitute": 29,
+        "id": 228
+    },
+    {
+        "hop": 110,
+        "substitute": 111,
+        "id": 229
+    },
+    {
+        "hop": 112,
+        "substitute": 39,
+        "id": 230
+    },
+    {
+        "hop": 112,
+        "substitute": 37,
+        "id": 231
+    },
+    {
+        "hop": 112,
+        "substitute": 38,
+        "id": 232
+    },
+    {
+        "hop": 112,
+        "substitute": 39,
+        "id": 233
+    },
+    {
+        "hop": 112,
+        "substitute": 40,
+        "id": 234
+    },
+    {
+        "hop": 116,
+        "substitute": 16,
+        "id": 235
+    },
+    {
+        "hop": 117,
+        "substitute": 44,
+        "id": 236
+    },
+    {
+        "hop": 118,
+        "substitute": 29,
+        "id": 237
+    },
+    {
+        "hop": 118,
+        "substitute": 111,
+        "id": 238
+    },
+    {
+        "hop": 120,
+        "substitute": 37,
+        "id": 239
+    },
+    {
+        "hop": 120,
+        "substitute": 38,
+        "id": 240
+    },
+    {
+        "hop": 120,
+        "substitute": 39,
+        "id": 241
+    },
+    {
+        "hop": 120,
+        "substitute": 40,
+        "id": 242
+    }
+]

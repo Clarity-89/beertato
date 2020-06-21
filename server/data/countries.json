@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Austria",
+        "code": "AT"
+    },
+    {
+        "id": 2,
+        "name": "Belgium",
+        "code": "BE"
+    },
+    {
+        "id": 3,
+        "name": "Canada",
+        "code": "CA"
+    },
+    {
+        "id": 4,
+        "name": "Czech Republic",
+        "code": "CZ"
+    },
+    {
+        "id": 5,
+        "name": "England",
+        "code": "UK"
+    },
+    {
+        "id": 6,
+        "name": "Germany",
+        "code": "DE"
+    },
+    {
+        "id": 7,
+        "name": "United Kingdom",
+        "code": "UK"
+    },
+    {
+        "id": 8,
+        "name": "United States",
+        "code": "US"
+    },
+    {
+        "id": 9,
+        "name": "Ukraine",
+        "code": "UA"
+    }
+]
