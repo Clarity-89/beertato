@@ -1,1 +1,1 @@
-React/Apollo databse for homebrew ingredients.
+Database for homebrew ingredients.
