@@ -34,10 +34,11 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "dev": "nodemon api/index.js",
     "test": "craco test",
     "eject": "craco eject",
     "generate": "plop --plopfile src/scripts/generator/index.js",
-    "server": "nodemon api/index.js",
+    "server": "node api/index.js",
     "serve": "serve -s build"
   },
   "eslintConfig": {
