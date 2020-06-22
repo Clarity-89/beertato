@@ -15,7 +15,12 @@ COPY . ./
 RUN npm run build
 COPY ./build ./build
 
+COPY ./bin/*.sh /
+RUN chmod +x /*.sh
+
+RUN apt-get update && apt-get install -f -y postgresql-client
+
 EXPOSE 5000
 
-CMD ["npm", "run", "serve"]
+CMD ["/serve_static.sh"]
 
