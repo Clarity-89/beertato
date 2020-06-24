@@ -14,7 +14,7 @@ services:
 
   web:
     build: .
-    image: bt
+    image: bt:latest
     volumes:
       - .:/bt
     ports:
@@ -22,7 +22,7 @@ services:
 
   api:
     build: .
-    image: bt
+    image: bt:latest
     command: /api_start.sh
     ports:
       - '3005:3005'

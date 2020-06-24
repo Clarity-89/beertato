@@ -19,6 +19,7 @@ cd ./api
 # Apply database migrations
 >&2 echo "Apply database migrations"
 knex-migrate up
+knex seed:run
 
 cd ..
 # Start api

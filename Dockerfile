@@ -13,7 +13,6 @@ RUN npm ci
 COPY . ./
 
 RUN npm run build
-COPY ./build ./build
 
 COPY ./bin/*.sh /
 RUN chmod +x /*.sh
