@@ -72,6 +72,4 @@ const Yeast = () => {
   );
 };
 
-Yeast.propTypes = {};
-
 export default Yeast;
