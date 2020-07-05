@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { Container, Header, Table } from "semantic-ui-react";
 import gql from "graphql-tag";
 import { LoaderScreen } from "../Loader";
-import { ErrorMessage } from "../Alerts";
+import { ErrorMessage } from "../../styled/Alerts";
 import { Text } from "../../styled/typography";
 
 const GET_GRAIN_DETAILS = gql`
@@ -31,7 +31,7 @@ const GET_GRAIN_DETAILS = gql`
 const GrainDetail = ({ match }) => {
   const { id } = match.params;
   const { data, loading, error } = useQuery(GET_GRAIN_DETAILS, {
-    variables: { id: id.toString() }
+    variables: { id: id.toString() },
   });
 
   if (loading) {
@@ -83,7 +83,7 @@ const GrainDetail = ({ match }) => {
 };
 
 GrainDetail.propTypes = {
-  match: PropTypes.object
+  match: PropTypes.object,
 };
 
 export default GrainDetail;

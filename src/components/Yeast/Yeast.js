@@ -3,7 +3,7 @@ import gql from "graphql-tag";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 import { Table, Container, Header } from "semantic-ui-react";
-import { ErrorMessage } from "../Alerts";
+import { ErrorMessage } from "../../styled/Alerts";
 import { LoaderScreen } from "../Loader";
 
 const GET_YEAST = gql`
@@ -47,7 +47,7 @@ const Yeast = () => {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {data.yeasts.map(y => (
+          {data.yeasts.map((y) => (
             <Table.Row key={y.id}>
               <Table.Cell>
                 <Link to={`/data/yeast/${y.id}`}>{y.name}</Link>

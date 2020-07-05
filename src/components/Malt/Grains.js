@@ -3,7 +3,7 @@ import gql from "graphql-tag";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 import { Table, Container, Header } from "semantic-ui-react";
-import { ErrorMessage } from "../Alerts";
+import { ErrorMessage } from "../../styled/Alerts";
 import { LoaderScreen } from "../Loader";
 
 const GET_MALTS = gql`
@@ -46,7 +46,7 @@ const Grains = () => {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {data.grains.map(grain => (
+          {data.grains.map((grain) => (
             <Table.Row key={grain.id}>
               <Table.Cell>
                 <Link to={`/data/grains/${grain.id}`}>{grain.name}</Link>

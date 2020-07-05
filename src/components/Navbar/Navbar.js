@@ -46,7 +46,7 @@ const navLinks = navElements.map((element) => (
 
 const links = [
   { name: "Calculator", url: "/calculator" },
-  { name: "Login/Signup", url: "login" },
+  { name: "Login/Signup", url: "/login" },
 ];
 
 const Navbar = () => {
