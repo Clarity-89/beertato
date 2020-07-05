@@ -5,7 +5,8 @@ const Origin = require("./Origin");
 const Grain = require("./Grain");
 const Yeast = require("./Yeast");
 const Adjunct = require("./Adjunct");
+const User = require("./User");
 
-const typeDefs = [Hop, Origin, Grain, Yeast, Adjunct];
+const typeDefs = [Hop, Origin, Grain, Yeast, Adjunct, User];
 
 module.exports = mergeTypes(typeDefs, { all: true });
