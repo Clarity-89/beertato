@@ -6,7 +6,7 @@ exports.up = function (knex) {
       table.string("last_name");
       table.string("username");
       table.string("password").notNullable();
-      table.string("email").notNullable();
+      table.string("email").notNullable().unique();
       table.string("picture");
       table.string("date_joined");
     }),
