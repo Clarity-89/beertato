@@ -5,7 +5,12 @@ require("dotenv").config();
 
 module.exports = {
   Query: {
-    me: async (_, { id }) => {
+    me: async (_, args, { user }) => {
+
+      if (!user) {
+        throw new Error("You are not authenticated!");
+      }
+
       try {
         const users = await knex("users").select().where("id", id);
         return users[0];
@@ -31,6 +36,28 @@ module.exports = {
       } catch (e) {
         throw e.detail;
       }
+    },
+
+    login: async (_, { email, password }) => {
+      const userResp = await knex("users").select().where("email", email);
+      const user = userResp[0];
+
+      if (!user) {
+        throw new Error("No user with that email");
+      }
+
+      const valid = await bcrypt.compare(password, user.password);
+
+      if (!valid) {
+        throw new Error("Incorrect password");
+      }
+
+      // return json web token
+      return jsonwebtoken.sign(
+        { id: user.id, email: user.email },
+        process.env.JWT_SECRET,
+        { expiresIn: "1d" }
+      );
     },
   },
 };
