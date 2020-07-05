@@ -8,23 +8,43 @@ import { Hops, HopDetail } from "../Hops";
 import { Grains, GrainDetail } from "../Malt";
 import { Yeast, YeastDetail } from "../Yeast";
 import { Calculator } from "../Calculator";
+import { Login, Signup } from "../Auth";
+
+const routes = [
+  {
+    path: "/",
+    component: FrontPage,
+    exact: true,
+  },
+  {
+    path: "/data/hops",
+    component: Hops,
+    exact: true,
+  },
+  { path: "/data/hops/:id", component: HopDetail },
+  { path: "/data/grains", component: Grains, exact: true },
+  { path: "/data/grains:id", component: GrainDetail },
+  { path: "/data/yeast", component: Yeast, exact: true },
+  { path: "/data/yeast:id", component: YeastDetail },
+  { path: "/calculator", component: Calculator },
+  { path: "/login", component: Login },
+  { path: "/signup", component: Signup },
+];
 
 /**
  *
  * Navbar
  *
  */
-const Navbar = () => {
-  const navElements = ["Hops", "Grains", "Yeast", "Adjuncts"];
-  const links = navElements.map(element => (
-    <RouterLink
-      key={element.toLowerCase()}
-      to={`/data/${element.toLowerCase()}`}
-    >
-      {element}
-    </RouterLink>
-  ));
+const navElements = ["Hops", "Grains", "Yeast", "Adjuncts"];
 
+const links = navElements.map((element) => (
+  <RouterLink key={element.toLowerCase()} to={`/data/${element.toLowerCase()}`}>
+    {element}
+  </RouterLink>
+));
+
+const Navbar = () => {
   return (
     <Main>
       <NavContainer>
@@ -38,14 +58,14 @@ const Navbar = () => {
         </NavRight>
       </NavContainer>
       <Container>
-        <Route path="/" exact component={FrontPage} />
-        <Route exact path="/data/hops" component={Hops} />
-        <Route path="/data/hops/:id" component={HopDetail} />
-        <Route exact path="/data/grains" component={Grains} />
-        <Route path="/data/grains/:id" component={GrainDetail} />
-        <Route exact path="/data/yeast" component={Yeast} />
-        <Route path="/data/yeast/:id" component={YeastDetail} />
-        <Route path="/calculator" component={Calculator} />
+        {routes.map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            exact={route.exact}
+            component={route.component}
+          />
+        ))}
       </Container>
     </Main>
   );
