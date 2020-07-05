@@ -38,11 +38,16 @@ const routes = [
  */
 const navElements = ["Hops", "Grains", "Yeast", "Adjuncts"];
 
-const links = navElements.map((element) => (
+const navLinks = navElements.map((element) => (
   <RouterLink key={element.toLowerCase()} to={`/data/${element.toLowerCase()}`}>
     {element}
   </RouterLink>
 ));
+
+const links = [
+  { name: "Calculator", url: "/calculator" },
+  { name: "Login/Signup", url: "login" },
+];
 
 const Navbar = () => {
   return (
@@ -53,8 +58,12 @@ const Navbar = () => {
           Beertato
         </Link>
         <NavRight>
-          <Link to="/calculator">Calculator</Link>
-          <NavDropdown title="Database" links={links} />
+          <NavDropdown title="Database" links={navLinks} />
+          {links.map((link) => (
+            <Link key={link.name} to={link.url}>
+              {link.name}
+            </Link>
+          ))}
         </NavRight>
       </NavContainer>
       <Container>
