@@ -26,6 +26,7 @@ const Signup = () => {
           <input
             placeholder="Email"
             name="email"
+            type="email"
             ref={register({ required: "Email is required" })}
           />
           {errors.email && (
@@ -38,6 +39,7 @@ const Signup = () => {
             placeholder="Password"
             name="password"
             type="password"
+            minLength={6}
             ref={register({ required: "Password is required" })}
           />
         </Form.Field>
