@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
  * Login
  *
  */
-const Login = props => {
+const Login = (props) => {
   return <div>Login</div>;
 };
 
