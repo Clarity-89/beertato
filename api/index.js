@@ -5,11 +5,20 @@ const { makeExecutableSchema } = require("graphql-tools");
 const typeDefs = require("./types");
 const resolvers = require("./resolvers");
 const { API_PORT, WEB_PORT } = require("../src/constants");
+const jwt = require("express-jwt");
+require("dotenv").config();
 
 // GraphQL schema
 const schema = makeExecutableSchema({
   typeDefs,
   resolvers,
+});
+
+// auth middleware
+const auth = jwt({
+  secret: process.env.JWT_SECRET,
+  credentialsRequired: false,
+  algorithms: ["RS256"],
 });
 
 const apiPort = process.env.API_PORT || API_PORT;
@@ -24,6 +33,7 @@ const cors = corsMiddleware({
 
 app.pre(cors.preflight);
 app.use(cors.actual);
+app.use(auth);
 
 app.get(
   "/api",
@@ -32,6 +42,7 @@ app.get(
     graphiql: true,
   })
 );
+
 app.post(
   "/api",
   expressGraphQL({
@@ -39,6 +50,7 @@ app.post(
     graphiql: false,
   })
 );
+
 app.listen(apiPort, () =>
   console.log(`Express GraphQL Server Now Running On localhost:${apiPort}/api`)
 );

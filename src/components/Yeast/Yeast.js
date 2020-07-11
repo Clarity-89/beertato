@@ -3,7 +3,7 @@ import gql from "graphql-tag";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 import { Table, Container, Header } from "semantic-ui-react";
-import { ErrorMessage } from "../Alerts";
+import { ErrorMessage } from "../../styled/Alerts";
 import { LoaderScreen } from "../Loader";
 
 const GET_YEAST = gql`

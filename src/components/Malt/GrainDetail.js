@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { Container, Header, Table } from "semantic-ui-react";
 import gql from "graphql-tag";
 import { LoaderScreen } from "../Loader";
-import { ErrorMessage } from "../Alerts";
+import { ErrorMessage } from "../../styled/Alerts";
 import { Text } from "../../styled/typography";
 
 const GET_GRAIN_DETAILS = gql`

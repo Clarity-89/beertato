@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useQuery } from "@apollo/react-hooks";
 import { Container, Header, Table } from "semantic-ui-react";
 import gql from "graphql-tag";
-import { ErrorMessage } from "../Alerts";
+import { ErrorMessage } from "../../styled/Alerts";
 import { Text } from "../../styled/typography";
 import { LoaderScreen } from "../Loader";
 
