@@ -14,7 +14,7 @@ const ErrorMessage = ({ header, text }) => (
 
 ErrorMessage.propTypes = {
   header: PropTypes.string,
-  text: PropTypes.string
+  text: PropTypes.string,
 };
 
 const Container = styled.div`

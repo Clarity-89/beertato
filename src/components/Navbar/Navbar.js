@@ -16,7 +16,7 @@ import { Calculator } from "../Calculator";
  */
 const Navbar = () => {
   const navElements = ["Hops", "Grains", "Yeast", "Adjuncts"];
-  const links = navElements.map(element => (
+  const links = navElements.map((element) => (
     <RouterLink
       key={element.toLowerCase()}
       to={`/data/${element.toLowerCase()}`}

@@ -46,7 +46,7 @@ const Grains = () => {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {data.grains.map(grain => (
+          {data.grains.map((grain) => (
             <Table.Row key={grain.id}>
               <Table.Cell>
                 <Link to={`/data/grains/${grain.id}`}>{grain.name}</Link>

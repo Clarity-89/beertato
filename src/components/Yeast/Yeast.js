@@ -47,7 +47,7 @@ const Yeast = () => {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {data.yeasts.map(y => (
+          {data.yeasts.map((y) => (
             <Table.Row key={y.id}>
               <Table.Cell>
                 <Link to={`/data/yeast/${y.id}`}>{y.name}</Link>

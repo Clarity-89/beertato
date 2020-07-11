@@ -14,7 +14,7 @@ const NavDropdown = ({ title, links }) => {
 
 NavDropdown.propTypes = {
   title: PropTypes.string,
-  links: PropTypes.array
+  links: PropTypes.array,
 };
 
 const StyledDropdown = styled(Dropdown)`

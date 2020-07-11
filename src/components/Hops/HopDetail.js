@@ -32,7 +32,7 @@ const GET_HOP_DETAILS = gql`
 const HopDetail = ({ match }) => {
   const { id } = match.params;
   const { data, loading, error } = useQuery(GET_HOP_DETAILS, {
-    variables: { id: id.toString() }
+    variables: { id: id.toString() },
   });
 
   if (loading) {
@@ -95,7 +95,7 @@ const HopDetail = ({ match }) => {
 };
 
 HopDetail.propTypes = {
-  match: PropTypes.object
+  match: PropTypes.object,
 };
 
 export default HopDetail;

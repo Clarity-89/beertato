@@ -32,7 +32,7 @@ const GET_YEAST_DETAIL = gql`
 const YeastDetail = ({ match }) => {
   const { id } = match.params;
   const { data, loading, error } = useQuery(GET_YEAST_DETAIL, {
-    variables: { id: id.toString() }
+    variables: { id: id.toString() },
   });
 
   if (loading) {
@@ -96,7 +96,7 @@ const YeastDetail = ({ match }) => {
 };
 
 YeastDetail.propTypes = {
-  match: PropTypes.object
+  match: PropTypes.object,
 };
 
 export default YeastDetail;
