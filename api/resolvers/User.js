@@ -11,7 +11,7 @@ module.exports = {
       }
 
       try {
-        const users = await knex("users").select().where("id", id);
+        const users = await knex("users").select().where("id", user.id);
         return users[0];
       } catch (e) {
         console.error("Error retrieving user", e);
@@ -22,7 +22,7 @@ module.exports = {
     signup: async (_, { username, email, password }) => {
       const pass = await bcrypt.hash(password, 10);
       try {
-        // TODO ad email validation
+        // TODO add email validation
         const user = await knex("users")
           .insert({ username, email, password: pass })
           .returning(["id", "email"]);
