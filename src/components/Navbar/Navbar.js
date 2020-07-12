@@ -9,6 +9,10 @@ import { Grains, GrainDetail } from "../Malt";
 import { Yeast, YeastDetail } from "../Yeast";
 import { Calculator } from "../Calculator";
 import { Login, Signup } from "../Auth";
+import { Profile } from "../Profile";
+
+const token = localStorage.getItem("token");
+console.log("t", token);
 
 const routes = [
   {
@@ -29,6 +33,7 @@ const routes = [
   { path: "/calculator", component: Calculator },
   { path: "/login", component: Login },
   { path: "/signup", component: Signup },
+  ...(token && [{ path: "/profile", component: Profile }]),
 ];
 
 /**
@@ -47,6 +52,7 @@ const navLinks = navElements.map((element) => (
 const links = [
   { name: "Calculator", url: "/calculator" },
   { name: "Login/Signup", url: "/login" },
+  ...(token && [{ name: "Profile", url: "/profile" }]),
 ];
 
 const Navbar = () => {
