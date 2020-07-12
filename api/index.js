@@ -18,7 +18,7 @@ const schema = makeExecutableSchema({
 const auth = jwt({
   secret: process.env.JWT_SECRET,
   credentialsRequired: false,
-  algorithms: ["RS256"],
+  algorithms: ["HS256"],
 });
 
 const apiPort = process.env.API_PORT || API_PORT;
@@ -29,6 +29,9 @@ const app = restify.createServer();
 
 const cors = corsMiddleware({
   origins: [`http://localhost:${webPort}`],
+  allowHeaders: [
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+  ],
 });
 
 app.pre(cors.preflight);
@@ -37,17 +40,27 @@ app.use(auth);
 
 app.get(
   "/api",
-  expressGraphQL({
-    schema,
-    graphiql: true,
+  expressGraphQL((req) => {
+    return {
+      schema,
+      graphiql: true,
+      context: {
+        user: req.user,
+      },
+    };
   })
 );
 
 app.post(
   "/api",
-  expressGraphQL({
-    schema,
-    graphiql: false,
+  expressGraphQL((req) => {
+    return {
+      schema,
+      graphiql: true,
+      context: {
+        user: req.user,
+      },
+    };
   })
 );
 

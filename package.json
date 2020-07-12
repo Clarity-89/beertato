@@ -8,6 +8,7 @@
     "@emotion/styled": "^10.0.27",
     "apollo-cache-inmemory": "^1.6.5",
     "apollo-client": "^2.6.8",
+    "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.16",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.18.2",
