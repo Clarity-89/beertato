@@ -10,7 +10,7 @@ module.exports = /* GraphQL */ `
   }
 
   type Mutation {
-    signup(username: String!, email: String!, password: String!): String
+    signup(username: String, email: String!, password: String!): String
     login(email: String!, password: String!): String
   }
 `;

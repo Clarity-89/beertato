@@ -1,22 +1,50 @@
 import React from "react";
-import styled from "@emotion/styled";
-import { Button, Form } from "semantic-ui-react";
+import { Link, Redirect } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { Container } from "../../styled/Layout/Layout";
-import { Link } from "react-router-dom";
-import { FormFieldError } from "../../styled/Alerts";
+import { useAsyncFn } from "react-use";
+import styled from "@emotion/styled";
+import { Button, Form, Message } from "semantic-ui-react";
 import { css } from "@emotion/core";
+import { useMutation } from "@apollo/react-hooks";
+import { Container } from "../../styled/Layout/Layout";
+import { FormFieldError } from "../../styled/Alerts";
+import gql from "graphql-tag";
+
+const SIGNUP = gql`
+  mutation signup($username: String, $email: String!, $password: String!) {
+    signup(username: $username, email: $email, password: $password)
+  }
+`;
 
 const Signup = () => {
   const { register, handleSubmit, errors } = useForm();
+  const signup = useMutation(SIGNUP)[0];
 
-  const onSubmit = (data) => console.log("data", data);
+  const [{ error, value, loading }, submit] = useAsyncFn(async (d) => {
+    const { username, email, password } = d;
+    const resp = await signup({ variables: { username, email, password } });
+    const { data } = resp;
+
+    localStorage.setItem("token", data.signup);
+    return true;
+  });
+
+  if (value) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <Container>
       <Header>Sign up</Header>
+
+      {error && (
+        <Message negative>
+          <Message.Header>Signup error</Message.Header>
+          <p>{error.message}</p>
+        </Message>
+      )}
       <Form
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(submit)}
         css={css`
           width: 300px;
         `}
@@ -52,7 +80,9 @@ const Signup = () => {
             Have an account? <Link to="/login"> Login here.</Link>
           </p>
         </Form.Field>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={loading}>
+          Submit
+        </Button>
       </Form>
     </Container>
   );

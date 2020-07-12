@@ -31,6 +31,7 @@
     "react-hook-form": "^6.0.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1",
+    "react-use": "^15.3.2",
     "restify": "^8.2.0",
     "restify-cors-middleware": "^1.1.1",
     "semantic-ui-react": "^0.88.2",
