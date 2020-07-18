@@ -42,7 +42,7 @@ const Login = () => {
         </Message>
       )}
       <Form
-        onSubmit={handleSubmit(login)}
+        onSubmit={handleSubmit(submit)}
         css={css`
           width: 300px;
         `}
