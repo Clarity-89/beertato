@@ -5,10 +5,10 @@ import { useAsyncFn } from "react-use";
 import styled from "@emotion/styled";
 import { Button, Form, Message } from "semantic-ui-react";
 import { css } from "@emotion/core";
+import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
 import { Container } from "../../styled/Layout/Layout";
 import { FormFieldError } from "../../styled/Alerts";
-import gql from "graphql-tag";
 
 const SIGNUP = gql`
   mutation signup($username: String, $email: String!, $password: String!) {
