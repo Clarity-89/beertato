@@ -10,9 +10,7 @@ import { Yeast, YeastDetail } from "../Yeast";
 import { Calculator } from "../Calculator";
 import { Login, Signup } from "../Auth";
 import { Profile } from "../Profile";
-
-const token = localStorage.getItem("token");
-console.log("t", token);
+import { isAuthenticated } from "../../services/utils/auth";
 
 const routes = [
   {
@@ -33,7 +31,7 @@ const routes = [
   { path: "/calculator", component: Calculator },
   { path: "/login", component: Login },
   { path: "/signup", component: Signup },
-  ...(token && [{ path: "/profile", component: Profile }]),
+  ...(isAuthenticated() ? [{ path: "/profile", component: Profile }] : []),
 ];
 
 /**
@@ -51,8 +49,8 @@ const navLinks = navElements.map((element) => (
 
 const links = [
   { name: "Calculator", url: "/calculator" },
-  { name: "Login/Signup", url: "/login" },
-  ...(token && [{ name: "Profile", url: "/profile" }]),
+  ...(isAuthenticated() ? [{ name: "Profile", url: "/profile" }] : []),
+  ...(!isAuthenticated() ? [{ name: "Login/Signup", url: "/login" }] : []),
 ];
 
 const Navbar = () => {

@@ -32,7 +32,8 @@ const Signup = () => {
   });
 
   if (value || isAuthenticated()) {
-    return <Redirect to="/" />;
+    window.location.href = "/";
+    return null;
   }
 
   return (

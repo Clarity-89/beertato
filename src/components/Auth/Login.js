@@ -31,7 +31,8 @@ const Login = () => {
   });
 
   if (value || isAuthenticated()) {
-    return <Redirect to="/" />;
+    window.location.href = "/";
+    return null;
   }
   return (
     <Container>
