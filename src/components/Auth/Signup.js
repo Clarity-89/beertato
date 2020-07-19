@@ -9,6 +9,8 @@ import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
 import { Container } from "../../styled/Layout/Layout";
 import { FormFieldError } from "../../styled/Alerts";
+import { TOKEN_KEY } from "../../constants";
+import { isAuthenticated } from "../../services/utils/auth";
 
 const SIGNUP = gql`
   mutation signup($username: String, $email: String!, $password: String!) {
@@ -25,11 +27,11 @@ const Signup = () => {
     const resp = await signup({ variables: { username, email, password } });
     const { data } = resp;
 
-    localStorage.setItem("token", data.signup);
+    localStorage.setItem(TOKEN_KEY, data.signup);
     return true;
   });
 
-  if (value) {
+  if (value || isAuthenticated()) {
     return <Redirect to="/" />;
   }
 

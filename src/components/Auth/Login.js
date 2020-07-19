@@ -8,6 +8,8 @@ import { css } from "@emotion/core";
 import { Button, Form, Message } from "semantic-ui-react";
 import { Container } from "../../styled/Layout/Layout";
 import { FormFieldError } from "../../styled/Alerts";
+import { TOKEN_KEY } from "../../constants";
+import { isAuthenticated } from "../../services/utils/auth";
 
 const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
@@ -24,11 +26,11 @@ const Login = () => {
     const resp = await login({ variables: { email, password } });
     const { data } = resp;
 
-    localStorage.setItem("token", data.login);
+    localStorage.setItem(TOKEN_KEY, data.login);
     return true;
   });
 
-  if (value) {
+  if (value || isAuthenticated()) {
     return <Redirect to="/" />;
   }
   return (

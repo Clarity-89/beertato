@@ -4,7 +4,7 @@ const corsMiddleware = require("restify-cors-middleware");
 const { makeExecutableSchema } = require("graphql-tools");
 const typeDefs = require("./types");
 const resolvers = require("./resolvers");
-const { API_PORT, WEB_PORT } = require("../src/constants");
+const { API_PORT, WEB_PORT } = require("../src/services/api/constants");
 const jwt = require("express-jwt");
 require("dotenv").config();
 
