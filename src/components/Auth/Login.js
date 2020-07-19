@@ -11,7 +11,7 @@ import { FormFieldError } from "../../styled/Alerts";
 
 const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
-    signup(email: $email, password: $password)
+    login(email: $email, password: $password)
   }
 `;
 
@@ -75,7 +75,7 @@ const Login = () => {
           </p>
         </Form.Field>
         <Button type="submit" disabled={loading}>
-          Submit
+          Login
         </Button>
       </Form>
     </Container>
