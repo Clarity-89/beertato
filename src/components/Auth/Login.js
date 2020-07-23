@@ -13,7 +13,12 @@ import { isAuthenticated } from "../../services/utils/auth";
 
 const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password)
+    login(email: $email, password: $password) {
+      id
+      username
+      token
+      email
+    }
   }
 `;
 
@@ -24,9 +29,9 @@ const Login = () => {
   const [{ error, value, loading }, submit] = useAsyncFn(async (d) => {
     const { email, password } = d;
     const resp = await login({ variables: { email, password } });
-    const { data } = resp;
+    const { login: data } = resp.data;
 
-    localStorage.setItem(TOKEN_KEY, data.login);
+    localStorage.setItem(TOKEN_KEY, data.token);
     return true;
   });
 

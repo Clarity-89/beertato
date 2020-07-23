@@ -16,6 +16,12 @@ const SIGNUP = gql`
   mutation signup($username: String, $email: String!, $password: String!) {
     signup(username: $username, email: $email, password: $password)
   }
+  {
+    id
+    token
+    username
+    email
+  }
 `;
 
 const Signup = () => {
@@ -25,7 +31,7 @@ const Signup = () => {
   const [{ error, value, loading }, submit] = useAsyncFn(async (d) => {
     const { username, email, password } = d;
     const resp = await signup({ variables: { username, email, password } });
-    const { data } = resp;
+    const { signup: data } = resp.data;
 
     localStorage.setItem(TOKEN_KEY, data.signup);
     return true;

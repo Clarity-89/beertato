@@ -19,26 +19,35 @@ module.exports = {
     },
   },
   Mutation: {
-    signup: async (_, { username, email, password }) => {
-      const pass = await bcrypt.hash(password, 10);
+    signup: async (_, data) => {
+      const pass = await bcrypt.hash(data.password, 10);
       try {
         // TODO add email validation
         const user = await knex("users")
-          .insert({ username, email, password: pass })
-          .returning(["id", "email"]);
+          .insert({
+            username: data.username,
+            email: data.email,
+            password: pass,
+          })
+          .returning(["id", "email", "username"]);
 
-        return jsonwebtoken.sign(
-          { id: user[0].id, email: user[0].email },
-          process.env.JWT_SECRET,
-          { expiresIn: "1y" }
-        );
+        const { id, email, username } = user[0];
+
+        return {
+          id,
+          email,
+          username,
+          token: jsonwebtoken.sign({ id, email }, process.env.JWT_SECRET, {
+            expiresIn: "1y",
+          }),
+        };
       } catch (e) {
         throw e.detail;
       }
     },
 
-    login: async (_, { email, password }) => {
-      const userResp = await knex("users").select().where("email", email);
+    login: async (_, { email: userEmail, password }) => {
+      const userResp = await knex("users").select().where("email", userEmail);
       const user = userResp[0];
 
       if (!user) {
@@ -51,12 +60,16 @@ module.exports = {
         throw new Error("Incorrect password");
       }
 
+      const { id, email, username } = user;
       // return json web token
-      return jsonwebtoken.sign(
-        { id: user.id, email: user.email },
-        process.env.JWT_SECRET,
-        { expiresIn: "1d" }
-      );
+      return {
+        id,
+        email,
+        username,
+        token: jsonwebtoken.sign({ id, email }, process.env.JWT_SECRET, {
+          expiresIn: "1y",
+        }),
+      };
     },
   },
 };
