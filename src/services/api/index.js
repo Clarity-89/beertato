@@ -2,7 +2,16 @@ import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { HttpLink } from "apollo-link-http";
 import { setContext } from "apollo-link-context";
+import { onError } from "apollo-link-error";
 import { API_PORT } from "./constants";
+import { TOKEN_KEY } from "../../constants";
+
+const logoutLink = onError(({ networkError }) => {
+  if (networkError?.statusCode === 401) {
+    localStorage.removeItem(TOKEN_KEY);
+    window.location.href = "/";
+  }
+});
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
@@ -23,5 +32,5 @@ const authLink = setContext((_, { headers }) => {
 
 export const client = new ApolloClient({
   cache,
-  link: authLink.concat(link),
+  link: logoutLink.concat(authLink.concat(link)),
 });

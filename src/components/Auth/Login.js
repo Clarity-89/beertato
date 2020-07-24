@@ -9,7 +9,6 @@ import { Button, Form, Message } from "semantic-ui-react";
 import { Container } from "../../styled/Layout/Layout";
 import { FormFieldError } from "../../styled/Alerts";
 import { TOKEN_KEY } from "../../constants";
-import { isAuthenticated } from "../../services/utils/auth";
 import { useAuth } from "../../context";
 
 const LOGIN = gql`
@@ -23,22 +22,20 @@ const LOGIN = gql`
   }
 `;
 
-const Login = () => {
+const Login = ({ history }) => {
   const { register, handleSubmit, errors } = useForm();
   const login = useMutation(LOGIN)[0];
   const { refetch } = useAuth();
-  const [{ error, value, loading }, submit] = useAsyncFn(async (d) => {
+  const [{ error, loading }, submit] = useAsyncFn(async (d) => {
     const { email, password } = d;
     const resp = await login({ variables: { email, password } });
     const { login: data } = resp.data;
     refetch();
     localStorage.setItem(TOKEN_KEY, data.token);
+    history.push("/");
     return true;
   });
 
-  if (value || isAuthenticated()) {
-    return <Redirect to="/profile" />;
-  }
   return (
     <Container>
       <h2>Login</h2>

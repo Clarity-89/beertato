@@ -38,6 +38,12 @@ app.pre(cors.preflight);
 app.use(cors.actual);
 app.use(auth);
 
+app.use(function (err, req, res, next) {
+  err.statusCode = err.status;
+  res.json(err);
+  next(err);
+});
+
 app.get(
   "/api",
   expressGraphQL((req) => {

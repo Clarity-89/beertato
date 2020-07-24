@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useAsyncFn } from "react-use";
 import styled from "@emotion/styled";
@@ -10,7 +10,6 @@ import { useMutation } from "@apollo/react-hooks";
 import { Container } from "../../styled/Layout/Layout";
 import { FormFieldError } from "../../styled/Alerts";
 import { TOKEN_KEY } from "../../constants";
-import { isAuthenticated } from "../../services/utils/auth";
 import { useAuth } from "../../context";
 
 const SIGNUP = gql`
@@ -25,23 +24,20 @@ const SIGNUP = gql`
   }
 `;
 
-const Signup = () => {
+const Signup = ({ history }) => {
   const { register, handleSubmit, errors } = useForm();
   const signup = useMutation(SIGNUP)[0];
   const { refetch } = useAuth();
 
-  const [{ error, value, loading }, submit] = useAsyncFn(async (d) => {
+  const [{ error, loading }, submit] = useAsyncFn(async (d) => {
     const { username, email, password } = d;
     const resp = await signup({ variables: { username, email, password } });
     const { signup: data } = resp.data;
     refetch();
+    history.push("/");
     localStorage.setItem(TOKEN_KEY, data.signup);
     return true;
   });
-
-  if (value || isAuthenticated()) {
-    return <Redirect to="/profile" />;
-  }
 
   return (
     <Container>
