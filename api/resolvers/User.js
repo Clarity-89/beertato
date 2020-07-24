@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const jsonwebtoken = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 const knex = require("../connection");
 require("dotenv").config();
 
@@ -37,7 +37,7 @@ module.exports = {
           id,
           email,
           username,
-          token: jsonwebtoken.sign({ id, email }, process.env.JWT_SECRET, {
+          token: jwt.sign({ id }, process.env.JWT_SECRET, {
             expiresIn: "1y",
           }),
         };
@@ -66,7 +66,7 @@ module.exports = {
         id,
         email,
         username,
-        token: jsonwebtoken.sign({ id, email }, process.env.JWT_SECRET, {
+        token: jwt.sign({ id }, process.env.JWT_SECRET, {
           expiresIn: "1y",
         }),
       };
