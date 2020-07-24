@@ -11,6 +11,7 @@ import { Container } from "../../styled/Layout/Layout";
 import { FormFieldError } from "../../styled/Alerts";
 import { TOKEN_KEY } from "../../constants";
 import { isAuthenticated } from "../../services/utils/auth";
+import { useAuth } from "../../context";
 
 const SIGNUP = gql`
   mutation signup($username: String, $email: String!, $password: String!) {
@@ -27,19 +28,19 @@ const SIGNUP = gql`
 const Signup = () => {
   const { register, handleSubmit, errors } = useForm();
   const signup = useMutation(SIGNUP)[0];
+  const { refetch } = useAuth();
 
   const [{ error, value, loading }, submit] = useAsyncFn(async (d) => {
     const { username, email, password } = d;
     const resp = await signup({ variables: { username, email, password } });
     const { signup: data } = resp.data;
-
+    refetch();
     localStorage.setItem(TOKEN_KEY, data.signup);
     return true;
   });
 
   if (value || isAuthenticated()) {
-    window.location.href = "/";
-    return null;
+    return <Redirect to="/profile" />;
   }
 
   return (

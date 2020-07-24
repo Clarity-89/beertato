@@ -1,33 +1,23 @@
 import React from "react";
-import { useQuery } from "@apollo/react-hooks";
-import gql from "graphql-tag";
 import { Button } from "semantic-ui-react";
 import { Container } from "../../styled/Layout/Layout";
 import { TOKEN_KEY } from "../../constants";
+import { useAuth } from "../../context";
 
-const PROFILE = gql`
-  {
-    me {
-      id
-      username
-      email
-    }
-  }
-`;
-
-const Profile = () => {
-  const { data = {} } = useQuery(PROFILE);
+const Profile = (props) => {
+  const { user, refetch } = useAuth();
 
   const logout = () => {
     localStorage.removeItem(TOKEN_KEY);
-    window.location.href = "/";
+    refetch();
+    props.history.push("/");
   };
 
   return (
     <Container>
       <h2>Profile</h2>
-      <p>Email: {data?.me?.email}</p>
-      <p>Username: {data?.me?.username}</p>
+      <p>Email: {user.email}</p>
+      <p>Username: {user.username}</p>
       <Button onClick={logout}>Log out</Button>
     </Container>
   );

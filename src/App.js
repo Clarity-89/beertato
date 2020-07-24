@@ -1,19 +1,11 @@
-import React, { Component } from "react";
-import { client } from "./services/api";
-import { ApolloProvider } from "react-apollo";
-import { Navbar } from "./components/Navbar";
-import { BrowserRouter as Router } from "react-router-dom";
+import React from "react";
+import { useAuth } from "./context";
+import AuthApp from "./AuthenticatedApp";
+import UnAuthApp from "./UnAuthenticatedApp";
 
-class App extends Component {
-  render() {
-    return (
-      <ApolloProvider client={client}>
-        <Router>
-          <Navbar />
-        </Router>
-      </ApolloProvider>
-    );
-  }
-}
+const App = () => {
+  const { user } = useAuth();
+  return user ? <AuthApp /> : <UnAuthApp />;
+};
 
 export default App;

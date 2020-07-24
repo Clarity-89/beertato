@@ -10,6 +10,7 @@ import { Container } from "../../styled/Layout/Layout";
 import { FormFieldError } from "../../styled/Alerts";
 import { TOKEN_KEY } from "../../constants";
 import { isAuthenticated } from "../../services/utils/auth";
+import { useAuth } from "../../context";
 
 const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
@@ -25,19 +26,18 @@ const LOGIN = gql`
 const Login = () => {
   const { register, handleSubmit, errors } = useForm();
   const login = useMutation(LOGIN)[0];
-
+  const { refetch } = useAuth();
   const [{ error, value, loading }, submit] = useAsyncFn(async (d) => {
     const { email, password } = d;
     const resp = await login({ variables: { email, password } });
     const { login: data } = resp.data;
-
+    refetch();
     localStorage.setItem(TOKEN_KEY, data.token);
     return true;
   });
 
   if (value || isAuthenticated()) {
-    window.location.href = "/";
-    return null;
+    return <Redirect to="/profile" />;
   }
   return (
     <Container>
