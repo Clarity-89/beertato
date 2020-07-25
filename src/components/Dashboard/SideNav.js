@@ -2,8 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
-import { TOKEN_KEY } from "../../constants";
 import { useAuth } from "../../context";
+import { auth } from "../../services/auth/auth";
 
 const SideNav = ({ history, match }) => {
   const { refetch } = useAuth();
@@ -14,9 +14,10 @@ const SideNav = ({ history, match }) => {
   ];
 
   const logout = () => {
-    localStorage.removeItem(TOKEN_KEY);
-    refetch();
-    history.push("/");
+    auth.logout(() => {
+      refetch();
+      history.push("/");
+    });
   };
 
   return (
