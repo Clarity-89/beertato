@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
-import { Button } from "semantic-ui-react";
+import { Button, Menu } from "semantic-ui-react";
 import { useAuth } from "../../context";
 import { auth } from "../../services/auth/auth";
 
@@ -22,20 +22,30 @@ const SideNav = ({ history, match }) => {
 
   return (
     <Container>
-      <NavLinks>
+      <Menu vertical>
         {links.map((link) => (
-          <li key={link.name}>
-            <Link to={link.url}>{link.name}</Link>
-          </li>
+          <Menu.Item
+            key={link.name}
+            active={window.location.pathname === link.url}
+          >
+            <NavLink to={link.url}>{link.name}</NavLink>
+          </Menu.Item>
         ))}
-      </NavLinks>
-      <Button onClick={logout}>Log out</Button>
+        <Menu.Item>
+          <Button onClick={logout}>Log out</Button>
+        </Menu.Item>
+      </Menu>
     </Container>
   );
 };
 
-const NavLinks = styled.ul`
-  list-style: none;
+const NavLink = styled(Link)`
+  width: 100%;
+  height: 100%;
+  display: block;
+  :hover {
+    text-decoration: none;
+  }
 `;
 
 const Container = styled.div`
