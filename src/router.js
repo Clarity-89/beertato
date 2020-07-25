@@ -3,7 +3,7 @@ import { HopDetail, Hops } from "./components/Hops";
 import { GrainDetail, Grains } from "./components/Malt";
 import { Yeast, YeastDetail } from "./components/Yeast";
 import { Calculator } from "./components/Calculator";
-import { Profile } from "./components/Profile";
+import { Dashboard } from "./components/Dashboard";
 import { Login, Signup } from "./components/Auth";
 
 const sharedRoutes = [
@@ -27,7 +27,7 @@ const sharedRoutes = [
 
 export const privateRoutes = [
   ...sharedRoutes,
-  { path: "/profile", component: Profile },
+  { path: "/dashboard", component: Dashboard },
 ];
 
 export const publicRoutes = [
@@ -40,7 +40,7 @@ const sharedLinks = [{ name: "Calculator", url: "/calculator" }];
 
 export const privateLinks = [
   ...sharedLinks,
-  { name: "Profile", url: "/profile" },
+  { name: "Dashboard", url: "/dashboard" },
 ];
 export const publicLinks = [
   ...sharedLinks,

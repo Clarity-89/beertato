@@ -32,7 +32,6 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
   padding: 24px 48px;
-  max-width: 1200px;
 `;
 
 export default AuthApp;
