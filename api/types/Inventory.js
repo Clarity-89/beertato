@@ -7,11 +7,16 @@ module.exports = /* GraphQL */ `
   }
 
   type Query {
-    hopInventory(user_id: Int!): HopInventory
+    hopInventory: [HopInventory]
   }
 
   type Mutation {
-    addHopInventory(amount: Int!, user_id: Int, hop_id: Int!): HopInventory
+    addHopInventory(amount: Int!, hop_id: Int!): Int
     updateHopInventory(amount: Int!, hop_id: Int!): HopInventory
+  }
+
+  schema {
+    query: Query
+    mutation: Mutation
   }
 `;
