@@ -2,10 +2,13 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Route } from "react-router-dom";
 import { Container } from "../../styled/Layout/Layout";
-import { Profile, SideNav } from "./index";
+import { Inventory, Profile, SideNav } from "./index";
 
 const Dashboard = (props) => {
-  const routes = [{ path: `${props.match.url}/profile`, component: Profile }];
+  const routes = [
+    { path: `${props.match.url}/profile`, component: Profile },
+    { path: `${props.match.url}/inventory`, component: Inventory },
+  ];
   return (
     <Page>
       <SideNav {...props} />
