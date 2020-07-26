@@ -3,26 +3,26 @@ exports.up = function (knex) {
     knex.schema.createTable("hops_inventory", (table) => {
       table.increments("id").primary();
       table.float("amount");
-      table.integer("hop_id").references("hops.id");
-      table.integer("user_id").references("users.id");
+      table.integer("hop").references("hops.id").onDelete("CASCADE");
+      table.integer("user").references("users.id").onDelete("CASCADE");
     }),
     knex.schema.createTable("grains_inventory", (table) => {
       table.increments("id").primary();
       table.float("amount");
-      table.integer("grain_id").references("grains.id");
-      table.integer("user_id").references("users.id");
+      table.integer("grain").references("grains.id").onDelete("CASCADE");
+      table.integer("user").references("users.id").onDelete("CASCADE");
     }),
     knex.schema.createTable("yeast_inventory", (table) => {
       table.increments("id").primary();
       table.float("amount");
-      table.integer("yeast_id").references("yeast.id");
-      table.integer("user_id").references("users.id");
+      table.integer("yeast").references("yeast.id").onDelete("CASCADE");
+      table.integer("user").references("users.id").onDelete("CASCADE");
     }),
     knex.schema.createTable("adjuncts_inventory", (table) => {
       table.increments("id").primary();
       table.float("amount");
-      table.integer("adjunct_id").references("adjuncts.id");
-      table.integer("user_id").references("users.id");
+      table.integer("adjunct").references("adjuncts.id").onDelete("CASCADE");
+      table.integer("user").references("users.id").onDelete("CASCADE");
     }),
   ]);
 };
