@@ -4,10 +4,7 @@ module.exports = {
   Query: {
     origin: async (root, { id }) => {
       try {
-        const origins = await knex("countries")
-          .select()
-          .where("id", id);
-        return origins[0];
+        return await knex("countries").first().where("id", id);
       } catch (e) {
         console.error("Error fetching origin", e);
       }
@@ -18,6 +15,6 @@ module.exports = {
       } catch (e) {
         console.error("Error fetching origins", e);
       }
-    }
-  }
+    },
+  },
 };

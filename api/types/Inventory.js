@@ -2,8 +2,8 @@ module.exports = /* GraphQL */ `
   type HopInventory {
     id: String!
     amount: Float!
-    user_id: Int!
-    hop_id: Int!
+    user: Int!
+    hop: Hop!
   }
 
   type Query {
@@ -11,8 +11,8 @@ module.exports = /* GraphQL */ `
   }
 
   type Mutation {
-    addHopInventory(amount: Int!, hop_id: Int!): Int
-    updateHopInventory(amount: Int!, hop_id: Int!): HopInventory
+    addHopInventory(amount: Int!, hop: Int!): Int
+    updateHopInventory(amount: Int!, hop: Int!): HopInventory
   }
 
   schema {

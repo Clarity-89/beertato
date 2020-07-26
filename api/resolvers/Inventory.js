@@ -1,4 +1,5 @@
 const knex = require("../connection");
+const { Hop } = require("./Hop");
 
 module.exports = {
   Query: {
@@ -8,12 +9,22 @@ module.exports = {
       }
 
       try {
-        return await knex("hops_inventory").select().where("user_id", user.id);
+        return await knex("hops_inventory").select().where("user", user.id);
       } catch (e) {
         throw new Error(e);
       }
     },
   },
+  HopInventory: {
+    hop: async ({ hop }) => {
+      try {
+        return await knex("hops").first().where("id", hop);
+      } catch (e) {
+        console.error("Error fetching hop", e);
+      }
+    },
+  },
+  Hop,
   Mutation: {
     addHopInventory: async (_, args, { user }, { variableValues }) => {
       if (!user) {
@@ -23,12 +34,12 @@ module.exports = {
       try {
         const inventory = await knex("hops_inventory")
           .insert({
-            user_id: user.id,
+            user: user.id,
             amount: variableValues.amount,
-            hop_id: variableValues.hop_id,
+            hop: variableValues.hop,
           })
-          .returning(["id"]);
-        return inventory[0].id;
+          .returning("id");
+        return inventory[0];
       } catch (e) {
         throw new Error(e);
       }
