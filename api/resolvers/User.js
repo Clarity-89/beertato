@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 const knex = require("../connection");
+const { getSignedToken } = require("../utils/getSignedToken");
 require("dotenv").config();
 
 module.exports = {
@@ -37,9 +37,7 @@ module.exports = {
           id,
           email,
           username,
-          token: jwt.sign({ id }, process.env.JWT_SECRET, {
-            expiresIn: "1y",
-          }),
+          token: getSignedToken(id),
         };
       } catch (e) {
         throw e.detail;
@@ -66,9 +64,7 @@ module.exports = {
         id,
         email,
         username,
-        token: jwt.sign({ id }, process.env.JWT_SECRET, {
-          expiresIn: "1y",
-        }),
+        token: getSignedToken(id),
       };
     },
   },
