@@ -46,7 +46,7 @@ module.exports = {
   Grain,
   Hop,
   Mutation: {
-    addHopInventory: async (_, args, { user }, { variableValues }) => {
+    addHopInventory: async (_, { amount, hop }, { user }) => {
       if (!user) {
         throw new Error("You are not authenticated!");
       }
@@ -55,10 +55,10 @@ module.exports = {
         const inventory = await knex("hops_inventory")
           .insert({
             user: user.id,
-            amount: variableValues.amount,
-            hop: variableValues.hop,
+            amount,
+            hop,
           })
-          .returning("id");
+          .returning(["id", "hop", "amount"]);
         return inventory[0];
       } catch (e) {
         throw new Error(e);
