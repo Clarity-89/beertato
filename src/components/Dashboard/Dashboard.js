@@ -33,5 +33,6 @@ const Page = styled.div`
 
 const Wrapper = styled(Container)`
   padding: 0 40px;
+  width: 100%;
 `;
 export default Dashboard;

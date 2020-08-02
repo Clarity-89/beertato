@@ -1,15 +1,53 @@
-import React, { useEffect } from "react";
+import React from "react";
 import gql from "graphql-tag/src";
 import { useMutation, useQuery } from "@apollo/react-hooks";
-import { Table } from "semantic-ui-react";
+import { Table, Tab, Loader } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-// import styled from "@emotion/styled";
+import { ErrorMessage } from "../../styled/Alerts";
+import { css } from "@emotion/core";
 
-const INVENTORY = gql`
+const paneStyles = css`
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+`;
+
+const panes = [
   {
-    hopInventory {
+    menuItem: "Hops",
+    render: () => (
+      <Tab.Pane attached={false} css={paneStyles}>
+        <InventoryTable query={HOP_INVENTORY} />
+      </Tab.Pane>
+    ),
+  },
+  {
+    menuItem: "Grains",
+    render: () => <Tab.Pane attached={false}>Tab 2 Content</Tab.Pane>,
+  },
+  {
+    menuItem: "Adjuncts",
+    render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane>,
+  },
+];
+
+const HOP_INVENTORY = gql`
+  {
+    results: hopInventory {
       amount
       hop {
+        name
+        id
+      }
+    }
+  }
+`;
+
+const GRAIN_INVENTORY = gql`
+  {
+    results: grainInventory {
+      amount
+      grain {
         name
         id
       }
@@ -24,12 +62,31 @@ const ADD_ITEM = gql`
 `;
 
 const Inventory = (props) => {
-  const { data = {}, loading, error } = useQuery(INVENTORY);
-  // const addHop = useMutation(ADD_ITEM)[0];
-  //
-  // useEffect(() => {
-  //   //addHop({ variables: { amount: 10, hop: 2 } });
-  // }, []);
+  return (
+    <Tab
+      menu={{
+        borderless: true,
+        attached: false,
+        secondary: true,
+        pointing: true,
+      }}
+      panes={panes}
+    />
+  );
+};
+
+export default Inventory;
+
+const InventoryTable = ({ query, mutation }) => {
+  const { data, loading, error } = useQuery(query);
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <ErrorMessage />;
+  }
 
   return (
     <div>
@@ -44,7 +101,7 @@ const Inventory = (props) => {
         </Table.Header>
 
         <Table.Body>
-          {(data?.hopInventory || []).map((item) => (
+          {data.results.map((item) => (
             <Table.Row key={item.hop.id}>
               <Table.Cell>
                 <Link to={`/data/hops/${item.hop.id}`}>{item.hop.name}</Link>
@@ -58,5 +115,3 @@ const Inventory = (props) => {
     </div>
   );
 };
-
-export default Inventory;
