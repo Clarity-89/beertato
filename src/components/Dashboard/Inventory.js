@@ -71,15 +71,17 @@ const InventoryTable = ({ items, type }) => {
         </Table.Header>
 
         <Table.Body>
-          {items.map(({ item, amount }) => (
-            <Table.Row key={item.id}>
-              <Table.Cell>
-                <Link to={`/data/${type}/${item.id}`}>{item.name}</Link>
-              </Table.Cell>
-              <Table.Cell>{amount}</Table.Cell>
-              <Table.Cell>Edit</Table.Cell>
-            </Table.Row>
-          ))}
+          {items
+            .sort((a, b) => a.item.name.localeCompare(b.item.name))
+            .map(({ item, amount }) => (
+              <Table.Row key={item.id}>
+                <Table.Cell>
+                  <Link to={`/data/${type}/${item.id}`}>{item.name}</Link>
+                </Table.Cell>
+                <Table.Cell>{amount}</Table.Cell>
+                <Table.Cell>Edit</Table.Cell>
+              </Table.Row>
+            ))}
         </Table.Body>
       </Table>
     </div>

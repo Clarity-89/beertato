@@ -2,13 +2,13 @@ const knex = require("../connection");
 const { Hop } = require("./Hop");
 const { Grain } = require("./Grain");
 
-const getInventoryItem = async (user, table) => {
+const getInventoryItems = async (user, table) => {
   if (!user) {
     throw new Error("You are not authenticated!");
   }
 
   try {
-    return await knex(table).select().where("user", user.id);
+    return knex(table).select().where("user", user.id);
   } catch (e) {
     throw new Error(e);
   }
@@ -25,13 +25,13 @@ const getItemById = async (id, table) => {
 module.exports = {
   Query: {
     hopInventory: async (_, __, { user }) => {
-      return getInventoryItem(user, "hops_inventory");
+      return getInventoryItems(user, "hops_inventory");
     },
     grainInventory: async (_, __, { user }) => {
-      return getInventoryItem(user, "grains_inventory");
+      return getInventoryItems(user, "grains_inventory");
     },
     adjunctInventory: async (_, __, { user }) => {
-      return getInventoryItem(user, "adjuncts_inventory");
+      return getInventoryItems(user, "adjuncts_inventory");
     },
   },
   HopInventory: {
@@ -49,6 +49,19 @@ module.exports = {
     addHopInventory: async (_, { amount, hop }, { user }) => {
       if (!user) {
         throw new Error("You are not authenticated!");
+      }
+
+      // If item with a give hop id exists, update that item's amount
+      const existingItem = await knex("hops_inventory")
+        .first()
+        .where("hop", hop);
+
+      if (existingItem) {
+        const res = await knex("hops_inventory")
+          .where("hop", hop)
+          .update({ amount: Number(existingItem.amount) + Number(amount) })
+          .returning(["id", "hop", "amount"]);
+        return res[0];
       }
 
       try {
