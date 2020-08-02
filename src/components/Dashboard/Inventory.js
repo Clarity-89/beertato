@@ -1,11 +1,16 @@
 import React from "react";
-import gql from "graphql-tag/src";
 import { useMutation, useQuery } from "@apollo/react-hooks";
 import { Table, Tab, Loader, Form, Dropdown, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { ErrorMessage } from "../../styled/Alerts";
 import { css } from "@emotion/core";
-import { useForm, Control } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
+import {
+  HOP_INVENTORY,
+  ADD_HOP_ITEM,
+  GET_HOPS,
+  GRAIN_INVENTORY,
+} from "./queries";
 
 const paneStyles = css`
   background: transparent !important;
@@ -18,8 +23,7 @@ const panes = [
     menuItem: "Hops",
     render: () => (
       <Tab.Pane attached={false} css={paneStyles}>
-        <InventoryTable query={HOP_INVENTORY} type={"hops"} />
-        <InventoryForm mutation={ADD_HOP_ITEM} />
+        <HopInventory />
       </Tab.Pane>
     ),
   },
@@ -37,45 +41,6 @@ const panes = [
   },
 ];
 
-const HOP_INVENTORY = gql`
-  {
-    results: hopInventory {
-      amount
-      item: hop {
-        name
-        id
-      }
-    }
-  }
-`;
-
-const GRAIN_INVENTORY = gql`
-  {
-    results: grainInventory {
-      amount
-      item: grain {
-        name
-        id
-      }
-    }
-  }
-`;
-
-const GET_HOPS = gql`
-  {
-    results: hops {
-      id
-      name
-    }
-  }
-`;
-
-const ADD_HOP_ITEM = gql`
-  mutation addHopInventory($amount: Int!, $hop: Int!) {
-    addHopInventory(amount: $amount, hop: $hop)
-  }
-`;
-
 const Inventory = (props) => {
   return (
     <Tab
@@ -92,21 +57,7 @@ const Inventory = (props) => {
 
 export default Inventory;
 
-const InventoryTable = ({ query, mutation, type }) => {
-  const { data, loading, error } = useQuery(query);
-
-  if (loading) {
-    return <Loader />;
-  }
-
-  if (error) {
-    return <ErrorMessage />;
-  }
-
-  if (!data.results.length) {
-    return <p>No data yet.</p>;
-  }
-
+const InventoryTable = ({ items, type }) => {
   return (
     <div>
       <h3>Inventory</h3>
@@ -120,7 +71,7 @@ const InventoryTable = ({ query, mutation, type }) => {
         </Table.Header>
 
         <Table.Body>
-          {data.results.map(({ item, amount }) => (
+          {items.map(({ item, amount }) => (
             <Table.Row key={item.id}>
               <Table.Cell>
                 <Link to={`/data/${type}/${item.id}`}>{item.name}</Link>
@@ -135,13 +86,12 @@ const InventoryTable = ({ query, mutation, type }) => {
   );
 };
 
-const InventoryForm = ({ mutation, type }) => {
-  const { register, handleSubmit, errors } = useForm();
-  const { data, loading, error } = useQuery(GET_HOPS);
+const InventoryForm = ({ query, addItem }) => {
+  const { register, handleSubmit, errors, control } = useForm();
+  const { data, loading } = useQuery(query);
 
-  const [addItem] = useMutation(mutation);
-  const submit = (formData) => {
-    console.log("d", formData);
+  const submit = (data) => {
+    return addItem(data);
   };
 
   return (
@@ -158,15 +108,24 @@ const InventoryForm = ({ mutation, type }) => {
         ) : (
           <>
             <label>Item</label>
-            <Dropdown
-              placeholder="Select item"
-              search
-              selection
-              options={data.results.map(({ id, name }) => ({
-                key: id,
-                text: name,
-                value: id,
-              }))}
+            <Controller
+              name="item"
+              control={control}
+              render={({ onChange }) => (
+                <Dropdown
+                  placeholder="Select item"
+                  search
+                  selection
+                  options={data.results.map(({ id, name }) => ({
+                    key: id,
+                    text: name,
+                    value: id,
+                  }))}
+                  onChange={(_, { value }) => {
+                    onChange(value);
+                  }}
+                />
+              )}
             />
           </>
         )}
@@ -176,6 +135,7 @@ const InventoryForm = ({ mutation, type }) => {
         <input
           placeholder="Amount"
           name="amount"
+          type="number"
           ref={register({ required: "Amount is required" })}
         />
       </Form.Field>
@@ -183,5 +143,33 @@ const InventoryForm = ({ mutation, type }) => {
         Submit
       </Button>
     </Form>
+  );
+};
+
+const HopInventory = () => {
+  const { data, loading, error, refetch } = useQuery(HOP_INVENTORY);
+  const [addItem] = useMutation(ADD_HOP_ITEM);
+
+  const save = async ({ amount, item }) => {
+    await addItem({ variables: { amount, hop: item } });
+    return refetch();
+  };
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <ErrorMessage />;
+  }
+
+  if (!data.results.length) {
+    return <p>No data yet.</p>;
+  }
+  return (
+    <>
+      <InventoryTable items={data.results} type={"hops"} />
+      <InventoryForm query={GET_HOPS} addItem={save} />
+    </>
   );
 };
