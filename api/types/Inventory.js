@@ -6,8 +6,24 @@ module.exports = /* GraphQL */ `
     hop: Hop!
   }
 
+  type GrainInventory {
+    id: String!
+    amount: Float!
+    user: Int!
+    grain: Grain!
+  }
+
+  type AdjunctInventory {
+    id: String!
+    amount: Float!
+    user: Int!
+    adjunct: Adjunct!
+  }
+
   type Query {
     hopInventory: [HopInventory]
+    grainInventory: [GrainInventory]
+    adjunctInventory: [AdjunctInventory]
   }
 
   type Mutation {
