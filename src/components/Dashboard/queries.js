@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 export const HOP_INVENTORY = gql`
   {
     results: hopInventory {
+      id
       amount
       item: hop {
         name
@@ -15,6 +16,7 @@ export const HOP_INVENTORY = gql`
 export const GRAIN_INVENTORY = gql`
   {
     results: grainInventory {
+      id
       amount
       item: grain {
         name
@@ -38,7 +40,20 @@ export const ADD_HOP_ITEM = gql`
     addHopInventory(amount: $amount, hop: $hop) {
       id
       amount
-      hop {
+      item: hop {
+        id
+        name
+      }
+    }
+  }
+`;
+
+export const UPDATE_HOP_ITEM = gql`
+  mutation updateHopInventory($amount: String!, $id: String!) {
+    updateHopInventory(amount: $amount, id: $id) {
+      id
+      amount
+      item: hop {
         id
         name
       }

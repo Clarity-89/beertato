@@ -59,7 +59,7 @@ module.exports = {
       if (existingItem) {
         const res = await knex("hops_inventory")
           .where("hop", hop)
-          .update({ amount: Number(existingItem.amount) + Number(amount) })
+          .update({ amount })
           .returning(["id", "hop", "amount"]);
         return res[0];
       }
@@ -73,6 +73,20 @@ module.exports = {
           })
           .returning(["id", "hop", "amount"]);
         return inventory[0];
+      } catch (e) {
+        throw new Error(e);
+      }
+    },
+    updateHopInventory: async (_, { amount, id }, { user }) => {
+      if (!user) {
+        throw new Error("You are not authenticated!");
+      }
+      try {
+        const res = await knex("hops_inventory")
+          .where("id", id)
+          .update({ amount })
+          .returning(["id", "hop", "amount"]);
+        return res[0];
       } catch (e) {
         throw new Error(e);
       }

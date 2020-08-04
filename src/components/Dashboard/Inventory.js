@@ -1,16 +1,11 @@
 import React from "react";
-import { useMutation, useQuery } from "@apollo/react-hooks";
+import { useQuery } from "@apollo/react-hooks";
 import { Table, Tab, Loader, Form, Dropdown, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import { ErrorMessage } from "../../styled/Alerts";
 import { css } from "@emotion/core";
 import { useForm, Controller } from "react-hook-form";
-import {
-  HOP_INVENTORY,
-  ADD_HOP_ITEM,
-  GET_HOPS,
-  GRAIN_INVENTORY,
-} from "./queries";
+import { GRAIN_INVENTORY } from "./queries";
+import { HopInventory } from "./HopInventory";
 
 const paneStyles = css`
   background: transparent !important;
@@ -57,7 +52,7 @@ const Inventory = (props) => {
 
 export default Inventory;
 
-const InventoryTable = ({ items, type }) => {
+export const InventoryTable = ({ items, type }) => {
   return (
     <div>
       <h3>Inventory</h3>
@@ -88,12 +83,12 @@ const InventoryTable = ({ items, type }) => {
   );
 };
 
-const InventoryForm = ({ query, addItem }) => {
+export const InventoryForm = ({ query, addItem }) => {
   const { register, handleSubmit, errors, control } = useForm();
   const { data, loading } = useQuery(query);
 
-  const submit = (data) => {
-    return addItem(data);
+  const submit = (formData) => {
+    return addItem(formData);
   };
 
   return (
@@ -145,33 +140,5 @@ const InventoryForm = ({ query, addItem }) => {
         Submit
       </Button>
     </Form>
-  );
-};
-
-const HopInventory = () => {
-  const { data, loading, error, refetch } = useQuery(HOP_INVENTORY);
-  const [addItem] = useMutation(ADD_HOP_ITEM);
-
-  const save = async ({ amount, item }) => {
-    await addItem({ variables: { amount, hop: item } });
-    return refetch();
-  };
-
-  if (loading) {
-    return <Loader />;
-  }
-
-  if (error) {
-    return <ErrorMessage />;
-  }
-
-  if (!data.results.length) {
-    return <p>No data yet.</p>;
-  }
-  return (
-    <>
-      <InventoryTable items={data.results} type={"hops"} />
-      <InventoryForm query={GET_HOPS} addItem={save} />
-    </>
   );
 };

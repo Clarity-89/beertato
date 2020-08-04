@@ -28,7 +28,7 @@ module.exports = /* GraphQL */ `
 
   type Mutation {
     addHopInventory(amount: String!, hop: String!): HopInventory
-    updateHopInventory(amount: String!, hop: String!): HopInventory
+    updateHopInventory(amount: String!, id: String!): HopInventory
   }
 
   schema {
