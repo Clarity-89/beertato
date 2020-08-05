@@ -1,13 +1,9 @@
-const { mergeTypes } = require("merge-graphql-schemas");
+const path = require("path");
+const { loadSchemaSync } = require("@graphql-tools/load");
+const { GraphQLFileLoader } = require("@graphql-tools/graphql-file-loader");
 
-const Hop = require("./Hop");
-const Origin = require("./Origin");
-const Grain = require("./Grain");
-const Yeast = require("./Yeast");
-const Adjunct = require("./Adjunct");
-const User = require("./User");
-const Inventory = require("./Inventory");
+const typeDefs = loadSchemaSync(path.join(__dirname, "schema.graphql"), {
+  loaders: [new GraphQLFileLoader()],
+});
 
-const typeDefs = [Hop, Origin, Grain, Yeast, Adjunct, User, Inventory];
-
-module.exports = mergeTypes(typeDefs, { all: true });
+module.exports = typeDefs;

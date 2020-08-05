@@ -1,5 +1,6 @@
 import gql from "graphql-tag";
 
+// const INVENTORY_FIELDS = gql``;
 export const HOP_INVENTORY = gql`
   {
     results: hopInventory {

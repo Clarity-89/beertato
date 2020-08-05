@@ -1,16 +1,16 @@
 const restify = require("restify");
 const expressGraphQL = require("express-graphql");
 const corsMiddleware = require("restify-cors-middleware");
-const { makeExecutableSchema } = require("graphql-tools");
 const typeDefs = require("./types");
 const resolvers = require("./resolvers");
 const { API_PORT, WEB_PORT } = require("../src/services/api/constants");
 const jwt = require("express-jwt");
+const { addResolversToSchema } = require("@graphql-tools/schema");
 require("dotenv").config();
 
 // GraphQL schema
-const schema = makeExecutableSchema({
-  typeDefs,
+const schema = addResolversToSchema({
+  schema: typeDefs,
   resolvers,
 });
 
