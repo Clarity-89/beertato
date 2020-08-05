@@ -1,23 +1,21 @@
-module.exports = /* GraphQL */ `
-  type User {
+type User {
     id: String!
     email: String!
     username: String
-  }
+}
 
-  type AuthUser {
+type AuthUser {
     id: String!
     email: String!
     username: String
     token: String!
-  }
+}
 
-  type Query {
+type Query {
     me: User
-  }
+}
 
-  type Mutation {
+type Mutation {
     signup(username: String, email: String!, password: String!): AuthUser
     login(email: String!, password: String!): AuthUser
-  }
-`;
+}

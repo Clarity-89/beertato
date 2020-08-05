@@ -1,4 +1,3 @@
-module.exports = /* GraphQL */ `
   enum Purpose {
     bittering
     aroma
@@ -18,12 +17,7 @@ module.exports = /* GraphQL */ `
     image: String
   }
 
-  type Query {
+  extend type Query {
     hop(id: String!): Hop
     hops: [Hop]
   }
-
-  schema {
-    query: Query
-  }
-`;
