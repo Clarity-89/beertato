@@ -1,17 +1,23 @@
 import gql from "graphql-tag";
 
-// const INVENTORY_FIELDS = gql``;
+const INVENTORY_FIELDS = gql`
+  fragment InventoryFields on Hop {
+    name
+    id
+  }
+`;
+
 export const HOP_INVENTORY = gql`
   {
     results: hopInventory {
       id
       amount
       item: hop {
-        name
-        id
+        ...InventoryFields
       }
     }
   }
+  ${INVENTORY_FIELDS}
 `;
 
 export const GRAIN_INVENTORY = gql`
@@ -25,15 +31,16 @@ export const GRAIN_INVENTORY = gql`
       }
     }
   }
+  ${INVENTORY_FIELDS}
 `;
 
 export const GET_HOPS = gql`
   {
     results: hops {
-      id
-      name
+      ...InventoryFields
     }
   }
+  ${INVENTORY_FIELDS}
 `;
 
 export const ADD_HOP_ITEM = gql`
@@ -42,11 +49,11 @@ export const ADD_HOP_ITEM = gql`
       id
       amount
       item: hop {
-        id
-        name
+        ...InventoryFields
       }
     }
   }
+  ${INVENTORY_FIELDS}
 `;
 
 export const UPDATE_HOP_ITEM = gql`
@@ -55,9 +62,9 @@ export const UPDATE_HOP_ITEM = gql`
       id
       amount
       item: hop {
-        id
-        name
+        ...InventoryFields
       }
     }
   }
+  ${INVENTORY_FIELDS}
 `;
