@@ -1,19 +1,19 @@
 type HopInventory {
-  id: String!
+  id: ID!
   amount: Float!
   user: Int!
   hop: Hop!
 }
 
 type GrainInventory {
-  id: String!
+  id: ID!
   amount: Float!
   user: Int!
   grain: Grain!
 }
 
 type AdjunctInventory {
-  id: String!
+  id: ID!
   amount: Float!
   user: Int!
   adjunct: Adjunct!
@@ -28,4 +28,5 @@ extend type Query {
 extend type Mutation {
   addHopInventory(amount: String!, hop: String!): HopInventory @authenticated
   updateHopInventory(amount: String!, id: String!): HopInventory @authenticated
+  deleteHopInventory(id: String!): ID @authenticated
 }

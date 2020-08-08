@@ -80,5 +80,16 @@ module.exports = {
         throw new Error(e);
       }
     },
+    deleteHopInventory: async (_, { id }, { user }) => {
+      try {
+        const resp = await knex("hops_inventory")
+          .where({ id, user: user.id })
+          .del()
+          .returning("id");
+        return resp.length ? resp[0] : null;
+      } catch (e) {
+        throw new Error(e);
+      }
+    },
   },
 };
