@@ -46,13 +46,13 @@ module.exports = {
       // If item with a give hop id exists, update that item's amount
       const existingItem = await knex("hops_inventory")
         .first()
-        .where("hop", hop);
+        .where({ hop, user: user.id });
 
       if (existingItem) {
         const res = await knex("hops_inventory")
-          .where("hop", hop)
+          .where({ hop, user: user.id })
           .update({ amount })
-          .returning(["id", "hop", "amount"]);
+          .returning(["id", "hop", "amount", "user"]);
         return res[0];
       }
 
@@ -63,7 +63,7 @@ module.exports = {
             amount,
             hop,
           })
-          .returning(["id", "hop", "amount"]);
+          .returning(["id", "hop", "amount", "user"]);
         return inventory[0];
       } catch (e) {
         throw new Error(e);
@@ -72,7 +72,7 @@ module.exports = {
     updateHopInventory: async (_, { amount, id }, { user }) => {
       try {
         const res = await knex("hops_inventory")
-          .where("id", id)
+          .where({ id, user: user.id })
           .update({ amount })
           .returning(["id", "hop", "amount"]);
         return res[0];
