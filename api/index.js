@@ -2,8 +2,10 @@ const express = require("express");
 const jwt = require("express-jwt");
 const { ApolloServer } = require("apollo-server-express");
 const { addResolversToSchema } = require("@graphql-tools/schema");
+const { SchemaDirectiveVisitor } = require("@graphql-tools/utils");
 const typeDefs = require("./types");
 const resolvers = require("./resolvers");
+const { AuthenticationDirective } = require("./directives/");
 const { API_PORT, WEB_PORT } = require("../src/services/api/constants");
 require("dotenv").config();
 
@@ -38,6 +40,10 @@ const server = new ApolloServer({
   context({ req }) {
     return { user: req.user };
   },
+});
+
+SchemaDirectiveVisitor.visitSchemaDirectives(schema, {
+  authenticated: AuthenticationDirective,
 });
 
 server.applyMiddleware({ app, cors });

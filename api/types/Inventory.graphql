@@ -1,32 +1,31 @@
 type HopInventory {
-    id: String!
-    amount: Float!
-    user: Int!
-    hop: Hop!
+  id: String!
+  amount: Float!
+  user: Int!
+  hop: Hop!
 }
 
 type GrainInventory {
-    id: String!
-    amount: Float!
-    user: Int!
-    grain: Grain!
+  id: String!
+  amount: Float!
+  user: Int!
+  grain: Grain!
 }
 
 type AdjunctInventory {
-    id: String!
-    amount: Float!
-    user: Int!
-    adjunct: Adjunct!
+  id: String!
+  amount: Float!
+  user: Int!
+  adjunct: Adjunct!
 }
 
 extend type Query {
-    hopInventory: [HopInventory]
-    grainInventory: [GrainInventory]
-    adjunctInventory: [AdjunctInventory]
+  hopInventory: [HopInventory] @authenticated
+  grainInventory: [GrainInventory] @authenticated
+  adjunctInventory: [AdjunctInventory] @authenticated
 }
 
 extend type Mutation {
-    addHopInventory(amount: String!, hop: String!): HopInventory
-    updateHopInventory(amount: String!, id: String!): HopInventory
+  addHopInventory(amount: String!, hop: String!): HopInventory @authenticated
+  updateHopInventory(amount: String!, id: String!): HopInventory @authenticated
 }
-

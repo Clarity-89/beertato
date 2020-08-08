@@ -9,6 +9,7 @@
     "@graphql-tools/graphql-file-loader": "^6.0.16",
     "@graphql-tools/load": "^6.0.16",
     "@graphql-tools/schema": "^6.0.16",
+    "@graphql-tools/utils": "^6.0.16",
     "apollo-cache-inmemory": "^1.6.5",
     "apollo-client": "^2.6.8",
     "apollo-link-context": "^1.0.20",

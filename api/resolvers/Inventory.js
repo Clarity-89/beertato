@@ -3,10 +3,6 @@ const { Hop } = require("./Hop");
 const { Grain } = require("./Grain");
 
 const getInventoryItems = async (user, table) => {
-  if (!user) {
-    throw new Error("You are not authenticated!");
-  }
-
   try {
     return knex(table).select().where("user", user.id);
   } catch (e) {
@@ -47,10 +43,6 @@ module.exports = {
   Hop,
   Mutation: {
     addHopInventory: async (_, { amount, hop }, { user }) => {
-      if (!user) {
-        throw new Error("You are not authenticated!");
-      }
-
       // If item with a give hop id exists, update that item's amount
       const existingItem = await knex("hops_inventory")
         .first()
@@ -78,9 +70,6 @@ module.exports = {
       }
     },
     updateHopInventory: async (_, { amount, id }, { user }) => {
-      if (!user) {
-        throw new Error("You are not authenticated!");
-      }
       try {
         const res = await knex("hops_inventory")
           .where("id", id)

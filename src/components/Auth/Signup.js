@@ -14,13 +14,12 @@ import { auth } from "../../services/auth/auth";
 
 const SIGNUP = gql`
   mutation signup($username: String, $email: String!, $password: String!) {
-    signup(username: $username, email: $email, password: $password)
-  }
-  {
-    id
-    token
-    username
-    email
+    signup(username: $username, email: $email, password: $password) {
+      id
+      token
+      username
+      email
+    }
   }
 `;
 
