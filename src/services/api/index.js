@@ -15,7 +15,7 @@ const logoutLink = onError(({ networkError }) => {
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: `http://localhost:${API_PORT}/api`,
+  uri: `http://localhost:${API_PORT}/graphql`,
 });
 
 const authLink = setContext((_, { headers }) => {
