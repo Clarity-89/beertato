@@ -80,12 +80,13 @@ export const HopInventory = () => {
     return <ErrorMessage />;
   }
 
-  if (!data.results.length) {
-    return <p>No data yet.</p>;
-  }
   return (
     <>
-      <InventoryTable items={data.results} type={"hops"} />
+      {!data.results.length ? (
+        <p>No data yet.</p>
+      ) : (
+        <InventoryTable items={data.results} type={"hops"} />
+      )}
       <InventoryForm query={GET_HOPS} addItem={save} updateItem={update} />
     </>
   );
