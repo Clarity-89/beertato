@@ -74,7 +74,7 @@ module.exports = {
         const res = await knex("hops_inventory")
           .where({ id, user: user.id })
           .update({ amount })
-          .returning(["id", "hop", "amount"]);
+          .returning(["id", "hop", "amount", "user"]);
         return res[0];
       } catch (e) {
         throw new Error(e);
