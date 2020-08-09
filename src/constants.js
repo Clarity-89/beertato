@@ -1,29 +1,27 @@
-import {
-  ADD_HOP_ITEM,
-  DELETE_HOP_ITEM,
-  GET_HOPS,
-  HOP_INVENTORY,
-  UPDATE_HOP_ITEM,
-  GRAIN_INVENTORY,
-} from "./components/Dashboard/queries";
+import * as q from "./components/Dashboard/queries";
 
 export const TOKEN_KEY = "token";
 
-const inventoryMap = {
-  hops: {
-    queries: {
-      list: HOP_INVENTORY,
-      add: ADD_HOP_ITEM,
-      update: UPDATE_HOP_ITEM,
-      delete: DELETE_HOP_ITEM,
-      selectList: GET_HOPS,
-    },
+export const queryMap = {
+  hop: {
+    list: q.HOP_INVENTORY,
+    add: q.ADD_HOP_ITEM,
+    update: q.UPDATE_HOP_ITEM,
+    delete: q.DELETE_HOP_ITEM,
+    selectList: q.GET_HOPS,
   },
-  grains: {
-    list: GRAIN_INVENTORY,
-    // add: ADD_GRAIN_ITEM,
-    // update: UPDATE_GRAIN_ITEM,
-    // delete: DELETE_GRAIN_ITEM,
-    // selectList: GET_GRAINS,
+  grain: {
+    list: q.GRAIN_INVENTORY,
+    add: q.ADD_GRAIN_ITEM,
+    update: q.UPDATE_GRAIN_ITEM,
+    delete: q.DELETE_GRAIN_ITEM,
+    selectList: q.GET_GRAINS,
+  },
+  adjunct: {
+    list: q.ADJUNCT_INVENTORY,
+    add: q.ADD_ADJUNCT_ITEM,
+    update: q.UPDATE_ADJUNCT_ITEM,
+    delete: q.DELETE_ADJUNCT_ITEM,
+    selectList: q.GET_ADJUNCTS,
   },
 };

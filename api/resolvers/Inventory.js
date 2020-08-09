@@ -18,6 +18,33 @@ const getItemById = async (id, table) => {
   }
 };
 
+const addItem = async (item_type, table, { user, amount, ...data }) => {
+  const existingItem = await knex(table)
+    .first()
+    .where({ [item_type]: data[item_type], user: user.id });
+
+  if (existingItem) {
+    const res = await knex(table)
+      .where({ [item_type]: data[item_type], user: user.id })
+      .update({ amount })
+      .returning(["id", item_type, "amount", "user"]);
+    return res[0];
+  }
+
+  try {
+    const inventory = await knex(table)
+      .insert({
+        user: user.id,
+        amount,
+        [item_type]: data[item_type],
+      })
+      .returning(["id", item_type, "amount", "user"]);
+    return inventory[0];
+  } catch (e) {
+    throw new Error(e);
+  }
+};
+
 module.exports = {
   Query: {
     hopInventory: async (_, __, { user }) => {
@@ -42,32 +69,8 @@ module.exports = {
   Grain,
   Hop,
   Mutation: {
-    addHopInventory: async (_, { amount, hop }, { user }) => {
-      // If item with a give hop id exists, update that item's amount
-      const existingItem = await knex("hops_inventory")
-        .first()
-        .where({ hop, user: user.id });
-
-      if (existingItem) {
-        const res = await knex("hops_inventory")
-          .where({ hop, user: user.id })
-          .update({ amount })
-          .returning(["id", "hop", "amount", "user"]);
-        return res[0];
-      }
-
-      try {
-        const inventory = await knex("hops_inventory")
-          .insert({
-            user: user.id,
-            amount,
-            hop,
-          })
-          .returning(["id", "hop", "amount", "user"]);
-        return inventory[0];
-      } catch (e) {
-        throw new Error(e);
-      }
+    addHopInventory: async (_, { amount, item_id }, { user }) => {
+      return addItem("hop", "hops_inventory", { hop: item_id, user, amount });
     },
     updateHopInventory: async (_, { amount, id }, { user }) => {
       try {
@@ -90,6 +93,20 @@ module.exports = {
       } catch (e) {
         throw new Error(e);
       }
+    },
+    addGrainInventory: async (_, { amount, item_id }, { user }) => {
+      return addItem("grain", "grains_inventory", {
+        grain: item_id,
+        user,
+        amount,
+      });
+    },
+    addAdjunctInventory: async (_, { amount, item_id }, { user }) => {
+      return addItem("adjunct", "adjuncts_inventory", {
+        adjunct: item_id,
+        user,
+        amount,
+      });
     },
   },
 };

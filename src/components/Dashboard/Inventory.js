@@ -1,7 +1,7 @@
 import React from "react";
 import { Tab } from "semantic-ui-react";
 import { css } from "@emotion/core";
-import { HopInventory } from "./HopInventory";
+import { InventoryTab } from "./InventoryTab";
 
 const paneStyles = css`
   background: transparent !important;
@@ -14,7 +14,7 @@ const panes = [
     menuItem: "Hops",
     render: () => (
       <Tab.Pane attached={false} css={paneStyles}>
-        <HopInventory />
+        <InventoryTab type={"hop"} />
       </Tab.Pane>
     ),
   },
@@ -22,13 +22,17 @@ const panes = [
     menuItem: "Grains",
     render: () => (
       <Tab.Pane attached={false} css={paneStyles}>
-        <HopInventory type={"grains"} />
+        <InventoryTab type={"grain"} />
       </Tab.Pane>
     ),
   },
   {
     menuItem: "Adjuncts",
-    render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane>,
+    render: () => (
+      <Tab.Pane attached={false} css={paneStyles}>
+        <InventoryTab type={"adjunct"} />
+      </Tab.Pane>
+    ),
   },
 ];
 

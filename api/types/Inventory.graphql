@@ -19,6 +19,13 @@ type AdjunctInventory {
   adjunct: Adjunct!
 }
 
+type YeastInventory {
+  id: ID!
+  amount: Float!
+  user: Int!
+  yeast: Yeast!
+}
+
 extend type Query {
   hopInventory: [HopInventory] @authenticated
   grainInventory: [GrainInventory] @authenticated
@@ -26,7 +33,23 @@ extend type Query {
 }
 
 extend type Mutation {
-  addHopInventory(amount: String!, hop: String!): HopInventory @authenticated
+  addHopInventory(amount: String!, item_id: String!): HopInventory
+    @authenticated
   updateHopInventory(amount: String!, id: String!): HopInventory @authenticated
   deleteHopInventory(id: String!): ID @authenticated
+  addGrainInventory(amount: String!, item_id: String!): GrainInventory
+    @authenticated
+  updateGrainInventory(amount: String!, id: String!): GrainInventory
+    @authenticated
+  deleteGrainInventory(id: String!): ID @authenticated
+  addAdjunctInventory(amount: String!, item_id: String!): AdjunctInventory
+    @authenticated
+  updateAdjunctInventory(amount: String!, id: String!): AdjunctInventory
+    @authenticated
+  deleteAdjunctInventory(id: String!): ID @authenticated
+  addYeastInventory(amount: String!, item_id: String!): YeastInventory
+    @authenticated
+  updateYeastInventory(amount: String!, id: String!): YeastInventory
+    @authenticated
+  deleteYeastInventory(id: String!): ID @authenticated
 }

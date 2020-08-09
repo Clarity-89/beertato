@@ -1,25 +1,23 @@
 import React from "react";
 import { useMutation, useQuery } from "@apollo/react-hooks";
 import { Loader } from "semantic-ui-react";
-import {
-  ADD_HOP_ITEM,
-  UPDATE_HOP_ITEM,
-  GET_HOPS,
-  HOP_INVENTORY,
-  DELETE_HOP_ITEM,
-} from "./queries";
 import { ErrorMessage } from "../../styled/Alerts";
 import { InventoryTable, InventoryForm } from "./index";
+import { queryMap } from "../../constants";
 
-const hopOptResponse = (type, { amount, item }) => {
+const cap = (str = "") => {
+  return str[0].toUpperCase() + str.substring(1);
+};
+
+const getOptResponse = (name) => (type, { amount, item }) => {
   return {
     __typename: "Mutation",
     [type]: {
-      __typename: "HopInventory",
+      __typename: `${cap(name)}Inventory`,
       id: (Math.random() * 1000).toString(),
       amount,
       item: {
-        __typename: "Hop",
+        __typename: `${cap(name)}`,
         id: (Math.random() * 1000).toString(),
         name: item,
       },
@@ -27,19 +25,21 @@ const hopOptResponse = (type, { amount, item }) => {
   };
 };
 
-export const HopInventory = ({ type }) => {
-  const { data, loading, error } = useQuery(HOP_INVENTORY);
-  const [addItem] = useMutation(ADD_HOP_ITEM);
-  const [updateItem] = useMutation(UPDATE_HOP_ITEM);
-  const [deleteItem] = useMutation(DELETE_HOP_ITEM);
+export const InventoryTab = ({ type }) => {
+  const queries = queryMap[type];
+  const { data, loading, error } = useQuery(queries.list);
+  const [addItem] = useMutation(queries.add);
+  const [updateItem] = useMutation(queries.update);
+  const [deleteItem] = useMutation(queries.delete);
+  const optResponse = getOptResponse(type);
 
   const del = async (id) => {
     await deleteItem({
       variables: { id },
       update: (proxy, { data: { deleteItem: id } }) => {
-        const data = proxy.readQuery({ query: HOP_INVENTORY });
+        const data = proxy.readQuery({ query: queries.list });
         proxy.writeQuery({
-          query: HOP_INVENTORY,
+          query: queries.list,
           data: {
             ...data,
             results: data.results.filter((item) => item.id !== id),
@@ -55,7 +55,7 @@ export const HopInventory = ({ type }) => {
         id,
         amount,
       },
-      optimisticResponse: hopOptResponse("updateItem", {
+      optimisticResponse: optResponse("updateItem", {
         amount,
         item,
       }),
@@ -64,15 +64,15 @@ export const HopInventory = ({ type }) => {
 
   const add = async ({ amount, item }) => {
     await addItem({
-      variables: { amount, hop: item },
-      optimisticResponse: hopOptResponse("addItem", {
+      variables: { amount, item_id: item },
+      optimisticResponse: optResponse("addItem", {
         amount,
         item,
       }),
       update: (proxy, { data: { addItem } }) => {
-        const data = proxy.readQuery({ query: HOP_INVENTORY });
+        const data = proxy.readQuery({ query: queries.list });
         proxy.writeQuery({
-          query: HOP_INVENTORY,
+          query: queries.list,
           data: {
             ...data,
             results: [...data.results, addItem],
@@ -110,7 +110,7 @@ export const HopInventory = ({ type }) => {
           deleteItem={del}
         />
       )}
-      <InventoryForm query={GET_HOPS} addItem={save} />
+      <InventoryForm query={queries.selectList} addItem={save} />
     </>
   );
 };
