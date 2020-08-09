@@ -6,6 +6,7 @@ import {
   UPDATE_HOP_ITEM,
   GET_HOPS,
   HOP_INVENTORY,
+  DELETE_HOP_ITEM,
 } from "./queries";
 import { ErrorMessage } from "../../styled/Alerts";
 import { InventoryTable, InventoryForm } from "./Inventory";
@@ -30,6 +31,23 @@ export const HopInventory = () => {
   const { data, loading, error } = useQuery(HOP_INVENTORY);
   const [addItem] = useMutation(ADD_HOP_ITEM);
   const [updateItem] = useMutation(UPDATE_HOP_ITEM);
+  const [deleteItem] = useMutation(DELETE_HOP_ITEM);
+
+  const del = async (id) => {
+    await deleteItem({
+      variables: { id },
+      update: (proxy, { data: { deleteHopInventory: id } }) => {
+        const data = proxy.readQuery({ query: HOP_INVENTORY });
+        proxy.writeQuery({
+          query: HOP_INVENTORY,
+          data: {
+            ...data,
+            results: data.results.filter((item) => item.id !== id),
+          },
+        });
+      },
+    });
+  };
 
   const update = async (id, { amount, item }) => {
     await updateItem({
@@ -89,9 +107,10 @@ export const HopInventory = () => {
           items={data.results}
           type={"hops"}
           updateItem={update}
+          deleteItem={del}
         />
       )}
-      <InventoryForm query={GET_HOPS} addItem={save} updateItem={update} />
+      <InventoryForm query={GET_HOPS} addItem={save} />
     </>
   );
 };

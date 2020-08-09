@@ -68,3 +68,9 @@ export const UPDATE_HOP_ITEM = gql`
   }
   ${INVENTORY_FIELDS}
 `;
+
+export const DELETE_HOP_ITEM = gql`
+  mutation deleteHopInventory($id: String!) {
+    deleteHopInventory(id: $id)
+  }
+`;

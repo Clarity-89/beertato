@@ -8,6 +8,7 @@ import {
   Dropdown,
   Button,
   Input,
+  Confirm,
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { css } from "@emotion/core";
@@ -62,8 +63,9 @@ export default Inventory;
 
 const defaultEdited = { id: 0, item: null, amount: 0 };
 
-export const InventoryTable = ({ items, type, updateItem }) => {
+export const InventoryTable = ({ items, type, updateItem, deleteItem }) => {
   const [edited, setEdited] = useState(defaultEdited);
+  const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 
   const changeAmount = (_, { value }) => {
     setEdited((ed) => ({ ...ed, amount: value }));
@@ -77,8 +79,12 @@ export const InventoryTable = ({ items, type, updateItem }) => {
 
   const onSave = () => {
     const { id, ...rest } = edited;
-    updateItem(id, rest);
+    const original = items.find((it) => it.id === id);
     setEdited(defaultEdited);
+    if (original.amount === rest.amount) {
+      return;
+    }
+    updateItem(id, rest);
   };
 
   return (
@@ -87,9 +93,9 @@ export const InventoryTable = ({ items, type, updateItem }) => {
       <Table celled>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Amount (gr)</Table.HeaderCell>
-            <Table.HeaderCell />
+            <Table.HeaderCell width={6}>Name</Table.HeaderCell>
+            <Table.HeaderCell width={6}>Amount (gr)</Table.HeaderCell>
+            <Table.HeaderCell width={6} />
           </Table.Row>
         </Table.Header>
 
@@ -119,8 +125,21 @@ export const InventoryTable = ({ items, type, updateItem }) => {
                       Edit
                     </Button>
                   ) : (
-                    <Button onClick={onSave}>Save</Button>
+                    <Button onClick={onSave} positive>
+                      Save
+                    </Button>
                   )}
+                  <Button negative onClick={() => setIsConfirmOpen(true)}>
+                    Delete
+                  </Button>
+                  <Confirm
+                    open={isConfirmOpen}
+                    onCancel={() => setIsConfirmOpen(false)}
+                    onConfirm={() => {
+                      deleteItem(id);
+                      setIsConfirmOpen(false);
+                    }}
+                  />
                 </Table.Cell>
               </Table.Row>
             ))}
