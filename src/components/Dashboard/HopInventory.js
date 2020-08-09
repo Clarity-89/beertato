@@ -85,7 +85,11 @@ export const HopInventory = () => {
       {!data.results.length ? (
         <p>No data yet.</p>
       ) : (
-        <InventoryTable items={data.results} type={"hops"} />
+        <InventoryTable
+          items={data.results}
+          type={"hops"}
+          updateItem={update}
+        />
       )}
       <InventoryForm query={GET_HOPS} addItem={save} updateItem={update} />
     </>

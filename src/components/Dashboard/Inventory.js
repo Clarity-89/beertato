@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
-import { Table, Tab, Loader, Form, Dropdown, Button } from "semantic-ui-react";
+import {
+  Table,
+  Tab,
+  Loader,
+  Form,
+  Dropdown,
+  Button,
+  Input,
+} from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { css } from "@emotion/core";
 import { useForm, Controller } from "react-hook-form";
@@ -36,7 +44,7 @@ const panes = [
   },
 ];
 
-const Inventory = (props) => {
+const Inventory = () => {
   return (
     <Tab
       menu={{
@@ -52,7 +60,27 @@ const Inventory = (props) => {
 
 export default Inventory;
 
-export const InventoryTable = ({ items, type }) => {
+const defaultEdited = { id: 0, item: null, amount: 0 };
+
+export const InventoryTable = ({ items, type, updateItem }) => {
+  const [edited, setEdited] = useState(defaultEdited);
+
+  const changeAmount = (_, { value }) => {
+    setEdited((ed) => ({ ...ed, amount: value }));
+  };
+
+  const saveOnEnter = ({ key }) => {
+    if (key === "Enter") {
+      return onSave();
+    }
+  };
+
+  const onSave = () => {
+    const { id, ...rest } = edited;
+    updateItem(id, rest);
+    setEdited(defaultEdited);
+  };
+
   return (
     <div>
       <h3>Inventory</h3>
@@ -68,13 +96,32 @@ export const InventoryTable = ({ items, type }) => {
         <Table.Body>
           {items
             .sort((a, b) => a.item.name.localeCompare(b.item.name))
-            .map(({ item, amount }) => (
+            .map(({ item, amount, id }) => (
               <Table.Row key={item.id}>
                 <Table.Cell>
                   <Link to={`/data/${type}/${item.id}`}>{item.name}</Link>
                 </Table.Cell>
-                <Table.Cell>{amount}</Table.Cell>
-                <Table.Cell>Edit</Table.Cell>
+                <Table.Cell>
+                  {edited.item?.id !== item.id ? (
+                    amount
+                  ) : (
+                    <Input
+                      type="number"
+                      value={edited.amount}
+                      onChange={changeAmount}
+                      onKeyDown={saveOnEnter}
+                    />
+                  )}
+                </Table.Cell>
+                <Table.Cell>
+                  {edited.item?.id !== item.id ? (
+                    <Button onClick={() => setEdited({ id, item, amount })}>
+                      Edit
+                    </Button>
+                  ) : (
+                    <Button onClick={onSave}>Save</Button>
+                  )}
+                </Table.Cell>
               </Table.Row>
             ))}
         </Table.Body>
