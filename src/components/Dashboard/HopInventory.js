@@ -9,7 +9,7 @@ import {
   DELETE_HOP_ITEM,
 } from "./queries";
 import { ErrorMessage } from "../../styled/Alerts";
-import { InventoryTable, InventoryForm } from "./Inventory";
+import { InventoryTable, InventoryForm } from "./index";
 
 const hopOptResponse = (type, { amount, item }) => {
   return {
@@ -27,7 +27,7 @@ const hopOptResponse = (type, { amount, item }) => {
   };
 };
 
-export const HopInventory = () => {
+export const HopInventory = ({ type }) => {
   const { data, loading, error } = useQuery(HOP_INVENTORY);
   const [addItem] = useMutation(ADD_HOP_ITEM);
   const [updateItem] = useMutation(UPDATE_HOP_ITEM);
@@ -36,7 +36,7 @@ export const HopInventory = () => {
   const del = async (id) => {
     await deleteItem({
       variables: { id },
-      update: (proxy, { data: { deleteHopInventory: id } }) => {
+      update: (proxy, { data: { deleteItem: id } }) => {
         const data = proxy.readQuery({ query: HOP_INVENTORY });
         proxy.writeQuery({
           query: HOP_INVENTORY,
@@ -55,7 +55,7 @@ export const HopInventory = () => {
         id,
         amount,
       },
-      optimisticResponse: hopOptResponse("updateHopInventory", {
+      optimisticResponse: hopOptResponse("updateItem", {
         amount,
         item,
       }),
@@ -65,17 +65,17 @@ export const HopInventory = () => {
   const add = async ({ amount, item }) => {
     await addItem({
       variables: { amount, hop: item },
-      optimisticResponse: hopOptResponse("addHopInventory", {
+      optimisticResponse: hopOptResponse("addItem", {
         amount,
         item,
       }),
-      update: (proxy, { data: { addHopInventory } }) => {
+      update: (proxy, { data: { addItem } }) => {
         const data = proxy.readQuery({ query: HOP_INVENTORY });
         proxy.writeQuery({
           query: HOP_INVENTORY,
           data: {
             ...data,
-            results: [...data.results, addHopInventory],
+            results: [...data.results, addItem],
           },
         });
       },
@@ -105,7 +105,7 @@ export const HopInventory = () => {
       ) : (
         <InventoryTable
           items={data.results}
-          type={"hops"}
+          type={type}
           updateItem={update}
           deleteItem={del}
         />

@@ -45,7 +45,7 @@ export const GET_HOPS = gql`
 
 export const ADD_HOP_ITEM = gql`
   mutation addHopInventory($amount: String!, $hop: String!) {
-    addHopInventory(amount: $amount, hop: $hop) {
+    addItem: addHopInventory(amount: $amount, hop: $hop) {
       id
       amount
       item: hop {
@@ -58,7 +58,7 @@ export const ADD_HOP_ITEM = gql`
 
 export const UPDATE_HOP_ITEM = gql`
   mutation updateHopInventory($amount: String!, $id: String!) {
-    updateHopInventory(amount: $amount, id: $id) {
+    updateItem: updateHopInventory(amount: $amount, id: $id) {
       id
       amount
       item: hop {
@@ -71,6 +71,6 @@ export const UPDATE_HOP_ITEM = gql`
 
 export const DELETE_HOP_ITEM = gql`
   mutation deleteHopInventory($id: String!) {
-    deleteHopInventory(id: $id)
+    deleteItem: deleteHopInventory(id: $id)
   }
 `;
