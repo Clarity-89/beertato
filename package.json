@@ -41,7 +41,7 @@
     "serve": "^11.3.2"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "PORT=3001 craco start",
     "build": "craco build",
     "dev": "nodemon api/index.js",
     "test": "craco test",
