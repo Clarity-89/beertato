@@ -10,7 +10,7 @@ module.exports = {
         console.error("Error fetching adjunct", e);
       }
     },
-    adjuncts: async (root, args) => {
+    adjuncts: async () => {
       try {
         return await knex("adjuncts").select();
       } catch (e) {

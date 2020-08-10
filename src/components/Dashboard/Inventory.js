@@ -14,7 +14,7 @@ const panes = [
     menuItem: "Hops",
     render: () => (
       <Tab.Pane attached={false} css={paneStyles}>
-        <InventoryTab type={"hop"} />
+        <InventoryTab key="hop" type="hop" />
       </Tab.Pane>
     ),
   },
@@ -22,7 +22,7 @@ const panes = [
     menuItem: "Grains",
     render: () => (
       <Tab.Pane attached={false} css={paneStyles}>
-        <InventoryTab type={"grain"} />
+        <InventoryTab key="grain" type="grain" />
       </Tab.Pane>
     ),
   },
@@ -30,7 +30,7 @@ const panes = [
     menuItem: "Adjuncts",
     render: () => (
       <Tab.Pane attached={false} css={paneStyles}>
-        <InventoryTab type={"adjunct"} />
+        <InventoryTab key="adjunct" type="adjunct" />
       </Tab.Pane>
     ),
   },
