@@ -1,0 +1,51 @@
+type HopIngredient {
+  id: ID!
+  amount: Float!
+  timing: Float!
+  hop: Hop!
+}
+
+type GrainIngredient {
+  id: ID!
+  amount: Float!
+  timing: Float!
+  grain: Grain!
+}
+
+type YeastIngredient {
+  id: ID!
+  amount: Float!
+  yeast: Yeast!
+}
+
+type AdjunctIngredient {
+  id: ID!
+  amount: Float!
+  adjunct: Adjunct!
+}
+
+type Recipe {
+  id: ID!
+  name: String!
+  volume: Int
+  boilVolume: Int
+  abv: Float
+  originalGravity: Float
+  finalGravity: Float
+  notes: String
+  description: String
+  ebc: Float
+  ibu: Int
+  srm: Float
+  ph: Float
+  attenuation: Float
+  mashTemp: Int
+  mashDuration: Float
+  fermentationTemp: Int
+  fermentationDuration: Int
+  user: User
+  hops: [HopIngredient]
+  grains: [GrainIngredient]
+  adjuncts: [AdjunctIngredient]
+  yeast: [YeastIngredient]
+}
