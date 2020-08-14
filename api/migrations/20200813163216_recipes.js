@@ -1,26 +1,5 @@
 exports.up = function (knex) {
   return Promise.all([
-    knex.schema.createTable("hop_ingredient", (table) => {
-      table.increments("id").primary();
-      table.float("amount");
-      table.float("timing");
-      table.integer("hop").references("hops.id").onDelete("CASCADE");
-    }),
-    knex.schema.createTable("grain_ingredient", (table) => {
-      table.increments("id").primary();
-      table.float("amount");
-      table.integer("grain").references("grains.id").onDelete("CASCADE");
-    }),
-    knex.schema.createTable("adjunct_ingredient", (table) => {
-      table.increments("id").primary();
-      table.float("amount");
-      table.integer("adjunct").references("adjuncts.id").onDelete("CASCADE");
-    }),
-    knex.schema.createTable("yeast_ingredient", (table) => {
-      table.increments("id").primary();
-      table.float("amount");
-      table.integer("yeast").references("yeast.id").onDelete("CASCADE");
-    }),
     knex.schema.createTable("recipe", (table) => {
       table.increments("id").primary();
       table.string("name");
@@ -41,20 +20,41 @@ exports.up = function (knex) {
       table.float("fermentation_temp");
       table.integer("fermentation_duration");
       table.integer("user").references("users.id").onDelete("CASCADE");
-      table.integer("hop_ingredients").references("hop_ingredient.id");
-      table.integer("grain_ingredients").references("grain_ingredient.id");
-      table.integer("adjunct_ingredients").references("grain_ingredient.id");
-      table.integer("yeast_ingredients").references("yeast_ingredient.id");
+    }),
+    knex.schema.createTable("hop_ingredient", (table) => {
+      table.increments("id").primary();
+      table.float("amount");
+      table.float("timing");
+      table.integer("hop").references("hops.id").onDelete("CASCADE");
+      table.integer("recipe").references("recipe.id").onDelete("CASCADE");
+    }),
+    knex.schema.createTable("grain_ingredient", (table) => {
+      table.increments("id").primary();
+      table.float("amount");
+      table.integer("grain").references("grains.id").onDelete("CASCADE");
+      table.integer("recipe").references("recipe.id").onDelete("CASCADE");
+    }),
+    knex.schema.createTable("adjunct_ingredient", (table) => {
+      table.increments("id").primary();
+      table.float("amount");
+      table.integer("adjunct").references("adjuncts.id").onDelete("CASCADE");
+      table.integer("recipe").references("recipe.id").onDelete("CASCADE");
+    }),
+    knex.schema.createTable("yeast_ingredient", (table) => {
+      table.increments("id").primary();
+      table.float("amount");
+      table.integer("yeast").references("yeast.id").onDelete("CASCADE");
+      table.integer("recipe").references("recipe.id").onDelete("CASCADE");
     }),
   ]);
 };
 
 exports.down = function (knex) {
   return Promise.all([
+    knex.schema.dropTable("recipe"),
     knex.schema.dropTable("hop_ingredient"),
     knex.schema.dropTable("grain_ingredient"),
     knex.schema.dropTable("adjunct_ingredient"),
     knex.schema.dropTable("yeast_ingredient"),
-    knex.schema.dropTable("recipe"),
   ]);
 };

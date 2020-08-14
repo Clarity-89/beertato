@@ -7,7 +7,8 @@ const Yeast = require("./Yeast");
 const Adjunct = require("./Adjunct");
 const User = require("./User");
 const Inventory = require("./Inventory");
+const Recipe = require("./Recipe");
 
-const resolvers = [Hop, Origin, Grain, Yeast, Adjunct, User, Inventory];
+const resolvers = [Hop, Origin, Grain, Yeast, Adjunct, User, Inventory, Recipe];
 
 module.exports = mergeResolvers(resolvers);

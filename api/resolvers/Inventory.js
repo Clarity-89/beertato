@@ -1,20 +1,13 @@
 const knex = require("../connection");
 const { Hop } = require("./Hop");
 const { Grain } = require("./Grain");
+const { getItemById } = require("./utils");
 
 const getInventoryItems = async (user, table) => {
   try {
     return knex(table).select().where("user", user.id);
   } catch (e) {
     throw new Error(e);
-  }
-};
-
-const getItemById = async (id, table) => {
-  try {
-    return await knex(table).first().where("id", id);
-  } catch (e) {
-    console.error(`Error fetching item from ${table}`, e);
   }
 };
 

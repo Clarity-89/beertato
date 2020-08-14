@@ -5,6 +5,12 @@ type HopIngredient {
   hop: Hop!
 }
 
+input HopIngredientInput {
+  amount: Float!
+  timing: Float!
+  hop: ID!
+}
+
 type GrainIngredient {
   id: ID!
   amount: Float!
@@ -43,9 +49,42 @@ type Recipe {
   mashDuration: Float
   fermentationTemp: Int
   fermentationDuration: Int
-  user: User
   hops: [HopIngredient]
   grains: [GrainIngredient]
   adjuncts: [AdjunctIngredient]
   yeast: [YeastIngredient]
+}
+
+input RecipeInput {
+  name: String!
+  volume: Int
+  boilVolume: Int
+  abv: Float
+  originalGravity: Float
+  finalGravity: Float
+  notes: String
+  description: String
+  ebc: Float
+  ibu: Int
+  srm: Float
+  ph: Float
+  attenuation: Float
+  mashTemp: Int
+  mashDuration: Float
+  fermentationTemp: Int
+  fermentationDuration: Int
+  hops: [HopIngredientInput]
+  grains: [ID]
+  adjuncts: [ID]
+  yeast: [ID]
+}
+
+extend type Query {
+  recipes: [Recipe] @authenticated
+}
+
+extend type Mutation {
+  addRecipe(input: RecipeInput!): Recipe @authenticated
+  updateRecipe(input: RecipeInput!): Recipe @authenticated
+  deleteRecipe(id: ID!): ID @authenticated
 }
