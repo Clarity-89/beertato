@@ -1,6 +1,15 @@
 const knex = require("../connection");
 const { Hop } = require("./Hop");
 const { Grain } = require("./Grain");
+const { getItemById } = require("./utils");
+
+const getIngredients = async (table, id) => {
+  try {
+    return knex("hop_ingredient").select().where("recipe", id);
+  } catch (e) {
+    throw new Error(e);
+  }
+};
 
 module.exports = {
   Query: {
@@ -9,24 +18,41 @@ module.exports = {
     },
   },
   Recipe: {
-    hopIngredients: async ({ hopIngredients, ...recipe }) => {
-      if (hopIngredients) {
-        return hopIngredients;
-      }
-
-      return knex("hop_ingredient").select().where("recipe", recipe.id);
+    hopIngredients: async ({ id }) => {
+      return getIngredients("hop_ingredients", id);
+    },
+    grainIngredients: async ({ id }) => {
+      return getIngredients("grain_ingredients", id);
+    },
+    adjunctIngredients: async ({ id }) => {
+      return getIngredients("adjunct_ingredients", id);
+    },
+    yeastIngredients: async ({ id }) => {
+      return getIngredients("yeast_ingredients", id);
     },
   },
   HopIngredient: {
     hop: async ({ hop }) => {
-      try {
-        return await knex("hops").first().where("id", hop);
-      } catch (e) {
-        console.error(`Error fetching item from hops`, e);
-      }
+      return getItemById(hop, "hops");
     },
   },
   Hop,
+  GrainIngredient: {
+    grain: async ({ grain }) => {
+      return getItemById(grain, "grains");
+    },
+  },
+  Grain,
+  AdjunctIngredient: {
+    adjunct: async ({ adjunct }) => {
+      return getItemById(adjunct, "adjuncts");
+    },
+  },
+  YeastIngredient: {
+    yeast: async ({ yeast }) => {
+      return getItemById(yeast, "yeast");
+    },
+  },
   Mutation: {
     addRecipe: async (_, { input }, { user }) => {
       const {
@@ -47,11 +73,8 @@ module.exports = {
         mashDuration,
         fermentationTemp,
         fermentationDuration,
-        hopIngredients,
-        grains,
-        adjuncts,
-        yeast,
       } = input;
+
       const recipe = await knex("recipe")
         .insert({
           name,
@@ -74,20 +97,33 @@ module.exports = {
           user: user.id,
         })
         .returning("*");
-      if (input.hopIngredients) {
-        var hopProms = hopIngredients.map((hop) => {
-          return knex("hop_ingredient")
-            .insert({
-              amount: hop.amount,
-              hop: hop.hop,
-              timing: hop.timing,
-              recipe: recipe[0].id,
-            })
-            .returning("*");
-        });
-      }
-      const hopData = await Promise.all(hopProms);
-      return { ...recipe[0], hopIngredients: hopData.flat() };
+      const { id } = recipe[0];
+
+      const ingredients = new Map([
+        ["hop_ingredient", "hopIngredients"],
+        ["grain_ingredient", "grainIngredients"],
+        ["adjunct_ingredient", "adjunctIngredients"],
+        ["yest_ingredient", "yeastIngredients"],
+      ]);
+
+      const promises = [...ingredients]
+        .flatMap(([table, name]) => {
+          const items = input[name];
+          if (items && items.length) {
+            return items.map((item) => {
+              return knex(table)
+                .insert({
+                  ...item,
+                  recipe: id,
+                })
+                .returning("*");
+            });
+          }
+        })
+        .filter(Boolean);
+
+      const hopData = await Promise.all(promises);
+      return { ...recipe[0], hopIngredients: hopData };
     },
   },
 };

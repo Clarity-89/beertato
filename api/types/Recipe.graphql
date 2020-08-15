@@ -18,16 +18,32 @@ type GrainIngredient {
   grain: Grain!
 }
 
+input GrainIngredientInput {
+  amount: Float!
+  timing: Float!
+  grain: ID!
+}
+
 type YeastIngredient {
   id: ID!
   amount: Float!
   yeast: Yeast!
 }
 
+input YeastIngredientInput {
+  amount: Float!
+  yeast: ID!
+}
+
 type AdjunctIngredient {
   id: ID!
   amount: Float!
   adjunct: Adjunct!
+}
+
+input AdjunctIngredientInput {
+  amount: Float!
+  adjunct: ID!
 }
 
 type Recipe {
@@ -50,7 +66,7 @@ type Recipe {
   fermentationTemp: Int
   fermentationDuration: Int
   hopIngredients: [HopIngredient]
-  grainIngredientss: [GrainIngredient]
+  grainIngredients: [GrainIngredient]
   adjunctIngredients: [AdjunctIngredient]
   yeastIngredients: [YeastIngredient]
 }
@@ -73,10 +89,10 @@ input RecipeInput {
   mashDuration: Float
   fermentationTemp: Int
   fermentationDuration: Int
-  hops: [HopIngredientInput]
-  grains: [ID]
-  adjuncts: [ID]
-  yeast: [ID]
+  hopIngredients: [HopIngredientInput]
+  grainIngredients: [GrainIngredientInput]
+  adjunctIngredients: [AdjunctIngredientInput]
+  yeastIngredients: [YeastIngredientInput]
 }
 
 extend type Query {
