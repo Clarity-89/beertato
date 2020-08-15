@@ -106,21 +106,20 @@ module.exports = {
         ["yest_ingredient", "yeastIngredients"],
       ]);
 
-      const promises = [...ingredients]
-        .flatMap(([table, name]) => {
-          const items = input[name];
-          if (items && items.length) {
-            return items.map((item) => {
-              return knex(table)
-                .insert({
-                  ...item,
-                  recipe: id,
-                })
-                .returning("*");
-            });
-          }
-        })
-        .filter(Boolean);
+      const promises = [...ingredients].flatMap(([table, name]) => {
+        const items = input[name];
+        if (items && items.length) {
+          return items.map((item) => {
+            return knex(table)
+              .insert({
+                ...item,
+                recipe: id,
+              })
+              .returning("*");
+          });
+        }
+        return [];
+      });
 
       const hopData = await Promise.all(promises);
       return { ...recipe[0], hopIngredients: hopData };
