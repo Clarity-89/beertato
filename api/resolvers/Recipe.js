@@ -9,8 +9,12 @@ module.exports = {
     },
   },
   Recipe: {
-    hops: async ({ hops }) => {
-      return hops;
+    hopIngredients: async ({ hopIngredients, ...recipe }) => {
+      if (hopIngredients) {
+        return hopIngredients;
+      }
+
+      return knex("hop_ingredient").select().where("recipe", recipe.id);
     },
   },
   HopIngredient: {
@@ -43,7 +47,7 @@ module.exports = {
         mashDuration,
         fermentationTemp,
         fermentationDuration,
-        hops,
+        hopIngredients,
         grains,
         adjuncts,
         yeast,
@@ -70,8 +74,8 @@ module.exports = {
           user: user.id,
         })
         .returning("*");
-      if (input.hops) {
-        var hopProms = hops.map((hop) => {
+      if (input.hopIngredients) {
+        var hopProms = hopIngredients.map((hop) => {
           return knex("hop_ingredient")
             .insert({
               amount: hop.amount,
@@ -83,7 +87,7 @@ module.exports = {
         });
       }
       const hopData = await Promise.all(hopProms);
-      return { ...recipe[0], hops: hopData.flat() };
+      return { ...recipe[0], hopIngredients: hopData.flat() };
     },
   },
 };

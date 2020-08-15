@@ -49,10 +49,10 @@ type Recipe {
   mashDuration: Float
   fermentationTemp: Int
   fermentationDuration: Int
-  hops: [HopIngredient]
-  grains: [GrainIngredient]
-  adjuncts: [AdjunctIngredient]
-  yeast: [YeastIngredient]
+  hopIngredients: [HopIngredient]
+  grainIngredientss: [GrainIngredient]
+  adjunctIngredients: [AdjunctIngredient]
+  yeastIngredients: [YeastIngredient]
 }
 
 input RecipeInput {
