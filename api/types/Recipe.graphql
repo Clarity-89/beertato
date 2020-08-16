@@ -101,6 +101,6 @@ extend type Query {
 
 extend type Mutation {
   addRecipe(input: RecipeInput!): Recipe @authenticated
-  updateRecipe(input: RecipeInput!): Recipe @authenticated
+  updateRecipe(id: ID!, input: RecipeInput!): Recipe @authenticated
   deleteRecipe(id: ID!): ID @authenticated
 }

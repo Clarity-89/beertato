@@ -3,12 +3,41 @@ const { Hop } = require("./Hop");
 const { Grain } = require("./Grain");
 const { getItemById } = require("./utils");
 
+const ingredients = new Map([
+  ["hop_ingredient", "hopIngredients"],
+  ["grain_ingredient", "grainIngredients"],
+  ["adjunct_ingredient", "adjunctIngredients"],
+  ["yest_ingredient", "yeastIngredients"],
+]);
+
 const getIngredients = async (table, id) => {
   try {
     return knex("hop_ingredient").select().where("recipe", id);
   } catch (e) {
     throw new Error(e);
   }
+};
+
+const getInputValues = (input) => {
+  return {
+    name: input.name,
+    volume: input.volume,
+    boil_volume: input.boilVolume,
+    abv: input.abv,
+    original_gravity: input.originalGravity,
+    final_gravity: input.finalGravity,
+    notes: input.notes,
+    description: input.description,
+    ebc: input.ebc,
+    ibu: input.ibu,
+    srm: input.srm,
+    ph: input.ph,
+    attenuation: input.attenuation,
+    mash_temp: input.mashTemp,
+    mash_duration: input.mashDuration,
+    fermentation_temp: input.fermentationTemp,
+    fermentation_duration: input.fermentationDuration,
+  };
 };
 
 module.exports = {
@@ -55,74 +84,47 @@ module.exports = {
   },
   Mutation: {
     addRecipe: async (_, { input }, { user }) => {
-      const {
-        name,
-        volume,
-        boilVolume,
-        abv,
-        originalGravity,
-        finalGravity,
-        notes,
-        description,
-        ebc,
-        ibu,
-        srm,
-        ph,
-        attenuation,
-        mashTemp,
-        mashDuration,
-        fermentationTemp,
-        fermentationDuration,
-      } = input;
+      try {
+        await knex.transaction(async (trx) => {
+          const inputValues = getInputValues(input);
 
-      const recipe = await knex("recipe")
-        .insert({
-          name,
-          volume,
-          boil_volume: boilVolume,
-          abv,
-          original_gravity: originalGravity,
-          final_gravity: finalGravity,
-          notes,
-          description,
-          ebc,
-          ibu,
-          srm,
-          ph,
-          attenuation,
-          mash_temp: mashTemp,
-          mash_duration: mashDuration,
-          fermentation_temp: fermentationTemp,
-          fermentation_duration: fermentationDuration,
-          user: user.id,
-        })
-        .returning("*");
-      const { id } = recipe[0];
+          const recipe = await trx("recipe")
+            .insert({
+              ...inputValues,
+              user: user.id,
+            })
+            .returning("*");
+          const { id } = recipe[0];
 
-      const ingredients = new Map([
-        ["hop_ingredient", "hopIngredients"],
-        ["grain_ingredient", "grainIngredients"],
-        ["adjunct_ingredient", "adjunctIngredients"],
-        ["yest_ingredient", "yeastIngredients"],
-      ]);
-
-      const promises = [...ingredients].flatMap(([table, name]) => {
-        const items = input[name];
-        if (items && items.length) {
-          return items.map((item) => {
-            return knex(table)
-              .insert({
-                ...item,
-                recipe: id,
-              })
-              .returning("*");
+          const promises = [...ingredients].flatMap(([table, name]) => {
+            const items = input[name];
+            if (items && items.length) {
+              return items.map((item) => {
+                return trx(table)
+                  .insert({
+                    ...item,
+                    recipe: id,
+                  })
+                  .returning("*");
+              });
+            }
+            return [];
           });
-        }
-        return [];
-      });
 
-      const hopData = await Promise.all(promises);
-      return { ...recipe[0], hopIngredients: hopData };
+          const hopData = await Promise.all(promises);
+          return { ...recipe[0], hopIngredients: hopData };
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+
+    updateRecipe: async (_, { id, input }, { user }) => {
+      const inputValues = getInputValues(input);
+      const recipe = await knex("recipe")
+        .where({ id, user: user.id })
+        .update(inputValues)
+        .returning("*");
     },
   },
 };
