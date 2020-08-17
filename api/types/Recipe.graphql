@@ -14,13 +14,11 @@ input HopIngredientInput {
 type GrainIngredient {
   id: ID!
   amount: Float!
-  timing: Float!
   grain: Grain!
 }
 
 input GrainIngredientInput {
   amount: Float!
-  timing: Float!
   grain: ID!
 }
 
