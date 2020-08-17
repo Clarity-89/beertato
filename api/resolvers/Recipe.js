@@ -7,7 +7,7 @@ const ingredients = new Map([
   ["hop_ingredient", "hopIngredients"],
   ["grain_ingredient", "grainIngredients"],
   ["adjunct_ingredient", "adjunctIngredients"],
-  ["yest_ingredient", "yeastIngredients"],
+  ["yeast_ingredient", "yeastIngredients"],
 ]);
 
 const getIngredients = async (table, id) => {
@@ -133,21 +133,21 @@ module.exports = {
             const items = input[name];
             const ingData = await trx(table)
               .select()
-              .where({ recipe: id, user: user.id })
+              .where({ recipe: id })
               .returning("id");
-            console.log("ing", ingData);
+
             for (const it of ingData) {
-              if (!items.some((item) => item.id === it.id)) {
-                await trx(table).where({ id: it.id, user: user.id }).del();
+              if (!items.some((item) => Number(item.id) === Number(it.id))) {
+                await trx(table).where({ id: it.id }).del();
               }
             }
 
             if (items && items.length) {
-              return items.map((item) => {
+              return items.map(async (item) => {
                 if (item.id) {
                   return trx(table)
-                    .where({ id: item.id, user: user.id })
-                    .update(...item)
+                    .where({ id: item.id })
+                    .update(item)
                     .returning("*");
                 }
                 return trx(table)
@@ -167,8 +167,5 @@ module.exports = {
         console.error(e);
       }
     },
-    // updateIngredient: async (_, { id, type }, { user }) => {
-    //   return knex.table(type).update();
-    // },
   },
 };

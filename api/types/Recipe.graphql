@@ -6,6 +6,7 @@ type HopIngredient {
 }
 
 input HopIngredientInput {
+  id: ID
   amount: Float!
   timing: Float!
   hop: ID!
@@ -18,6 +19,7 @@ type GrainIngredient {
 }
 
 input GrainIngredientInput {
+  id: ID
   amount: Float!
   grain: ID!
 }
@@ -29,6 +31,7 @@ type YeastIngredient {
 }
 
 input YeastIngredientInput {
+  id: ID
   amount: Float!
   yeast: ID!
 }
@@ -40,6 +43,7 @@ type AdjunctIngredient {
 }
 
 input AdjunctIngredientInput {
+  id: ID
   amount: Float!
   adjunct: ID!
 }
