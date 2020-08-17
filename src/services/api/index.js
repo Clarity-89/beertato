@@ -6,8 +6,11 @@ import { onError } from "apollo-link-error";
 import { API_PORT } from "./constants";
 import { TOKEN_KEY } from "../../constants";
 
-const logoutLink = onError(({ networkError }) => {
-  if (networkError?.statusCode === 401) {
+const logoutLink = onError(({ graphQLErrors }) => {
+  if (
+    graphQLErrors?.length &&
+    graphQLErrors.some((err) => err.extensions.code === "UNAUTHENTICATED")
+  ) {
     localStorage.removeItem(TOKEN_KEY);
     window.location.href = "/";
   }

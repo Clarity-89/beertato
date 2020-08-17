@@ -1,5 +1,4 @@
 const express = require("express");
-const jwt = require("express-jwt");
 const { ApolloServer } = require("apollo-server-express");
 const { addResolversToSchema } = require("@graphql-tools/schema");
 const { SchemaDirectiveVisitor } = require("@graphql-tools/utils");
@@ -7,18 +6,12 @@ const typeDefs = require("./types");
 const resolvers = require("./resolvers");
 const { AuthenticationDirective } = require("./directives/");
 const { API_PORT, WEB_PORT } = require("../src/services/api/constants");
+const { getUser } = require("./utils/getUser");
 require("dotenv").config();
 
 const app = express();
 const apiPort = process.env.API_PORT || API_PORT;
 const webPort = process.env.WEB_PORT || WEB_PORT;
-
-// Middleware
-const auth = jwt({
-  secret: process.env.JWT_SECRET,
-  credentialsRequired: false,
-  algorithms: ["HS256"],
-});
 
 const cors = {
   origin: `http://localhost:${webPort}`,
@@ -26,8 +19,6 @@ const cors = {
   allowedHeaders:
     "Origin, X-Requested-With, Content-Type, Accept, Authorization",
 };
-
-app.use(auth);
 
 // GraphQL schema
 const schema = addResolversToSchema({
@@ -38,7 +29,8 @@ const schema = addResolversToSchema({
 const server = new ApolloServer({
   schema,
   context({ req }) {
-    return { user: req.user };
+    const user = getUser(req);
+    return { user };
   },
 });
 
