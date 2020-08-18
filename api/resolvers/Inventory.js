@@ -1,7 +1,7 @@
 const knex = require("../connection");
 const { Hop } = require("./Hop");
 const { Grain } = require("./Grain");
-const { getItemById } = require("./utils");
+const { getItemById, deleteItem } = require("./utils");
 
 const getInventoryItems = async (user, table) => {
   try {
@@ -77,15 +77,7 @@ module.exports = {
       }
     },
     deleteHopInventory: async (_, { id }, { user }) => {
-      try {
-        const resp = await knex("hops_inventory")
-          .where({ id, user: user.id })
-          .del()
-          .returning("id");
-        return resp.length ? resp[0] : null;
-      } catch (e) {
-        throw new Error(e);
-      }
+      return deleteItem(id, user.id, "hops_inventory");
     },
     addGrainInventory: async (_, { amount, item_id }, { user }) => {
       return addItem("grain", "grains_inventory", {

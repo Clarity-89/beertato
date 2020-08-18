@@ -1,7 +1,7 @@
 const knex = require("../connection");
 const { Hop } = require("./Hop");
 const { Grain } = require("./Grain");
-const { getItemById } = require("./utils");
+const { getItemById, deleteItem } = require("./utils");
 
 const ingredients = new Map([
   ["hop_ingredient", "hopIngredients"],
@@ -166,6 +166,10 @@ module.exports = {
       } catch (e) {
         console.error(e);
       }
+    },
+
+    deleteRecipe: async (_, { id }, { user }) => {
+      return deleteItem(id, user.id, "recipe");
     },
   },
 };
