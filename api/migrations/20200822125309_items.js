@@ -8,7 +8,7 @@ exports.up = function (knex) {
       table.string("image");
       table.enu("type", Object.values(ITEM_TYPES));
       table.text("description");
-      table.integer("origin").references("countries.id");
+      table.integer("origin").references("countries.id").onDelete("CASCADE");
       table.jsonb("data");
     }),
     knex.schema.createTable("substitutes", (table) => {
