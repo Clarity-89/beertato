@@ -1,0 +1,29 @@
+enum ItemType {
+  HOP
+  GRAIN
+  ADJUNCT
+  YEAST
+}
+
+type Item {
+  id: ID!
+  name: String!
+  description: String
+  image: String
+  type: ItemType
+  origin: Origin
+  data: String
+}
+
+type ItemSubstitute {
+  id: ID!
+  item: ID!
+  substitute: ID!
+}
+
+extend type Query {
+  item(id: ID!): Item
+  items(type: ItemType): [Item]
+  substitute(id: ID!): ItemSubstitute
+  substitutes: [ItemSubstitute]
+}
