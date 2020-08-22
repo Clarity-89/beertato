@@ -1,14 +1,10 @@
 const knex = require("../connection");
+const { getItemById } = require("./utils");
 
 module.exports = {
   Query: {
     item: async (_, { id }) => {
-      try {
-        const item = await knex("items").first().where({ id });
-        return { ...item, data: JSON.stringify(item.data) };
-      } catch (e) {
-        console.error("Error retrieving item", e);
-      }
+      return getItemById(id, "items");
     },
     items: async (_, { type }) => {
       try {

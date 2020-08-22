@@ -1,55 +1,16 @@
-type HopInventory {
+type Inventory {
   id: ID!
   amount: Float!
   user: Int!
-  hop: Hop!
-}
-
-type GrainInventory {
-  id: ID!
-  amount: Float!
-  user: Int!
-  grain: Grain!
-}
-
-type AdjunctInventory {
-  id: ID!
-  amount: Float!
-  user: Int!
-  adjunct: Adjunct!
-}
-
-type YeastInventory {
-  id: ID!
-  amount: Float!
-  user: Int!
-  yeast: Yeast!
+  item: Item!
 }
 
 extend type Query {
-  hopInventory: [HopInventory] @authenticated
-  grainInventory: [GrainInventory] @authenticated
-  adjunctInventory: [AdjunctInventory] @authenticated
+  inventory(type: ItemType): [Inventory] @authenticated
 }
 
 extend type Mutation {
-  addHopInventory(amount: String!, item_id: String!): HopInventory
-    @authenticated
-  updateHopInventory(amount: String!, id: String!): HopInventory @authenticated
-  deleteHopInventory(id: String!): ID @authenticated
-  addGrainInventory(amount: String!, item_id: String!): GrainInventory
-    @authenticated
-  updateGrainInventory(amount: String!, id: String!): GrainInventory
-    @authenticated
-  deleteGrainInventory(id: String!): ID @authenticated
-  addAdjunctInventory(amount: String!, item_id: String!): AdjunctInventory
-    @authenticated
-  updateAdjunctInventory(amount: String!, id: String!): AdjunctInventory
-    @authenticated
-  deleteAdjunctInventory(id: String!): ID @authenticated
-  addYeastInventory(amount: String!, item_id: String!): YeastInventory
-    @authenticated
-  updateYeastInventory(amount: String!, id: String!): YeastInventory
-    @authenticated
-  deleteYeastInventory(id: String!): ID @authenticated
+  addInventory(amount: Float!, item_id: ID!): Inventory @authenticated
+  updateInventory(amount: Float!, id: ID!): Inventory @authenticated
+  deleteInventory(id: ID!): ID @authenticated
 }

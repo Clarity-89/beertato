@@ -2,7 +2,11 @@ const knex = require("../connection");
 
 module.exports.getItemById = async (id, table) => {
   try {
-    return await knex(table).first().where("id", id);
+    const item = await knex(table).first().where("id", id);
+    if (item.data) {
+      return { ...item, data: JSON.stringify(item.data) };
+    }
+    return item;
   } catch (e) {
     console.error(`Error fetching item from ${table}`, e);
   }
