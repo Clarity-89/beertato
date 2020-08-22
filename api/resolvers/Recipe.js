@@ -66,18 +66,12 @@ module.exports = {
             .returning("*");
           const { id } = recipe[0];
 
-          const promises = input.ingredients.map((ingredient) => {
-            return items.map((item) => {
-              return trx("ingredients")
-                .insert({
-                  ...item,
-                  recipe: id,
-                })
-                .returning("id");
-            });
-          });
+          const ingredients = input.ingredients.map((ingredient) => ({
+            ...ingredient,
+            recipe: id,
+          }));
 
-          await Promise.all(promises);
+          await trx("ingredients").insert(ingredients);
 
           return recipe[0];
         });
@@ -95,37 +89,31 @@ module.exports = {
             .update(inputValues)
             .returning("*");
 
-          const promises = [...ingredients].flatMap(async ([table, name]) => {
-            const items = input[name];
-            const ingData = await trx(table)
-              .select()
-              .where({ recipe: id })
-              .returning("id");
+          const ingData = await trx("ingredients")
+            .select()
+            .where({ recipe: id })
+            .returning("id");
 
-            for (const it of ingData) {
-              if (!items.some((item) => Number(item.id) === Number(it.id))) {
-                await trx(table).where({ id: it.id }).del();
-              }
+          // Remove ingredients not in updated list
+          for (const it of ingData) {
+            if (
+              !input.ingredients.some(
+                (item) => Number(item.id) === Number(it.id)
+              )
+            ) {
+              await trx("ingredients").where({ id: it.id }).del();
             }
+          }
 
-            if (items && items.length) {
-              return items.map(async (item) => {
-                if (item.id) {
-                  return trx(table)
-                    .where({ id: item.id })
-                    .update(item)
-                    .returning("*");
-                }
-                return trx(table)
-                  .insert({
-                    ...item,
-                    recipe: id,
-                  })
-                  .returning("*");
-              });
+          const promises = input.ingredients.map((ingredient) => {
+            if (ingredient.id) {
+              return trx("ingredients")
+                .where({ id: ingredient.id })
+                .update(ingredient);
             }
-            return [];
+            return trx("ingredients").insert({ ...ingredient, recipe: id });
           });
+
           await Promise.all(promises);
           return recipe[0];
         });
