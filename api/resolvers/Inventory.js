@@ -9,16 +9,16 @@ module.exports = {
         if (type) {
           return knex
             .select(
-              "inventory.id",
-              "inventory.amount",
-              "inventory.user",
-              "inventory.item"
+              "inventories.id",
+              "inventories.amount",
+              "inventories.user",
+              "inventories.item"
             )
-            .from("inventory")
-            .innerJoin("items", "items.id", "=", "inventory.item")
+            .from("inventories")
+            .innerJoin("items", "items.id", "=", "inventories.item")
             .where({ type });
         }
-        return knex("inventory").select().where("user", user.id);
+        return knex("inventories").select().where("user", user.id);
       } catch (e) {
         throw new Error(e);
       }
@@ -30,7 +30,7 @@ module.exports = {
   Item,
   Mutation: {
     addInventory: async (_, { amount, item_id }, { user }) => {
-      const getItem = knex("inventory")
+      const getItem = knex("inventories")
         .where({ item: item_id, user: user.id })
         .first();
 
@@ -42,7 +42,7 @@ module.exports = {
       }
 
       try {
-        const inventory = await knex("inventory")
+        const inventory = await knex("inventories")
           .insert({
             user: user.id,
             amount,
@@ -56,7 +56,7 @@ module.exports = {
     },
     updateInventory: async (_, { amount, id }, { user }) => {
       try {
-        const res = await knex("inventory")
+        const res = await knex("inventories")
           .where({ id, user: user.id })
           .update({ amount })
           .returning(["id", "item", "amount", "user"]);
@@ -66,7 +66,7 @@ module.exports = {
       }
     },
     deleteInventory: async (_, { id }, { user }) => {
-      return deleteItem(id, user.id, "inventory");
+      return deleteItem(id, user.id, "inventories");
     },
   },
 };

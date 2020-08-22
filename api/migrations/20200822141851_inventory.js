@@ -1,5 +1,5 @@
 exports.up = function (knex) {
-  return knex.schema.createTable("inventory", (table) => {
+  return knex.schema.createTable("inventories", (table) => {
     table.increments("id").primary();
     table.float("amount");
     table.integer("item").references("items.id").onDelete("CASCADE");
@@ -8,5 +8,5 @@ exports.up = function (knex) {
 };
 
 exports.down = function (knex) {
-  return knex.schema.dropTable("inventory");
+  return knex.schema.dropTable("inventories");
 };

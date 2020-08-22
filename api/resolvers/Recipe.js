@@ -1,6 +1,5 @@
 const knex = require("../connection");
-const { Hop } = require("./Hop");
-const { Grain } = require("./Grain");
+const { Item } = require("./Item");
 const { getItemById, deleteItem } = require("./utils");
 
 const ingredients = new Map([
@@ -9,14 +8,6 @@ const ingredients = new Map([
   ["adjunct_ingredient", "adjunctIngredients"],
   ["yeast_ingredient", "yeastIngredients"],
 ]);
-
-const getIngredients = async (table, id) => {
-  try {
-    return knex(table).select().where("recipe", id);
-  } catch (e) {
-    throw new Error(e);
-  }
-};
 
 const getInputValues = (input) => {
   return {
@@ -43,52 +34,31 @@ const getInputValues = (input) => {
 module.exports = {
   Query: {
     recipes: async (_, __, { user }) => {
-      return knex("recipe").select().where("user", user.id);
+      return knex("recipes").select().where("user", user.id);
     },
   },
   Recipe: {
-    hopIngredients: async ({ id }) => {
-      return getIngredients("hop_ingredient", id);
-    },
-    grainIngredients: async ({ id }) => {
-      return getIngredients("grain_ingredient", id);
-    },
-    adjunctIngredients: async ({ id }) => {
-      return getIngredients("adjunct_ingredient", id);
-    },
-    yeastIngredients: async ({ id }) => {
-      return getIngredients("yeast_ingredient", id);
+    ingredients: async ({ id }) => {
+      try {
+        return knex("ingredients").select().where("recipe", id);
+      } catch (e) {
+        throw new Error(e);
+      }
     },
   },
-  HopIngredient: {
-    hop: async ({ hop }) => {
-      return getItemById(hop, "hops");
+  Ingredient: {
+    item: async ({ item }) => {
+      return getItemById(item, "items");
     },
   },
-  Hop,
-  GrainIngredient: {
-    grain: async ({ grain, ...rest }) => {
-      return getItemById(grain, "grains");
-    },
-  },
-  Grain,
-  AdjunctIngredient: {
-    adjunct: async ({ adjunct }) => {
-      return getItemById(adjunct, "adjuncts");
-    },
-  },
-  YeastIngredient: {
-    yeast: async ({ yeast }) => {
-      return getItemById(yeast, "yeast");
-    },
-  },
+  Item,
   Mutation: {
     addRecipe: async (_, { input }, { user }) => {
       try {
         return knex.transaction(async (trx) => {
           const inputValues = getInputValues(input);
 
-          const recipe = await trx("recipe")
+          const recipe = await trx("recipes")
             .insert({
               ...inputValues,
               user: user.id,
@@ -96,19 +66,15 @@ module.exports = {
             .returning("*");
           const { id } = recipe[0];
 
-          const promises = [...ingredients].flatMap(([table, name]) => {
-            const items = input[name];
-            if (items && items.length) {
-              return items.map((item) => {
-                return trx(table)
-                  .insert({
-                    ...item,
-                    recipe: id,
-                  })
-                  .returning("id");
-              });
-            }
-            return [];
+          const promises = input.ingredients.map((ingredient) => {
+            return items.map((item) => {
+              return trx("ingredients")
+                .insert({
+                  ...item,
+                  recipe: id,
+                })
+                .returning("id");
+            });
           });
 
           await Promise.all(promises);
@@ -124,7 +90,7 @@ module.exports = {
       try {
         return knex.transaction(async (trx) => {
           const inputValues = getInputValues(input);
-          const recipe = await trx("recipe")
+          const recipe = await trx("recipes")
             .where({ id, user: user.id })
             .update(inputValues)
             .returning("*");
@@ -169,7 +135,7 @@ module.exports = {
     },
 
     deleteRecipe: async (_, { id }, { user }) => {
-      return deleteItem(id, user.id, "recipe");
+      return deleteItem(id, user.id, "recipes");
     },
   },
 };
