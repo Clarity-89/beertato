@@ -1,5 +1,10 @@
 [
     {
+        "id": 0,
+        "name": "",
+        "code": "N/A"
+    },
+    {
         "id": 1,
         "name": "Austria",
         "code": "AT"
