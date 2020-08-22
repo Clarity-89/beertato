@@ -51,10 +51,10 @@ exports.up = function (knex) {
 
 exports.down = function (knex) {
   return Promise.all([
-    knex.schema.dropTable("recipe"),
     knex.schema.dropTable("hop_ingredient"),
     knex.schema.dropTable("grain_ingredient"),
     knex.schema.dropTable("adjunct_ingredient"),
     knex.schema.dropTable("yeast_ingredient"),
+    knex.schema.dropTable("recipe"),
   ]);
 };
