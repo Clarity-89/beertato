@@ -8,22 +8,20 @@ import { Text } from "../../styled/typography";
 import { LoaderScreen } from "../Loader";
 
 const GET_HOP_DETAILS = gql`
-  query Hop($id: String!) {
-    hop(id: $id) {
+  query Hop($id: ID!) {
+    hop: item(id: $id) {
       id
       name
       description
-      purpose
-      alpha_acid_composition
-      beta_acid_composition
-      sub_names
-      beer_style
+      data
       origin {
+        id
         name
       }
     }
   }
 `;
+
 /**
  *
  * HopDetail
@@ -32,7 +30,7 @@ const GET_HOP_DETAILS = gql`
 const HopDetail = ({ match }) => {
   const { id } = match.params;
   const { data, loading, error } = useQuery(GET_HOP_DETAILS, {
-    variables: { id: id.toString() },
+    variables: { id },
   });
 
   if (loading) {
@@ -41,6 +39,7 @@ const HopDetail = ({ match }) => {
 
   if (error) return <ErrorMessage />;
   const { hop } = data;
+  const hopData = JSON.parse(hop.data);
   return (
     <Container textAlign="center">
       <Header as="h1">{hop.name}</Header>
@@ -56,19 +55,19 @@ const HopDetail = ({ match }) => {
             <Table.Cell>
               <Text bold>Purpose</Text>
             </Table.Cell>
-            <Table.Cell>{hop.purpose}</Table.Cell>
+            <Table.Cell>{hopData.purpose}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
               <Text bold>Alpha Acid Composition</Text>
             </Table.Cell>
-            <Table.Cell>{hop.alpha_acid_composition}%</Table.Cell>
+            <Table.Cell>{hopData.alpha_acid_composition}%</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
               <Text bold>Beta Acid Composition</Text>
             </Table.Cell>
-            <Table.Cell>{hop.beta_acid_composition}%</Table.Cell>
+            <Table.Cell>{hopData.beta_acid_composition}%</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
@@ -80,13 +79,13 @@ const HopDetail = ({ match }) => {
             <Table.Cell>
               <Text bold>Substitutes</Text>
             </Table.Cell>
-            <Table.Cell>{hop.sub_names}</Table.Cell>
+            <Table.Cell>{hopData.sub_names}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
               <Text bold>Style Guide</Text>
             </Table.Cell>
-            <Table.Cell>{hop.beer_style}</Table.Cell>
+            <Table.Cell>{hopData.beer_style}</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>

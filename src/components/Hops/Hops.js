@@ -6,16 +6,17 @@ import { Table, Container, Header } from "semantic-ui-react";
 import { ErrorMessage } from "../../styled/Alerts";
 import { LoaderScreen } from "../Loader";
 import { Search } from "../Search";
+import { HOP } from "../../constants";
 
 const GET_HOPS = gql`
-  {
-    hops {
+  query GetHops($type: ItemType) {
+    hops: items(type: $type) {
       id
       name
       description
-      purpose
-      sub_names
+      data
       origin {
+        id
         name
       }
     }
@@ -29,7 +30,9 @@ const GET_HOPS = gql`
  */
 const Hops = () => {
   const [filter, setFilter] = useState("");
-  const { data = {}, loading, error } = useQuery(GET_HOPS);
+  const { data = {}, loading, error } = useQuery(GET_HOPS, {
+    variables: { type: HOP },
+  });
 
   const filteredData = !filter
     ? data.hops
@@ -58,25 +61,28 @@ const Hops = () => {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {filteredData.map((hop) => (
-            <Table.Row key={hop.id}>
-              <Table.Cell>
-                <Link to={`/data/hops/${hop.id}`}>{hop.name}</Link>
-              </Table.Cell>
-              <Table.Cell>
-                <p>{hop.description}</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p>{hop.origin.name}</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p>{hop.purpose}</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p>{hop.sub_names}</p>
-              </Table.Cell>
-            </Table.Row>
-          ))}
+          {filteredData.map((hop) => {
+            const hopData = JSON.parse(hop.data);
+            return (
+              <Table.Row key={hop.id}>
+                <Table.Cell>
+                  <Link to={`/data/hops/${hop.id}`}>{hop.name}</Link>
+                </Table.Cell>
+                <Table.Cell>
+                  <p>{hop.description}</p>
+                </Table.Cell>
+                <Table.Cell>
+                  <p>{hop.origin.name}</p>
+                </Table.Cell>
+                <Table.Cell>
+                  <p>{hopData.purpose}</p>
+                </Table.Cell>
+                <Table.Cell>
+                  <p>{hopData.sub_names}</p>
+                </Table.Cell>
+              </Table.Row>
+            );
+          })}
         </Table.Body>
       </Table>
     </Container>
