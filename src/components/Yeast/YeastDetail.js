@@ -8,18 +8,12 @@ import { ErrorMessage } from "../../styled/Alerts";
 import { Text } from "../../styled/typography";
 
 const GET_YEAST_DETAIL = gql`
-  query Yeast($id: String!) {
-    yeast(id: $id) {
+  query Yeast($id: ID!) {
+    yeast: item(id: $id) {
       id
       name
-      lab
-      code
-      beer_type
-      flocculation
-      temperature
+      data
       description
-      attenuation
-      type
     }
   }
 `;
@@ -42,6 +36,7 @@ const YeastDetail = ({ match }) => {
   if (error) return <ErrorMessage />;
 
   const { yeast } = data;
+  const yeastData = JSON.parse(yeast.data);
   return (
     <Container textAlign="center">
       <Header as="h1">{yeast.name}</Header>
@@ -51,7 +46,7 @@ const YeastDetail = ({ match }) => {
             <Table.Cell>
               <Text bold>Code</Text>
             </Table.Cell>
-            <Table.Cell>{yeast.code}</Table.Cell>
+            <Table.Cell>{yeastData.code}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
@@ -63,31 +58,31 @@ const YeastDetail = ({ match }) => {
             <Table.Cell>
               <Text bold>Type</Text>
             </Table.Cell>
-            <Table.Cell>{yeast.type}</Table.Cell>
+            <Table.Cell>{yeastData.type}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
               <Text bold>Lab</Text>
             </Table.Cell>
-            <Table.Cell>{yeast.lab}</Table.Cell>
+            <Table.Cell>{yeastData.lab}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
               <Text bold>Flocculation</Text>
             </Table.Cell>
-            <Table.Cell>{yeast.flocculation}</Table.Cell>
+            <Table.Cell>{yeastData.flocculation}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
               <Text bold>Temperature (&deg;C)</Text>
             </Table.Cell>
-            <Table.Cell>{yeast.temperature}</Table.Cell>
+            <Table.Cell>{yeastData.temperature}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
               <Text bold>Beer types</Text>
             </Table.Cell>
-            <Table.Cell>{yeast.beer_type}</Table.Cell>
+            <Table.Cell>{yeastData.beer_type}</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>

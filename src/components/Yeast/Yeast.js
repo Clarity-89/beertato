@@ -5,16 +5,15 @@ import { useQuery } from "@apollo/react-hooks";
 import { Table, Container, Header } from "semantic-ui-react";
 import { ErrorMessage } from "../../styled/Alerts";
 import { LoaderScreen } from "../Loader";
+import { YEAST } from "../../constants";
 
 const GET_YEAST = gql`
-  {
-    yeasts {
+  query GetYeasts($type: ItemType) {
+    yeasts: items(type: $type) {
       id
       name
-      code
+      data
       description
-      type
-      lab
     }
   }
 `;
@@ -25,7 +24,9 @@ const GET_YEAST = gql`
  *
  */
 const Yeast = () => {
-  const { data = {}, loading, error } = useQuery(GET_YEAST);
+  const { data = {}, loading, error } = useQuery(GET_YEAST, {
+    variables: { type: YEAST },
+  });
 
   if (loading) {
     return <LoaderScreen />;
@@ -47,25 +48,28 @@ const Yeast = () => {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {data.yeasts.map((y) => (
-            <Table.Row key={y.id}>
-              <Table.Cell>
-                <Link to={`/data/yeast/${y.id}`}>{y.name}</Link>
-              </Table.Cell>
-              <Table.Cell>
-                <p>{y.code}</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p>{y.description}</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p>{y.type}</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p>{y.lab}</p>
-              </Table.Cell>
-            </Table.Row>
-          ))}
+          {data.yeasts.map((y) => {
+            const yeastData = JSON.parse(y.data);
+            return (
+              <Table.Row key={y.id}>
+                <Table.Cell>
+                  <Link to={`/data/yeast/${y.id}`}>{y.name}</Link>
+                </Table.Cell>
+                <Table.Cell>
+                  <p>{yeastData.code}</p>
+                </Table.Cell>
+                <Table.Cell>
+                  <p>{y.description}</p>
+                </Table.Cell>
+                <Table.Cell>
+                  <p>{yeastData.type}</p>
+                </Table.Cell>
+                <Table.Cell>
+                  <p>{yeastData.lab}</p>
+                </Table.Cell>
+              </Table.Row>
+            );
+          })}
         </Table.Body>
       </Table>
     </Container>
