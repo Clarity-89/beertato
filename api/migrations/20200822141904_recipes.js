@@ -19,6 +19,7 @@ exports.up = function (knex) {
       table.float("mash_duration");
       table.float("fermentation_temp");
       table.integer("fermentation_duration");
+      table.date("brew_date");
       table.integer("user").references("users.id").onDelete("CASCADE");
     }),
     knex.schema.createTable("ingredients", (table) => {

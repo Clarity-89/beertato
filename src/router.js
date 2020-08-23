@@ -40,7 +40,7 @@ const sharedLinks = [{ name: "Calculator", url: "/calculator" }];
 
 export const privateLinks = [
   ...sharedLinks,
-  { name: "Dashboard", url: "/dashboard" },
+  { name: "Dashboard", url: "/dashboard/profile" },
 ];
 export const publicLinks = [
   ...sharedLinks,
