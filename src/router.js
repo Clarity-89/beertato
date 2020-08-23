@@ -1,6 +1,6 @@
 import { FrontPage } from "./components/FrontPage";
 import { HopDetail, Hops } from "./components/Hops";
-import { GrainDetail, Grains } from "./components/Malt";
+import { GrainDetail, Grains } from "./components/Grains";
 import { Yeast, YeastDetail } from "./components/Yeast";
 import { Calculator } from "./components/Calculator";
 import { Dashboard } from "./components/Dashboard";
@@ -19,9 +19,9 @@ const sharedRoutes = [
   },
   { path: "/data/hops/:id", component: HopDetail },
   { path: "/data/grains", component: Grains, exact: true },
-  { path: "/data/grains:id", component: GrainDetail },
+  { path: "/data/grains/:id", component: GrainDetail },
   { path: "/data/yeast", component: Yeast, exact: true },
-  { path: "/data/yeast:id", component: YeastDetail },
+  { path: "/data/yeast/:id", component: YeastDetail },
   { path: "/calculator", component: Calculator },
 ];
 

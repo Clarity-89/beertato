@@ -8,15 +8,14 @@ import { ErrorMessage } from "../../styled/Alerts";
 import { Text } from "../../styled/typography";
 
 const GET_GRAIN_DETAILS = gql`
-  query Grain($id: String!) {
-    grain(id: $id) {
+  query Grain($id: ID!) {
+    grain: item(id: $id) {
       id
       name
       description
-      yield
-      color
-      protein
+      data
       origin {
+        id
         name
       }
     }
@@ -31,7 +30,7 @@ const GET_GRAIN_DETAILS = gql`
 const GrainDetail = ({ match }) => {
   const { id } = match.params;
   const { data, loading, error } = useQuery(GET_GRAIN_DETAILS, {
-    variables: { id: id.toString() },
+    variables: { id },
   });
 
   if (loading) {
@@ -41,6 +40,7 @@ const GrainDetail = ({ match }) => {
   if (error) return <ErrorMessage />;
 
   const { grain } = data;
+  const grainData = JSON.parse(grain.data);
   return (
     <Container textAlign="center">
       <Header as="h1">{grain.name}</Header>
@@ -60,21 +60,21 @@ const GrainDetail = ({ match }) => {
           </Table.Row>
           <Table.Row>
             <Table.Cell>
-              <Text bold>Yield</Text>
+              <Text bold>Yield (%)</Text>
             </Table.Cell>
-            <Table.Cell>{grain.yield}%</Table.Cell>
+            <Table.Cell>{grainData.yield}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
-              <Text bold>Color</Text>
+              <Text bold>Color (EBC)</Text>
             </Table.Cell>
-            <Table.Cell>{grain.color} EBC</Table.Cell>
+            <Table.Cell>{grainData.color}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
               <Text bold>Protein</Text>
             </Table.Cell>
-            <Table.Cell>{grain.protein}</Table.Cell>
+            <Table.Cell>{grainData.protein}</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>
