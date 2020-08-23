@@ -3,21 +3,22 @@ import { useMutation, useQuery } from "@apollo/react-hooks";
 import { Loader } from "semantic-ui-react";
 import { ErrorMessage } from "../../styled/Alerts";
 import { InventoryTable, InventoryForm } from "./index";
-import { queryMap } from "../../constants";
+import {
+  ADD_INVENTORY,
+  DELETE_INVENTORY,
+  INVENTORY,
+  UPDATE_INVENTORY,
+} from "./queries";
 
-const cap = (str = "") => {
-  return str[0].toUpperCase() + str.substring(1);
-};
-
-const getOptResponse = (name) => (type, { amount, item }) => {
+const optResponse = (type, { amount, item }) => {
   return {
     __typename: "Mutation",
     [type]: {
-      __typename: `${cap(name)}Inventory`,
+      __typename: "Inventory",
       id: (Math.random() * 1000).toString(),
       amount,
       item: {
-        __typename: `${cap(name)}`,
+        __typename: "Item",
         id: (Math.random() * 1000).toString(),
         name: item,
       },
@@ -26,23 +27,22 @@ const getOptResponse = (name) => (type, { amount, item }) => {
 };
 
 export const InventoryTab = ({ type }) => {
-  const queries = queryMap[type];
-  const { data, loading, error } = useQuery(queries.list);
-  const [addItem] = useMutation(queries.add);
-  const [updateItem] = useMutation(queries.update);
-  const [deleteItem] = useMutation(queries.delete);
-  const optResponse = getOptResponse(type);
+  const { data, loading, error } = useQuery(INVENTORY, { variables: { type } });
+  const [addItem] = useMutation(ADD_INVENTORY);
+  const [updateItem] = useMutation(UPDATE_INVENTORY);
+  const [deleteItem] = useMutation(DELETE_INVENTORY);
 
   const del = async (id) => {
     await deleteItem({
       variables: { id },
-      update: (proxy, { data: { deleteItem: id } }) => {
-        const data = proxy.readQuery({ query: queries.list });
+      update: (proxy, { data: { deleteInventory: id } }) => {
+        const data = proxy.readQuery({ query: INVENTORY, variables: { type } });
         proxy.writeQuery({
-          query: queries.list,
+          query: INVENTORY,
+          variables: { type },
           data: {
             ...data,
-            results: data.results.filter((item) => item.id !== id),
+            inventory: data.inventory.filter((item) => item.id !== id),
           },
         });
       },
@@ -53,10 +53,10 @@ export const InventoryTab = ({ type }) => {
     await updateItem({
       variables: {
         id,
-        amount,
+        amount: parseFloat(amount),
       },
-      optimisticResponse: optResponse("updateItem", {
-        amount,
+      optimisticResponse: optResponse("updateInventory", {
+        amount: parseFloat(amount),
         item,
       }),
     });
@@ -65,17 +65,18 @@ export const InventoryTab = ({ type }) => {
   const add = async ({ amount, item }) => {
     await addItem({
       variables: { amount, item_id: item },
-      optimisticResponse: optResponse("addItem", {
+      optimisticResponse: optResponse("addInventory", {
         amount,
         item,
       }),
-      update: (proxy, { data: { addItem } }) => {
-        const data = proxy.readQuery({ query: queries.list });
+      update: (proxy, { data: { addInventory } }) => {
+        const data = proxy.readQuery({ query: INVENTORY, variables: { type } });
         proxy.writeQuery({
-          query: queries.list,
+          query: INVENTORY,
+          variables: { type },
           data: {
             ...data,
-            results: [...data.results, addItem],
+            inventory: [...data.inventory, addInventory],
           },
         });
       },
@@ -83,7 +84,7 @@ export const InventoryTab = ({ type }) => {
   };
 
   const save = async (formData) => {
-    const item = data.results.find((it) => it.item.id === formData.item);
+    const item = data.inventory.find((it) => it.item.id === formData.item);
     if (item) {
       return update(item.id, formData);
     }
@@ -100,17 +101,17 @@ export const InventoryTab = ({ type }) => {
 
   return (
     <>
-      {!data.results.length ? (
+      {!data.inventory.length ? (
         <p>No data yet.</p>
       ) : (
         <InventoryTable
-          items={data.results}
+          items={data.inventory}
           type={type}
           updateItem={update}
           deleteItem={del}
         />
       )}
-      <InventoryForm query={queries.selectList} addItem={save} />
+      <InventoryForm type={type} addItem={save} />
     </>
   );
 };

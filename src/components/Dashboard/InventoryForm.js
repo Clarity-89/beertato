@@ -4,13 +4,14 @@ import { Controller, useForm } from "react-hook-form";
 import { useQuery } from "@apollo/react-hooks";
 import { Button, Dropdown, Form, Loader } from "semantic-ui-react";
 import { css } from "@emotion/core";
+import { GET_ITEMS } from "./queries";
 
-export const InventoryForm = ({ query, addItem }) => {
+export const InventoryForm = ({ type, addItem }) => {
   const { register, handleSubmit, errors, control } = useForm();
-  const { data, loading } = useQuery(query);
+  const { data, loading } = useQuery(GET_ITEMS, { variables: { type } });
 
   const submit = (formData) => {
-    return addItem(formData);
+    return addItem({ ...formData, amount: parseFloat(formData.amount) });
   };
 
   return (
@@ -35,7 +36,7 @@ export const InventoryForm = ({ query, addItem }) => {
                   placeholder="Select item"
                   search
                   selection
-                  options={data.results.map(({ id, name }) => ({
+                  options={data.items.map(({ id, name }) => ({
                     key: id,
                     text: name,
                     value: id,
