@@ -2,13 +2,6 @@ const knex = require("../connection");
 const { Item } = require("./Item");
 const { getItemById, deleteItem } = require("./utils");
 
-const ingredients = new Map([
-  ["hop_ingredient", "hopIngredients"],
-  ["grain_ingredient", "grainIngredients"],
-  ["adjunct_ingredient", "adjunctIngredients"],
-  ["yeast_ingredient", "yeastIngredients"],
-]);
-
 const getInputValues = (input) => {
   return {
     name: input.name,
