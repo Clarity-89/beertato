@@ -31,6 +31,7 @@ type Recipe {
   mashDuration: Float
   fermentationTemp: Int
   fermentationDuration: Int
+  brewDate: String
   ingredients: [Ingredient]
 }
 
@@ -52,6 +53,7 @@ input RecipeInput {
   mashDuration: Float
   fermentationTemp: Int
   fermentationDuration: Int
+  brewDate: String
   ingredients: [IngredientInput]
 }
 

@@ -20,6 +20,11 @@ exports.up = function (knex) {
       table.float("fermentation_temp");
       table.integer("fermentation_duration");
       table.date("brew_date");
+      table.enum("type", ["ALL_GRAIN", "EXTRACT", "MIXED"]);
+      table
+        .integer("beerStyle")
+        .references("beer_styles.id")
+        .onDelete("CASCADE");
       table.integer("user").references("users.id").onDelete("CASCADE");
     }),
     knex.schema.createTable("ingredients", (table) => {

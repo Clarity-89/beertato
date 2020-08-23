@@ -1,0 +1,10 @@
+type BeerStyle {
+  id: ID!
+  name: String
+  category: String
+}
+
+extend type Query {
+  beerStyle(id: ID!): BeerStyle
+  beerStyles: [BeerStyle]
+}

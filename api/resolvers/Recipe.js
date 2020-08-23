@@ -21,6 +21,7 @@ const getInputValues = (input) => {
     mash_duration: input.mashDuration,
     fermentation_temp: input.fermentationTemp,
     fermentation_duration: input.fermentationDuration,
+    brew_date: input.brewDate,
   };
 };
 
@@ -59,7 +60,7 @@ module.exports = {
             .returning("*");
           const { id } = recipe[0];
 
-          const ingredients = input.ingredients.map((ingredient) => ({
+          const ingredients = (input.ingredients || []).map((ingredient) => ({
             ...ingredient,
             recipe: id,
           }));
@@ -98,7 +99,7 @@ module.exports = {
             }
           }
 
-          const promises = input.ingredients.map((ingredient) => {
+          const promises = (input.ingredients || []).map((ingredient) => {
             if (ingredient.id) {
               return trx("ingredients")
                 .where({ id: ingredient.id })
