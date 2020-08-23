@@ -1,54 +1,65 @@
 import gql from "graphql-tag";
 
-const invFields = `
-  amount
-  id
+const INVENTORY_FIELDS = gql`
+  fragment InventoryFields on Inventory {
+    id
+    amount
+  }
 `;
 
-const itemFields = `
-  name
-  id
+const ITEM_FIELDS = gql`
+  fragment ItemFields on Item {
+    id
+    name
+  }
 `;
 
 export const INVENTORY = gql`
-  query Inventory($type: ItemType){
-    inventory(type:$type) {
-      ${invFields}
+  query Inventory($type: ItemType) {
+    inventory(type: $type) {
+      ...InventoryFields
       item {
-        ${itemFields}
+        ...ItemFields
       }
     }
   }
+  ${INVENTORY_FIELDS}
+  ${ITEM_FIELDS}
 `;
 
 export const GET_ITEMS = gql`
-  query GetItems($type: ItemType){
+  query GetItems($type: ItemType) {
     items(type: $type) {
-      ${itemFields}
+      ...ItemFields
     }
   }
+  ${ITEM_FIELDS}
 `;
 
 export const ADD_INVENTORY = gql`
   mutation AddInventory($amount: Float!, $item_id: ID!) {
     addInventory(amount: $amount, item_id: $item_id) {
-      ${invFields}
+      ...InventoryFields
       item {
-        ${itemFields}
+        ...ItemFields
       }
     }
   }
+  ${INVENTORY_FIELDS}
+  ${ITEM_FIELDS}
 `;
 
 export const UPDATE_INVENTORY = gql`
   mutation UpdateInventory($amount: Float!, $id: ID!) {
     updateInventory(amount: $amount, id: $id) {
-      ${invFields}
+      ...InventoryFields
       item {
-        ${itemFields}
+        ...ItemFields
       }
     }
   }
+  ${INVENTORY_FIELDS}
+  ${ITEM_FIELDS}
 `;
 
 export const DELETE_INVENTORY = gql`
