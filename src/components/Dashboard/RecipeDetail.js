@@ -12,6 +12,7 @@ const GET_RECIPE = gql`
     recipe(id: $id) {
       id
       name
+      originalGravity
     }
   }
 `;
