@@ -30,6 +30,9 @@ module.exports = {
     recipes: async (_, __, { user }) => {
       return knex("recipes").select().where("user", user.id);
     },
+    recipe: async (_, { id }, { user }) => {
+      return knex("recipes").select().where({ user: user.id, id });
+    },
   },
   Recipe: {
     ingredients: async ({ id }) => {

@@ -59,6 +59,7 @@ input RecipeInput {
 
 extend type Query {
   recipes: [Recipe] @authenticated
+  recipe(id: ID!): Recipe @authenticated
 }
 
 extend type Mutation {
