@@ -13,6 +13,40 @@ const GET_RECIPE = gql`
       id
       name
       originalGravity
+      volume
+      boilVolume
+      abv
+      originalGravity
+      finalGravity
+      notes
+      description
+      ebc
+      ibu
+      srm
+      ph
+      attenuation
+      mashTemp
+      mashDuration
+      fermentationTemp
+      fermentationDuration
+      brewDate
+      ingredients {
+        id
+        amount
+        timing
+        item {
+          id
+          name
+          data
+          type
+          image
+          description
+          origin {
+            id
+            name
+          }
+        }
+      }
     }
   }
 `;
