@@ -2,14 +2,22 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Route } from "react-router-dom";
 import { Container } from "../../styled/Layout/Layout";
-import { Inventory, Profile, RecipeList, Recipe, SideNav } from "./index";
+import {
+  Inventory,
+  Profile,
+  Recipes,
+  RecipeEdit,
+  RecipeDetail,
+  SideNav,
+} from "./index";
 
 const Dashboard = (props) => {
   const routes = [
     { path: `${props.match.url}/profile`, component: Profile },
     { path: `${props.match.url}/inventory`, component: Inventory },
-    { path: `${props.match.url}/recipes`, component: RecipeList },
-    { path: `${props.match.url}/recipes/:id`, component: Recipe },
+    { path: `${props.match.url}/recipes`, component: Recipes },
+    { path: `${props.match.url}/recipes/:id`, component: RecipeDetail },
+    { path: `${props.match.url}/recipes/:id/edit`, component: RecipeEdit },
   ];
   return (
     <Page>

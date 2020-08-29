@@ -22,10 +22,10 @@ const GET_RECIPES = gql`
 
 /**
  *
- * RecipeList
+ * Recipes
  *
  */
-const RecipeList = ({ match }) => {
+const Recipes = ({ match }) => {
   const { data, loading, error } = useQuery(GET_RECIPES);
 
   if (loading) {
@@ -77,8 +77,8 @@ const RecipeList = ({ match }) => {
   );
 };
 
-RecipeList.propTypes = {
+Recipes.propTypes = {
   match: PropTypes.object,
 };
 
-export default RecipeList;
+export default Recipes;
