@@ -31,7 +31,7 @@ module.exports = {
       return knex("recipes").select().where("user", user.id);
     },
     recipe: async (_, { id }, { user }) => {
-      return knex("recipes").select().where({ user: user.id, id });
+      return knex("recipes").first().where({ user: user.id, id });
     },
   },
   Recipe: {
