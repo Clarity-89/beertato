@@ -67,3 +67,47 @@ export const DELETE_INVENTORY = gql`
     deleteInventory(id: $id)
   }
 `;
+
+export const GET_RECIPE = gql`
+  query Recipe($id: ID!) {
+    recipe(id: $id) {
+      id
+      name
+      abv
+      attenuation
+      boilVolume
+      brewDate
+      description
+      ebc
+      fermentationDuration
+      fermentationTemp
+      finalGravity
+      ibu
+      mashDuration
+      mashTemp
+      notes
+      originalGravity
+      originalGravity
+      ph
+      srm
+      volume
+      ingredients {
+        id
+        amount
+        timing
+        item {
+          id
+          name
+          data
+          type
+          image
+          description
+          origin {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+`;

@@ -38,7 +38,7 @@ const NavContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 16px 32px;
-  background: transparent;
+  background: #f7f9cd;
   position: fixed;
   top: 0;
   left: 0;

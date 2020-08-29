@@ -32,6 +32,7 @@ type Recipe {
   fermentationTemp: Int
   fermentationDuration: Int
   brewDate: String
+  beerStyle: BeerStyle
   ingredients: [Ingredient]
 }
 

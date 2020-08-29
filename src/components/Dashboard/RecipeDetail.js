@@ -2,54 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
-import gql from "graphql-tag/src";
 import { useQuery } from "@apollo/react-hooks";
 import { LoaderScreen } from "../Loader";
 import { ErrorMessage } from "../../styled/Alerts";
-
-const GET_RECIPE = gql`
-  query Recipe($id: ID!) {
-    recipe(id: $id) {
-      id
-      name
-      originalGravity
-      volume
-      boilVolume
-      abv
-      originalGravity
-      finalGravity
-      notes
-      description
-      ebc
-      ibu
-      srm
-      ph
-      attenuation
-      mashTemp
-      mashDuration
-      fermentationTemp
-      fermentationDuration
-      brewDate
-      ingredients {
-        id
-        amount
-        timing
-        item {
-          id
-          name
-          data
-          type
-          image
-          description
-          origin {
-            id
-            name
-          }
-        }
-      }
-    }
-  }
-`;
+import { GET_RECIPE } from "./queries";
 
 /**
  *
