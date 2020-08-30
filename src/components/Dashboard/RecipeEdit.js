@@ -12,8 +12,9 @@ import { FieldSet } from "../../styled/Form";
 
 const baseFields = [
   "name",
+  "description",
+  "brewDate",
   "volume",
-  "boilVolume",
   "originalGravity",
   "finalGravity",
   "abv",
@@ -69,7 +70,7 @@ const RecipeEdit = ({ match }) => {
 
         <FieldSet label="Mash">
           <Form.Field width={6}>
-            <label htmlFor="mashDuration">Mash duration (mins) </label>
+            <label htmlFor="mashDuration">Mash duration (mins)</label>
             <input
               id="mashDuration"
               name="recipe.mashDuration"
@@ -87,10 +88,30 @@ const RecipeEdit = ({ match }) => {
             />
           </Form.Field>
         </FieldSet>
+        <FieldSet label="Boil">
+          <Form.Field width={6}>
+            <label htmlFor="boilVolume">Boil volume</label>
+            <input
+              id="boilVolume"
+              name="recipe.boilVolume"
+              defaultValue={recipe.boilVolume}
+              ref={register}
+            />
+          </Form.Field>
+          <Form.Field width={6}>
+            <label htmlFor="boilDuration">Boil duration (mins)</label>
+            <input
+              id="boilDuration"
+              name="recipe.boilDuration"
+              defaultValue={recipe.boilDuration}
+              ref={register}
+            />
+          </Form.Field>
+        </FieldSet>
         <FieldSet label="Fermentation">
           <Form.Field width={6}>
             <label htmlFor="fermentationDuration">
-              Fermentation duration (mins){" "}
+              Fermentation duration (days)
             </label>
             <input
               id="fermentationDuration"
