@@ -1,14 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Controller, useForm } from "react-hook-form";
-import { useQuery } from "@apollo/react-hooks";
-import { Button, Dropdown, Form, Loader } from "semantic-ui-react";
+import { Button, Form } from "semantic-ui-react";
 import { css } from "@emotion/core";
-import { GET_ITEMS } from "./queries";
+import ItemSelect from "../../styled/Dropdown/ItemSelect";
 
 export const InventoryForm = ({ type, addItem }) => {
   const { register, handleSubmit, errors, control } = useForm();
-  const { data, loading } = useQuery(GET_ITEMS, { variables: { type } });
 
   const submit = (formData) => {
     return addItem({ ...formData, amount: parseFloat(formData.amount) });
@@ -23,32 +21,21 @@ export const InventoryForm = ({ type, addItem }) => {
       `}
     >
       <Form.Field>
-        {loading ? (
-          <Loader />
-        ) : (
-          <>
-            <label>Item</label>
-            <Controller
-              name="item"
-              control={control}
-              render={({ onChange }) => (
-                <Dropdown
-                  placeholder="Select item"
-                  search
-                  selection
-                  options={data.items.map(({ id, name }) => ({
-                    key: id,
-                    text: name,
-                    value: id,
-                  }))}
-                  onChange={(_, { value }) => {
-                    onChange(value);
-                  }}
-                />
-              )}
-            />
-          </>
-        )}
+        <>
+          <label>Item</label>
+          <Controller
+            name="item"
+            control={control}
+            render={({ onChange }) => (
+              <ItemSelect
+                type={type}
+                onChange={(_, { value }) => {
+                  onChange(value);
+                }}
+              />
+            )}
+          />
+        </>
       </Form.Field>
       <Form.Field error={!!errors.amount}>
         <label>Amount</label>
@@ -59,9 +46,7 @@ export const InventoryForm = ({ type, addItem }) => {
           ref={register({ required: "Amount is required" })}
         />
       </Form.Field>
-      <Button type="submit" disabled={loading}>
-        Submit
-      </Button>
+      <Button type="submit">Submit</Button>
     </Form>
   );
 };

@@ -10,17 +10,18 @@ import {
   UPDATE_INVENTORY,
 } from "./queries";
 
-const optResponse = (type, { amount, item }) => {
+const optResponse = (queryType, { amount, item, type }) => {
   return {
     __typename: "Mutation",
-    [type]: {
+    [queryType]: {
       __typename: "Inventory",
-      id: (Math.random() * 1000).toString(),
+      id: Date.now().toString(10),
       amount,
       item: {
         __typename: "Item",
-        id: (Math.random() * 1000).toString(),
+        id: Date.now().toString(10),
         name: item,
+        type,
       },
     },
   };
@@ -58,6 +59,7 @@ export const InventoryTab = ({ type }) => {
       optimisticResponse: optResponse("updateInventory", {
         amount: parseFloat(amount),
         item,
+        type,
       }),
     });
   };
@@ -68,6 +70,7 @@ export const InventoryTab = ({ type }) => {
       optimisticResponse: optResponse("addInventory", {
         amount,
         item,
+        type,
       }),
       update: (proxy, { data: { addInventory } }) => {
         const data = proxy.readQuery({ query: INVENTORY, variables: { type } });

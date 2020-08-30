@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { css } from "@emotion/core";
-import { useFieldArray, useForm } from "react-hook-form";
+import { Controller, useFieldArray, useForm } from "react-hook-form";
 import { Button, Form } from "semantic-ui-react";
 import { FieldSet } from "../../styled/Form";
 import { formatLabel } from "../../services/utils/strings";
+import ItemSelect from "../../styled/Dropdown/ItemSelect";
 
 const baseFields = [
   "name",
@@ -114,6 +115,31 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
             defaultValue={recipe.fermentationTemp}
             ref={register}
           />
+        </Form.Field>
+      </FieldSet>
+
+      <FieldSet label="Grains">
+        <Form.Field width={6}>
+          {/*{fields.map((field, index) => {*/}
+          {/*  return <*/}
+          {/*})}*/}
+          <label>Name</label>
+          <Controller
+            name="item"
+            control={control}
+            render={({ onChange }) => (
+              <ItemSelect
+                type="GRAIN"
+                onChange={(_, { value }) => {
+                  onChange(value);
+                }}
+              />
+            )}
+          />
+        </Form.Field>
+        <Form.Field width={6}>
+          <label htmlFor="amount">Amount</label>
+          <input type="number" id="amount" ref={register} />
         </Form.Field>
       </FieldSet>
       <Button primary>{recipe.id ? "Update" : "Add"}</Button>

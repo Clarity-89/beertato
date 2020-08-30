@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
 import { Table } from "semantic-ui-react";
 import { Link } from "react-router-dom";

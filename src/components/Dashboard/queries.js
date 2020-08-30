@@ -11,6 +11,7 @@ const ITEM_FIELDS = gql`
   fragment ItemFields on Item {
     id
     name
+    type
   }
 `;
 

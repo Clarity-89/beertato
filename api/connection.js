@@ -23,6 +23,7 @@ module.exports = knex({
     return origImpl(toSnakeCase(value));
   },
   postProcessResponse: (result) => {
+    if (!result) return;
     if (Array.isArray(result)) {
       return result.map((row) => toCamelCase(row));
     } else {
