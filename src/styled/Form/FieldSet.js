@@ -22,7 +22,7 @@ FieldSet.propTypes = {
 };
 
 const Container = styled.fieldset`
-  margin-top: 16px;
+  margin: 16px 0;
   padding: 25px;
 `;
 

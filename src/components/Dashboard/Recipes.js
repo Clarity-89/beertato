@@ -6,19 +6,7 @@ import { Table } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { LoaderScreen } from "../Loader";
 import { ErrorMessage } from "../../styled/Alerts";
-
-const GET_RECIPES = gql`
-  {
-    recipes {
-      id
-      name
-      volume
-      abv
-      ibu
-      brewDate
-    }
-  }
-`;
+import { GET_RECIPES } from "./queries";
 
 /**
  *

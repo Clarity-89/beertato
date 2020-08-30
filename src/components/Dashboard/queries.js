@@ -111,3 +111,16 @@ export const GET_RECIPE = gql`
     }
   }
 `;
+
+export const GET_RECIPES = gql`
+  {
+    recipes {
+      id
+      name
+      volume
+      abv
+      ibu
+      brewDate
+    }
+  }
+`;
