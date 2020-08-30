@@ -37,6 +37,7 @@ const Recipes = ({ match }) => {
   return (
     <>
       <h1>Recipes</h1>
+      <Link to={`${match.url}/new`}>Add recipe</Link>
       <Table celled padded>
         <Table.Header>
           <Table.Row>
