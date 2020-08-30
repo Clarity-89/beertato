@@ -17,6 +17,7 @@ type Recipe {
   name: String!
   volume: Int
   boilVolume: Int
+  boilDuration: Int
   abv: Float
   originalGravity: Float
   finalGravity: Float

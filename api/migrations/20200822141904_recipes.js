@@ -5,6 +5,7 @@ exports.up = function (knex) {
       table.string("name");
       table.integer("volume");
       table.integer("boil_volume");
+      table.integer("boil_duration");
       table.float("abv");
       table.float("original_gravity");
       table.float("final_gravity");
