@@ -6,6 +6,7 @@ import { Button, Form } from "semantic-ui-react";
 import { FieldSet } from "../../styled/Form";
 import { formatLabel } from "../../services/utils/strings";
 import ItemSelect from "../../styled/Dropdown/ItemSelect";
+import { Row } from "../../styled/Layout/Layout";
 
 const baseFields = [
   "name",
@@ -17,6 +18,23 @@ const baseFields = [
   "abv",
 ];
 
+const NumberInput = ({ value, onChange, ...rest }) => {
+  const handleChange = (e) => {
+    const { value } = e.target;
+    onChange(parseFloat(value));
+  };
+
+  return (
+    <input
+      lang="en"
+      type="number"
+      step="any"
+      onChange={handleChange}
+      value={value || 0}
+      {...rest}
+    />
+  );
+};
 /**
  *
  * RecipeForm
@@ -24,12 +42,11 @@ const baseFields = [
  */
 const RecipeForm = ({ onSave, recipe = {} }) => {
   const { register, control, handleSubmit } = useForm();
-  const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
-    {
-      control,
-      name: "recipe",
-    }
-  );
+  const { fields, append } = useFieldArray({
+    control,
+    name: "recipe",
+  });
+
   return (
     <Form
       onSubmit={handleSubmit(onSave)}
@@ -119,28 +136,38 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
       </FieldSet>
 
       <FieldSet label="Grains">
-        <Form.Field width={6}>
-          {/*{fields.map((field, index) => {*/}
-          {/*  return <*/}
-          {/*})}*/}
-          <label>Name</label>
-          <Controller
-            name="item"
-            control={control}
-            render={({ onChange }) => (
-              <ItemSelect
-                type="GRAIN"
-                onChange={(_, { value }) => {
-                  onChange(value);
-                }}
-              />
-            )}
-          />
-        </Form.Field>
-        <Form.Field width={6}>
-          <label htmlFor="amount">Amount</label>
-          <input type="number" id="amount" ref={register} />
-        </Form.Field>
+        {fields.map((field, index) => {
+          return (
+            <Row key={`${field}-${index}`}>
+              <Form.Field width={6}>
+                <label>Name</label>
+                <Controller
+                  name={`recipe.ingredients[${index}].item`}
+                  control={control}
+                  render={({ onChange }) => (
+                    <ItemSelect
+                      type="GRAIN"
+                      onChange={(_, { value }) => {
+                        onChange(value);
+                      }}
+                    />
+                  )}
+                />
+              </Form.Field>
+              <Form.Field width={6}>
+                <label htmlFor="amount">Amount</label>
+                <Controller
+                  control={control}
+                  name={`recipe.ingredients[${index}].amount`}
+                  render={(props) => <NumberInput {...props} />}
+                />
+              </Form.Field>
+            </Row>
+          );
+        })}
+        <Button type="button" onClick={() => append({ item: "", amount: 0 })}>
+          Add row
+        </Button>
       </FieldSet>
       <Button primary>{recipe.id ? "Update" : "Add"}</Button>
     </Form>

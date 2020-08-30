@@ -30,6 +30,7 @@ const removeEmptyFields = (data) => {
     {}
   );
 };
+
 /**
  *
  * NewRecipe
