@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import styled from "@emotion/styled";
 import { useQuery } from "@apollo/react-hooks";
 import { useForm, useFieldArray } from "react-hook-form";
+import { css } from "@emotion/core";
+import { Form } from "semantic-ui-react";
 import { GET_RECIPE } from "./queries";
 import { LoaderScreen } from "../Loader";
 import { ErrorMessage } from "../../styled/Alerts";
-import { Form } from "semantic-ui-react";
 import { formatLabel } from "../../services/utils/strings";
+import { FieldSet } from "../../styled/Form";
 
 const baseFields = [
   "name",
@@ -45,12 +46,15 @@ const RecipeEdit = ({ match }) => {
   return (
     <>
       <h1>Edit Recipe</h1>
-      <Form>
-        <fieldset>
-          <legend>Basics</legend>
+      <Form
+        css={css`
+          max-width: 1400px !important;
+        `}
+      >
+        <FieldSet label="Basics">
           {baseFields.map((field) => {
             return (
-              <Form.Field key={field}>
+              <Form.Field key={field} width={6}>
                 <label htmlFor={field}>{formatLabel(field)}</label>
                 <input
                   id={field}
@@ -61,7 +65,52 @@ const RecipeEdit = ({ match }) => {
               </Form.Field>
             );
           })}
-        </fieldset>
+        </FieldSet>
+
+        <FieldSet label="Mash">
+          <Form.Field width={6}>
+            <label htmlFor="mashDuration">Mash duration (mins) </label>
+            <input
+              id="mashDuration"
+              name="recipe.mashDuration"
+              defaultValue={recipe.mashDuration}
+              ref={register}
+            />
+          </Form.Field>
+          <Form.Field width={6}>
+            <label htmlFor="mashTemp">Mash temperature (&deg;C)</label>
+            <input
+              id="mashTemp"
+              name="recipe.mashTemp"
+              defaultValue={recipe.mashTemp}
+              ref={register}
+            />
+          </Form.Field>
+        </FieldSet>
+        <FieldSet label="Fermentation">
+          <Form.Field width={6}>
+            <label htmlFor="fermentationDuration">
+              Fermentation duration (mins){" "}
+            </label>
+            <input
+              id="fermentationDuration"
+              name="recipe.fermentationDuration"
+              defaultValue={recipe.fermentationDuration}
+              ref={register}
+            />
+          </Form.Field>
+          <Form.Field width={6}>
+            <label htmlFor="fermentationTemp">
+              Fermentation temperature (&deg;C)
+            </label>
+            <input
+              id="fermentationTemp"
+              name="recipe.fermentationTemp"
+              defaultValue={recipe.fermentationTemp}
+              ref={register}
+            />
+          </Form.Field>
+        </FieldSet>
       </Form>
     </>
   );
