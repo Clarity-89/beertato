@@ -41,10 +41,12 @@ const NumberInput = ({ value, onChange, ...rest }) => {
  *
  */
 const RecipeForm = ({ onSave, recipe = {} }) => {
-  const { register, control, handleSubmit } = useForm();
+  const { register, control, handleSubmit } = useForm({
+    defaultValues: recipe,
+  });
   const { fields, append } = useFieldArray({
     control,
-    name: "recipe",
+    name: "ingredients",
   });
 
   return (
