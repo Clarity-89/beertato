@@ -7,6 +7,7 @@ import { FieldSet } from "../../styled/Form";
 import { formatLabel } from "../../services/utils/strings";
 import ItemSelect from "../../styled/Dropdown/ItemSelect";
 import { Row } from "../../styled/Layout/Layout";
+import { GRAIN, HOP } from "../../constants";
 
 const baseFields = [
   "name",
@@ -139,6 +140,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
 
       <FieldSet label="Grains">
         {fields.map((field, index) => {
+          if (field.type !== GRAIN) return null;
           return (
             <Row key={`${field}-${index}`}>
               <Form.Field width={6}>
@@ -148,7 +150,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                   control={control}
                   render={({ onChange }) => (
                     <ItemSelect
-                      type="GRAIN"
+                      type={GRAIN}
                       onChange={(_, { value }) => {
                         onChange(value);
                       }}
@@ -167,7 +169,49 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
             </Row>
           );
         })}
-        <Button type="button" onClick={() => append({ item: "", amount: 0 })}>
+        <Button
+          type="button"
+          onClick={() => append({ item: "", type: GRAIN, amount: 0 })}
+        >
+          Add row
+        </Button>
+      </FieldSet>
+
+      <FieldSet label="Hops">
+        {fields.map((field, index) => {
+          if (field.type !== HOP) return null;
+          return (
+            <Row key={`${field}-${index}`}>
+              <Form.Field width={6}>
+                <label>Name</label>
+                <Controller
+                  name={`recipe.ingredients[${index}].item`}
+                  control={control}
+                  render={({ onChange }) => (
+                    <ItemSelect
+                      type={HOP}
+                      onChange={(_, { value }) => {
+                        onChange(value);
+                      }}
+                    />
+                  )}
+                />
+              </Form.Field>
+              <Form.Field width={6}>
+                <label htmlFor="amount">Amount</label>
+                <Controller
+                  control={control}
+                  name={`recipe.ingredients[${index}].amount`}
+                  render={(props) => <NumberInput {...props} />}
+                />
+              </Form.Field>
+            </Row>
+          );
+        })}
+        <Button
+          type="button"
+          onClick={() => append({ item: "", type: HOP, amount: 0 })}
+        >
           Add row
         </Button>
       </FieldSet>
