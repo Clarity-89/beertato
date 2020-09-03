@@ -7,7 +7,7 @@ import { FieldSet } from "../../styled/Form";
 import { formatLabel } from "../../services/utils/strings";
 import ItemSelect from "../../styled/Dropdown/ItemSelect";
 import { Row } from "../../styled/Layout/Layout";
-import { GRAIN, HOP } from "../../constants";
+import { ADJUNCT, GRAIN, HOP, YEAST } from "../../constants";
 
 const baseFields = [
   "name",
@@ -18,6 +18,13 @@ const baseFields = [
   "finalGravity",
   "abv",
 ];
+
+const ingredientTypes = new Map([
+  [GRAIN, "Grains"],
+  [HOP, "Hops"],
+  [ADJUNCT, "Other"],
+  [YEAST, "Yeast"],
+]);
 
 const NumberInput = ({ value, onChange, ...rest }) => {
   const handleChange = (e) => {
@@ -138,87 +145,64 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
         </Form.Field>
       </FieldSet>
 
-      <FieldSet label="Grains">
-        {fields.map((field, index) => {
-          if (field?.item?.type !== GRAIN) return null;
-          return (
-            <Row key={`${field}-${index}`}>
-              <Form.Field width={6}>
-                <label>Name</label>
-                <Controller
-                  name={`recipe.ingredients[${index}].item`}
-                  control={control}
-                  render={({ onChange }) => (
-                    <ItemSelect
-                      type={GRAIN}
-                      defaultValue={field.item.id}
-                      onChange={(_, { value }) => {
-                        onChange(value);
-                      }}
+      {[...ingredientTypes].map(([ingredientType, label]) => {
+        const hasTiming = [ADJUNCT, HOP].includes(ingredientType);
+        return (
+          <FieldSet key={ingredientType} label={label}>
+            {fields.map((field, index) => {
+              if (field?.item?.type !== ingredientType) return null;
+              return (
+                <Row key={`${field}-${index}`}>
+                  <Form.Field width={hasTiming ? 5 : 6}>
+                    <label>Name</label>
+                    <Controller
+                      name={`recipe.ingredients[${index}].item`}
+                      control={control}
+                      render={({ onChange }) => (
+                        <ItemSelect
+                          type={ingredientType}
+                          defaultValue={field.item.id}
+                          onChange={(_, { value }) => {
+                            onChange(value);
+                          }}
+                        />
+                      )}
                     />
-                  )}
-                />
-              </Form.Field>
-              <Form.Field width={6}>
-                <label htmlFor="amount">Amount</label>
-                <Controller
-                  control={control}
-                  defaultValue={field.amount}
-                  name={`recipe.ingredients[${index}].amount`}
-                  render={(props) => <NumberInput {...props} />}
-                />
-              </Form.Field>
-            </Row>
-          );
-        })}
-        <Button
-          type="button"
-          onClick={() => append({ item: { type: GRAIN }, amount: 0 })}
-        >
-          Add row
-        </Button>
-      </FieldSet>
-
-      <FieldSet label="Hops">
-        {fields.map((field, index) => {
-          if (field?.item?.type !== HOP) return null;
-          return (
-            <Row key={`${field}-${index}`}>
-              <Form.Field width={6}>
-                <label>Name</label>
-                <Controller
-                  name={`recipe.ingredients[${index}].item`}
-                  control={control}
-                  render={({ onChange }) => (
-                    <ItemSelect
-                      defaultValue={field.item.id}
-                      type={HOP}
-                      onChange={(_, { value }) => {
-                        onChange(value);
-                      }}
+                  </Form.Field>
+                  <Form.Field width={hasTiming ? 5 : 6}>
+                    <label htmlFor="amount">Amount</label>
+                    <Controller
+                      control={control}
+                      defaultValue={field.amount}
+                      name={`recipe.ingredients[${index}].amount`}
+                      render={(props) => <NumberInput {...props} />}
                     />
+                  </Form.Field>
+                  {hasTiming && (
+                    <Form.Field width={5}>
+                      <label htmlFor="amount">Timing (minutes)</label>
+                      <Controller
+                        control={control}
+                        defaultValue={field.timing}
+                        name={`recipe.ingredients[${index}].timing`}
+                        render={(props) => <NumberInput {...props} />}
+                      />
+                    </Form.Field>
                   )}
-                />
-              </Form.Field>
-              <Form.Field width={6}>
-                <label htmlFor="amount">Amount</label>
-                <Controller
-                  control={control}
-                  defaultValue={field.amount}
-                  name={`recipe.ingredients[${index}].amount`}
-                  render={(props) => <NumberInput {...props} />}
-                />
-              </Form.Field>
-            </Row>
-          );
-        })}
-        <Button
-          type="button"
-          onClick={() => append({ item: { type: HOP }, amount: 0 })}
-        >
-          Add row
-        </Button>
-      </FieldSet>
+                </Row>
+              );
+            })}
+            <Button
+              type="button"
+              onClick={() =>
+                append({ item: { type: ingredientType }, amount: 0 })
+              }
+            >
+              Add row
+            </Button>
+          </FieldSet>
+        );
+      })}
       <Button primary>{recipe.id ? "Update" : "Add"}</Button>
     </Form>
   );
