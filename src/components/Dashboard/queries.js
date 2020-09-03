@@ -69,48 +69,54 @@ export const DELETE_INVENTORY = gql`
   }
 `;
 
-export const GET_RECIPE = gql`
-  query Recipe($id: ID!) {
-    recipe(id: $id) {
+export const RECIPE_FIELDS = gql`
+  fragment RecipeFields on Recipe {
+    id
+    name
+    abv
+    attenuation
+    boilVolume
+    brewDate
+    description
+    ebc
+    fermentationDuration
+    fermentationTemp
+    finalGravity
+    ibu
+    mashDuration
+    mashTemp
+    notes
+    originalGravity
+    originalGravity
+    ph
+    srm
+    volume
+    ingredients {
       id
-      name
-      abv
-      attenuation
-      boilVolume
-      brewDate
-      description
-      ebc
-      fermentationDuration
-      fermentationTemp
-      finalGravity
-      ibu
-      mashDuration
-      mashTemp
-      notes
-      originalGravity
-      originalGravity
-      ph
-      srm
-      volume
-      ingredients {
+      amount
+      timing
+      item {
         id
-        amount
-        timing
-        item {
+        name
+        data
+        type
+        image
+        description
+        origin {
           id
           name
-          data
-          type
-          image
-          description
-          origin {
-            id
-            name
-          }
         }
       }
     }
   }
+`;
+export const GET_RECIPE = gql`
+  query Recipe($id: ID!) {
+    recipe(id: $id) {
+      ...RecipeFields
+    }
+  }
+  ${RECIPE_FIELDS}
 `;
 
 export const GET_RECIPES = gql`

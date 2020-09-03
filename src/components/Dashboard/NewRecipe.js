@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 import { Loader } from "semantic-ui-react";
 import { GET_RECIPES } from "./queries";
 import { RecipeForm } from "./index";
+import { removeEmptyFields } from "../../services/utils/form";
 
 const ADD_RECIPE = gql`
   mutation AddRecipe($input: RecipeInput!) {
@@ -19,18 +20,6 @@ const ADD_RECIPE = gql`
   }
 `;
 
-/** Do not send empty form fields to backend
- *
- * @param data
- * @return {any}
- */
-const removeEmptyFields = (data) => {
-  return Object.entries(data).reduce(
-    (acc, [key, val]) => (val ? { ...acc, [key]: val } : acc),
-    {}
-  );
-};
-
 /**
  *
  * NewRecipe
@@ -39,6 +28,7 @@ const removeEmptyFields = (data) => {
 const NewRecipe = () => {
   const [addRecipe, { loading, error }] = useMutation(ADD_RECIPE);
   const [redirect, setRedirect] = useState(false);
+
   const onSave = async ({ recipe }) => {
     await addRecipe({
       variables: { input: removeEmptyFields(recipe) },

@@ -158,10 +158,11 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                     <Controller
                       name={`recipe.ingredients[${index}].item`}
                       control={control}
+                      defaultValue={field.item.id}
                       render={({ onChange }) => (
                         <ItemSelect
-                          type={ingredientType}
                           defaultValue={field.item.id}
+                          type={ingredientType}
                           onChange={(_, { value }) => {
                             onChange(value);
                           }}
