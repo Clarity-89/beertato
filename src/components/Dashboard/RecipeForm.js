@@ -140,7 +140,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
 
       <FieldSet label="Grains">
         {fields.map((field, index) => {
-          if (field.type !== GRAIN) return null;
+          if (field?.item?.type !== GRAIN) return null;
           return (
             <Row key={`${field}-${index}`}>
               <Form.Field width={6}>
@@ -151,6 +151,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                   render={({ onChange }) => (
                     <ItemSelect
                       type={GRAIN}
+                      defaultValue={field.item.id}
                       onChange={(_, { value }) => {
                         onChange(value);
                       }}
@@ -162,6 +163,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                 <label htmlFor="amount">Amount</label>
                 <Controller
                   control={control}
+                  defaultValue={field.amount}
                   name={`recipe.ingredients[${index}].amount`}
                   render={(props) => <NumberInput {...props} />}
                 />
@@ -171,7 +173,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
         })}
         <Button
           type="button"
-          onClick={() => append({ item: "", type: GRAIN, amount: 0 })}
+          onClick={() => append({ item: { type: GRAIN }, amount: 0 })}
         >
           Add row
         </Button>
@@ -179,7 +181,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
 
       <FieldSet label="Hops">
         {fields.map((field, index) => {
-          if (field.type !== HOP) return null;
+          if (field?.item?.type !== HOP) return null;
           return (
             <Row key={`${field}-${index}`}>
               <Form.Field width={6}>
@@ -189,6 +191,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                   control={control}
                   render={({ onChange }) => (
                     <ItemSelect
+                      defaultValue={field.item.id}
                       type={HOP}
                       onChange={(_, { value }) => {
                         onChange(value);
@@ -201,6 +204,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                 <label htmlFor="amount">Amount</label>
                 <Controller
                   control={control}
+                  defaultValue={field.amount}
                   name={`recipe.ingredients[${index}].amount`}
                   render={(props) => <NumberInput {...props} />}
                 />
@@ -210,7 +214,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
         })}
         <Button
           type="button"
-          onClick={() => append({ item: "", type: HOP, amount: 0 })}
+          onClick={() => append({ item: { type: HOP }, amount: 0 })}
         >
           Add row
         </Button>

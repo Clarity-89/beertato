@@ -9,7 +9,7 @@ import { Dropdown } from "semantic-ui-react";
  * ItemSelect
  *
  */
-const ItemSelect = ({ type, onChange }) => {
+const ItemSelect = ({ type, onChange, defaultValue }) => {
   const { data = { items: [] }, loading } = useQuery(GET_ITEMS);
 
   let items = useMemo(() => {
@@ -33,6 +33,7 @@ const ItemSelect = ({ type, onChange }) => {
       selection
       options={items}
       onChange={onChange}
+      defaultValue={defaultValue}
     />
   );
 };
@@ -40,6 +41,11 @@ const ItemSelect = ({ type, onChange }) => {
 ItemSelect.propTypes = {
   type: PropTypes.string,
   onChange: PropTypes.func,
+  defaultValue: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.bool,
+  ]),
 };
 
 export default ItemSelect;
