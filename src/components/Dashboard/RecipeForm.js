@@ -190,11 +190,10 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                       />
                     </Form.Field>
                   )}
-                  <Form.Field width={2}>
-                    <Button type="button" onClick={() => remove(index)}>
-                      Delete
-                    </Button>
-                  </Form.Field>
+
+                  <Button type="button" onClick={() => remove(index)}>
+                    Delete
+                  </Button>
                 </Row>
               );
             })}
