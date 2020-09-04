@@ -110,6 +110,7 @@ export const RECIPE_FIELDS = gql`
     }
   }
 `;
+
 export const GET_RECIPE = gql`
   query Recipe($id: ID!) {
     recipe(id: $id) {

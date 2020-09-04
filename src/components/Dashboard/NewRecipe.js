@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 import { Loader } from "semantic-ui-react";
 import { GET_RECIPES } from "./queries";
 import { RecipeForm } from "./index";
-import { removeEmptyFields } from "../../services/utils/form";
+import { processFormData } from "../../services/utils/form";
 
 const ADD_RECIPE = gql`
   mutation AddRecipe($input: RecipeInput!) {
@@ -29,9 +29,10 @@ const NewRecipe = () => {
   const [addRecipe, { loading, error }] = useMutation(ADD_RECIPE);
   const [redirect, setRedirect] = useState(false);
 
-  const onSave = async ({ recipe }) => {
+  const onSave = async (formData) => {
+    const input = processFormData(formData);
     await addRecipe({
-      variables: { input: removeEmptyFields(recipe) },
+      variables: { input },
       update: (proxy, { data: { addRecipe } }) => {
         const data = proxy.readQuery({ query: GET_RECIPES });
         proxy.writeQuery({

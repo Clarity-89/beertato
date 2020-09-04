@@ -52,7 +52,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
   const { register, control, handleSubmit } = useForm({
     defaultValues: recipe,
   });
-  const { fields, append } = useFieldArray({
+  const { fields, append, remove } = useFieldArray({
     control,
     name: "ingredients",
   });
@@ -156,7 +156,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                   <Form.Field width={hasTiming ? 5 : 6}>
                     <label>Name</label>
                     <Controller
-                      name={`recipe.ingredients[${index}].item`}
+                      name={`ingredients[${index}].item`}
                       control={control}
                       defaultValue={field.item.id}
                       render={({ onChange }) => (
@@ -175,7 +175,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                     <Controller
                       control={control}
                       defaultValue={field.amount}
-                      name={`recipe.ingredients[${index}].amount`}
+                      name={`ingredients[${index}].amount`}
                       render={(props) => <NumberInput {...props} />}
                     />
                   </Form.Field>
@@ -185,11 +185,16 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                       <Controller
                         control={control}
                         defaultValue={field.timing}
-                        name={`recipe.ingredients[${index}].timing`}
+                        name={`ingredients[${index}].timing`}
                         render={(props) => <NumberInput {...props} />}
                       />
                     </Form.Field>
                   )}
+                  <Form.Field width={2}>
+                    <Button type="button" onClick={() => remove(index)}>
+                      Delete
+                    </Button>
+                  </Form.Field>
                 </Row>
               );
             })}

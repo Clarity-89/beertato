@@ -6,7 +6,7 @@ import { LoaderScreen } from "../Loader";
 import { ErrorMessage } from "../../styled/Alerts";
 import { RecipeForm } from "./index";
 import gql from "graphql-tag/src";
-import { removeEmptyFields } from "../../services/utils/form";
+import { processFormData } from "../../services/utils/form";
 
 const UPDATE_RECIPE = gql`
   mutation UpdateRecipe($id: ID!, $input: RecipeInput!) {
@@ -37,9 +37,10 @@ const RecipeEdit = ({ match }) => {
 
   if (error || updateError) return <ErrorMessage />;
 
-  const onUpdate = async ({ recipe }) => {
+  const onUpdate = async (formData) => {
+    const input = processFormData(formData);
     await updateRecipe({
-      variables: { id, input: removeEmptyFields(recipe) },
+      variables: { id, input },
       update: (proxy, { data: { updateRecipe } }) => {
         const data = proxy.readQuery({ query: GET_RECIPE, variables: { id } });
         proxy.writeQuery({

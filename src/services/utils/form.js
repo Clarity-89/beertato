@@ -9,3 +9,13 @@ export const removeEmptyFields = (data) => {
     {}
   );
 };
+
+export const processFormData = ({ recipe, ingredients = [] }) => {
+  const recipeData = removeEmptyFields(recipe);
+  const ingredientData = ingredients.map((ingredient) => ({
+    ...ingredient,
+    item: ingredient?.item?.id || ingredient.item,
+  }));
+
+  return { ...recipeData, ingredients: ingredientData };
+};
