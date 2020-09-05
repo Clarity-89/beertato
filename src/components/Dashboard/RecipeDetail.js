@@ -16,6 +16,21 @@ const basicsFields = [
   "originalGravity",
   "finalGravity",
 ];
+
+const methodFields = [
+  "mashTemp",
+  "mashDuration",
+  "boilDuration",
+  "fermentationTemp",
+  "fermentationDuration",
+];
+
+const groupIngredients = (ingredients) => {
+  return ingredients.reduce((acc, curr) => {
+    const { type } = curr.item;
+    return { ...acc, [type]: acc[type] ? [...acc[type], curr] : [curr] };
+  }, {});
+};
 /**
  *
  * RecipeDetail
@@ -33,6 +48,7 @@ const RecipeDetail = ({ match }) => {
   if (error) return <ErrorMessage />;
 
   const { recipe } = data;
+
   return (
     <div>
       <PageHeader>
@@ -47,12 +63,46 @@ const RecipeDetail = ({ match }) => {
           <List>
             {basicsFields.map((field) => {
               return (
-                <li key={field}>
+                <ListItem key={field}>
                   <div>{formatLabel(field)}</div>
                   <div>{recipe[field]}</div>
-                </li>
+                </ListItem>
               );
             })}
+          </List>
+        </Section>
+        <Section heading="Method">
+          <List>
+            {methodFields.map((field) => {
+              return (
+                <ListItem key={field}>
+                  <div>{formatLabel(field)}</div>
+                  <div>{recipe[field]}</div>
+                </ListItem>
+              );
+            })}
+          </List>
+        </Section>
+
+        <Section heading="Ingredients">
+          <List>
+            {Object.entries(groupIngredients(recipe.ingredients)).map(
+              ([type, ingredients]) => {
+                return (
+                  <List key={type}>
+                    <TypeLabel>{type}</TypeLabel>
+                    {ingredients.map((ingredient) => {
+                      return (
+                        <ListItem key={ingredient.id}>
+                          <div>{formatLabel(ingredient?.item?.name)}</div>
+                          <div>{ingredient.amount}</div>
+                        </ListItem>
+                      );
+                    })}
+                  </List>
+                );
+              }
+            )}
           </List>
         </Section>
       </div>
@@ -75,12 +125,29 @@ const Heading = styled.h2`
   border-bottom: 2px solid black;
 `;
 
+const ListItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid;
+`;
+
+const TypeLabel = styled.p`
+  font-weight: bold;
+  padding-top: 10px;
+`;
+
 const Section = ({ children, heading }) => {
   return (
-    <div>
+    <SectionContainer>
       <Heading>{heading}</Heading>
       {children}
-    </div>
+    </SectionContainer>
   );
 };
+
+const SectionContainer = styled.div`
+  width: 50%;
+  margin: 20px 0;
+`;
 export default RecipeDetail;
