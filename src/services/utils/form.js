@@ -10,7 +10,7 @@ export const removeEmptyFields = (data) => {
   );
 };
 
-export const processFormData = ({ recipe, ingredients = [] }) => {
+export const processFormData = ({ ingredients = [], ...recipe }) => {
   const recipeData = removeEmptyFields(recipe);
   const ingredientData = ingredients.map((ingredient) => ({
     ...ingredient,

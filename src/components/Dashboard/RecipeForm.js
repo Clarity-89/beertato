@@ -8,6 +8,7 @@ import { formatLabel } from "../../services/utils/strings";
 import ItemSelect from "../../styled/Dropdown/ItemSelect";
 import { Row } from "../../styled/Layout/Layout";
 import { ADJUNCT, GRAIN, HOP, YEAST } from "../../constants";
+import { FormFieldError } from "../../styled/Alerts";
 
 const baseFields = [
   "name",
@@ -49,7 +50,7 @@ const NumberInput = ({ value, onChange, ...rest }) => {
  *
  */
 const RecipeForm = ({ onSave, recipe = {} }) => {
-  const { register, control, handleSubmit } = useForm({
+  const { register, control, handleSubmit, errors } = useForm({
     defaultValues: recipe,
   });
   const { fields, append, remove } = useFieldArray({
@@ -67,14 +68,19 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
       <FieldSet label="Basics">
         {baseFields.map((field) => {
           return (
-            <Form.Field key={field} width={6}>
+            <Form.Field key={field} width={6} error={!!errors[field]}>
               <label htmlFor={field}>{formatLabel(field)}</label>
               <input
                 id={field}
-                name={`recipe.${field}`}
+                name={`${field}`}
                 defaultValue={recipe[field]}
-                ref={register}
+                ref={register({
+                  required: field === "name" && `${field} is required`,
+                })}
               />
+              {errors[field] && (
+                <FormFieldError>{errors[field]?.message}</FormFieldError>
+              )}
             </Form.Field>
           );
         })}
@@ -85,7 +91,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
           <label htmlFor="mashDuration">Mash duration (mins)</label>
           <input
             id="mashDuration"
-            name="recipe.mashDuration"
+            name="mashDuration"
             defaultValue={recipe.mashDuration}
             ref={register}
           />
@@ -94,7 +100,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
           <label htmlFor="mashTemp">Mash temperature (&deg;C)</label>
           <input
             id="mashTemp"
-            name="recipe.mashTemp"
+            name="mashTemp"
             defaultValue={recipe.mashTemp}
             ref={register}
           />
@@ -105,7 +111,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
           <label htmlFor="boilVolume">Boil volume</label>
           <input
             id="boilVolume"
-            name="recipe.boilVolume"
+            name="boilVolume"
             defaultValue={recipe.boilVolume}
             ref={register}
           />
@@ -114,7 +120,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
           <label htmlFor="boilDuration">Boil duration (mins)</label>
           <input
             id="boilDuration"
-            name="recipe.boilDuration"
+            name="boilDuration"
             defaultValue={recipe.boilDuration}
             ref={register}
           />
@@ -127,7 +133,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
           </label>
           <input
             id="fermentationDuration"
-            name="recipe.fermentationDuration"
+            name="fermentationDuration"
             defaultValue={recipe.fermentationDuration}
             ref={register}
           />
@@ -138,7 +144,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
           </label>
           <input
             id="fermentationTemp"
-            name="recipe.fermentationTemp"
+            name="fermentationTemp"
             defaultValue={recipe.fermentationTemp}
             ref={register}
           />
@@ -153,11 +159,15 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
               if (field?.item?.type !== ingredientType) return null;
               return (
                 <Row key={`${field}-${index}`}>
-                  <Form.Field width={hasTiming ? 5 : 6}>
+                  <Form.Field
+                    width={hasTiming ? 4 : 6}
+                    error={!!errors?.ingredients?.[index]?.item}
+                  >
                     <label>Name</label>
                     <Controller
                       name={`ingredients[${index}].item`}
                       control={control}
+                      rules={{ required: "Ingredient name is required" }}
                       defaultValue={field.item.id}
                       render={({ onChange }) => (
                         <ItemSelect
@@ -169,8 +179,13 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                         />
                       )}
                     />
+                    {!!errors?.ingredients?.[index]?.item && (
+                      <FormFieldError>
+                        {errors?.ingredients?.[index]?.item.message}
+                      </FormFieldError>
+                    )}
                   </Form.Field>
-                  <Form.Field width={hasTiming ? 5 : 6}>
+                  <Form.Field width={hasTiming ? 4 : 6}>
                     <label htmlFor="amount">Amount</label>
                     <Controller
                       control={control}
@@ -180,7 +195,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                     />
                   </Form.Field>
                   {hasTiming && (
-                    <Form.Field width={5}>
+                    <Form.Field width={4}>
                       <label htmlFor="amount">Timing (minutes)</label>
                       <Controller
                         control={control}
