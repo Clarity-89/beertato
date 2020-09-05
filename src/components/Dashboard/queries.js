@@ -76,6 +76,7 @@ export const RECIPE_FIELDS = gql`
     abv
     attenuation
     boilVolume
+    boilDuration
     brewDate
     description
     ebc
@@ -91,6 +92,11 @@ export const RECIPE_FIELDS = gql`
     ph
     srm
     volume
+    beerStyle {
+      id
+      name
+      category
+    }
     ingredients {
       id
       amount

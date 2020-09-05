@@ -41,6 +41,7 @@ input RecipeInput {
   name: String!
   volume: Int
   boilVolume: Int
+  boilDuration: Int
   abv: Float
   originalGravity: Float
   finalGravity: Float
@@ -56,6 +57,7 @@ input RecipeInput {
   fermentationTemp: Int
   fermentationDuration: Int
   brewDate: String
+  beerStyle: ID
   ingredients: [IngredientInput]
 }
 

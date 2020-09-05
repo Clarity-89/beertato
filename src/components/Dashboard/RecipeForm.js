@@ -9,17 +9,12 @@ import ItemSelect from "../../styled/Dropdown/ItemSelect";
 import { Row } from "../../styled/Layout/Layout";
 import { ADJUNCT, GRAIN, HOP, YEAST } from "../../constants";
 import { FormFieldError } from "../../styled/Alerts";
+import { NumberInput } from "../../styled/Form";
 
-const baseFields = [
-  "name",
-  "description",
-  "brewDate",
-  "volume",
-  "originalGravity",
-  "finalGravity",
-  "abv",
-];
+const textFields = ["name", "description", "brewDate"];
+const numberFields = ["volume", "originalGravity", "finalGravity", "abv"];
 
+const baseFields = [...textFields, ...numberFields];
 const ingredientTypes = new Map([
   [GRAIN, "Grains"],
   [HOP, "Hops"],
@@ -27,23 +22,6 @@ const ingredientTypes = new Map([
   [YEAST, "Yeast"],
 ]);
 
-const NumberInput = ({ value, onChange, ...rest }) => {
-  const handleChange = (e) => {
-    const { value } = e.target;
-    onChange(parseFloat(value));
-  };
-
-  return (
-    <input
-      lang="en"
-      type="number"
-      step="any"
-      onChange={handleChange}
-      value={value || 0}
-      {...rest}
-    />
-  );
-};
 /**
  *
  * RecipeForm
@@ -70,14 +48,23 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
           return (
             <Form.Field key={field} width={6} error={!!errors[field]}>
               <label htmlFor={field}>{formatLabel(field)}</label>
-              <input
-                id={field}
-                name={`${field}`}
-                defaultValue={recipe[field]}
-                ref={register({
-                  required: field === "name" && `${field} is required`,
-                })}
-              />
+              {numberFields.includes(field) ? (
+                <Controller
+                  control={control}
+                  defaultValue={recipe[field]}
+                  name={field}
+                  render={(props) => <NumberInput id={field} {...props} />}
+                />
+              ) : (
+                <input
+                  id={field}
+                  name={field}
+                  defaultValue={recipe[field]}
+                  ref={register({
+                    required: field === "name" && `${field} is required`,
+                  })}
+                />
+              )}
               {errors[field] && (
                 <FormFieldError>{errors[field]?.message}</FormFieldError>
               )}
@@ -88,41 +75,41 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
 
       <FieldSet label="Mash">
         <Form.Field width={6}>
-          <label htmlFor="mashDuration">Mash duration (mins)</label>
-          <input
-            id="mashDuration"
-            name="mashDuration"
+          <label htmlFor="mashDuration">Mash duration (minutes)</label>
+          <Controller
+            control={control}
             defaultValue={recipe.mashDuration}
-            ref={register}
+            name="mashDuration"
+            render={(props) => <NumberInput id="mashDuration" {...props} />}
           />
         </Form.Field>
         <Form.Field width={6}>
           <label htmlFor="mashTemp">Mash temperature (&deg;C)</label>
-          <input
-            id="mashTemp"
-            name="mashTemp"
+          <Controller
+            control={control}
             defaultValue={recipe.mashTemp}
-            ref={register}
+            name="mashTemp"
+            render={(props) => <NumberInput id="mashTemp" {...props} />}
           />
         </Form.Field>
       </FieldSet>
       <FieldSet label="Boil">
         <Form.Field width={6}>
-          <label htmlFor="boilVolume">Boil volume</label>
-          <input
-            id="boilVolume"
-            name="boilVolume"
+          <label htmlFor="boilVolume">Boil volume (L)</label>
+          <Controller
+            control={control}
             defaultValue={recipe.boilVolume}
-            ref={register}
+            name="boilVolume"
+            render={(props) => <NumberInput id="boilVolume" {...props} />}
           />
         </Form.Field>
         <Form.Field width={6}>
-          <label htmlFor="boilDuration">Boil duration (mins)</label>
-          <input
-            id="boilDuration"
-            name="boilDuration"
+          <label htmlFor="boilDuration">Boil duration (minutes)</label>
+          <Controller
+            control={control}
             defaultValue={recipe.boilDuration}
-            ref={register}
+            name="boilDuration"
+            render={(props) => <NumberInput id="boilDuration" {...props} />}
           />
         </Form.Field>
       </FieldSet>
@@ -131,22 +118,24 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
           <label htmlFor="fermentationDuration">
             Fermentation duration (days)
           </label>
-          <input
-            id="fermentationDuration"
-            name="fermentationDuration"
+          <Controller
+            control={control}
             defaultValue={recipe.fermentationDuration}
-            ref={register}
+            name="fermentationDuration"
+            render={(props) => (
+              <NumberInput id="fermentationDuration" {...props} />
+            )}
           />
         </Form.Field>
         <Form.Field width={6}>
           <label htmlFor="fermentationTemp">
             Fermentation temperature (&deg;C)
           </label>
-          <input
-            id="fermentationTemp"
-            name="fermentationTemp"
+          <Controller
+            control={control}
             defaultValue={recipe.fermentationTemp}
-            ref={register}
+            name="fermentationTemp"
+            render={(props) => <NumberInput id="fermentationTemp" {...props} />}
           />
         </Form.Field>
       </FieldSet>
