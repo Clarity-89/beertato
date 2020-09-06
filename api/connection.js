@@ -1,5 +1,9 @@
 const knex = require("knex");
 const connection = require("./knexfile").development;
+const types = require("pg").types;
+
+// override parsing date column to Date()
+types.setTypeParser(1082, (val) => val);
 
 const toSnakeCase = (value) => {
   if (value === "*") return value;
