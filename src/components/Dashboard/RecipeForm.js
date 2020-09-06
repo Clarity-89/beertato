@@ -227,8 +227,13 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
         );
       })}
       <Button primary>{recipe.id ? "Update" : "Add"}</Button>
-      <Button type="button" secondary>
-        <Link to={"/dashboard/recipes"}>Cancel</Link>
+      {recipe.id && (
+        <Button as={Link} to={`/dashboard/recipes/${recipe.id}`}>
+          View
+        </Button>
+      )}
+      <Button type="button" secondary as={Link} to={"/dashboard/recipes"}>
+        Cancel
       </Button>
     </Form>
   );
