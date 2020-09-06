@@ -82,6 +82,14 @@ export const InventoryTable = ({ items, type, updateItem, deleteItem }) => {
                       setIsConfirmOpen(false);
                     }}
                   />
+                  <Confirm
+                    open={isConfirmOpen}
+                    onCancel={() => setIsConfirmOpen(false)}
+                    onConfirm={() => {
+                      deleteItem(id);
+                      setIsConfirmOpen(false);
+                    }}
+                  />
                 </Table.Cell>
               </Table.Row>
             ))}

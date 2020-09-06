@@ -13,6 +13,7 @@ const toSnakeCase = (value) => {
 };
 
 const toCamelCase = (row) => {
+  if (typeof row !== "object" || row === null) return row;
   return Object.entries(row).reduce((acc, [key, value]) => {
     return {
       ...acc,
