@@ -7,7 +7,7 @@ import { FieldSet } from "../../styled/Form";
 import { formatLabel } from "../../services/utils/strings";
 import ItemSelect from "../../styled/Dropdown/ItemSelect";
 import { Row } from "../../styled/Layout/Layout";
-import { ADJUNCT, GRAIN, HOP, YEAST } from "../../constants";
+import { ADJUNCT, HOP, ingredientTypes } from "../../constants";
 import { FormFieldError } from "../../styled/Alerts";
 import { NumberInput } from "../../styled/Form";
 
@@ -15,12 +15,6 @@ const textFields = ["name", "description", "brewDate"];
 const numberFields = ["volume", "originalGravity", "finalGravity", "abv"];
 
 const baseFields = [...textFields, ...numberFields];
-const ingredientTypes = new Map([
-  [GRAIN, "Grains"],
-  [HOP, "Hops"],
-  [ADJUNCT, "Other"],
-  [YEAST, "Yeast"],
-]);
 
 /**
  *

@@ -8,6 +8,7 @@ import { ErrorMessage } from "../../styled/Alerts";
 import { GET_RECIPE } from "./queries";
 import { formatLabel } from "../../services/utils/strings";
 import { List } from "../../styled/List";
+import { ingredientTypes } from "../../constants";
 
 const basicsFields = [
   "volume",
@@ -90,7 +91,7 @@ const RecipeDetail = ({ match }) => {
               ([type, ingredients]) => {
                 return (
                   <List key={type}>
-                    <TypeLabel>{type}</TypeLabel>
+                    <TypeLabel>{ingredientTypes.get(type)}</TypeLabel>
                     {ingredients.map((ingredient) => {
                       return (
                         <ListItem key={ingredient.id}>
