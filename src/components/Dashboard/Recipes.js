@@ -4,9 +4,9 @@ import { useMutation, useQuery } from "@apollo/react-hooks";
 import { Button, Confirm, Table } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import gql from "graphql-tag";
-import styled from "@emotion/styled";
 import { LoaderScreen } from "../Loader";
 import { ErrorMessage } from "../../styled/Alerts";
+import { PageHeader } from "../../styled/Layout/Layout";
 import { GET_RECIPES } from "./queries";
 
 const headers = ["Name", "Date", "Volume", "ABV", "IBU", ""];
@@ -50,12 +50,12 @@ const Recipes = ({ match }) => {
 
   return (
     <>
-      <Header>
+      <PageHeader>
         <h1>Recipes</h1>
         <Button as={Link} primary to={`${match.url}/new`}>
           Add recipe
         </Button>
-      </Header>
+      </PageHeader>
       <Table celled padded>
         <Table.Header>
           <Table.Row>
@@ -131,11 +131,5 @@ const Recipes = ({ match }) => {
 Recipes.propTypes = {
   match: PropTypes.object,
 };
-
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
 
 export default Recipes;

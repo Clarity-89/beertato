@@ -3,11 +3,13 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 import { useQuery } from "@apollo/react-hooks";
+import { Button } from "semantic-ui-react";
 import { LoaderScreen } from "../Loader";
 import { ErrorMessage } from "../../styled/Alerts";
+import { PageHeader } from "../../styled/Layout/Layout";
+import { List } from "../../styled/List";
 import { GET_RECIPE } from "./queries";
 import { formatLabel } from "../../services/utils/strings";
-import { List } from "../../styled/List";
 import { ingredientTypes } from "../../constants";
 
 const basicsFields = [
@@ -54,11 +56,15 @@ const RecipeDetail = ({ match }) => {
     <div>
       <PageHeader>
         <h1>{recipe.name}</h1>
-        <Link to={`${match.url}/edit`}>Edit</Link>
+        <Button as={Link} to={`${match.url}/edit`}>
+          Edit
+        </Button>
       </PageHeader>
       <div>
         {recipe.description && (
-          <Section heading="Description">{recipe.description}</Section>
+          <Section heading="Description">
+            <p>{recipe.description}</p>
+          </Section>
         )}
         <Section heading="Basics">
           <List>
@@ -114,11 +120,6 @@ const RecipeDetail = ({ match }) => {
 RecipeDetail.propTypes = {
   match: PropTypes.object,
 };
-
-const PageHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
 
 const Heading = styled.h2`
   text-transform: uppercase;
