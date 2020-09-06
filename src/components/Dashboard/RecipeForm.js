@@ -10,9 +10,10 @@ import { Row } from "../../styled/Layout/Layout";
 import { ADJUNCT, HOP, ingredientTypes } from "../../constants";
 import { FormFieldError } from "../../styled/Alerts";
 import { NumberInput } from "../../styled/Form";
+import { getAbv } from "../../services/utils/calculations";
 
 const textFields = ["name", "description", "brewDate"];
-const numberFields = ["volume", "originalGravity", "finalGravity", "abv"];
+const numberFields = ["volume", "originalGravity", "finalGravity"];
 
 const baseFields = [...textFields, ...numberFields];
 
@@ -22,13 +23,16 @@ const baseFields = [...textFields, ...numberFields];
  *
  */
 const RecipeForm = ({ onSave, recipe = {} }) => {
-  const { register, control, handleSubmit, errors } = useForm({
+  const { register, watch, control, handleSubmit, errors, setValue } = useForm({
     defaultValues: recipe,
   });
   const { fields, append, remove } = useFieldArray({
     control,
     name: "ingredients",
   });
+
+  const watchOG = watch("originalGravity", recipe.originalGravity);
+  const watchFG = watch("finalGravity", recipe.finalGravity);
 
   return (
     <Form
@@ -65,6 +69,20 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
             </Form.Field>
           );
         })}
+        <Form.Field width={6}>
+          <label>ABV</label>
+          <Controller
+            control={control}
+            name="abv"
+            render={(props) => <NumberInput id="abv" {...props} />}
+          />
+          <Button
+            type="button"
+            onClick={() => setValue("abv", getAbv(watchOG, watchFG))}
+          >
+            Calculate
+          </Button>
+        </Form.Field>
       </FieldSet>
 
       <FieldSet label="Mash">
