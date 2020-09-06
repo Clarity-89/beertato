@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { css } from "@emotion/core";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
 import { Button, Form } from "semantic-ui-react";
+import moment from "moment";
 import { FieldSet } from "../../styled/Form";
 import { formatLabel } from "../../services/utils/strings";
 import ItemSelect from "../../styled/Dropdown/ItemSelect";
@@ -24,7 +25,10 @@ const baseFields = [...textFields, ...numberFields];
  */
 const RecipeForm = ({ onSave, recipe = {} }) => {
   const { register, watch, control, handleSubmit, errors, setValue } = useForm({
-    defaultValues: recipe,
+    defaultValues: {
+      ...recipe,
+      brewDate: moment(Number(recipe.brewDate)).format("YYYY-MM-DD"),
+    },
   });
   const { fields, append, remove } = useFieldArray({
     control,
@@ -55,6 +59,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                 />
               ) : (
                 <input
+                  type={field === "brewDate" ? "date" : "text"}
                   id={field}
                   name={field}
                   defaultValue={recipe[field]}
