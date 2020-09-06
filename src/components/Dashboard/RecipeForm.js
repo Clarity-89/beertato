@@ -11,7 +11,7 @@ import { Row } from "../../styled/Layout/Layout";
 import { ADJUNCT, HOP, ingredientTypes } from "../../constants";
 import { FormFieldError } from "../../styled/Alerts";
 import { NumberInput } from "../../styled/Form";
-import { getAbv } from "../../services/utils/calculations";
+import { getAbv, getIBU } from "../../services/utils/calculations";
 
 const textFields = ["name", "description", "brewDate"];
 const numberFields = ["volume", "originalGravity", "finalGravity"];
@@ -34,6 +34,9 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
 
   const watchOG = watch("originalGravity", recipe.originalGravity);
   const watchFG = watch("finalGravity", recipe.finalGravity);
+  const watchIngredients = watch("ingredients", recipe.ingredients);
+  const watchVolume = watch("volume", recipe.volume);
+  const watchBoilDuration = watch("boilDuration", recipe.boilDuration);
 
   return (
     <Form
@@ -81,6 +84,30 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
           <Button
             type="button"
             onClick={() => setValue("abv", getAbv(watchOG, watchFG))}
+          >
+            Calculate
+          </Button>
+        </Form.Field>
+        <Form.Field width={6}>
+          <label>IBU</label>
+          <Controller
+            control={control}
+            name="ibu"
+            render={(props) => <NumberInput id="ibu" {...props} />}
+          />
+          <Button
+            type="button"
+            onClick={() =>
+              setValue(
+                "ibu",
+                getIBU(
+                  watchIngredients.filter((ing) => ing.item.type === HOP),
+                  watchOG,
+                  watchVolume,
+                  watchBoilDuration
+                )
+              )
+            }
           >
             Calculate
           </Button>
