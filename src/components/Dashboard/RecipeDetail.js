@@ -15,7 +15,6 @@ import { ingredientTypes } from "../../constants";
 const basicsFields = [
   "volume",
   "boilVolume",
-  "abv",
   "originalGravity",
   "finalGravity",
 ];
@@ -61,6 +60,20 @@ const RecipeDetail = ({ match }) => {
         </Button>
       </PageHeader>
       <div>
+        <DetailRow>
+          <DetailRowInner>
+            <p>Brew Date</p>
+            <DetailRowData>{recipe.brewDate}</DetailRowData>
+          </DetailRowInner>
+          <DetailRowInner>
+            <p>ABV</p>
+            <DetailRowData>{recipe.abv}</DetailRowData>
+          </DetailRowInner>
+          <DetailRowInner>
+            <p>IBU</p>
+            <DetailRowData>{recipe.ibu}</DetailRowData>
+          </DetailRowInner>
+        </DetailRow>
         {recipe.description && (
           <Section heading="Description">
             <p>{recipe.description}</p>
@@ -137,6 +150,23 @@ const ListItem = styled.li`
 const TypeLabel = styled.p`
   font-weight: bold;
   padding-top: 10px;
+`;
+
+const DetailRow = styled.div`
+  display: flex;
+  border-bottom: 2px solid black;
+`;
+
+const DetailRowInner = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px 10px 0;
+  font-size: 18px;
+`;
+
+const DetailRowData = styled.div`
+  font-weight: bold;
+  line-height: 1.5;
 `;
 
 const Section = ({ children, heading }) => {
