@@ -7,6 +7,7 @@ import { LoaderScreen } from "../Loader";
 import { ErrorMessage } from "../../styled/Alerts";
 import { GET_RECIPES } from "./queries";
 
+const headers = ["Name", "Date", "Volume", "ABV", "IBU", ""];
 /**
  *
  * Recipes
@@ -28,12 +29,9 @@ const Recipes = ({ match }) => {
       <Table celled padded>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Date</Table.HeaderCell>
-            <Table.HeaderCell>Volume</Table.HeaderCell>
-            <Table.HeaderCell>ABV</Table.HeaderCell>
-            <Table.HeaderCell>IBU</Table.HeaderCell>
-            <Table.HeaderCell />
+            {headers.map((header) => (
+              <Table.HeaderCell key={header}>{header}</Table.HeaderCell>
+            ))}
           </Table.Row>
         </Table.Header>
         <Table.Body>
