@@ -2,19 +2,21 @@ import React from "react";
 import Downshift from "downshift";
 import styled from "@emotion/styled";
 import { List } from "../List";
+import { getFilter } from "./utils";
 
 const Select = ({
   options,
-  placeholder,
+  placeholder = "Select item",
   onChange,
   value,
   defaultValue,
   label,
 }) => {
+  const filter = getFilter(options);
   return (
     <Downshift
       onChange={onChange}
-      itemToString={(item) => (item ? item.value : "")}
+      itemToString={(item) => (item ? item.label : "")}
     >
       {({
         getInputProps,
@@ -27,44 +29,42 @@ const Select = ({
         highlightedIndex,
         selectedItem,
         getRootProps,
+        clearSelection,
       }) => {
         return (
           <>
             {label && <Label {...getLabelProps()}>{label}</Label>}
             <Combobox {...getRootProps({}, { suppressRefError: true })}>
-              <input {...getInputProps()} />
-              <ToggleButton {...getToggleButtonProps()} />
+              <input {...getInputProps({ placeholder })} />
+              <ToggleButton
+                {...{
+                  ...getToggleButtonProps(),
+                  clearSelection,
+                  hasSelectedItem: !!selectedItem,
+                }}
+              />
             </Combobox>
-            <Menu {...getMenuProps()}>
-              {isOpen
-                ? options
-                    .filter(
-                      (item) => !inputValue || item.label.includes(inputValue)
-                    )
-                    .map((item, index) => {
-                      console.log("pp", {
-                        ...getItemProps({
-                          key: item.value,
-                          index,
-                          item,
-                        }),
-                      });
+            <MenuWrapper>
+              <Menu {...getMenuProps()}>
+                {isOpen
+                  ? filter(inputValue).map((item, index) => {
                       return (
                         <MenuItem
                           {...getItemProps({
                             key: item.value,
                             index,
                             item,
+                            isActive: highlightedIndex === index,
+                            isSelected: selectedItem === item,
                           })}
-                          isSelected={selectedItem === item}
-                          isHighlighted={highlightedIndex === index}
                         >
                           {item.label}
                         </MenuItem>
                       );
                     })
-                : null}
-            </Menu>
+                  : null}
+              </Menu>
+            </MenuWrapper>
           </>
         );
       }}
@@ -72,11 +72,17 @@ const Select = ({
   );
 };
 
-const Menu = styled(List)``;
+const MenuWrapper = styled.div`
+  max-height: 300px;
+  overflow: auto;
+`;
+const Menu = styled(List)`
+  overflow: hidden;
+`;
 const MenuItem = styled.li`
-  background-color: ${({ isHighlighted }) =>
-    isHighlighted ? "lightgray" : "white"};
+  background-color: ${({ isActive }) => (isActive ? "lightgray" : "white")};
   font-weight: ${({ isSelected }) => (isSelected ? "bold" : "normal")};
+  padding: 8px;
 `;
 const Combobox = styled.div`
   position: relative;
@@ -92,8 +98,15 @@ const Label = styled.label`
   text-transform: none;
 `;
 
-const ToggleButton = ({ ...props }) => {
-  return (
+const ToggleButton = ({ hasSelectedItem, clearSelection, ...props }) => {
+  return hasSelectedItem ? (
+    <ToggleButtonContainer
+      onClick={clearSelection}
+      aria-label="clear selection"
+    >
+      X
+    </ToggleButtonContainer>
+  ) : (
     <ToggleButtonContainer {...props} aria-label={"toggle menu"}>
       &#x25BE;
     </ToggleButtonContainer>
