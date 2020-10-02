@@ -8,7 +8,6 @@ const Select = ({
   options,
   placeholder = "Select item",
   onChange,
-  value,
   defaultValue,
   label,
 }) => {
@@ -17,6 +16,7 @@ const Select = ({
     <Downshift
       onChange={onChange}
       itemToString={(item) => (item ? item.label : "")}
+      initialSelectedItem={options.find((opt) => opt.value === defaultValue)}
     >
       {({
         getInputProps,
@@ -32,7 +32,7 @@ const Select = ({
         clearSelection,
       }) => {
         return (
-          <>
+          <Container>
             {label && <Label {...getLabelProps()}>{label}</Label>}
             <Combobox {...getRootProps({}, { suppressRefError: true })}>
               <input {...getInputProps({ placeholder })} />
@@ -65,17 +65,25 @@ const Select = ({
                   : null}
               </Menu>
             </MenuWrapper>
-          </>
+          </Container>
         );
       }}
     </Downshift>
   );
 };
 
+const Container = styled.div`
+  position: relative;
+`;
+
 const MenuWrapper = styled.div`
+  position: absolute;
+  width: 100%;
   max-height: 300px;
   overflow: auto;
+  z-index: 1;
 `;
+
 const Menu = styled(List)`
   overflow: hidden;
 `;

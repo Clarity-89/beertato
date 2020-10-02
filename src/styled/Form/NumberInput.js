@@ -3,7 +3,7 @@ import React from "react";
 const NumberInput = ({ value, onChange, ...rest }) => {
   const handleChange = (e) => {
     const { value } = e.target;
-    onChange(parseFloat(value));
+    onChange(Number(value));
   };
 
   return (

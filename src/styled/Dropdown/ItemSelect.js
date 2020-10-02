@@ -2,14 +2,14 @@ import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 import { useQuery } from "@apollo/react-hooks";
 import { GET_ITEMS } from "../../components/Dashboard/queries";
-import { Dropdown } from "semantic-ui-react";
+import { Select } from "../Form";
 
 /**
  *
  * ItemSelect
  *
  */
-const ItemSelect = ({ type, onChange, defaultValue }) => {
+const ItemSelect = ({ type, onChange, defaultValue, label }) => {
   const { data = { items: [] }, loading } = useQuery(GET_ITEMS);
 
   let items = useMemo(() => {
@@ -19,7 +19,7 @@ const ItemSelect = ({ type, onChange, defaultValue }) => {
 
     return items.map(({ id, name }) => ({
       key: id,
-      text: name,
+      label: name,
       value: id,
     }));
   }, [type, data]);
@@ -27,8 +27,8 @@ const ItemSelect = ({ type, onChange, defaultValue }) => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <Dropdown
-      placeholder="Select item"
+    <Select
+      label={label}
       search
       selection
       options={items}

@@ -198,7 +198,6 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                       name={`ingredients[${index}].item`}
                       control={control}
                       rules={{ required: "Ingredient name is required" }}
-                      defaultValue={field.item.id}
                       render={({ onChange }) => (
                         <ItemSelect
                           defaultValue={field.item.id}

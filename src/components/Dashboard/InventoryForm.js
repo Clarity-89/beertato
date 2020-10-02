@@ -22,17 +22,11 @@ export const InventoryForm = ({ type, addItem }) => {
     >
       <Form.Field>
         <>
-          <label>Item</label>
           <Controller
             name="item"
             control={control}
             render={({ onChange }) => (
-              <ItemSelect
-                type={type}
-                onChange={(_, { value }) => {
-                  onChange(value);
-                }}
-              />
+              <ItemSelect label="Item" type={type} onChange={onChange} />
             )}
           />
         </>
