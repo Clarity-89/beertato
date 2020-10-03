@@ -1,3 +1,5 @@
+import { YEAST } from "../../constants";
+
 export const getAbv = (og, fg) => {
   return parseFloat(((og - fg) * 105 * 1.25).toFixed(2));
 };
@@ -45,4 +47,30 @@ export const getIBU = (hops, og, volume, boilTime) => {
     );
   });
   return Number(ibus.reduce((sum, ibu) => ibu + sum, 0).toFixed());
+};
+
+/**
+ * Scale recipe's ingredients amount proportionately to the boil volume
+ * @param origVol - original boil volume
+ * @return {function(*=, *, *): (undefined)}
+ */
+export const scaleRecipe = (origVol) => {
+  let original = origVol;
+  return (newVol, ingredients, setValue) => {
+    if (original === newVol || !original || !newVol || !ingredients?.length) {
+      return;
+    }
+    const ratio = original / newVol;
+
+    ingredients.forEach((ing, index) => {
+      if (ing.item.type !== YEAST) {
+        setValue(
+          `ingredients[${index}].amount`,
+          Number((ing.amount / ratio).toFixed(2))
+        );
+      }
+    });
+
+    original = newVol;
+  };
 };

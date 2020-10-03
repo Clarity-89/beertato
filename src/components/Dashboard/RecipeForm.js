@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 import { css } from "@emotion/core";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
@@ -11,7 +11,7 @@ import { Row } from "../../styled/Layout/Layout";
 import { ADJUNCT, HOP, ingredientTypes } from "../../constants";
 import { FormFieldError } from "../../styled/Alerts";
 import { NumberInput } from "../../styled/Form";
-import { getAbv, getIBU } from "../../services/utils/calculations";
+import { getAbv, getIBU, scaleRecipe } from "../../services/utils/calculations";
 
 const textFields = ["name", "description", "brewDate"];
 const numberFields = ["volume", "originalGravity", "finalGravity"];
@@ -36,8 +36,11 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
   const watchFG = watch("finalGravity", recipe.finalGravity);
   const watchIngredients = watch("ingredients", recipe.ingredients);
   const watchVolume = watch("volume", recipe.volume);
+  const watchBoilVolume = watch("boilVolume", recipe.boilVolume);
   const watchBoilDuration = watch("boilDuration", recipe.boilDuration);
-
+  const scaler = useMemo(() => scaleRecipe(recipe.boilVolume), [
+    recipe.boilVolume,
+  ]);
   return (
     <Form
       onSubmit={handleSubmit(onSave)}
@@ -143,6 +146,12 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
             name="boilVolume"
             render={(props) => <NumberInput id="boilVolume" {...props} />}
           />
+          <Button
+            type="button"
+            onClick={() => scaler(watchBoilVolume, watchIngredients, setValue)}
+          >
+            Scale
+          </Button>
         </Form.Field>
         <Form.Field width={6}>
           <label htmlFor="boilDuration">Boil duration (minutes)</label>
