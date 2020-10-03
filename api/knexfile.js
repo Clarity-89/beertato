@@ -1,4 +1,4 @@
-// Update with your config settings.
+require("dotenv").config({ path: "../.env" });
 
 module.exports = {
   development: {
@@ -6,15 +6,15 @@ module.exports = {
     connection: {
       database: "beertato",
       user: "admin",
-      password: "admin123"
+      password: "admin123",
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      tableName: "knex_migrations"
-    }
+      tableName: "knex_migrations",
+    },
   },
 
   staging: {
@@ -22,15 +22,15 @@ module.exports = {
     connection: {
       database: "my_db",
       user: "username",
-      password: "password"
+      password: "password",
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      tableName: "knex_migrations"
-    }
+      tableName: "knex_migrations",
+    },
   },
 
   production: {
@@ -38,14 +38,14 @@ module.exports = {
     connection: {
       database: "my_db",
       user: "username",
-      password: "password"
+      password: "password",
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      tableName: "knex_migrations"
-    }
-  }
+      tableName: "knex_migrations",
+    },
+  },
 };

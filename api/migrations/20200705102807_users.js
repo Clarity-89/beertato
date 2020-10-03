@@ -9,6 +9,10 @@ exports.up = function (knex) {
       table.string("email").notNullable().unique();
       table.string("picture");
       table.string("date_joined");
+      table.boolean("is_admin").defaultTo(false);
+      table
+        .enum("plan", ["FREE", "BASIC", "PRO", "UNLIMITED"])
+        .defaultTo("FREE");
     }),
   ]);
 };

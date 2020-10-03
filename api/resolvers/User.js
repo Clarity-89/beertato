@@ -28,6 +28,7 @@ module.exports = {
             username: data.username,
             email: data.email,
             password: pass,
+            data_joined: new Date(),
           })
           .returning(["id", "email", "username"]);
 
