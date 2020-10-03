@@ -15,6 +15,15 @@ type Item {
   data: String
 }
 
+input ItemInput {
+  name: String!
+  description: String
+  image: String
+  type: ItemType
+  origin: ID
+  data: String
+}
+
 type ItemSubstitute {
   id: ID!
   item: ID!
@@ -26,4 +35,9 @@ extend type Query {
   items(type: ItemType): [Item]
   substitute(id: ID!): ItemSubstitute
   substitutes: [ItemSubstitute]
+}
+
+extend type Mutation {
+  addItem(input: ItemInput): Item @authenticated
+  updateItem(id: ID!, input: ItemInput): Item @authenticated
 }

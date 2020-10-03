@@ -69,6 +69,7 @@ const Login = ({ history }) => {
           <label>Password*</label>
           <input
             placeholder="Password"
+            autoComplete="new-password"
             name="password"
             type="password"
             minLength={6}

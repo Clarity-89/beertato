@@ -10,6 +10,8 @@ const GET_PROFILE = gql`
       id
       username
       email
+      isAdmin
+      plan
     }
   }
 `;

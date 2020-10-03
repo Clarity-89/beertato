@@ -32,12 +32,13 @@ module.exports = {
           })
           .returning(["id", "email", "username"]);
 
-        const { id, email, username } = user[0];
-
+        const { id, email, username, isAdmin, plan } = user[0];
         return {
           id,
           email,
           username,
+          isAdmin,
+          plan,
           token: getSignedToken(id),
         };
       } catch (e) {
@@ -59,12 +60,13 @@ module.exports = {
         throw new Error("Incorrect password");
       }
 
-      const { id, email, username } = user;
-      // return json web token
+      const { id, email, username, isAdmin, plan } = user;
       return {
         id,
         email,
         username,
+        isAdmin,
+        plan,
         token: getSignedToken(id),
       };
     },

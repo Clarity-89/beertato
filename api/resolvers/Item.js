@@ -30,4 +30,7 @@ module.exports = {
       }
     },
   },
+  Mutation: {
+    addItem: async (_, { input }, { user }) => {},
+  },
 };

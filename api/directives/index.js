@@ -1,3 +1,4 @@
-const { AuthenticationDirective } = require("./auth");
+const { AuthenticationDirective, AuthorizationDirective } = require("./auth");
 
 module.exports.AuthenticationDirective = AuthenticationDirective;
+module.exports.AuthorizationDirective = AuthorizationDirective;
