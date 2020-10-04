@@ -2,12 +2,21 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Navbar } from "./components/Navbar";
 import { privateLinks, privateRoutes } from "./router";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
+import { ItemForm } from "./components/Admin";
 
-const AuthApp = () => {
+const AuthApp = ({ user }) => {
+  const extraNavLinks = user?.isAdmin
+    ? [
+        <Link key="add-item" to="/items/add">
+          Add item
+        </Link>,
+      ]
+    : [];
+
   return (
     <Main>
-      <Navbar links={privateLinks} />
+      <Navbar links={privateLinks} extraNavLinks={extraNavLinks} />
       <Container>
         {privateRoutes.map((route) => (
           <Route
@@ -17,6 +26,10 @@ const AuthApp = () => {
             component={route.component}
           />
         ))}
+
+        {user?.isAdmin && (
+          <Route key="add" path="/items/add" component={ItemForm} />
+        )}
       </Container>
     </Main>
   );

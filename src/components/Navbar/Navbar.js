@@ -12,7 +12,7 @@ const navLinks = navElements.map((element) => (
   </RouterLink>
 ));
 
-const Navbar = ({ links = [] }) => {
+const Navbar = ({ links = [], extraNavLinks = [] }) => {
   return (
     <NavContainer>
       <Link to="/">
@@ -20,7 +20,7 @@ const Navbar = ({ links = [] }) => {
         Beertato
       </Link>
       <NavRight>
-        <NavDropdown title="Database" links={navLinks} />
+        <NavDropdown title="Database" links={[...navLinks, ...extraNavLinks]} />
         {links.map((link) => (
           <Link key={link.name} to={link.url}>
             {link.name}
