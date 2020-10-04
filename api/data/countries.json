@@ -48,5 +48,10 @@
         "id": 9,
         "name": "Ukraine",
         "code": "UA"
+    },
+    {
+        "id": 10,
+        "name": "France",
+        "code": "FR"
     }
 ]

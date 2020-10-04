@@ -10,8 +10,6 @@ const FrontPage = () => {
   return <Container />;
 };
 
-FrontPage.propTypes = {};
-
 const Container = styled.div`
   display: flex;
 `;
