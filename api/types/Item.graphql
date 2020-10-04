@@ -38,6 +38,6 @@ extend type Query {
 }
 
 extend type Mutation {
-  addItem(input: ItemInput): Item @authenticated
-  updateItem(id: ID!, input: ItemInput): Item @authenticated
+  addItem(input: ItemInput!): Item @authenticated
+  updateItem(id: ID!, input: ItemInput!): Item @authenticated
 }

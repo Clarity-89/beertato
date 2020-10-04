@@ -31,6 +31,9 @@ module.exports = {
     },
   },
   Mutation: {
-    addItem: async (_, { input }, { user }) => {},
+    addItem: async (_, { input }) => {
+      const item = await knex("items").insert(input).returning("*");
+      return item[0];
+    },
   },
 };
