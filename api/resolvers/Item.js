@@ -35,5 +35,12 @@ module.exports = {
       const item = await knex("items").insert(input).returning("*");
       return item[0];
     },
+    updateItem: async (_, { id, input }) => {
+      const item = await knex("items")
+        .where({ id })
+        .update(input)
+        .returning("*");
+      return item[0];
+    },
   },
 };
