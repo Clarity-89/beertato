@@ -8,7 +8,7 @@ import { LoaderScreen } from "../Loader";
 import { Search } from "../Search";
 import { HOP } from "../../constants";
 
-const GET_HOPS = gql`
+export const GET_HOPS = gql`
   query GetHops($type: ItemType) {
     hops: items(type: $type) {
       id
