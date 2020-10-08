@@ -1,0 +1,1392 @@
+[
+  {
+    "name": "WLP001 California Ale Yeast®",
+    "abv": "High (10 - 15%)",
+    "description": "This strain was the first yeast strain produced by White Labs in 1995. It’s our best-selling yeast, famous for its clean flavors and hardy fermentations. Known for its use in hoppy beers, it accentuates hop flavors and aromas and attenuates well, even for high gravity beers. This strain has the ability to be used in almost any style of ale ranging from IPA to porter and even kölsch, which makes it a great all-around house strain.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "73.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "20-23°C (68.00-73.00)°F"
+  },
+  {
+    "name": "WLP002 English Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "This is a classic ESB strain from one of England’s largest independent breweries. While it is traditionally used for English-style ales including milds, bitters, porters, and stouts, it is also ideal for American-style pale ales and IPAs. Residual sweetness accentuates malt character along with mild fruity esters, adding complexity to the flavor and aroma of finished beers. Slight diacetyl production is common. Due to this strain’s high flocculation, the beer will finish clear and the yeast can easily be harvested from the fermenter for future use. It is common for this yeast to look coagulated.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "63.00-70.00",
+    "flocculation": "Very High",
+    "temperature": "18-20°C (65.00-68.00)°F"
+  },
+  {
+    "name": "WLP003 German Ale II Yeast ",
+    "abv": "Medium (5 - 10%)",
+    "description": "A great strain for clean ales such as kölsch, altbier, and German-style pale ales. It has a strong sulfur component that will reduce with conditioning. Lager-like in flavor, this strain ferments clean and produces subdued fruity esters which are more present than WLP029 German/Kölsch Ale Yeast.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "73.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "18-21°C (65.00-70.00)°F"
+  },
+  {
+    "name": "WLP004 Irish Ale Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This yeast is from one of the oldest stout-producing breweries in the world. It’s great for many beer styles but really shines in malty British styles such as stouts, porters and brown ales. Medium attenuation helps with a dry finish that promotes roasty notes. Esters help round out the overall flavor making a soft drinkable stout.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "69.00-74.00",
+    "flocculation": "Medium to High",
+    "temperature": "18-20°C (65.00-68.00)°F"
+  },
+  {
+    "name": "WLP005 British Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "Known for its use in malty English beers, this strain is a great choice for any beers using traditional English malts like Marris Otter, Golden Promise or floor malted barley. This strain will push bready, grainy malt flavors while being a mild ester producer.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "67.00-74.00",
+    "flocculation": "High",
+    "temperature": "18-21°C (65.00-70.00)°F"
+  },
+  {
+    "name": "WLP006 Bedford British Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "Ferments dry and flocculates very well; produces a distinct ester profile. This yeast yields a full mouthfeel, perfect for creating English-style ales, including bitters, pale ales, porters, stouts and browns.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-80.00",
+    "flocculation": "High",
+    "temperature": "18-21°C (65.00-70.00)°F"
+  },
+  {
+    "name": "WLP007 Dry English Ale Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This yeast is known for its high attenuation, achieving 80% even with 10% ABV beers. The high attenuation eliminates residual sweetness, making the yeast well-suited for high gravity ales and clean, well-attenuated beer styles. This strain has become a go-to house strain for American breweries due to its clean profile and high attenuation. It’s an ideal strain for American and English hoppy beers as well as malty ambers, porters and brown ales. This strain can be a substitute for WLP001 California Ale Yeast®.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-80.00",
+    "flocculation": "Medium to High",
+    "temperature": "18-21°C (65.00-70.00)°F"
+  },
+  {
+    "name": "WLP008 East Coast Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "This strain can be used to reproduce many American versions of classic beer styles but has been gaining popularity for its use in East Coast IPAs. It is cleaner and crisper than other haze producing strains. It possesses the similar neutral character of WLP001 California Ale Yeast® with slightly higher ester production. This strain’s attenuation leaves some mouthfeel and residual sweetness which balances hop bitterness. It’s a great all-around strain for balanced, accessible beer styles such as blondes, pale ales and amber ales.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-75.00",
+    "flocculation": "Medium to Low",
+    "temperature": "20-23°C (68.00-73.00)°F"
+  },
+  {
+    "name": "WLP009 Australian Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "This yeast produces a clean, malty beer with pleasant ester characters that can be described as “bready.” It ferments successfully and cleanly at higher temperatures, combined with good flocculation and good attenuation.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-75.00",
+    "flocculation": "High",
+    "temperature": "18-21°C (65.00-70.00)°F"
+  },
+  {
+    "name": "WLP011 European Ale Yeast ",
+    "abv": "Medium (5 - 10%)",
+    "description": "A malty northern European-origin ale yeast. Its low ester production gives it a clean profile, with little to no sulfur production. Low attenuation helps to contribute to the malty character. Good for altbiers, kölsch-style ales, malty English-style ales, and fruit beers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "65.00-70.00",
+    "flocculation": "Medium",
+    "temperature": "18-21°C (65.00-70.00)°F"
+  },
+  {
+    "name": "WLP013 London Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "Oak ester character makes this yeast well-suited for classic British beer styles such as pales and bitters, or dark malty beers like brown ales and porters. Medium flocculation characteristics allow attenuation up to 75% leaving beer dry while adding malt complexity and pushing hop bitterness. If you love WLP001 California Ale Yeast®, give this strain a try as it has more character.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "67.00-75.00",
+    "flocculation": "Medium",
+    "temperature": "19-22°C (66.00-71.00)°F"
+  },
+  {
+    "name": "WLP017 Whitbread II Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "Traditional mixed yeast culture with British character. Slightly fruity with a hint of sulfur production. This yeast can be used for many different beer styles. The most traditional choices would be English-style ales, including milds, bitters, porters, and English-style stouts. North American-style ales will also benefit from fermentation with this strain.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "67.00-73.00",
+    "flocculation": "High",
+    "temperature": "19-21°C (66.00-70.00)°F"
+  },
+  {
+    "name": "WLP019 California IV Ale Yeast",
+    "abv": "",
+    "description": "Moderately clean strain with a low ester profile and less sulfur production than WLP051.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP022 Essex Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "A flavorful British-style yeast that produces slightly fruity and bready characters. A good top-fermenting yeast strain that is well suited for top cropping. It is ideal for classic British-style milds, pale ales, bitters and stouts. Does not flocculate as much as other English strains.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "71.00-76.00",
+    "flocculation": "Medium to High",
+    "temperature": "19-21°C (66.00-70.00)°F"
+  },
+  {
+    "name": "WLP023 Burton Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "This strain is sourced from Burton upon Trent, England which is known for pushing IPAs into the spotlight. It produces a subtle fruity ester profile which can be described as notes of apple, clover honey and pear. A background sulfur note is common with this strain. Great for use in hoppy American and English styles such as pale ales, bitters and ambers. Can also be an alternative to WLP001 California Ale Yeast®.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-78.00",
+    "flocculation": "Medium",
+    "temperature": "20-23°C (68.00-73.00)°F"
+  },
+  {
+    "name": "WLP025 Southwold Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "From Suffolk County, England. This yeast produces complex fruit, citrus, and spice flavors. Great for British-style bitters and pale ales. A slight sulfur note is produced during fermentation, but disappears with aging.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "68.00-75.00",
+    "flocculation": "Medium",
+    "temperature": "19-21°C (66.00-69.00)°F"
+  },
+  {
+    "name": "WLP026 Premium Bitter Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "From Staffordshire, England. Fermentation gives a mild but complex estery character. Ferments strong and dry and is good for high-gravity beers. Best for all English-style ales, including bitters, milds, ESBs, porters, stouts and barleywines.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-75.00",
+    "flocculation": "Medium",
+    "temperature": "19-21°C (67.00-70.00)°F"
+  },
+  {
+    "name": "WLP028 Edinburgh Scottish Ale Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This strain produces underlying esters of pear and melon which work well with hop and malt derived notes. It’s medium to high alcohol tolerance is well-suited for strong Scotch-style ales or barleywine beers. This is a versatile strain that can be neutral at the low end of the recommended fermentation temperature range or provide more esters at the higher range.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-75.00",
+    "flocculation": "Medium",
+    "temperature": "18-21°C (65.00-70.00)°F"
+  },
+  {
+    "name": "WLP029 German Ale/ Kölsch Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "Sourced from a small brewpub in Cologne, Germany, this strain is fitting for German ales such as kölsch and altbier. Known for accentuating hop flavor and bitterness while creating crisp, clean lager like characters, it performs exceptionally well at temperatures ranging from 65° to 69°F (18-20°C) and does not ferment well below 62°F (17°C) after peak fermentation. Typically has low flocculation characteristics after the first generation.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-78.00",
+    "flocculation": "Medium",
+    "temperature": "18-21°C (65.00-69.00)°F"
+  },
+  {
+    "name": "WLP030 Thames Valley Ale Yeast",
+    "abv": "",
+    "description": "Very flocculant strain for all things English. Great for porters, stouts and ESBs. Lower ester production than most English strains but creates a bigger mouthfeel than most cleaner strains.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-78.00",
+    "flocculation": "High",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP033 Klassic Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "Traditional English single-strain yeast. Produces signature ester characters and does not mask hop flavors. Leaves ales with a slightly sweet malt character. Best for bitters, milds, porters and stouts. Also good for Scottish-style ales.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "66.00-74.00",
+    "flocculation": "Medium",
+    "temperature": "19-21°C (66.00-70.00)°F"
+  },
+  {
+    "name": "WLP036 Düsseldorf Alt Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "A traditional altbier-style yeast from Düsseldorf, Germany. It produces clean, malty German brown and amber ales. This strain keeps the contribution of hop bitterness in the background while promoting sweet malt notes.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "65.00-72.00",
+    "flocculation": "Medium",
+    "temperature": "18-21°C (65.00-69.00)°F"
+  },
+  {
+    "name": "WLP037 Yorkshire Square Ale Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This yeast produces a beer that is malty and well balanced. Expect toasty flavors with malt-driven esters. Highly flocculent and a good choice for English-style pale ales, brown ales, and milds.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "68.00-72.00",
+    "flocculation": "High",
+    "temperature": "18-21°C (65.00-70.00)°F"
+  },
+  {
+    "name": "WLP038 Manchester Ale Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "A top-fermenting ale yeast that is traditionally good for top-cropping. Moderately flocculent with a clean, dry finish. Has a low ester profile and produces a highly balanced English-style beer.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-74.00",
+    "flocculation": "Medium to High",
+    "temperature": "18-21°C (65.00-70.00)°F"
+  },
+  {
+    "name": "WLP039 East Midlands Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "British-style ale yeast with a very dry finish. Medium to low fruit and fusel alcohol production. A good top-fermenting yeast strain well suited for top-cropping. A great choice for pale ales, ambers, porters and stouts.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "73.00-82.00",
+    "flocculation": "Medium to High",
+    "temperature": "19-21°C (66.00-70.00)°F"
+  },
+  {
+    "name": "WLP041 Pacific Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "Hailing from the Pacific Northwest, this strain is a mild ester producer while promoting malt character. It can be used for a range of styles from an English mild to an American IPA or Irish stout. A great flocculator, it leaves a clear beer and saves on conditioning time.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-78.00",
+    "flocculation": "High",
+    "temperature": "18-20°C (65.00-68.00)°F"
+  },
+  {
+    "name": "WLP045 Scotch Whisky Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "A strain that has been widely used for Scotch whisky production since the early 1950s. This yeast produces a complex array of ester compounds and fusel oils, as well as some spicy clover character. Suitable for Scotch or American-style whiskeys.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "22-25°C (72.00-77.00)°F"
+  },
+  {
+    "name": "WLP050 Tennessee Whiskey Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "Suitable or American-style whiskeys and bourbons, this strain is famous for creating rich, smooth flavors. A clean and dry-fermenting yeast that will tolerate high alcohol concentrations (up to 15% ABV). Ester production is low.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "24-26°C (75.00-79.00)°F"
+  },
+  {
+    "name": "WLP051 California V Ale Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This strain has more similarities to an English strain than WLP001 California Ale Yeast®. It is a big ester producer, showcasing notes of cherry and apple which compliment pale ales, blonde and brown ales. Typically leaves some residual, lager-like sulfur compounds in finished beer. Recent sequencing studies show that WLP051 belongs to Saccharomyces pastorianus species, the same hybrid species as most lager strains. However, this strain has been used to make ales for decades and was previously categorized as belonging to Saccharomyces cerevisiae.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-78.00",
+    "flocculation": "Medium to High",
+    "temperature": "19-21°C (66.00-70.00)°F"
+  },
+  {
+    "name": "WLP059 Melbourne Ale Yeast",
+    "abv": "",
+    "description": "A yeast isolated from Australia in the early 1900s, it is a clean fermenting strain well suited for many American and English beer styles. Renowned Australian homebrewer, Peter Symon, researched this strain for his book Bronzed Brews and asked White Labs to acquire it from a yeast bank in London, England. This historic strain was used in Australia because of its ability to ferment well in the Australian climate and Australian cane sugar.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "74.00-78.00",
+    "flocculation": "Medium",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP060 American Ale Yeast Blend",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This blend of three strains creates a clean and neutral fermentation character, making it ideal for use in many different American beer styles. The blend lends complexity to finished beer by exhibiting a crisp, clean lager-like character with accentuated hop flavors and bitterness. A slight amount of sulfur can be produced during peak fermentation.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "20-22°C (68.00-72.00)°F"
+  },
+  {
+    "name": "WLP064 Buchner Ale Yeast Blend",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "A blend of two strains that adds creaminess with a hint of crispness. Great for pale ales, cream ales and American wheats. Flocculation is good due to one of the strains being a heavy flocculator.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-78.00",
+    "flocculation": "Medium",
+    "temperature": "19-22°C (67.00-72.00)°F"
+  },
+  {
+    "name": "WLP065 American Whiskey Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "A yeast strain that produces a low ester profile and moderate fusel oils. It is temperature and alcohol tolerant and suitable for American-style whiskeys using barley or corn bases.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "76.00-82.00",
+    "flocculation": "Medium",
+    "temperature": "24-28°C (75.00-82.00)°F"
+  },
+  {
+    "name": "WLP066 London Fog Ale Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This is the go-to strain for New England-style IPAs. It produces a medium ester profile similar to WLP008 East Coast Ale Yeast. It leaves some residual sweetness, helping accentuate both malt and hop flavors and aromas, while retaining a velvety mouthfeel.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-82.00",
+    "flocculation": "Medium to Low",
+    "temperature": "18-22°C (64.00-72.00)°F"
+  },
+  {
+    "name": "WLP067 Coastal Haze Ale Yeast Blend",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This blend of our favorite New England-style IPA strains is great for producing beers with a hazy appearance and tropical, fruit-forward esters. Producing dry, yet juicy beers, the mango and pineapple characteristics will lend to added drinkability.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-82.00",
+    "flocculation": "Medium to Low",
+    "temperature": "20-22°C (68.00-72.00)°F"
+  },
+  {
+    "name": "WLP070 Kentucky Bourbon Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "From a traditional distillery in the heart of Bourbon Country, this strain produces a malty caramel character with a balanced ester profile. Suitable for bourbons or other American whiskeys with barley, rye, or corn base grains.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "22-25°C (72.00-77.00)°F"
+  },
+  {
+    "name": "WLP072 French Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "A clean strain that complements malt flavor. Low to moderate esters are produced when fermentation temperature is below 70°F (21°C). Moderate to high ester character achieved above 70°F (21°C). Low diacetyl production. A good yeast strain for Bière de Garde, blondes, ambers, brown ales and specialty beers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "68.00-75.00",
+    "flocculation": "Medium to High",
+    "temperature": "17-23°C (63.00-73.00)°F"
+  },
+  {
+    "name": "WLP073 Artisanal Country Ale Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "A classic Bière de Garde strain, it produces slight esters and mild phenols, while preserving the sweet aromatics from the malt bill. This strain fully attenuates, leaving the beer with a crisp, dry finish.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-80.00",
+    "flocculation": "Medium to Low",
+    "temperature": "21-28°C (70.00-82.00)°F"
+  },
+  {
+    "name": "WLP075 Hansen Ale Yeast Blend",
+    "abv": "High (10 - 15%)",
+    "description": "This is a blend of many IPA strain favorites. It has the attenuation of WLP090 San Diego Super Ale Yeast and the character of WLP007 Dry English Ale Yeast. This strain produces dry, hop-forward beers with minor ester production and is blend is a great flocculator.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-80.00",
+    "flocculation": "Medium to High",
+    "temperature": "19-21°C (66.00-70.00)°F"
+  },
+  {
+    "name": "WLP076 Old Sonoma Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "From a historic brewery in Northern California. This strain was embraced by the early pioneers of craft beer in America and is ideal for those seeking to use a traditional British-style yeast. A neutral and versatile strain, a great for pale ales, porters, and stouts.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-74.00",
+    "flocculation": "Medium",
+    "temperature": "19-21°C (66.00-70.00)°F"
+  },
+  {
+    "name": "WLP078 Neutral Grain Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "Marked by a clean, fast fermentation, this strain is ideal for any neutral grain spirit. Alcohol and temperature tolerant.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "77.00-84.00",
+    "flocculation": "Medium",
+    "temperature": "24-29°C (76.00-85.00)°F"
+  },
+  {
+    "name": "WLP080 Cream Ale Yeast Blend",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "A blend of ale and lager yeast, this strain produces a classic cream ale. The blend produces a pleasing light fruity note from the ale yeast, while the lager strain produces clean pilsner-like flavors and a slightly subdued hop bitterness. This blend is known for producing subtle sulfur during primary fermentation.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "18-21°C (65.00-70.00)°F"
+  },
+  {
+    "name": "WLP085 English Ale Yeast Blend",
+    "abv": "Medium (5 - 10%)",
+    "description": "A blend of British ale yeast strains designed to add complexity and attenuation to your ale. Moderate fruitiness and mineral-like character, with little to no sulfur. Drier than WLP002 English Ale Yeast and WLP005 British Ale Yeast, but with similar flocculation properties. Suitable for English pale ales, bitters, porters, stouts and IPAs.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "69.00-76.00",
+    "flocculation": "Medium to High",
+    "temperature": "20-22°C (68.00-72.00)°F"
+  },
+  {
+    "name": "WLP090 San Diego Super Yeast ",
+    "abv": "High (10 - 15%)",
+    "description": "A low ester producing strain, it’s known for quick fermentations and producing a neutral flavor and aroma profile similar to WLP001 California Ale Yeast®. Due to high attenuation, this strain produces very dry beers with increased perceived bitterness. It also has a high alcohol tolerance which is suitable for a variety of styles and beverages from double IPAs to barleywines, ciders and mead. This is a great all around house strain and ideal for breweries who produce hop-forward beers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "76.00-83.00",
+    "flocculation": "Medium to High",
+    "temperature": "18-20°C (65.00-68.00)°F"
+  },
+  {
+    "name": "WLP095 Burlington Ale Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This yeast is the signature strain for a brewery in the Northeast United States, making it ideal for New England-style IPAs. Adding personality to your beer by contributing esters and body, this strain will blend with hop flavors and aromas while balancing bitterness. Esters are higher than WLP001 California Ale Yeast® and this strain has been known to result in more diacetyl increasing the temperature at the end of fermentation is suggested.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "19-21°C (67.00-70.00)°F"
+  },
+  {
+    "name": "WLP099 Super High Gravity Ale Yeast",
+    "abv": "Very High (Over 15%)",
+    "description": "From England, this yeast can ferment up to 25% alcohol when used correctly. It produces ester characters that increase with increasing gravity. Malt character dominates at lower gravities. To achieve >25% ABV, sugar needs to be fed over the course of the fermentation.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "Medium",
+    "temperature": "18-21°C (65.00-69.00)°F"
+  },
+  {
+    "name": "WLP1983 Charlie's Fist Bump Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "Previously called WLP862 Cry Havoc Lager Yeast, this strain is licensed from Charlie Papazian and can ferment at both ale and lager temperatures, allowing brewers to produce diverse beer styles. The recipes in both Papazian’s books, \"The Complete Joy of Homebrewing,\" \"The Homebrewer’s Companion,\" and \"Microbrewed Adventures\" were originally developed and brewed with this yeast.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-78.00",
+    "flocculation": "Low",
+    "temperature": "13-23°C (55.00-73.00)°F"
+  },
+  {
+    "name": "WLP300 Hefeweizen Ale Yeast ",
+    "abv": "Medium (5 - 10%)",
+    "description": "This popular German strain is used in the production of traditional, authentic hefeweizen. It produces a high level of isoamyl acetate, giving the resulting beer notes of banana. With balanced phenol production, this strain produces notes of clove but remains banana forward. Low flocculation leaves the desired cloudy look, appropriate for the German wheat beer style.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-76.00",
+    "flocculation": "Low",
+    "temperature": "20-22°C (68.00-72.00)°F"
+  },
+  {
+    "name": "WLP320 American Hefeweizen Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "This strain ferments much cleaner than it’s hefeweizen strain counterparts. It produces very slight banana and clove notes and has low flocculation, leaving resulting beers with characteristic cloudiness.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-75.00",
+    "flocculation": "Low",
+    "temperature": "18-21°C (65.00-69.00)°F"
+  },
+  {
+    "name": "WLP351 Bavarian Weizen Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "This is former Yeast Lab W51, the description originally used by Yeast Lab still fits: “This strain produces a classic German-style wheat beer, with medium to high spicy phenolic overtones reminiscent of cloves.”",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-82.00",
+    "flocculation": "Low",
+    "temperature": "19-21°C (66.00-70.00)°F"
+  },
+  {
+    "name": "WLP380 Hefeweizen IV Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "This strain produces a balance of phenolics and esters. Nutmeg, clove, and spice are more dominant than the banana and bubble gum aroma. Pitching rate and temperature will dramatically affect the flavor and aroma of this strain. Traditional brewing techniques suggest underpitching to produce more classic characteristics of the style. This strain has low flocculation and minor sulfur production.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "73.00-80.00",
+    "flocculation": "Low",
+    "temperature": "19-21°C (66.00-70.00)°F"
+  },
+  {
+    "name": "WLP400 Belgian Wit Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "This strain is the pinnacle yeast for Belgian witbiers or white ales. High phenol production contributes an herbal aroma and flavor notes which blends well with herb and fruit adjuncts. Expect nearly 80% attenuation and a slightly lower resulting pH than English or American ale strains creating a dry beer.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "74.00-78.00",
+    "flocculation": "Medium to Low",
+    "temperature": "19-23°C (67.00-74.00)°F"
+  },
+  {
+    "name": "WLP410 Belgian Wit II Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "A fairly clean strain with medium intensity and spice-like phenol production. With up to 75% attenuation, this strain produces a residual malt character. It helps balance any adjuncts resulting in increased drinkability. Slightly lower resulting pH than English or American ale strains, it creates a slightly tart refreshing beer. This strain is ideal for witbiers or Belgian table beers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-75.00",
+    "flocculation": "Medium to Low",
+    "temperature": "19-23°C (67.00-74.00)°F"
+  },
+  {
+    "name": "WLP500 Monastery Ale Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "Sourced from a Belgian monastery, this strain is ideal for Belgian quads, trippels and dubbels due to its high alcohol tolerance. It produces characteristic notes of plum and cherry with a hint of bubble gum. Lower fermentation temperatures (65-67°F/18-19°C) result in less fruity and more earthy beers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-80.00",
+    "flocculation": "Medium to Low",
+    "temperature": "18-22°C (65.00-72.00)°F"
+  },
+  {
+    "name": "WLP510 Bastogne Belgian Ale Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "A high-gravity ale yeast that produces a dry beer with a slightly acidic finish. While fruit forward, this strain is mild on spice-like phenols. With a high alcohol tolerance upwards of 15% ABV, this strain is great for any Belgian styles ranging from a table beer to a dark strong ale.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "74.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "19-22°C (66.00-72.00)°F"
+  },
+  {
+    "name": "WLP515 Antwerp Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "Clean, almost lager like Belgian type ale yeast. Good for Belgian type pales ales and amber ales, or with blends to combine with other Belgian type yeast strains. Biscuity, ale like aroma present. Hop flavors and bitterness are accentuated. Slight sulfur will be produced during fermentation, which can give the yeast a lager-like flavor profile.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "73.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "19-21°C (67.00-70.00)°F"
+  },
+  {
+    "name": "WLP518 Opshaug Kveik Ale Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "Sourced from our friend Lars Marius Garshol, this kveik strain was isolated from a mixed culture which belonged to Harald Opshaug, a farmhouse brewer in Stranda, Norway. This strain was originally used in the 1990s to produce several kornøl-style beers. It is a clean fermenting yeast and has tolerated temperatures up to 95°F (35°C) while finishing fermentation within three to four days. The hop-forward, clean characteristics of this strain make it ideal for IPAs and pale ales.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-80.00",
+    "flocculation": "Medium to High",
+    "temperature": "25-35°C (77.00-95.00)°F"
+  },
+  {
+    "name": "WLP519 Stranda Kveik Ale Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "Stranda is a kveik strain owned by Stein Langlo from Stranda, Norway. Considered a “cleaner” kveik strain, Stranda can also produce a wide range of beer styles over a large temperature gradient. Ideal for use when you have little to no temperature control of your fermentation.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-85.00",
+    "flocculation": "Medium to High",
+    "temperature": "22-37°C (72.00-98.00)°F"
+  },
+  {
+    "name": "WLP520 Sigmund Kveik Ale Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "Sigmund is a Kveik strain shared by Sigmund Gjernes from Voss, Norway. Also known as Voss Kveik, this strain can produce earthy-like flavors with a touch of orange peel aromas.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-83.00",
+    "flocculation": "Medium to High",
+    "temperature": "22-37°C (72.00-98.00)°F"
+  },
+  {
+    "name": "WLP521 Hornindal Kveik Ale Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "Hornindal is a Kveik strain shared with the world by Terje Raftevold from Hornindal, Norway. It produces an intense tropical flavor and aroma with notes of fresh tangerine, mango, and pineapple, ideal to be used with fruit-forward hops.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-82.00",
+    "flocculation": "High",
+    "temperature": "22-37°C (72.00-98.00)°F"
+  },
+  {
+    "name": "WLP530 Abbey Ale Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "This is a traditional Belgian abbey strain perfect for use in dubbels, tripels and Belgian strong ales due to its very high alcohol tolerance of up to 15% ABV. Produces cherry, plum and pear esters. Medium flocculation results in clear, drinkable beer.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-80.00",
+    "flocculation": "Medium to High",
+    "temperature": "19-22°C (66.00-72.00)°F"
+  },
+  {
+    "name": "WLP540 Abbey IV Ale Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "This strain produces balanced fruit aroma and flavor characters. It is ideal for abbey-style beers including dubbels, trippels and Belgian strong ales.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "74.00-82.00",
+    "flocculation": "Medium",
+    "temperature": "19-22°C (66.00-72.00)°F"
+  },
+  {
+    "name": "WLP545 Belgian Strong Ale Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "From the Ardennes region of Belgium, this classic yeast strain produces moderate levels of ester and phenolic characters, often described as dried sage and black cracked pepper. High attenuation results in a dry finish ideal for high gravity beers. This strain is recommended for dark strong ales, abbey ales and seasonal specialties like Belgian holiday ales.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "78.00-85.00",
+    "flocculation": "Medium",
+    "temperature": "19-22°C (66.00-72.00)°F"
+  },
+  {
+    "name": "WLP546 Marañón Canyon Wild Cacao",
+    "abv": "Medium (5 - 10%)",
+    "description": "This yeast was isolated from the thought to be extinct Pure Nacional variety of cacao. In 2007, this rare variety with white beans was rediscovered in the remote Marañón River Canyon in Peru. The fruity, phenolic, and wild-like characteristics of this strain make it an ideal choice for farmhouse and saison-style beers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "65.00-70.00",
+    "flocculation": "Low",
+    "temperature": "18-24°C (65.00-75.00)°F"
+  },
+  {
+    "name": "WLP550 Belgian Ale Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This very expressive strain produces phenol forward flavors and aromas reminiscent of clove, allspice and peppercorns. It has medium to high alcohol tolerance and is ideal for many classic Belgian styles including saisons, witbiers, blondes and browns.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "78.00-85.00",
+    "flocculation": "Medium",
+    "temperature": "20-26°C (68.00-78.00)°F"
+  },
+  {
+    "name": "WLP561 Non STA1son Ale Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "This blend of STA1 negative strains produces a complex expression of esters and phenols great for saison and farmhouse-style beers without the potential for super-attenuation commonly associated with many Belgian-style strains. White Labs Brewing Co. commercial trials and sensory panel identified fruit-like notes from this strain ranging from lemon and tropical fruit to chamomile, as well as an array of spice-like phenolic driven aromas like pepper, clove, and coriander.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "78.00-85.00",
+    "flocculation": "Low",
+    "temperature": "20-26°C (68.00-78.00)°F"
+  },
+  {
+    "name": "WLP564 Leeuwenhoek Saison Yeast Blend",
+    "abv": "High (10 - 15%)",
+    "description": "A blend of two saison strains and a low phenolic Belgian strain, developed for the White Labs in-house saisons. Approximately 85% attenuation which makes for a dryer saison. The strain proved very versatile, creating spicy, dry and clean beers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "76.00-82.00",
+    "flocculation": "Low",
+    "temperature": "19-24°C (66.00-75.00)°F"
+  },
+  {
+    "name": "WLP565 Belgian Saison I Ale Yeast ",
+    "abv": "Medium (5 - 10%)",
+    "description": "A classic saison strain sourced from the Wallonia region of Belgium. This strain makes a classic saison by producing flavors and aromas noted as earthy, peppery and spicy. With attenuation averaging around 70 to 75%, some malt flavor will remain present. For best fermentation results, let this strain free-rise to allow for complete attenuation and production of the subtle, traditional aroma characteristics. With high gravity saisons, it’s suggested to dry the beer with an alternate yeast (such as WLP001 California Ale Yeast®) added after 50 to 60% fermentation.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "78.00-85.00",
+    "flocculation": "Medium",
+    "temperature": "20-24°C (68.00-75.00)°F"
+  },
+  {
+    "name": "WLP566 Belgian Saison II Ale Yeast ",
+    "abv": "Medium (5 - 10%)",
+    "description": "This strain is a moderate phenol producer with clove-like flavor and aromatic notes present in finished beer. Some fruit-forward ester production provides a balance between fruit and spice aroma and flavors. This strain ferments and flocculates well, making it an easy-to-use option for saison and farmhouse ales.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "78.00-85.00",
+    "flocculation": "Medium",
+    "temperature": "20-26°C (68.00-78.00)°F"
+  },
+  {
+    "name": "WLP568 Belgian Style Saison Ale Yeast Blend",
+    "abv": "Medium (5 - 10%)",
+    "description": "This blend incorporates multiple Belgian and saison strains to produce pear-like esters backed by spicy, earthy and clove-like flavors and aromas. The cultures encourage complete fermentation in a timely manner and create harmony and complexity throughout its ester and phenol production.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "21-27°C (70.00-80.00)°F"
+  },
+  {
+    "name": "WLP570 Belgian Golden Ale Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "From East Flanders, this yeast is versatile in that it can produce low to high gravity Belgian beers up to 12% ABV. A combination of fruitiness and phenolic characteristics dominate the flavor profile. Some sulfur is produced during fermentation, which will dissipate following the end of fermentation.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "73.00-78.00",
+    "flocculation": "Low",
+    "temperature": "20-24°C (68.00-75.00)°F"
+  },
+  {
+    "name": "WLP575 Belgian Style Ale Yeast Blend ",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "A blend of two monastery-type yeast strains and one Belgian ale-type yeast. This blend creates a versatile culture which can be used for monastery-style beers or a myriad of American-Belgian style beers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "74.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "20-24°C (68.00-75.00)°F"
+  },
+  {
+    "name": "WLP590 French Saison Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "One of our most popular saison strains, it is great for farmhouse-style beers because it produces flavors and aromas of pear, apple and cracked pepper. This strain is a high attenuator producing a very dry and drinkable finishing beer.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "78.00-85.00",
+    "flocculation": "Medium",
+    "temperature": "21-24°C (69.00-75.00)°F"
+  },
+  {
+    "name": "WLP600 Kombucha SCOBY ",
+    "abv": "",
+    "description": "White Labs now offers WLP600 Kombucha SCOBY, a symbiotic culture of bacteria and yeast that is used for fermenting sweet tea into kombucha. White Labs’ SCOBY is free of food pathogens and has been genetically identified to know specially what yeast and bacteria are involved in the fermentation of kombucha. As we continue our genetic identification we will publish the data below. This SCOBY has medium acetic acid production and low alcohol production based on our recipe. The SCOBY diameter is 2.92 inches.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "N/A",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP603 Torulaspora delbrueckii",
+    "abv": "N/A",
+    "description": "This strain of non-conventional brewing yeast is a maltose negative strain of yeast ideal for low-alcohol beers or to be blended with another higher attenuating strain. This species does not ferment maltose or other larger sugars and will only ferment glucose, sucrose, and fructose.The profile of this strain has high ester production and will lend well to styles such as a fruit-forward IPA or saison. This particular strain was isolated off of apples from an island in Norway. Although this would be categorized as a wild yeast, this strain would not typically be considered to be a beer spoiler as it does not have the ability to ferment larger sugars. Using this strain to create a low alcohol beer requires a modified recipe. STA1: Negative",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "20.00-20.00",
+    "flocculation": "Medium to Low",
+    "temperature": "19-23°C (66.00-74.00)°F"
+  },
+  {
+    "name": "WLP611 New Nordic Ale Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "Isolated from spontaneously fermented apples on a remote island off the coast of Denmark in the fall of 2009, this culture is a unique blend of three yeast strains (two belonging to Saccharomyces cerevisiae and one Torulaspora delbrueckii).",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "65.00-75.00",
+    "flocculation": "Medium to Low",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP616 Funky Cider Blend",
+    "abv": "",
+    "description": "This is a blend of two Saccharomyces strains combined with some Brettanomyces and Lactobacillus. This blend results in a slight tartness and a mild funk aroma that will result in less than two weeks. Light pellicle will form because of the Brettanomyces.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP618 Saccharomycodes ludwigii",
+    "abv": "N/A",
+    "description": "This strain of non-conventional brewing yeast has been found to be useful when brewing a low alcohol beer. This specific strain has been chosen because of it’s lower ethyl acetate production compared to similar strains. This species does not ferment maltose or other larger sugars and will only ferment the glucose, sucrose, and fructose. This strain is appropriate for all styles of low alcohol beer.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "20.00-20.00",
+    "flocculation": "Medium",
+    "temperature": "20-24°C (68.00-75.00)°F"
+  },
+  {
+    "name": "WLP630 Berliner Weisse Blend",
+    "abv": "Medium (5 - 10%)",
+    "description": "A blend of German weizen yeast and Lactobacillus bacteria to create a subtly tart, drinkable beer. This blend can take several months to develop tart character making it perfect for brewing a traditional Berliner Weisse.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "73.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "20-22°C (68.00-72.00)°F"
+  },
+  {
+    "name": "WLP640 Brettanomyces anomalus",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "Typical barnyard funk character with some fruitiness. Acidity is medium. Primary fermentation can be done with this strain, but a starter may be necessary.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-85.00",
+    "flocculation": "Low",
+    "temperature": "21-29°C (70.00-85.00)°F"
+  },
+  {
+    "name": "WLP644 Saccharomyces \"bruxellensis\" Trois",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This Belgian strain, traditionally used for wild yeast fermentations, produces a slightly tart beer with delicate mango and pineapple characteristics. This wild yeast has grown in popularity for styles like American IPA, American pale and blonde ales due to its tropical and stone fruit flavors and aromas. This Saccharomyces strain can be used like other house strains and can be easily clean with proper CIP procedures.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "85.00-85.00",
+    "flocculation": "Low",
+    "temperature": "21-29°C (70.00-85.00)°F"
+  },
+  {
+    "name": "WLP645 Brettanomyces claussenii",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "Originally isolated from strong English stock beer in the early 20th century, this yeast has low-intensity Brettanomyces character and is closely related to Brettanomyces anomalus. This strain produces fruity, pineapple-like aroma with an earthy hay-like background aroma and aroma note.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-85.00",
+    "flocculation": "Low",
+    "temperature": "29-29°C (85.00-85.00)°F"
+  },
+  {
+    "name": "WLP648 Brettanomyces bruxellensis Trois Vrai",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "The vrai (“true” in French) Brettanomyces bruxellensis Trois. This infamous strain should be used for primary fermentations due to its ability to highly attenuate. It has a robust, complex sour character with aromas of pear.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "85.00-85.00",
+    "flocculation": "Low",
+    "temperature": "21-29°C (70.00-85.00)°F"
+  },
+  {
+    "name": "WLP650 Brettanomyces bruxellensis",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "A classic strain used for secondary fermentation in Belgian-style beers such as lambics. It creates a medium-intensity, earth-forward character in finished beer. A historic brewery in Belgium uses this yeast in secondary fermentation and bottling to produce the signature flavor of its beer.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "85.00-85.00",
+    "flocculation": "Low",
+    "temperature": "29-29°C (85.00-85.00)°F"
+  },
+  {
+    "name": "WLP653 Brettanomyces lambicus",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This yeast produces a high intensity of the traditional Brettanomyces characters — horsey, smoky and spicy flavors — in beer. As the name suggests, this strain is found most often in lambic style beers but is also commonly found in Flanders and sour brown ales.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-85.00",
+    "flocculation": "Low",
+    "temperature": "29-29°C (85.00-85.00)°F"
+  },
+  {
+    "name": "WLP655 Belgian Sour Mix 1",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "A unique blend of Brettanomyces and Saccharomyces yeasts as well as bacterial strains Lactobacillus and Pediococcus. Perfect for duplicating traditional spontaneous fermentations similar to those found in Belgian-style ales.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-80.00",
+    "flocculation": "Medium to Low",
+    "temperature": "27-29°C (80.00-85.00)°F"
+  },
+  {
+    "name": "WLP661 Pediococcus damnosus",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "Perfect for use in any sour program, this is a cocci bacteria known for its souring capabilities through the production of lactic acid. It is a high diacetyl producer and slow growing, so it’s suggested to use in a mixed culture.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "0.00-0.00",
+    "flocculation": "Low",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP665 Flemish Ale Blend",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "Blended culture used to produce the classic beer styles of the West Flanders region of Belgium. A proprietary blend of Saccharomyces and Brettanomyces yeasts with Lactobacillus and Pediococcus bacteria, this culture creates a more complex, dark stone fruit characteristic than WLP655.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-85.00",
+    "flocculation": "Medium to Low",
+    "temperature": "20-27°C (68.00-80.00)°F"
+  },
+  {
+    "name": "WLP669 Lactobacillus paracollinoides",
+    "abv": "",
+    "description": "This strain has been isolated from Belgian lambics. Originally referred to as Lactobacillus pastorianous, it has now been reclassified. Can be used for secondary fermentation to produce acidity in aging beer styles.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP670 American Farmhouse Blend",
+    "abv": "Medium (5 - 10%)",
+    "description": "Inspired by local American brewers crafting semi-traditional Belgian-style ales, this blend creates a complex flavor profile with a moderate level of sourness. It consists of a traditional farmhouse yeast strain and Brettanomyces. Great yeast for farmhouse ales, saisons, and other Belgian-inspired beers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-82.00",
+    "flocculation": "Medium",
+    "temperature": "20-22°C (68.00-72.00)°F"
+  },
+  {
+    "name": "WLP672 Lactobacillus brevis",
+    "abv": "Medium (5 - 10%)",
+    "description": "This is a rod-shaped Lactobacillus bacteria used for souring beers through either traditional or kettle souring techniques. This strain typically produces more lactic acid than strains like WLP677 Lactobacillus delbrueckii, making it an ideal addition to any sour program. Recommended usage is below 107°F (40°C).",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "0.00-0.00",
+    "flocculation": "Low",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP673 Lactobacillus buchneri",
+    "abv": "",
+    "description": "This strain is recommended for souring. Can be used for sour kettle/mash or in secondary fermentation. <15 IBU tolerance. Little to no attenuation. Experiments have shown less than <5% attenuation.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP675 Malolactic Cultures",
+    "abv": "",
+    "description": "Malolactic Fermentation is the conversion of malic acid to lactic acid by bacteria from the lactic acid bacteria family.  Lactic acid is less acidic than malic acid, which in turn decreases acidity and helps to soften and/or round out some of the flavors in wine. These liquid cultures are available in vials to inoculate 6 gallons or 1 liter sizes to inoculate 60 gallons.Please note: We recommend caution with using WLP675 with wine kits, which contain potassium sorbate and effect the viability of malolactic bacteria. Under FAQ questions below, you will find instructions for using WLP675 with wine kits. General instructions are under FAQs below.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP677 Lactobacillus delbrueckii Bacteria",
+    "abv": "Medium (5 - 10%)",
+    "description": "This lactic acid bacteria produces moderate levels of acidity and sour flavors found in lambics, Berliner Weisse, sour brown ales and gueuze.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "0.00-0.00",
+    "flocculation": "Low",
+    "temperature": "21-24°C (70.00-75.00)°F"
+  },
+  {
+    "name": "WLP678 Lactobacillus hilgardii",
+    "abv": "",
+    "description": "Lactic acid bacteria that produces medium acidity. Low hop tolerance (<10). Great for Berliner weisse, gueuze and lambics.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP686 Zygosaccharomyces Lentus",
+    "abv": "N/A",
+    "description": "This strain of non-conventional brewing yeast is a maltose negative strain of yeast ideal for low alcohol beers. This species does not ferment maltose or other larger sugars and will only ferment the glucose, sucrose, and fructose. The profile of this strain is found to be very neutral. This species is slower and might take longer to reduce sugars and lower the pH of the beer compared to other strains. Little ester production was perceived in lab scale trials. Although this would be categorized as a wild yeast, this strain would not typically be considered to be a beer spoiler as it does not have the ability to ferment larger sugars. Using this strain to create a low alcohol beer requires a modified recipe. STA1: Negative",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "20.00-20.00",
+    "flocculation": "Low",
+    "temperature": "20-24°C (68.00-75.00)°F"
+  },
+  {
+    "name": "WLP692 Debaryomyces hansenii",
+    "abv": "",
+    "description": "Debaryomyces is one of the wild yeasts isolated from lambics in Belgium.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP693 Lactobacillus plantarum",
+    "abv": "",
+    "description": "Typically found in probiotics, this bacteria has been found to produce high levels of lactic acid. This strain is perfect for sour kettle or sour mash beers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP700 Flor Sherry Yeast",
+    "abv": "Very High (Over 15%)",
+    "description": "Creates green almond, Granny Smith apple and nougat characteristics found in sherry. For use in secondary fermentation.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "",
+    "temperature": "21-38°C (70.00-100.00)°F"
+  },
+  {
+    "name": "WLP705 Sake #7 Yeast",
+    "abv": "Very High (Over 15%)",
+    "description": "Produces a full-bodied character and subtle fruity esters. For use in rice-based fermentations; typically used in conjunction with koji (to produce fermentable sugar). This strain can also be used successfully in beer fermentations.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "",
+    "temperature": "21-38°C (70.00-100.00)°F"
+  },
+  {
+    "name": "WLP707 California Pinot Noir Yeast",
+    "abv": "Very High (Over 15%)",
+    "description": "Produces fruity and complex aromas and is reliable for difficult fermentations. Isolated from pinot noir grapes in Davis, CA.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "N/A",
+    "temperature": "16-32°C (60.00-90.00)°F"
+  },
+  {
+    "name": "WLP709 Sake #9 Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "For use in rice-based fermentations. Traditional strain used in Ginjo-shu production because of the yeast’s development of high fragrance components. Also a fairly strong fermenter, but producing a foamless fermentation.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-78.00",
+    "flocculation": "Medium to Low",
+    "temperature": "17-20°C (62.00-68.00)°F"
+  },
+  {
+    "name": "WLP715 Champagne Yeast",
+    "abv": "Very High (Over 15%)",
+    "description": "Classic yeast that is neutral in character, and a strong fermenter. Great for use in wine, cider and mead allowing the character of the fermentables to become prominent flavors.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-100.00",
+    "flocculation": "Low",
+    "temperature": "21-24°C (70.00-75.00)°F"
+  },
+  {
+    "name": "WLP718 Avize Wine Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "Champagne isolate used for complexity in whites. Contributes elegance, especially in barrel fermented Chardonnays.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "Low",
+    "temperature": "16-32°C (60.00-90.00)°F"
+  },
+  {
+    "name": "WLP720 Sweet Mead/Wine Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "Produces a slightly fruity flavor and aroma while leaving more residual sweetness than WLP715 Champagne Yeast. This strain will tolerate alcohol concentrations up to 15%.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "Low",
+    "temperature": "21-24°C (70.00-75.00)°F"
+  },
+  {
+    "name": "WLP727 Steinberg-Geisenheim Wine Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "High fruit ester production. German in origin and cold tolerant.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "Low",
+    "temperature": "10-32°C (50.00-90.00)°F"
+  },
+  {
+    "name": "WLP730 Chardonnay White Wine Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "Dry wine yeast with slight ester production and low sulfur dioxide production which enhances varietal character.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "Low",
+    "temperature": "10-32°C (50.00-90.00)°F"
+  },
+  {
+    "name": "WLP735 French White Wine Yeast",
+    "abv": "Very High (Over 15%)",
+    "description": "Classic yeast for white wine fermentation, giving an enhanced creamy texture. Low foam producer.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "Low",
+    "temperature": "16-32°C (60.00-90.00)°F"
+  },
+  {
+    "name": "WLP740 Merlot Red Wine Yeast",
+    "abv": "Very High (Over 15%)",
+    "description": "Neutral character, with low fusel-alcohol production. Ferments dry.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "Low",
+    "temperature": "16-32°C (60.00-90.00)°F"
+  },
+  {
+    "name": "WLP749 Assmanshausen Wine Yeast",
+    "abv": "Very High (Over 15%)",
+    "description": "This strain is a German red wine yeast that is cold tolerant. Produces spicy fruit aromas.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "Low",
+    "temperature": "10-32°C (50.00-90.00)°F"
+  },
+  {
+    "name": "WLP750 French Red Wine Yeast",
+    "abv": "Very High (Over 15%)",
+    "description": "Classic Bordeaux yeast with a rich, smooth flavor profile.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "Low",
+    "temperature": "16-32°C (60.00-90.00)°F"
+  },
+  {
+    "name": "WLP760 Cabernet Red Wine Yeast",
+    "abv": "Very High (Over 15%)",
+    "description": "A versatile strain for full-bodied red wines with ester production that complements dry aromatic white wines.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "Low",
+    "temperature": "16-32°C (60.00-90.00)°F"
+  },
+  {
+    "name": "WLP770 Suremain Burgundy Wine Yeast",
+    "abv": "Very High (Over 15%)",
+    "description": "Emphasizes fruit aromas in barrel fermentations. Posesses a high nutrient requirement to avoid volatile acidity production.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "Low",
+    "temperature": "16-32°C (60.00-90.00)°F"
+  },
+  {
+    "name": "WLP773 Scottish Cider Yeast Blend",
+    "abv": "",
+    "description": "This is an exciting blend of two ale strains and one wine strain. Unlike a lot of ale strains that typically dry out most ciders, this unique blend of Saccharomyces strains will leave some residual sweetness for a smooth mouthfeel. This strain is perfect for those looking for a still cider with some lingering apple characteristic or a dryer sparkling cider.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-80.00",
+    "flocculation": "Medium to High",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP775 English Cider Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "Classic cider yeast that ferments dry, but retains the flavor from apples.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "80.00-100.00",
+    "flocculation": "Medium",
+    "temperature": "20-24°C (68.00-75.00)°F"
+  },
+  {
+    "name": "WLP780 Thai Rice Chong Yeast",
+    "abv": "High (10 - 15%)",
+    "description": "Typically used for making rice wine but has shown to ferment beer just fine. The ester profile is very fruity and produces a surprising amount of alcohol (15%). The aroma and flavor were highly favorable compared to rice wine made with the traditional yeast balls.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "76.00-76.00",
+    "flocculation": "",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP800 Pilsner Lager Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "A classic pilsner strain from the Czech Republic, this strain produces a clean, crisp beer that’s somewhat dry with a malty finish. A to-style pilsner strain, this yeast is also well suited for thirst quenching lagers such as Munich helles, dunkels and American lagers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-77.00",
+    "flocculation": "Medium to High",
+    "temperature": "10-13°C (50.00-55.00)°F"
+  },
+  {
+    "name": "WLP802 Czech Budejovice Lager Yeast ",
+    "abv": "Medium (5 - 10%)",
+    "description": "A pilsner lager yeast from southern Czech Republic, this strain produces dry and crisp lagers with low diacetyl production. With up to 80% attenuation, this strain will make a dry beer and showcase rounded hop bitterness. Low diacetyl production makes conditioning of this beer an ease.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-75.00",
+    "flocculation": "Medium",
+    "temperature": "10-13°C (50.00-55.00)°F"
+  },
+  {
+    "name": "WLP810 San Francisco Lager Yeast ",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "A unique lager strain because it can ferment at a wide range of temperatures — 50°F (10°C) to 65°F (18°C) — while retaining lager-like characteristics. This strain is traditionally used to brew the California common or steam beer styles. At lower temperatures can also produce märzens, pilsners and helles style lagers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-75.00",
+    "flocculation": "High",
+    "temperature": "14-18°C (58.00-65.00)°F"
+  },
+  {
+    "name": "WLP815 Belgian Lager Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "A clean, crisp European lager yeast with low sulfur production. This strain originates from a very old brewery in west Belgium. Great for European-style pilsners, dark lagers, Vienna lagers, and American-style lagers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-78.00",
+    "flocculation": "Medium",
+    "temperature": "10-13°C (50.00-55.00)°F"
+  },
+  {
+    "name": "WLP820 Oktoberfest/Märzen Lager Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "This strain is ideal for producing malty lagers. Residual sweetness further helps promote malt nuances while contributing to a balanced finish. The first generation of this strain can be slow, so we encourage using a larger initial culture or scheduling longer fermentation and conditioning times. Great for lagers with a wide gravity range including bocks, doppelbocks, märzens, Oktoberfests and American amber lagers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "65.00-73.00",
+    "flocculation": "Medium",
+    "temperature": "11-14°C (52.00-58.00)°F"
+  },
+  {
+    "name": "WLP830 German Lager Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "Our most popular lager yeast, this strain is one of the most widely used lager strains in the world. It can be used in almost any lager style and tends to produce clean and crisp beers with some accentuation of hop characteristics.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "74.00-79.00",
+    "flocculation": "Medium",
+    "temperature": "10-13°C (50.00-55.00)°F"
+  },
+  {
+    "name": "WLP833 German Bock Lager Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "From the Alps of southern Bavaria, this yeast produces a beer that is well-balanced between malt and hop character. The excellent malt profile makes it well suited for bocks, doppelbocks, and Oktoberfest-style beers. A very versatile lager yeast, it has gained tremendous popularity for use in classic American-style lagers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-76.00",
+    "flocculation": "Medium",
+    "temperature": "9-13°C (48.00-55.00)°F"
+  },
+  {
+    "name": "WLP835 German X Lager Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "Classic yeast from a famous Bavarian monastery. This strain develops a creamy, malty beer profile with low sulfur production and low esters. It is a great choice for styles like traditional Helles, Oktoberfest, Bock, and Dunkel.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-76.00",
+    "flocculation": "Medium",
+    "temperature": "10-12°C (50.00-54.00)°F"
+  },
+  {
+    "name": "WLP838 Southern German Lager Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "This yeast is characterized by a malty finish, balanced aroma and great flocculation. It is a strong fermenter which produces slight sulfur and low diacetyl during fermentation. This strain benefits from a diacetyl rest and conditioning.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "68.00-76.00",
+    "flocculation": "Medium to High",
+    "temperature": "10-13°C (50.00-55.00)°F"
+  },
+  {
+    "name": "WLP840 American Lager Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "This strain makes dry and clean lagers with a light note of apple fruitiness. Sulfur and diacetyl production is minimal making this strain easy to work with and fitting for American-style lagers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "10-13°C (50.00-55.00)°F"
+  },
+  {
+    "name": "WLP845 Fast Lager Yeast",
+    "abv": "",
+    "description": "Use this strain when you need a lager sooner rather than later. Low sulfur production and medium flocculation characteristics.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "75.00-78.00",
+    "flocculation": "",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "WLP850 Copenhagen Lager Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "This northern European lager strain emphasizes clean and crisp characteristics. Malt flavors tend to be secondary, promoting clean drinkability. It is ideal for Vienna, schwarzbier or American-style lagers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "72.00-78.00",
+    "flocculation": "Medium",
+    "temperature": "10-14°C (50.00-58.00)°F"
+  },
+  {
+    "name": "WLP860 Munich Helles Lager Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "This yeast helps to produce a malty, yet balanced traditional Munich-style lager. Clean and a strong fermentor, it’s great for a variety of lager styles ranging from helles to rauchbier.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "68.00-72.00",
+    "flocculation": "Medium",
+    "temperature": "9-11°C (48.00-52.00)°F"
+  },
+  {
+    "name": "WLP885 Zurich Lager Yeast",
+    "abv": "Very High (Over 15%)",
+    "description": "A Swiss-style lager yeast that with proper care can be used to produce lagers over 11% ABV. Sulfur and diacetyl production is minimal.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-80.00",
+    "flocculation": "Medium",
+    "temperature": "10-13°C (50.00-55.00)°F"
+  },
+  {
+    "name": "WLP920 Old Bavarian Lager Yeast",
+    "abv": "Medium - High (8 - 12%)",
+    "description": "From Southern Germany, this yeast finishes malty with a slight ester profile. Use in beers such as Oktoberfests, bocks, and dark lagers.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "66.00-73.00",
+    "flocculation": "Medium",
+    "temperature": "10-13°C (50.00-55.00)°F"
+  },
+  {
+    "name": "WLP925 High Pressure Lager Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "Used to ferment lager beer in one week. Ferment at room temperature; 62-68°F (17-20°C) under 1.0 bar (14.7 PSI) until final gravity is obtained, generally in one week. Lager the beer at 35°F (2°C), 15 PSI, for 3-5 days to condition. Sulfur production is strong the first 2 days, then disappears by day 5.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "73.00-82.00",
+    "flocculation": "Medium",
+    "temperature": "17-20°C (62.00-68.00)°F"
+  },
+  {
+    "name": "WLP940 Mexican Lager Yeast",
+    "abv": "Medium (5 - 10%)",
+    "description": "From Mexico City, this strain produces clean lager beers with a crisp finish. It keeps drinkability on the forefront while allowing malt and hop flavors and aromas to be background notes. A great strain choice for light-style lagers like Vienna-style.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "70.00-78.00",
+    "flocculation": "Medium",
+    "temperature": "10-13°C (50.00-55.00)°F"
+  },
+  {
+    "name": "Pinnacle Distillers Yeast (G) - WLDPINNACLE G 500G",
+    "abv": "High (10 - 15%)",
+    "description": "An active dried yeast well-suited for use in simultaneous saccharification fermentation of starch substrates from grain. It has a high tolerance to liberated glucose. Product size = 500g.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "33-37°C (92.00-98.00)°F"
+  },
+  {
+    "name": "Pinnacle Distillers Yeast (M) - WLDPINNACLE M 500G",
+    "abv": "",
+    "description": "An active dried yeast well-suited for use in malt-based fermentations. It rapidly consumes maltose and produces a flavorful spirit. Product size = 500g.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "28-32°C (82.00-90.00)°F"
+  },
+  {
+    "name": "Pinnacle Distillers Yeast (MG+) - WLDPINNACLE MG+ 500G",
+    "abv": "High (10 - 15%)",
+    "description": "An active dried yeast well-suited for use in both malt and grain fermentations. It has the collective capability to tolerate high gravity and temperature. Product size = 500g.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "28-38°C (82.00-100.00)°F"
+  },
+  {
+    "name": "Pinnacle Distillers Yeast (S) - WLDPINNACLE S",
+    "abv": "Very High (Over 15%)",
+    "description": "An active dry yeast well-suited for use in batch and continuous fermentations of molasses and pure sugars. It has a high tolerance to early residual sugars. Product size = 500g.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "33-37°C (92.00-98.00)°F"
+  },
+  {
+    "name": "TY 48 High Performance Yeast - WLDTY48-1KG",
+    "abv": "N/A",
+    "description": "High-performance temperature and ethanol tolerant yeast capable of reaching 20% ABV from pure sugar wash in 8 days. With AG enzyme to allow starch-based feedstock after normal gelatination and alpha-amylase treatment.",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "-18-NaN°C ()°F"
+  },
+  {
+    "name": "Whiskey Turbo - WLDWHISKEYAG-1KG ",
+    "abv": "N/A",
+    "description": "Whiskey strain of Saccharomyces cerevisiae used widely in commercial whiskey, with robust and authentic aromatics even in high-alcohol fermentations. Includes the advantage of complete nutrition and amyloglucosidase. This enables both complete dextrin conversion of malt or grain for maximum yield as well as rapid fermentation to 15% abv. - very high for standard whiskey \"low beers.\"",
+    "type": "liquid",
+    "lab": "White Labs",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "-18-NaN°C ()°F"
+  }
+]

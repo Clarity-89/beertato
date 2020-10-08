@@ -1,0 +1,152 @@
+[
+  {
+    "name": "LalBrew® Abbaye Belgian Ale Yeast",
+    "abv": "",
+    "description": "LalBrew® Abbaye is an ale yeast of Belgian origin. Selected for its ability to ferment Belgian style beers ranging from low to high alcohol, LalBrew® Abbaye produces the spiciness and fruitiness typical of Belgian and Trappist style ales. When fermented at higher temperatures, typical flavors and aromas include tropical, spicy and banana. At lower temperatures, LalBrew® Abbaye produces darker fruit aromas and flavors of raisin, date, and fig. Traditional styles brewed with this yeast include but are not limited to Belgian White, Belgian Blonde, Belgian Golden, Dubbel, Tripel, and Quad.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "High",
+    "flocculation": "Medium - High",
+    "temperature": "17-25°C (63-77°F)"
+  },
+  {
+    "name": "LalBrew® Belle Saison Belgian Saison-Style Yeast",
+    "abv": "",
+    "description": "LalBrew® Belle Saison is a Belgian-style ale yeast selected specifically for its ability to create Saison-style beers. Belle Saison is a diastaticus strain that allows the brewers to achieve the high attenuation characteristic of this classic style. Designed for warm-temperature fermentation true to traditional “Farmhouse” production methods, beers brewed with LalBrew® Belle Saison are fruity, spicy and refreshing.For best practices when using Saccharomyces cerevisiae var. diastaticus strains please download our “best practices” diastaticus document under the Technical Data Sheet section.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "High",
+    "flocculation": "Low",
+    "temperature": "15-35°C (59-95°F)"
+  },
+  {
+    "name": "LalBrew® BRY-97 West Coast Ale Yeast",
+    "abv": "",
+    "description": "LalBrew® BRY-97 is an American West Coast-style ale yeast that was selected from the Siebel Institute Culture Collection for its ability to produce high quality ales. LalBrew® BRY-97 is a neutral strain with a high flocculation ability that can be used to make a wide variety of American-style beers. Through expression of a beta-glucosidase enzyme, LalBrew® BRY-97 can promote hop biotransformation and accentuate hop flavor and aroma. Traditional ales made with LalBrew® BRY-97 include but are certainly not limited to Cream Ale, American Wheat, Scotch Ale, American Pale Ale, American Amber, American Brown, American IPA, American Stout, Russian Imperial Stout, Imperial IPA, Roggen/Rye, Old Ale and American Barleywine.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "Medium - High",
+    "flocculation": "High",
+    "temperature": "15-22°C (59-72°F)"
+  },
+  {
+    "name": "LalBrew® CBC-1 Cask & Bottle Conditioning Yeast",
+    "abv": "",
+    "description": "LalBrew® CBC-1 has been specifically selected from the Lallemand Yeast Culture Collection for its refermentation properties and is recommended for Cask and Bottle Conditioning. LalBrew® CBC-1 referments beer efficiently due to its high resistance to alcohol and pressure. The flavor is neutral, therefore the original character of the beer is preserved. The yeast will settle and form a tight mat at the end of refermentation. LalBrew® CBC-1 can also be used for primary fermentation of dry ciders or mead. Maltotriose is not metabolized during primary fermentation of beer, so LalBrew® CBC-1 is well suited for sweeter fruit beers or fullbodied, malty ales.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "15-25°C (59-77°F)"
+  },
+  {
+    "name": "LalBrew® Diamond Lager Yeast",
+    "abv": "",
+    "description": "LalBrew® Diamond Lager yeast is a true lager strain originating in Germany. Chosen for its robust character, LalBrew® Diamond Lager yeast delivers excellent fermentation performance, and has the ability to  produce clean, authentic lagers. Traditional styles brewed with the Diamond include but are not  limited to Munich Helles, Dortmunder Export, German Pilsner, Bohemian Pilsner, American Pilsner,  Vienna Lager, Oktoberfest/Märzen, Dark American Lager, Munich Dunkel, Schwarzbier, Traditional Bock, Doppelbock, Eisbock and California Common.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "High",
+    "flocculation": "High",
+    "temperature": "10-15°C (50-59°F)"
+  },
+  {
+    "name": "LalBrew® London English-Style Ale Yeast",
+    "abv": "",
+    "description": "LalBrew® London is a true English ale strain selected for reliable fermentation performance and moderate  ester production that lets the flavors and aromas of malt and hops shine through. LalBrew® London was  selected from the Lallemand yeast culture library, and is an excellent choice not only for brewing  Extra Special Bitter but for other authentic heritage UK styles like Pale Ale, Bitter and Mild. LalBrew® London may also be used in the production of Ciders.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "Medium",
+    "flocculation": "Low",
+    "temperature": "18-22°C (65-72°F)"
+  },
+  {
+    "name": "LalBrew® Wit Belgian Wit-Style Ale Yeast",
+    "abv": "",
+    "description": "LalBrew® Wit yeast is a relatively neutral strain which can be used to produce a wide variety of wheat beer styles. Ester and phenol production is lower than for traditional hefeweizen strains such as Munich Classic. LalBrew® Wit provides a baseline profile of banana and spice aromas, but leaves space for the brewer to showcase other spice additions typical of Belgian style beers. Traditional styles brewed with this yeast include but are not limited to Belgian Witbier, American Wheat, Berliner Weiss, Gose, Hefeweizen, Dunkelweis, and Weizenbock .",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "Medium - High",
+    "flocculation": "Low",
+    "temperature": "17-23°C (63-72°F)"
+  },
+  {
+    "name": "LalBrew® Munich Classic Wheat Beer Yeast",
+    "abv": "",
+    "description": "LalBrew® Munich Classic is a Bavarian wheat beer strain that can easily express the spicy and estery aroma profile typical to German wheat beer styles. This strain is simple to use over a wide range of recipe variations and fermentation conditions, making it a great choice for a number of traditional styles of wheat beer. A true top cropping yeast, LalBrew® Munich Classic yeast can be skimmed off the top of classic open fermentation vessels in the traditional manner. Styles brewed with LalBrew® Munich Classic include but are not limited to Weizen/Weissbier, Dunkelweizen and Weizenbock.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "Medium - High",
+    "flocculation": "Low",
+    "temperature": "17-22°C (63-72°F)"
+  },
+  {
+    "name": "LalBrew® Nottingham High Performance Ale Yeast",
+    "abv": "",
+    "description": "LalBrew® Nottingham is an English style ale yeast selected for its high performance and versatility for a wide variety of styles and fermentation conditions. Traditional styles brewed with this yeast include but are not limited to Pale Ales, Ambers, Porters, Stouts and Barleywines. In addition to these traditional styles, Nottingham can be used to produce Golden Ale, Kölsch, Lager-style beers, IPA, and Imperial Stout, among many others. LalBrew® Nottingham is a relatively neutral ale strain that is stress tolerant making it a good choice for high gravity, sour and other challenging fermentation conditions.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "High",
+    "flocculation": "High",
+    "temperature": "10-22°C (50-72°F)"
+  },
+  {
+    "name": "LalBrew® Windsor British-Style Beer Yeast",
+    "abv": "",
+    "description": "LalBrew® Windsor ale yeast is a true English strain that produces a balanced fruity aroma and imparts a slight fresh yeasty flavor. Beers created with Windsor are usually described as full-bodied, fruity English ales. Brewers choose LalBrew® Windsor to produce beers that range from Pale Ale to Porter with moderate alcohol levels and the flavor and aroma characteristics of the best traditional ales. Traditional styles brewed with this yeast include but are not limited to Milds, Bitters, Irish Reds, English Brown ales, Porters and Sweet Stouts.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "Medium",
+    "flocculation": "Low",
+    "temperature": "15-22°C (59-72°F)"
+  },
+  {
+    "name": "LalBrew® New England",
+    "abv": "",
+    "description": "LalBrew® New England is an ale strain selected specifically for its ability to produce a unique fruit forward ester profile desired in East Coast styles of beer. A typical fermentation with LalBrew®  New England will produce tropical and fruity esters, notably stone fruits like peach. Through expression of a β-glucosidase enzyme, LalBrew® New England can promote hop biotransformation and accentuate hop flavor and aroma. LalBrew® New England exhibits medium to high attenuation with medium flocculation, making it a perfect choice for East Coast style ales.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "Medium - High",
+    "flocculation": "Medium",
+    "temperature": "15-22°C (59-72°F)"
+  },
+  {
+    "name": "LalBrew® Köln Kölsch Style Ale Yeast",
+    "abv": "",
+    "description": "LalBrew Köln® is ideal for brewing traditional Kölsch-style beers and other neutral ales.  The neutral character of this strain accentuates delicate hop aromas while imparting subtle fruity esters.  Through expression of a beta-glucosidase enzyme LalBrew® Köln can promote hop biotransformation and accentuate hop flavor and aroma. Colder fermentations will be more neutral in character, while warmer fermentations will have more fruit-forward ester profile.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "Medium - High",
+    "flocculation": "Medium",
+    "temperature": "12–20°C (54–68°F)"
+  },
+  {
+    "name": "LalBrew® Voss Kveik Ale Yeast",
+    "abv": "",
+    "description": "Kveik is a Norwegian word meaning yeast. In the Norwegian farmhouse tradition, kveik was preserved by drying and passed from generation to generation. Kveik is the original, traditional dried yeast! The LalBrew® Voss strain was obtained from Sigmund Gjernes (Voss, Norway), who has maintained this culture using traditional methods since the 1980s and generously shared it with the wider brewing community. LalBrew® Voss supports a wide range of fermentation temperatures between 25-40°C (77-104°F) with a very high optimal range of 35-40°C (95-104°F). Very fast fermentations are achieved within the optimal temperature range with full attenuation typically achieved within 2-3 days. The flavor profile is consistent across the entire temperature range: neutral with subtle fruity notes of orange and citrus. Flocculation is very high producing clear beers without filtration or use of process aids.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "Medium - High",
+    "flocculation": "Very High",
+    "temperature": "35-40°C (95-104°F)"
+  },
+  {
+    "name": "WildBrew™ PHILLY SOUR",
+    "abv": "",
+    "description": "WildBrew™ Philly Sour is a unique species of Lachancea selected from nature by University of the Sciences in Philadelphia, PA, USA.(Patent pending N° PCT/US20 18/043 148). WildBrew™Philly Sour produces moderate amounts of lactic acid in addition to ethanol in one simple fermentation step. This first yeast in the WildBrew™ series is a great choice for innovative, sessionable sour beers with refreshing acidity and notes of stone fruit. With high attenuation, high flocculation and good head retention, WildBrew™ Philly Sour is an ideal yeast for traditional styles such as Berliner Weiss, Gose, American Lambic Style, American Wild Ales and its resistance to hops make it perfect for Sour IPA’s.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "High",
+    "flocculation": "High",
+    "temperature": "20-25°C (68-77°F)"
+  },
+  {
+    "name": "LalBrew® Verdant IPA",
+    "abv": "",
+    "description": "LalBrew® Verdant IPA was specially selected in collaboration with Verdant Brewing Co. (UK) for its ability to produce a variety of hop-forward and malty beers. Prominent notes of apricot and undertones of tropical fruit and citrus merge seamlessly with hop aromas. With medium-high attenuation, LalBrew® Verdant IPA leaves a soft and balanced malt profile with slightly more body than a typical American IPA yeast strain. This highly versatile strain is well suited for a variety of beer styles including NEIPA, English IPA, American Pale, English Bitter, Sweet Stout and Sours.",
+    "type": "dry",
+    "lab": "Lallemand",
+    "attenuation": "Medium - High",
+    "flocculation": "Medium",
+    "temperature": "18-23°C (64-73°F)"
+  }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "name": "SafAle™ BE-134",
+    "abv": "9-11",
+    "code": "BE-134",
+    "description": "This typical brewer’s yeast strain is recommended for well-attenuated beers, produces fruity, floral and phenolic notes and a dry character. Produces highly refreshing beers, it is ideal for Belgian-Saison style.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "89-93%",
+    "flocculation": "Medium",
+    "temperature": "18-28°C (64.4-82.4°F)"
+  },
+  {
+    "name": "SafAle™ BE-256",
+    "abv": "9-11",
+    "code": "BE-256",
+    "description": "Active dry brewer’s yeast recommended to ferment a diversity of Belgian type beers such as abbey style known for its fruitiness and high alcohol content. It ferments very fast and reveals strong fermentation aromas. To maintain the aromatic profile at the end of the fermentation, we do recommend to crop this yeast as soon as possible after fermentation",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "82-86%",
+    "flocculation": "High",
+    "temperature": "15-20°C (59-68°F)"
+  },
+  {
+    "name": "SafAle™ S-04",
+    "abv": "9-11",
+    "code": "S-04",
+    "description": "English ale brewer’s yeast selected for its fast fermentation profile. Produces balanced fruity and floral notes. Due to its flocculation power, tends to produce beers with higher clarity. Ideal for a large range of American and English Ales – including highly hopped beers – and is specially adapted to cask-conditioned and beers fermented in cylindro-conical tanks.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "74-82%",
+    "flocculation": "High",
+    "temperature": "15-20°C (59-68°F)"
+  },
+  {
+    "name": "SafAle™ US-05",
+    "abv": "9-11",
+    "code": "US-05",
+    "description": "American ale brewer’s yeast producing neutral and well-balanced ales, clean and crispy. Forms a firm foam head and presents a very good ability to stay in suspension during fermentation. Ideal for American beer types and highly hopped beers.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "78-82%",
+    "flocculation": "Medium",
+    "temperature": "18-28°C (64-82°F)"
+  },
+  {
+    "name": "SafAle™ T-58",
+    "abv": "9-11",
+    "code": "T-58",
+    "description": "Specialty brewer’s yeast selected for its strong fermentation character, intense fruity and phenolic flavors – especially banana, clove and peppery notes. Suitable for a great variety of wheat-base beers and fruity-spicy oriented styles. Yeast with a medium sedimentation: forms no clumps but a powdery haze when resuspended in the beer.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "72-78%",
+    "flocculation": "Medium",
+    "temperature": "15-20°C (59-68°F)"
+  },
+  {
+    "name": "SafAle™ S-33",
+    "abv": "9-11",
+    "code": "S-33",
+    "description": "Fruity driven strain, gives a high mouthfeel and body to the beer. Ideal for Belgian Ales (Blond, Dubbel, Tripel, Quadrupel Styles) and strong English ales (ex. Imperial Stouts). It is also ideal for New England IPA’s. Yeast with a medium sedimentation: forms no clumps but a powdery haze when resuspended in the beer.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "68-72%",
+    "flocculation": "Medium",
+    "temperature": "15-20°C (59-68°F)"
+  },
+  {
+    "name": "SafAle™ WB-06",
+    "abv": "9-11",
+    "code": "WB-06",
+    "description": "Brewer’s yeast providing fruity and phenolic character, varying with the fermentation conditions. Produces well-attenuated beers and it is ideal for wheat base beers, such as Belgian and German Styles (Ex. Wit Beers and Weizen Beers). Produces typical phenolic notes of wheat beers. Allows to brew beer with a high drinkability profile and presents a very good ability to suspend during fermentation.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "86-90%",
+    "flocculation": "Low",
+    "temperature": "18-24°C (64-75°F)"
+  },
+  {
+    "name": "SafAle™ K-97",
+    "abv": "9-11",
+    "code": "K-97",
+    "description": "German ale brewer’s yeast producing subtle fermentation character. Depending on the conditions tend to present floral and balanced fruity character. Ideal for delicate beers such as German Kolsch beers, Belgian Wits and some versions of Session Beers. Suitable for heavily hopped beers and has ability to form a large firm head when fermenting.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "80-84%",
+    "flocculation": "Low",
+    "temperature": "15-20°C (59-68°F)"
+  },
+  {
+    "name": "SafAle™ F-2",
+    "abv": "",
+    "code": "F-2",
+    "description": "SafAle™ F-2 brewing yeast has been selected specifically for secondary fermentation in bottle and in cask. This yeast assimilates very little amount of maltotriose but assimilates basic sugars (glucose, fructose, saccharose, maltose). It is characterized by a neutral aroma profile respecting the base beer character and settles very homogeneously at the end of fermentation.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "",
+    "flocculation": "",
+    "temperature": "15-25°C (59-77°F)"
+  },
+  {
+    "name": "SafBrew™ HA-18",
+    "abv": "18",
+    "code": "SafBrew™ HA-18",
+    "description": "SafBrewTM HA-18 is a powerful solution (consisting of POF+ Active Dry Brewer’s Yeast and enzymes) for the production of high-gravity and particularly high alcoholic beers – such as strong ales, barley wines and barrel aged beers with very high density. It has a very good resistance to osmotic pressure and high fermentation temperatures (thermotolerant yeast).",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "98-102%",
+    "flocculation": "Medium",
+    "temperature": "25°C–35°C (77.0°F–95.0°F)"
+  },
+  {
+    "name": "SafBrew™ LA-01",
+    "abv": "",
+    "code": "SafBrew™ LA-01",
+    "description": "SafBrew™ LA-01, is a Saccharomyces cerevisiae var. chevalieri that has been specifically selected for the production of low and/or non-alcoholic beverages (<0.5ABV). This yeast does not assimilate maltose and maltotriose but assimilates simple sugars (glucose, fructose and sucrose) and is characterized by a subtle aroma profile. Yeast with a medium sedimentation: forms no clumps but a powdery haze when resuspended in the beer.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "15%",
+    "flocculation": "",
+    "temperature": "10-25°C (50-77°F)"
+  },
+  {
+    "name": "SafBrew™ DA-16",
+    "abv": "16",
+    "code": "SafBrew™ DA-16",
+    "description": "SafBrew™ DA-16 is a powerful solution (consisting of Active Dry Yeast and enzymes) for the production of very dry and flavorful beers, particularly fruity and hoppy ones such as Brut IPAs. SafBrew™ DA-16 is also recommended for very high gravity wort, allowing a level of alcohol up to 16% ABV.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "98-102%%",
+    "flocculation": "Medium",
+    "temperature": "20°C–32°C (68.0°F–89.6°F)"
+  },
+  {
+    "name": "SafLager™ S-23",
+    "abv": "9-11",
+    "code": "SafLager™ S-23",
+    "description": "Bottom fermenting brewer’s yeast originating from Berlin in Germany. It’s recommended for the production of fruitier and more estery lagers. Its profile gives beers with a good length on the palate.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "80-84%",
+    "flocculation": "",
+    "temperature": "12°C – 15°C (53.6-59°F)"
+  },
+  {
+    "name": "SafLager™ S-189",
+    "abv": "9-11",
+    "code": "SafLager™ S-189",
+    "description": "Originating from the Hürlimann brewery in Switzerland. This lager yeast strain’s profile allows to brew fairly neutral flavor beers with a high drinkability. Depending on the conditions, it tends to present noticeable herbal and floral notes to lager beers.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "80-84%",
+    "flocculation": "",
+    "temperature": "12°C–15°C (53.6-59°F)"
+  },
+  {
+    "name": "SafLager™ W-34/70",
+    "abv": "9-11",
+    "code": "SafLager™ W-34/70",
+    "description": "This famous brewer’s yeast strain from Weihenstephan in Germany is used world-wide within the brewing industry. SafLager™ W-34/70 allows the brewing of beers with a good balance of floral and fruity aromas and gives clean flavors and high drinkable beers.",
+    "type": "dry",
+    "lab": "SafAle",
+    "attenuation": "80-84%",
+    "flocculation": "",
+    "temperature": "12°C–15°C (53.6-59°F)"
+  }
+]
