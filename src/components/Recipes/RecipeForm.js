@@ -45,6 +45,7 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
     recipe.boilVolume,
   ]);
 
+  const updateIngredients = () => {};
   return (
     <Form
       onSubmit={handleSubmit(onSave)}
@@ -276,6 +277,9 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
         );
       })}
       <Button primary>{recipe.id ? "Update" : "Add"}</Button>
+      <Button secondary type="button" onClick={updateIngredients}>
+        Brew
+      </Button>
       {recipe.id && (
         <Button as={Link} to={`/dashboard/recipes/${recipe.id}`}>
           View

@@ -9,8 +9,14 @@ extend type Query {
   inventory(type: ItemType): [Inventory] @authenticated
 }
 
+input UpdateInput {
+  amount: Float!
+  item_id: ID!
+}
+
 extend type Mutation {
   addInventory(amount: Float!, item_id: ID!): Inventory @authenticated
   updateInventory(amount: Float!, id: ID!): Inventory @authenticated
+  updateInventoryItems(input: [UpdateInput]): [Inventory] @authenticated
   deleteInventory(id: ID!): ID @authenticated
 }

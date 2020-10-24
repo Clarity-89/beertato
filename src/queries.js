@@ -63,6 +63,19 @@ export const UPDATE_INVENTORY = gql`
   ${ITEM_FIELDS}
 `;
 
+export const UPDATE_INVENTORY_ITEMS = gql`
+  mutation UpdateInventoryItems($input: [UpdateInput]) {
+    updateInventoryItems(input: $input) {
+      ...InventoryFields
+      item {
+        ...ItemFields
+      }
+    }
+  }
+  ${INVENTORY_FIELDS}
+  ${ITEM_FIELDS}
+`;
+
 export const DELETE_INVENTORY = gql`
   mutation DeleteInventory($id: ID!) {
     deleteInventory(id: $id)

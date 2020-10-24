@@ -68,5 +68,17 @@ module.exports = {
     deleteInventory: async (_, { id }, { user }) => {
       return deleteItem(id, user.id, "inventories");
     },
+    updateInventoryItems: async (_, { input }, { user }) => {
+      return knex.transaction(async (trx) => {
+        const promises = input.map((item) => {
+          return trx("inventories")
+            .where({ id: item.item_id, user: user.id })
+            .update({ amount: item.amount })
+            .returning("*");
+        });
+
+        return Promise.all(promises).then((data) => data.flat());
+      });
+    },
   },
 };
