@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Button, Confirm, Input, Table } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { ingredientTypes } from "../../constants";
 
 const defaultEdited = { id: 0, item: null, amount: 0 };
 
@@ -47,7 +48,9 @@ export const InventoryTable = ({ items, type, updateItem, deleteItem }) => {
             .map(({ item, amount, id }) => (
               <Table.Row key={item.id}>
                 <Table.Cell>
-                  <Link to={`/data/${type}/${item.id}`}>{item.name}</Link>
+                  <Link to={`/data/${ingredientTypes.get(type)}/${item.id}`}>
+                    {item.name}
+                  </Link>
                 </Table.Cell>
                 <Table.Cell>
                   {edited.item?.id !== item.id ? (

@@ -4,6 +4,7 @@ import { css } from "@emotion/core";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
 import { Button, Form } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/react-hooks";
 import { FieldSet } from "../../styled/Form";
 import { formatLabel } from "../../services/utils/strings";
 import { ItemSelect } from "../../styled/Dropdown";
@@ -12,6 +13,7 @@ import { ADJUNCT, HOP, ingredientTypes } from "../../constants";
 import { FormFieldError } from "../../styled/Alerts";
 import { NumberInput } from "../../styled/Form";
 import { getAbv, getIBU, scaleRecipe } from "../../services/utils/calculations";
+import { INVENTORY } from "../../queries";
 
 const textFields = ["name", "description", "brewDate"];
 const numberFields = ["volume", "originalGravity", "finalGravity"];
@@ -24,6 +26,7 @@ const baseFields = [...textFields, ...numberFields];
  *
  */
 const RecipeForm = ({ onSave, recipe = {} }) => {
+  const { data = {} } = useQuery(INVENTORY);
   const { register, watch, control, handleSubmit, errors, setValue } = useForm({
     defaultValues: recipe,
   });
@@ -31,16 +34,17 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
     control,
     name: "ingredients",
   });
-
   const watchOG = watch("originalGravity", recipe.originalGravity);
   const watchFG = watch("finalGravity", recipe.finalGravity);
   const watchIngredients = watch("ingredients", recipe.ingredients);
   const watchVolume = watch("volume", recipe.volume);
   const watchBoilVolume = watch("boilVolume", recipe.boilVolume);
   const watchBoilDuration = watch("boilDuration", recipe.boilDuration);
+
   const scaler = useMemo(() => scaleRecipe(recipe.boilVolume), [
     recipe.boilVolume,
   ]);
+
   return (
     <Form
       onSubmit={handleSubmit(onSave)}
@@ -196,6 +200,10 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
           <FieldSet key={ingredientType} label={label}>
             {fields.map((field, index) => {
               if (field?.item?.type !== ingredientType) return null;
+              const item = watchIngredients?.[index]?.item;
+              const inInventory = item
+                ? data.inventory.find((inv) => inv.item.id === item)
+                : null;
               return (
                 <Row key={`${field}-${index}`}>
                   <Form.Field
@@ -211,8 +219,8 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                         <ItemSelect
                           defaultValue={field.item.id}
                           type={ingredientType}
-                          onChange={(_, { value }) => {
-                            onChange(value);
+                          onChange={(item) => {
+                            onChange(item?.value);
                           }}
                         />
                       )}
@@ -231,6 +239,12 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
                       name={`ingredients[${index}].amount`}
                       render={(props) => <NumberInput {...props} />}
                     />
+                    {inInventory && (
+                      <small>
+                        Available in inventory:{" "}
+                        <strong>{inInventory.amount}</strong> gr
+                      </small>
+                    )}
                   </Form.Field>
                   {hasTiming && (
                     <Form.Field width={4}>
