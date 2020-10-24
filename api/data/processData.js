@@ -1,10 +1,10 @@
 const fs = require("fs");
-const adjuncts = require("./adjuncts.json");
-const grains = require("./grains.json");
-const hops = require("./hops.json");
-const yeast = require("./yeast.json");
+const adjuncts = require("./root/adjuncts.json");
+const grains = require("./root/grains.json");
+const hops = require("./root/hops.json");
+const yeast = require("./root/yeast.json");
 const { ITEM_TYPES } = require("../constants");
-const subs = require("./hop_subs.json");
+const subs = require("./root/subs.json");
 
 const data = [];
 let uid = 121;
@@ -61,11 +61,11 @@ fs.writeFile("./data/items.json", JSON.stringify(data), "utf8", (d) =>
   console.log("cb", d)
 );
 
-const subData = subs.map((s) => {
-  const { hop, id, substitute } = s;
-  return { item: hop, id, substitute };
-});
-
-fs.writeFile("./data/substitutes.json", JSON.stringify(subData), "utf8", (d) =>
-  console.log("cb", d)
-);
+// const subData = subs.map((s) => {
+//   const { hop, id, substitute } = s;
+//   return { item: hop, id, substitute };
+// });
+//
+// fs.writeFile("./data/substitutes.json", JSON.stringify(subData), "utf8", (d) =>
+//   console.log("cb", d)
+// );
