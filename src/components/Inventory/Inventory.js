@@ -1,7 +1,7 @@
 import React from "react";
 import { Tab } from "semantic-ui-react";
 import { css } from "@emotion/core";
-import { InventoryTab } from "./InventoryTab";
+import { InventoryTab } from "./index";
 
 const paneStyles = css`
   background: transparent !important;

@@ -3,7 +3,7 @@ import gql from "graphql-tag/src";
 import { useMutation } from "@apollo/react-hooks";
 import { Redirect } from "react-router-dom";
 import { Loader } from "semantic-ui-react";
-import { GET_RECIPES } from "./queries";
+import { GET_RECIPES } from "../../queries";
 import { RecipeForm } from "./index";
 import { processFormData } from "../../services/utils/form";
 

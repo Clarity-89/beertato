@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useMutation, useQuery } from "@apollo/react-hooks";
-import { GET_RECIPE, RECIPE_FIELDS } from "./queries";
+import { GET_RECIPE, RECIPE_FIELDS } from "../../queries";
 import { LoaderScreen } from "../Loader";
 import { ErrorMessage } from "../../styled/Alerts";
 import { RecipeForm } from "./index";

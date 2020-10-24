@@ -2,15 +2,9 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Route, Switch } from "react-router-dom";
 import { Container } from "../../styled/Layout/Layout";
-import {
-  Inventory,
-  Profile,
-  Recipes,
-  RecipeEdit,
-  RecipeDetail,
-  SideNav,
-  NewRecipe,
-} from "./index";
+import { Profile, SideNav } from "./index";
+import { Inventory } from "../Inventory";
+import { NewRecipe, Recipes, RecipeEdit, RecipeDetail } from "../Recipes";
 
 const Dashboard = (props) => {
   const routes = [

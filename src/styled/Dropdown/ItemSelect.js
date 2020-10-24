@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 import { useQuery } from "@apollo/react-hooks";
-import { GET_ITEMS } from "../../components/Dashboard/queries";
+import { GET_ITEMS } from "../../queries";
 import { Select } from "../Form";
 
 /**

@@ -8,7 +8,7 @@ import {
   DELETE_INVENTORY,
   INVENTORY,
   UPDATE_INVENTORY,
-} from "./queries";
+} from "../../queries";
 
 const optResponse = (queryType, { amount, item, type }) => {
   return {
@@ -27,7 +27,7 @@ const optResponse = (queryType, { amount, item, type }) => {
   };
 };
 
-export const InventoryTab = ({ type }) => {
+const InventoryTab = ({ type }) => {
   const { data, loading, error } = useQuery(INVENTORY, { variables: { type } });
   const [addItem] = useMutation(ADD_INVENTORY);
   const [updateItem] = useMutation(UPDATE_INVENTORY);
@@ -118,3 +118,5 @@ export const InventoryTab = ({ type }) => {
     </>
   );
 };
+
+export default InventoryTab;

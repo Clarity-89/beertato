@@ -7,7 +7,7 @@ import gql from "graphql-tag";
 import { LoaderScreen } from "../Loader";
 import { ErrorMessage } from "../../styled/Alerts";
 import { PageHeader } from "../../styled/Layout/Layout";
-import { GET_RECIPES } from "./queries";
+import { GET_RECIPES } from "../../queries";
 
 const headers = ["Name", "Date", "Volume", "ABV", "IBU", ""];
 

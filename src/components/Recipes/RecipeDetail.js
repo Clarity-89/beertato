@@ -8,7 +8,7 @@ import { LoaderScreen } from "../Loader";
 import { ErrorMessage } from "../../styled/Alerts";
 import { PageHeader } from "../../styled/Layout/Layout";
 import { List } from "../../styled/List";
-import { GET_RECIPE } from "./queries";
+import { GET_RECIPE } from "../../queries";
 import { formatLabel } from "../../services/utils/strings";
 import { ingredientTypes } from "../../constants";
 
