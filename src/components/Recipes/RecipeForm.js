@@ -6,7 +6,7 @@ import { Button, Form } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { FieldSet } from "../../styled/Form";
 import { formatLabel } from "../../services/utils/strings";
-import ItemSelect from "../../styled/Dropdown/ItemSelect";
+import { ItemSelect } from "../../styled/Dropdown";
 import { Row } from "../../styled/Layout/Layout";
 import { ADJUNCT, HOP, ingredientTypes } from "../../constants";
 import { FormFieldError } from "../../styled/Alerts";

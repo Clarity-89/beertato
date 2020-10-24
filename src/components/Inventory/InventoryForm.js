@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Controller, useForm } from "react-hook-form";
 import { Button, Form } from "semantic-ui-react";
 import { css } from "@emotion/core";
-import ItemSelect from "../../styled/Dropdown/ItemSelect";
+import { ItemSelect } from "../../styled/Dropdown";
 
 export const InventoryForm = ({ type, addItem }) => {
   const { register, handleSubmit, errors, control } = useForm();
@@ -21,15 +21,19 @@ export const InventoryForm = ({ type, addItem }) => {
       `}
     >
       <Form.Field>
-        <>
-          <Controller
-            name="item"
-            control={control}
-            render={({ onChange }) => (
-              <ItemSelect label="Item" type={type} onChange={onChange} />
-            )}
-          />
-        </>
+        <Controller
+          name="item"
+          control={control}
+          render={({ onChange }) => (
+            <ItemSelect
+              label="Item"
+              type={type}
+              onChange={({ value }) => {
+                onChange(value);
+              }}
+            />
+          )}
+        />
       </Form.Field>
       <Form.Field error={!!errors.amount}>
         <label>Amount</label>

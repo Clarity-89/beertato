@@ -1,1 +1,1 @@
-export { default as Dropdown } from "./ItemSelect";
+export { default as ItemSelect } from "./ItemSelect";
