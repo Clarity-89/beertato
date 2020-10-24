@@ -11,7 +11,7 @@ extend type Query {
 
 input UpdateInput {
   amount: Float!
-  item_id: ID!
+  id: ID!
 }
 
 extend type Mutation {

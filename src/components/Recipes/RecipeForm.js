@@ -1,10 +1,10 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import { css } from "@emotion/core";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
-import { Button, Form } from "semantic-ui-react";
+import { Button, Form, Checkbox } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import { useQuery } from "@apollo/react-hooks";
+import { useMutation, useQuery } from "@apollo/react-hooks";
 import { FieldSet } from "../../styled/Form";
 import { formatLabel } from "../../services/utils/strings";
 import { ItemSelect } from "../../styled/Dropdown";
@@ -13,7 +13,7 @@ import { ADJUNCT, HOP, ingredientTypes } from "../../constants";
 import { FormFieldError } from "../../styled/Alerts";
 import { NumberInput } from "../../styled/Form";
 import { getAbv, getIBU, scaleRecipe } from "../../services/utils/calculations";
-import { INVENTORY } from "../../queries";
+import { INVENTORY, UPDATE_INVENTORY_ITEMS } from "../../queries";
 
 const textFields = ["name", "description", "brewDate"];
 const numberFields = ["volume", "originalGravity", "finalGravity"];
@@ -26,7 +26,9 @@ const baseFields = [...textFields, ...numberFields];
  *
  */
 const RecipeForm = ({ onSave, recipe = {} }) => {
+  const [updateInventory, setUpdateInventory] = useState(true);
   const { data = {} } = useQuery(INVENTORY);
+  const [updateInventoryItems] = useMutation(UPDATE_INVENTORY_ITEMS);
   const { register, watch, control, handleSubmit, errors, setValue } = useForm({
     defaultValues: recipe,
   });
@@ -45,10 +47,48 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
     recipe.boilVolume,
   ]);
 
-  const updateIngredients = () => {};
+  const updateIngredients = () => {
+    let updated = [];
+    if (!recipe.ingredients) {
+      updated = watchIngredients.map((ingredient) => {
+        const found = data.inventory.find((i) => i.item.id === ingredient.item);
+        if (found) {
+          return { amount: found.amount - ingredient.amount, id: found.id };
+        }
+      });
+    } else {
+      updated = data.inventory.map((inv) => {
+        const fromRecipe = recipe.ingredients.find(
+          (i) => inv.item.id === i.item.id
+        );
+        const currItem = watchIngredients.find(
+          (i) => i.item.id === inv.item.id
+        );
+
+        if (!currItem && !fromRecipe) return;
+        const prev = fromRecipe?.amount || 0;
+        const curr = currItem?.amount || 0;
+        const delta = curr - prev;
+        return { amount: inv.amount - delta, id: inv.id };
+      });
+    }
+
+    const input = updated.filter(Boolean);
+    if (input.length) {
+      return updateInventoryItems({ variables: { input } });
+    }
+  };
+
+  const handleSave = () => {
+    if (updateInventory) {
+      updateIngredients();
+    }
+    handleSubmit(onSave)();
+  };
+
   return (
     <Form
-      onSubmit={handleSubmit(onSave)}
+      onSubmit={handleSave}
       css={css`
         max-width: 1400px !important;
       `}
@@ -203,7 +243,11 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
               if (field?.item?.type !== ingredientType) return null;
               const item = watchIngredients?.[index]?.item;
               const inInventory = item
-                ? data.inventory.find((inv) => inv.item.id === item)
+                ? data.inventory?.find((inv) => {
+                    return item.id
+                      ? inv.item.id === item.id
+                      : inv.item.id === item;
+                  })
                 : null;
               return (
                 <Row key={`${field}-${index}`}>
@@ -276,10 +320,15 @@ const RecipeForm = ({ onSave, recipe = {} }) => {
           </FieldSet>
         );
       })}
+
+      <Form.Field>
+        <Checkbox
+          label="Update inventory items"
+          checked={updateInventory}
+          onChange={() => setUpdateInventory(!updateInventory)}
+        />
+      </Form.Field>
       <Button primary>{recipe.id ? "Update" : "Add"}</Button>
-      <Button secondary type="button" onClick={updateIngredients}>
-        Brew
-      </Button>
       {recipe.id && (
         <Button as={Link} to={`/dashboard/recipes/${recipe.id}`}>
           View

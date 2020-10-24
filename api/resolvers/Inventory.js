@@ -72,7 +72,7 @@ module.exports = {
       return knex.transaction(async (trx) => {
         const promises = input.map((item) => {
           return trx("inventories")
-            .where({ id: item.item_id, user: user.id })
+            .where({ id: item.id, user: user.id })
             .update({ amount: item.amount })
             .returning("*");
         });
