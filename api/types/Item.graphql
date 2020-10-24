@@ -13,6 +13,7 @@ type Item {
   type: ItemType
   origin: Origin
   data: String
+  substitutes: [Item]
 }
 
 input ItemInput {
@@ -26,8 +27,8 @@ input ItemInput {
 
 type ItemSubstitute {
   id: ID!
-  item: ID!
-  substitute: ID!
+  item: Item!
+  substitute: Item!
 }
 
 extend type Query {

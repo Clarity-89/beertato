@@ -29,6 +29,17 @@ module.exports = {
         console.error("Error fetching origin", e);
       }
     },
+    substitutes: async ({ id }) => {
+      try {
+        return knex
+          .select("*")
+          .from("items")
+          .innerJoin("substitutes", "items.id", "=", "substitutes.substitute")
+          .where("item", id);
+      } catch (e) {
+        console.error(e);
+      }
+    },
   },
   Mutation: {
     addItem: async (_, { input }) => {
