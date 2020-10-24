@@ -32,9 +32,16 @@ module.exports = {
     substitutes: async ({ id }) => {
       try {
         return knex
-          .select("*")
+          .select(
+            "items.id",
+            "items.name",
+            "items.type",
+            "items.description",
+            "items.origin",
+            "items.data"
+          )
           .from("items")
-          .innerJoin("substitutes", "items.id", "=", "substitutes.substitute")
+          .innerJoin("substitutes", "items.id", "substitutes.substitute")
           .where("item", id);
       } catch (e) {
         console.error(e);

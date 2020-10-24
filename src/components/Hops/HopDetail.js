@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useQuery } from "@apollo/react-hooks";
 import { Container, Header, Table } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import gql from "graphql-tag";
 import { ErrorMessage } from "../../styled/Alerts";
 import { Text } from "../../styled/typography";
@@ -15,6 +16,10 @@ const GET_HOP_DETAILS = gql`
       description
       data
       origin {
+        id
+        name
+      }
+      substitutes {
         id
         name
       }
@@ -38,8 +43,10 @@ const HopDetail = ({ match }) => {
   }
 
   if (error) return <ErrorMessage />;
+
   const { hop } = data;
   const hopData = JSON.parse(hop.data);
+
   return (
     <Container textAlign="center">
       <Header as="h1">{hop.name}</Header>
@@ -79,7 +86,14 @@ const HopDetail = ({ match }) => {
             <Table.Cell>
               <Text bold>Substitutes</Text>
             </Table.Cell>
-            <Table.Cell>{hopData.sub_names}</Table.Cell>
+            <Table.Cell>
+              {hop.substitutes.map((sub, i) => (
+                <span key={sub.id}>
+                  {i > 0 && ", "}
+                  <Link to={`/data/hops/${sub.id}`}>{sub.name}</Link>
+                </span>
+              ))}
+            </Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
