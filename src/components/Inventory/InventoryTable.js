@@ -29,7 +29,6 @@ export const InventoryTable = ({ items, type, updateItem, deleteItem }) => {
     updateItem(id, rest);
   };
 
-  console.log("it", items);
   return (
     <div>
       <h3>Inventory</h3>

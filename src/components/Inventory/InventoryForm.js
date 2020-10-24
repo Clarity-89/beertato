@@ -6,10 +6,17 @@ import { css } from "@emotion/core";
 import { ItemSelect } from "../../styled/Dropdown";
 
 export const InventoryForm = ({ type, addItem }) => {
-  const { register, handleSubmit, errors, control } = useForm();
+  const { register, handleSubmit, errors, control, reset } = useForm();
 
   const submit = (formData) => {
-    return addItem({ ...formData, amount: parseFloat(formData.amount) });
+    addItem({ ...formData, amount: parseFloat(formData.amount) });
+    reset();
+  };
+
+  const submitOnEnter = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit(submit)();
+    }
   };
 
   return (
@@ -28,8 +35,8 @@ export const InventoryForm = ({ type, addItem }) => {
             <ItemSelect
               label="Item"
               type={type}
-              onChange={({ value }) => {
-                onChange(value);
+              onChange={(item) => {
+                onChange(item?.value);
               }}
             />
           )}
@@ -38,6 +45,7 @@ export const InventoryForm = ({ type, addItem }) => {
       <Form.Field error={!!errors.amount}>
         <label>Amount</label>
         <input
+          onKeyDown={submitOnEnter}
           placeholder="Amount"
           name="amount"
           type="number"
