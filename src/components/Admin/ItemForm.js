@@ -108,7 +108,7 @@ const ItemForm = () => {
               <Select
                 options={origins}
                 {...props}
-                onChange={(v) => onChange(v.value)}
+                onChange={(v) => onChange(v?.value)}
               />
             )}
           />

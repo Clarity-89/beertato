@@ -64,10 +64,7 @@ export const scaleRecipe = (origVol) => {
 
     ingredients.forEach((ing, index) => {
       if (ing.item.type !== YEAST) {
-        setValue(
-          `ingredients[${index}].amount`,
-          Number((ing.amount / ratio).toFixed(2))
-        );
+        setValue(`ingredients[${index}].amount`, Math.ceil(ing.amount / ratio));
       }
     });
 
