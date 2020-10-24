@@ -26,7 +26,7 @@ const baseFields = [...textFields, ...numberFields];
  *
  */
 const RecipeForm = ({ onSave, recipe = {} }) => {
-  const [updateInventory, setUpdateInventory] = useState(true);
+  const [updateInventory, setUpdateInventory] = useState(false);
   const { data = {} } = useQuery(INVENTORY);
   const [updateInventoryItems] = useMutation(UPDATE_INVENTORY_ITEMS);
   const { register, watch, control, handleSubmit, errors, setValue } = useForm({
