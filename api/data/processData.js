@@ -4,10 +4,9 @@ const grains = require("./root/grains.json");
 const hops = require("./root/hops.json");
 const yeast = require("./root/yeast.json");
 const { ITEM_TYPES } = require("../constants");
-const subs = require("./root/subs.json");
 
 const data = [];
-let uid = 121;
+let uid = 270;
 
 adjuncts.forEach((it) => {
   const { name, origin, description, id, ...rest } = it;
@@ -60,12 +59,3 @@ yeast.forEach((it) => {
 fs.writeFile("./data/items.json", JSON.stringify(data), "utf8", (d) =>
   console.log("cb", d)
 );
-
-// const subData = subs.map((s) => {
-//   const { hop, id, substitute } = s;
-//   return { item: hop, id, substitute };
-// });
-//
-// fs.writeFile("./data/substitutes.json", JSON.stringify(subData), "utf8", (d) =>
-//   console.log("cb", d)
-// );

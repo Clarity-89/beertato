@@ -1,0 +1,1810 @@
+[
+  {
+    "item": 0,
+    "substitute": 54
+  },
+  {
+    "item": 0,
+    "substitute": 158
+  },
+  {
+    "item": 0,
+    "substitute": 52
+  },
+  {
+    "item": 0,
+    "substitute": 50
+  },
+  {
+    "item": 0,
+    "substitute": 46
+  },
+  {
+    "item": 0,
+    "substitute": 6
+  },
+  {
+    "item": 0,
+    "substitute": 233
+  },
+  {
+    "item": 3,
+    "substitute": 46
+  },
+  {
+    "item": 3,
+    "substitute": 6
+  },
+  {
+    "item": 3,
+    "substitute": 200
+  },
+  {
+    "item": 3,
+    "substitute": 50
+  },
+  {
+    "item": 3,
+    "substitute": 257
+  },
+  {
+    "item": 6,
+    "substitute": 46
+  },
+  {
+    "item": 6,
+    "substitute": 50
+  },
+  {
+    "item": 6,
+    "substitute": 3
+  },
+  {
+    "item": 6,
+    "substitute": 54
+  },
+  {
+    "item": 6,
+    "substitute": 221
+  },
+  {
+    "item": 8,
+    "substitute": 162
+  },
+  {
+    "item": 8,
+    "substitute": 62
+  },
+  {
+    "item": 8,
+    "substitute": 266
+  },
+  {
+    "item": 8,
+    "substitute": 139
+  },
+  {
+    "item": 8,
+    "substitute": 146
+  },
+  {
+    "item": 10,
+    "substitute": 97
+  },
+  {
+    "item": 11,
+    "substitute": 257
+  },
+  {
+    "item": 11,
+    "substitute": 52
+  },
+  {
+    "item": 11,
+    "substitute": 3
+  },
+  {
+    "item": 11,
+    "substitute": 217
+  },
+  {
+    "item": 11,
+    "substitute": 50
+  },
+  {
+    "item": 11,
+    "substitute": 54
+  },
+  {
+    "item": 11,
+    "substitute": 107
+  },
+  {
+    "item": 11,
+    "substitute": 235
+  },
+  {
+    "item": 13,
+    "substitute": 219
+  },
+  {
+    "item": 16,
+    "substitute": 10
+  },
+  {
+    "item": 16,
+    "substitute": 97
+  },
+  {
+    "item": 19,
+    "substitute": 224
+  },
+  {
+    "item": 20,
+    "substitute": 97
+  },
+  {
+    "item": 20,
+    "substitute": 162
+  },
+  {
+    "item": 23,
+    "substitute": 54
+  },
+  {
+    "item": 25,
+    "substitute": 90
+  },
+  {
+    "item": 25,
+    "substitute": 257
+  },
+  {
+    "item": 25,
+    "substitute": 219
+  },
+  {
+    "item": 28,
+    "substitute": 256
+  },
+  {
+    "item": 28,
+    "substitute": 187
+  },
+  {
+    "item": 28,
+    "substitute": 75
+  },
+  {
+    "item": 29,
+    "substitute": 256
+  },
+  {
+    "item": 29,
+    "substitute": 187
+  },
+  {
+    "item": 29,
+    "substitute": 75
+  },
+  {
+    "item": 30,
+    "substitute": 62
+  },
+  {
+    "item": 30,
+    "substitute": 266
+  },
+  {
+    "item": 30,
+    "substitute": 8
+  },
+  {
+    "item": 30,
+    "substitute": 139
+  },
+  {
+    "item": 30,
+    "substitute": 162
+  },
+  {
+    "item": 31,
+    "substitute": 34
+  },
+  {
+    "item": 31,
+    "substitute": 46
+  },
+  {
+    "item": 31,
+    "substitute": 97
+  },
+  {
+    "item": 31,
+    "substitute": 161
+  },
+  {
+    "item": 31,
+    "substitute": 158
+  },
+  {
+    "item": 32,
+    "substitute": 34
+  },
+  {
+    "item": 32,
+    "substitute": 46
+  },
+  {
+    "item": 32,
+    "substitute": 97
+  },
+  {
+    "item": 32,
+    "substitute": 158
+  },
+  {
+    "item": 34,
+    "substitute": 62
+  },
+  {
+    "item": 34,
+    "substitute": 97
+  },
+  {
+    "item": 34,
+    "substitute": 54
+  },
+  {
+    "item": 34,
+    "substitute": 31
+  },
+  {
+    "item": 35,
+    "substitute": 62
+  },
+  {
+    "item": 35,
+    "substitute": 97
+  },
+  {
+    "item": 35,
+    "substitute": 54
+  },
+  {
+    "item": 35,
+    "substitute": 31
+  },
+  {
+    "item": 39,
+    "substitute": 83
+  },
+  {
+    "item": 39,
+    "substitute": 97
+  },
+  {
+    "item": 41,
+    "substitute": 156
+  },
+  {
+    "item": 41,
+    "substitute": 139
+  },
+  {
+    "item": 41,
+    "substitute": 97
+  },
+  {
+    "item": 42,
+    "substitute": 75
+  },
+  {
+    "item": 42,
+    "substitute": 143
+  },
+  {
+    "item": 43,
+    "substitute": 107
+  },
+  {
+    "item": 43,
+    "substitute": 235
+  },
+  {
+    "item": 43,
+    "substitute": 75
+  },
+  {
+    "item": 44,
+    "substitute": 107
+  },
+  {
+    "item": 44,
+    "substitute": 75
+  },
+  {
+    "item": 45,
+    "substitute": 46
+  },
+  {
+    "item": 45,
+    "substitute": 107
+  },
+  {
+    "item": 45,
+    "substitute": 3
+  },
+  {
+    "item": 45,
+    "substitute": 50
+  },
+  {
+    "item": 46,
+    "substitute": 50
+  },
+  {
+    "item": 46,
+    "substitute": 6
+  },
+  {
+    "item": 46,
+    "substitute": 62
+  },
+  {
+    "item": 46,
+    "substitute": 3
+  },
+  {
+    "item": 49,
+    "substitute": 192
+  },
+  {
+    "item": 49,
+    "substitute": 25
+  },
+  {
+    "item": 49,
+    "substitute": 219
+  },
+  {
+    "item": 50,
+    "substitute": 54
+  },
+  {
+    "item": 50,
+    "substitute": 97
+  },
+  {
+    "item": 50,
+    "substitute": 162
+  },
+  {
+    "item": 50,
+    "substitute": 266
+  },
+  {
+    "item": 50,
+    "substitute": 62
+  },
+  {
+    "item": 50,
+    "substitute": 46
+  },
+  {
+    "item": 52,
+    "substitute": 175
+  },
+  {
+    "item": 52,
+    "substitute": 0
+  },
+  {
+    "item": 53,
+    "substitute": 97
+  },
+  {
+    "item": 53,
+    "substitute": 162
+  },
+  {
+    "item": 54,
+    "substitute": 97
+  },
+  {
+    "item": 54,
+    "substitute": 83
+  },
+  {
+    "item": 54,
+    "substitute": 162
+  },
+  {
+    "item": 54,
+    "substitute": 34
+  },
+  {
+    "item": 54,
+    "substitute": 62
+  },
+  {
+    "item": 54,
+    "substitute": 233
+  },
+  {
+    "item": 56,
+    "substitute": 200
+  },
+  {
+    "item": 56,
+    "substitute": 46
+  },
+  {
+    "item": 56,
+    "substitute": 50
+  },
+  {
+    "item": 56,
+    "substitute": 147
+  },
+  {
+    "item": 57,
+    "substitute": 97
+  },
+  {
+    "item": 58,
+    "substitute": 83
+  },
+  {
+    "item": 58,
+    "substitute": 97
+  },
+  {
+    "item": 59,
+    "substitute": 75
+  },
+  {
+    "item": 59,
+    "substitute": 71
+  },
+  {
+    "item": 62,
+    "substitute": 266
+  },
+  {
+    "item": 62,
+    "substitute": 54
+  },
+  {
+    "item": 62,
+    "substitute": 162
+  },
+  {
+    "item": 62,
+    "substitute": 233
+  },
+  {
+    "item": 62,
+    "substitute": 255
+  },
+  {
+    "item": 62,
+    "substitute": 34
+  },
+  {
+    "item": 63,
+    "substitute": 97
+  },
+  {
+    "item": 63,
+    "substitute": 222
+  },
+  {
+    "item": 64,
+    "substitute": 135
+  },
+  {
+    "item": 64,
+    "substitute": 149
+  },
+  {
+    "item": 64,
+    "substitute": 245
+  },
+  {
+    "item": 64,
+    "substitute": 117
+  },
+  {
+    "item": 66,
+    "substitute": 68
+  },
+  {
+    "item": 67,
+    "substitute": 46
+  },
+  {
+    "item": 67,
+    "substitute": 153
+  },
+  {
+    "item": 67,
+    "substitute": 90
+  },
+  {
+    "item": 67,
+    "substitute": 257
+  },
+  {
+    "item": 68,
+    "substitute": 66
+  },
+  {
+    "item": 69,
+    "substitute": 104
+  },
+  {
+    "item": 71,
+    "substitute": 75
+  },
+  {
+    "item": 71,
+    "substitute": 59
+  },
+  {
+    "item": 71,
+    "substitute": 29
+  },
+  {
+    "item": 75,
+    "substitute": 256
+  },
+  {
+    "item": 75,
+    "substitute": 187
+  },
+  {
+    "item": 75,
+    "substitute": 90
+  },
+  {
+    "item": 75,
+    "substitute": 89
+  },
+  {
+    "item": 76,
+    "substitute": 31
+  },
+  {
+    "item": 79,
+    "substitute": 97
+  },
+  {
+    "item": 79,
+    "substitute": 200
+  },
+  {
+    "item": 83,
+    "substitute": 34
+  },
+  {
+    "item": 83,
+    "substitute": 31
+  },
+  {
+    "item": 83,
+    "substitute": 97
+  },
+  {
+    "item": 85,
+    "substitute": 46
+  },
+  {
+    "item": 85,
+    "substitute": 62
+  },
+  {
+    "item": 85,
+    "substitute": 50
+  },
+  {
+    "item": 89,
+    "substitute": 257
+  },
+  {
+    "item": 89,
+    "substitute": 75
+  },
+  {
+    "item": 89,
+    "substitute": 219
+  },
+  {
+    "item": 90,
+    "substitute": 91
+  },
+  {
+    "item": 90,
+    "substitute": 257
+  },
+  {
+    "item": 90,
+    "substitute": 219
+  },
+  {
+    "item": 90,
+    "substitute": 235
+  },
+  {
+    "item": 90,
+    "substitute": 156
+  },
+  {
+    "item": 91,
+    "substitute": 90
+  },
+  {
+    "item": 91,
+    "substitute": 257
+  },
+  {
+    "item": 91,
+    "substitute": 219
+  },
+  {
+    "item": 91,
+    "substitute": 235
+  },
+  {
+    "item": 96,
+    "substitute": 56
+  },
+  {
+    "item": 96,
+    "substitute": 6
+  },
+  {
+    "item": 96,
+    "substitute": 50
+  },
+  {
+    "item": 97,
+    "substitute": 162
+  },
+  {
+    "item": 97,
+    "substitute": 62
+  },
+  {
+    "item": 97,
+    "substitute": 266
+  },
+  {
+    "item": 97,
+    "substitute": 54
+  },
+  {
+    "item": 97,
+    "substitute": 186
+  },
+  {
+    "item": 97,
+    "substitute": 83
+  },
+  {
+    "item": 97,
+    "substitute": 156
+  },
+  {
+    "item": 98,
+    "substitute": 39
+  },
+  {
+    "item": 98,
+    "substitute": 125
+  },
+  {
+    "item": 99,
+    "substitute": 257
+  },
+  {
+    "item": 99,
+    "substitute": 91
+  },
+  {
+    "item": 99,
+    "substitute": 235
+  },
+  {
+    "item": 99,
+    "substitute": 102
+  },
+  {
+    "item": 101,
+    "substitute": 75
+  },
+  {
+    "item": 101,
+    "substitute": 90
+  },
+  {
+    "item": 101,
+    "substitute": 257
+  },
+  {
+    "item": 102,
+    "substitute": 75
+  },
+  {
+    "item": 102,
+    "substitute": 90
+  },
+  {
+    "item": 102,
+    "substitute": 257
+  },
+  {
+    "item": 102,
+    "substitute": 187
+  },
+  {
+    "item": 102,
+    "substitute": 256
+  },
+  {
+    "item": 103,
+    "substitute": 75
+  },
+  {
+    "item": 104,
+    "substitute": 135
+  },
+  {
+    "item": 104,
+    "substitute": 107
+  },
+  {
+    "item": 104,
+    "substitute": 64
+  },
+  {
+    "item": 104,
+    "substitute": 149
+  },
+  {
+    "item": 104,
+    "substitute": 245
+  },
+  {
+    "item": 107,
+    "substitute": 135
+  },
+  {
+    "item": 107,
+    "substitute": 109
+  },
+  {
+    "item": 107,
+    "substitute": 113
+  },
+  {
+    "item": 108,
+    "substitute": 107
+  },
+  {
+    "item": 108,
+    "substitute": 174
+  },
+  {
+    "item": 109,
+    "substitute": 149
+  },
+  {
+    "item": 109,
+    "substitute": 135
+  },
+  {
+    "item": 109,
+    "substitute": 64
+  },
+  {
+    "item": 109,
+    "substitute": 113
+  },
+  {
+    "item": 109,
+    "substitute": 245
+  },
+  {
+    "item": 110,
+    "substitute": 153
+  },
+  {
+    "item": 111,
+    "substitute": 235
+  },
+  {
+    "item": 111,
+    "substitute": 75
+  },
+  {
+    "item": 111,
+    "substitute": 64
+  },
+  {
+    "item": 111,
+    "substitute": 149
+  },
+  {
+    "item": 112,
+    "substitute": 139
+  },
+  {
+    "item": 112,
+    "substitute": 145
+  },
+  {
+    "item": 112,
+    "substitute": 116
+  },
+  {
+    "item": 114,
+    "substitute": 107
+  },
+  {
+    "item": 115,
+    "substitute": 180
+  },
+  {
+    "item": 117,
+    "substitute": 113
+  },
+  {
+    "item": 117,
+    "substitute": 213
+  },
+  {
+    "item": 117,
+    "substitute": 149
+  },
+  {
+    "item": 117,
+    "substitute": 107
+  },
+  {
+    "item": 117,
+    "substitute": 135
+  },
+  {
+    "item": 118,
+    "substitute": 217
+  },
+  {
+    "item": 118,
+    "substitute": 149
+  },
+  {
+    "item": 119,
+    "substitute": 117
+  },
+  {
+    "item": 121,
+    "substitute": 139
+  },
+  {
+    "item": 124,
+    "substitute": 261
+  },
+  {
+    "item": 124,
+    "substitute": 39
+  },
+  {
+    "item": 125,
+    "substitute": 97
+  },
+  {
+    "item": 127,
+    "substitute": 46
+  },
+  {
+    "item": 127,
+    "substitute": 52
+  },
+  {
+    "item": 128,
+    "substitute": 129
+  },
+  {
+    "item": 129,
+    "substitute": 90
+  },
+  {
+    "item": 131,
+    "substitute": 130
+  },
+  {
+    "item": 131,
+    "substitute": 192
+  },
+  {
+    "item": 131,
+    "substitute": 243
+  },
+  {
+    "item": 131,
+    "substitute": 76
+  },
+  {
+    "item": 134,
+    "substitute": 97
+  },
+  {
+    "item": 135,
+    "substitute": 107
+  },
+  {
+    "item": 135,
+    "substitute": 149
+  },
+  {
+    "item": 136,
+    "substitute": 192
+  },
+  {
+    "item": 136,
+    "substitute": 215
+  },
+  {
+    "item": 137,
+    "substitute": 31
+  },
+  {
+    "item": 137,
+    "substitute": 162
+  },
+  {
+    "item": 137,
+    "substitute": 99
+  },
+  {
+    "item": 139,
+    "substitute": 112
+  },
+  {
+    "item": 139,
+    "substitute": 62
+  },
+  {
+    "item": 139,
+    "substitute": 162
+  },
+  {
+    "item": 140,
+    "substitute": 139
+  },
+  {
+    "item": 140,
+    "substitute": 121
+  },
+  {
+    "item": 140,
+    "substitute": 158
+  },
+  {
+    "item": 141,
+    "substitute": 62
+  },
+  {
+    "item": 141,
+    "substitute": 162
+  },
+  {
+    "item": 141,
+    "substitute": 46
+  },
+  {
+    "item": 142,
+    "substitute": 235
+  },
+  {
+    "item": 143,
+    "substitute": 28
+  },
+  {
+    "item": 143,
+    "substitute": 75
+  },
+  {
+    "item": 143,
+    "substitute": 187
+  },
+  {
+    "item": 143,
+    "substitute": 256
+  },
+  {
+    "item": 144,
+    "substitute": 96
+  },
+  {
+    "item": 145,
+    "substitute": 139
+  },
+  {
+    "item": 146,
+    "substitute": 62
+  },
+  {
+    "item": 146,
+    "substitute": 162
+  },
+  {
+    "item": 146,
+    "substitute": 222
+  },
+  {
+    "item": 147,
+    "substitute": 56
+  },
+  {
+    "item": 148,
+    "substitute": 192
+  },
+  {
+    "item": 148,
+    "substitute": 193
+  },
+  {
+    "item": 148,
+    "substitute": 215
+  },
+  {
+    "item": 149,
+    "substitute": 64
+  },
+  {
+    "item": 149,
+    "substitute": 117
+  },
+  {
+    "item": 150,
+    "substitute": 107
+  },
+  {
+    "item": 150,
+    "substitute": 90
+  },
+  {
+    "item": 153,
+    "substitute": 170
+  },
+  {
+    "item": 153,
+    "substitute": 172
+  },
+  {
+    "item": 156,
+    "substitute": 97
+  },
+  {
+    "item": 156,
+    "substitute": 162
+  },
+  {
+    "item": 158,
+    "substitute": 52
+  },
+  {
+    "item": 158,
+    "substitute": 0
+  },
+  {
+    "item": 159,
+    "substitute": 174
+  },
+  {
+    "item": 159,
+    "substitute": 161
+  },
+  {
+    "item": 161,
+    "substitute": 54
+  },
+  {
+    "item": 162,
+    "substitute": 97
+  },
+  {
+    "item": 163,
+    "substitute": 97
+  },
+  {
+    "item": 163,
+    "substitute": 162
+  },
+  {
+    "item": 163,
+    "substitute": 54
+  },
+  {
+    "item": 165,
+    "substitute": 75
+  },
+  {
+    "item": 165,
+    "substitute": 219
+  },
+  {
+    "item": 167,
+    "substitute": 174
+  },
+  {
+    "item": 168,
+    "substitute": 210
+  },
+  {
+    "item": 169,
+    "substitute": 90
+  },
+  {
+    "item": 170,
+    "substitute": 139
+  },
+  {
+    "item": 171,
+    "substitute": 169
+  },
+  {
+    "item": 172,
+    "substitute": 135
+  },
+  {
+    "item": 173,
+    "substitute": 219
+  },
+  {
+    "item": 173,
+    "substitute": 257
+  },
+  {
+    "item": 173,
+    "substitute": 99
+  },
+  {
+    "item": 173,
+    "substitute": 54
+  },
+  {
+    "item": 174,
+    "substitute": 175
+  },
+  {
+    "item": 174,
+    "substitute": 159
+  },
+  {
+    "item": 175,
+    "substitute": 159
+  },
+  {
+    "item": 177,
+    "substitute": 158
+  },
+  {
+    "item": 177,
+    "substitute": 52
+  },
+  {
+    "item": 177,
+    "substitute": 75
+  },
+  {
+    "item": 178,
+    "substitute": 233
+  },
+  {
+    "item": 178,
+    "substitute": 180
+  },
+  {
+    "item": 178,
+    "substitute": 52
+  },
+  {
+    "item": 180,
+    "substitute": 75
+  },
+  {
+    "item": 181,
+    "substitute": 231
+  },
+  {
+    "item": 185,
+    "substitute": 97
+  },
+  {
+    "item": 186,
+    "substitute": 75
+  },
+  {
+    "item": 186,
+    "substitute": 50
+  },
+  {
+    "item": 186,
+    "substitute": 97
+  },
+  {
+    "item": 187,
+    "substitute": 75
+  },
+  {
+    "item": 187,
+    "substitute": 90
+  },
+  {
+    "item": 191,
+    "substitute": 192
+  },
+  {
+    "item": 192,
+    "substitute": 193
+  },
+  {
+    "item": 192,
+    "substitute": 215
+  },
+  {
+    "item": 192,
+    "substitute": 137
+  },
+  {
+    "item": 192,
+    "substitute": 50
+  },
+  {
+    "item": 192,
+    "substitute": 6
+  },
+  {
+    "item": 193,
+    "substitute": 192
+  },
+  {
+    "item": 193,
+    "substitute": 107
+  },
+  {
+    "item": 193,
+    "substitute": 235
+  },
+  {
+    "item": 193,
+    "substitute": 136
+  },
+  {
+    "item": 193,
+    "substitute": 215
+  },
+  {
+    "item": 194,
+    "substitute": 235
+  },
+  {
+    "item": 194,
+    "substitute": 212
+  },
+  {
+    "item": 194,
+    "substitute": 213
+  },
+  {
+    "item": 194,
+    "substitute": 107
+  },
+  {
+    "item": 194,
+    "substitute": 135
+  },
+  {
+    "item": 195,
+    "substitute": 107
+  },
+  {
+    "item": 195,
+    "substitute": 213
+  },
+  {
+    "item": 196,
+    "substitute": 162
+  },
+  {
+    "item": 196,
+    "substitute": 97
+  },
+  {
+    "item": 199,
+    "substitute": 192
+  },
+  {
+    "item": 199,
+    "substitute": 107
+  },
+  {
+    "item": 199,
+    "substitute": 194
+  },
+  {
+    "item": 200,
+    "substitute": 222
+  },
+  {
+    "item": 201,
+    "substitute": 192
+  },
+  {
+    "item": 202,
+    "substitute": 235
+  },
+  {
+    "item": 202,
+    "substitute": 192
+  },
+  {
+    "item": 202,
+    "substitute": 212
+  },
+  {
+    "item": 205,
+    "substitute": 192
+  },
+  {
+    "item": 205,
+    "substitute": 75
+  },
+  {
+    "item": 205,
+    "substitute": 64
+  },
+  {
+    "item": 205,
+    "substitute": 217
+  },
+  {
+    "item": 205,
+    "substitute": 117
+  },
+  {
+    "item": 207,
+    "substitute": 209
+  },
+  {
+    "item": 209,
+    "substitute": 207
+  },
+  {
+    "item": 210,
+    "substitute": 168
+  },
+  {
+    "item": 212,
+    "substitute": 192
+  },
+  {
+    "item": 212,
+    "substitute": 235
+  },
+  {
+    "item": 212,
+    "substitute": 194
+  },
+  {
+    "item": 212,
+    "substitute": 135
+  },
+  {
+    "item": 212,
+    "substitute": 107
+  },
+  {
+    "item": 213,
+    "substitute": 192
+  },
+  {
+    "item": 213,
+    "substitute": 235
+  },
+  {
+    "item": 213,
+    "substitute": 212
+  },
+  {
+    "item": 213,
+    "substitute": 117
+  },
+  {
+    "item": 213,
+    "substitute": 174
+  },
+  {
+    "item": 215,
+    "substitute": 192
+  },
+  {
+    "item": 216,
+    "substitute": 159
+  },
+  {
+    "item": 217,
+    "substitute": 135
+  },
+  {
+    "item": 217,
+    "substitute": 107
+  },
+  {
+    "item": 217,
+    "substitute": 64
+  },
+  {
+    "item": 217,
+    "substitute": 117
+  },
+  {
+    "item": 218,
+    "substitute": 219
+  },
+  {
+    "item": 219,
+    "substitute": 90
+  },
+  {
+    "item": 219,
+    "substitute": 257
+  },
+  {
+    "item": 219,
+    "substitute": 25
+  },
+  {
+    "item": 221,
+    "substitute": 192
+  },
+  {
+    "item": 222,
+    "substitute": 62
+  },
+  {
+    "item": 222,
+    "substitute": 200
+  },
+  {
+    "item": 222,
+    "substitute": 8
+  },
+  {
+    "item": 223,
+    "substitute": 139
+  },
+  {
+    "item": 223,
+    "substitute": 97
+  },
+  {
+    "item": 223,
+    "substitute": 266
+  },
+  {
+    "item": 224,
+    "substitute": 192
+  },
+  {
+    "item": 226,
+    "substitute": 186
+  },
+  {
+    "item": 227,
+    "substitute": 187
+  },
+  {
+    "item": 227,
+    "substitute": 256
+  },
+  {
+    "item": 227,
+    "substitute": 90
+  },
+  {
+    "item": 228,
+    "substitute": 114
+  },
+  {
+    "item": 228,
+    "substitute": 192
+  },
+  {
+    "item": 232,
+    "substitute": 183
+  },
+  {
+    "item": 233,
+    "substitute": 90
+  },
+  {
+    "item": 233,
+    "substitute": 257
+  },
+  {
+    "item": 235,
+    "substitute": 192
+  },
+  {
+    "item": 235,
+    "substitute": 212
+  },
+  {
+    "item": 235,
+    "substitute": 194
+  },
+  {
+    "item": 235,
+    "substitute": 213
+  },
+  {
+    "item": 235,
+    "substitute": 237
+  },
+  {
+    "item": 236,
+    "substitute": 235
+  },
+  {
+    "item": 236,
+    "substitute": 90
+  },
+  {
+    "item": 236,
+    "substitute": 192
+  },
+  {
+    "item": 236,
+    "substitute": 212
+  },
+  {
+    "item": 236,
+    "substitute": 245
+  },
+  {
+    "item": 237,
+    "substitute": 213
+  },
+  {
+    "item": 237,
+    "substitute": 194
+  },
+  {
+    "item": 237,
+    "substitute": 212
+  },
+  {
+    "item": 238,
+    "substitute": 235
+  },
+  {
+    "item": 238,
+    "substitute": 192
+  },
+  {
+    "item": 238,
+    "substitute": 107
+  },
+  {
+    "item": 239,
+    "substitute": 235
+  },
+  {
+    "item": 239,
+    "substitute": 192
+  },
+  {
+    "item": 239,
+    "substitute": 107
+  },
+  {
+    "item": 240,
+    "substitute": 97
+  },
+  {
+    "item": 240,
+    "substitute": 53
+  },
+  {
+    "item": 242,
+    "substitute": 96
+  },
+  {
+    "item": 242,
+    "substitute": 56
+  },
+  {
+    "item": 242,
+    "substitute": 46
+  },
+  {
+    "item": 242,
+    "substitute": 191
+  },
+  {
+    "item": 242,
+    "substitute": 188
+  },
+  {
+    "item": 242,
+    "substitute": 6
+  },
+  {
+    "item": 244,
+    "substitute": 217
+  },
+  {
+    "item": 244,
+    "substitute": 3
+  },
+  {
+    "item": 244,
+    "substitute": 50
+  },
+  {
+    "item": 244,
+    "substitute": 54
+  },
+  {
+    "item": 244,
+    "substitute": 200
+  },
+  {
+    "item": 245,
+    "substitute": 192
+  },
+  {
+    "item": 245,
+    "substitute": 113
+  },
+  {
+    "item": 245,
+    "substitute": 135
+  },
+  {
+    "item": 246,
+    "substitute": 107
+  },
+  {
+    "item": 247,
+    "substitute": 135
+  },
+  {
+    "item": 247,
+    "substitute": 149
+  },
+  {
+    "item": 247,
+    "substitute": 192
+  },
+  {
+    "item": 248,
+    "substitute": 96
+  },
+  {
+    "item": 249,
+    "substitute": 197
+  },
+  {
+    "item": 252,
+    "substitute": 191
+  },
+  {
+    "item": 253,
+    "substitute": 62
+  },
+  {
+    "item": 255,
+    "substitute": 162
+  },
+  {
+    "item": 255,
+    "substitute": 62
+  },
+  {
+    "item": 256,
+    "substitute": 90
+  },
+  {
+    "item": 256,
+    "substitute": 75
+  },
+  {
+    "item": 257,
+    "substitute": 90
+  },
+  {
+    "item": 257,
+    "substitute": 219
+  },
+  {
+    "item": 257,
+    "substitute": 237
+  },
+  {
+    "item": 257,
+    "substitute": 99
+  },
+  {
+    "item": 257,
+    "substitute": 219
+  },
+  {
+    "item": 258,
+    "substitute": 90
+  },
+  {
+    "item": 258,
+    "substitute": 219
+  },
+  {
+    "item": 258,
+    "substitute": 237
+  },
+  {
+    "item": 258,
+    "substitute": 99
+  },
+  {
+    "item": 258,
+    "substitute": 219
+  },
+  {
+    "item": 261,
+    "substitute": 54
+  },
+  {
+    "item": 264,
+    "substitute": 202
+  },
+  {
+    "item": 264,
+    "substitute": 192
+  },
+  {
+    "item": 264,
+    "substitute": 235
+  },
+  {
+    "item": 264,
+    "substitute": 213
+  },
+  {
+    "item": 266,
+    "substitute": 62
+  },
+  {
+    "item": 268,
+    "substitute": 202
+  },
+  {
+    "item": 268,
+    "substitute": 192
+  },
+  {
+    "item": 268,
+    "substitute": 235
+  },
+  {
+    "item": 269,
+    "substitute": 200
+  },
+  {
+    "item": 269,
+    "substitute": 6
+  }
+]
