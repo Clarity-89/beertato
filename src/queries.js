@@ -148,6 +148,15 @@ export const GET_RECIPES = gql`
       abv
       ibu
       brewDate
+      ingredients {
+        id
+        amount
+        item {
+          id
+          name
+          type
+        }
+      }
     }
   }
 `;

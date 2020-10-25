@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useMutation, useQuery } from "@apollo/react-hooks";
-import { Button, Confirm, Table } from "semantic-ui-react";
+import { Button, Confirm, Table, Checkbox } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import gql from "graphql-tag";
 import { LoaderScreen } from "../Loader";
 import { ErrorMessage } from "../../styled/Alerts";
 import { PageHeader } from "../../styled/Layout/Layout";
 import { GET_RECIPES } from "../../queries";
+import { TotalsModal } from "./index";
 
-const headers = ["Name", "Date", "Volume", "ABV", "IBU", ""];
+const headers = ["", "Name", "Date", "Volume", "ABV", "IBU", ""];
 
 export const DELETE_RECIPE = gql`
   mutation DeleteRecipe($id: ID!) {
@@ -25,6 +26,8 @@ const Recipes = ({ match }) => {
   const { data, loading, error } = useQuery(GET_RECIPES);
   const [deleteRecipe] = useMutation(DELETE_RECIPE);
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+  const [selectedRecipes, setSelectedRecipes] = useState([]);
+  const [totals, setTotals] = useState(null);
 
   const doDelete = (id) => {
     return deleteRecipe({
@@ -48,19 +51,49 @@ const Recipes = ({ match }) => {
 
   if (error) return <ErrorMessage />;
 
+  const setSelected = (id) => {
+    setSelectedRecipes((ids) => {
+      if (ids.includes(id)) {
+        return ids.filter((selectedId) => selectedId !== id);
+      }
+      return [...ids, id];
+    });
+  };
+
+  const showTotal = () => {
+    const recipes = selectedRecipes.map((id) =>
+      data.recipes.find((r) => r.id === id)
+    );
+    const sum = {};
+
+    recipes.forEach((recipe) => {
+      recipe.ingredients.forEach((ingredient) => {
+        sum[ingredient.item.name] =
+          (sum[ingredient.item.name] || 0) + ingredient.amount;
+      });
+    });
+
+    setTotals(sum);
+  };
+
   return (
     <>
       <PageHeader>
         <h1>Recipes</h1>
-        <Button as={Link} primary to={`${match.url}/new`}>
-          Add recipe
-        </Button>
+        <div>
+          <Button as={Link} primary to={`${match.url}/new`}>
+            Add recipe
+          </Button>
+          {!!selectedRecipes.length && (
+            <Button onClick={showTotal}>Calculate ingredients</Button>
+          )}
+        </div>
       </PageHeader>
       <Table celled padded>
         <Table.Header>
           <Table.Row>
-            {headers.map((header) => (
-              <Table.HeaderCell key={header}>{header}</Table.HeaderCell>
+            {headers.map((header, i) => (
+              <Table.HeaderCell key={i}>{header}</Table.HeaderCell>
             ))}
           </Table.Row>
         </Table.Header>
@@ -68,6 +101,12 @@ const Recipes = ({ match }) => {
           {data.recipes.map((recipe) => {
             return (
               <Table.Row key={recipe.id}>
+                <Table.Cell>
+                  <Checkbox
+                    onChange={() => setSelected(recipe.id)}
+                    checked={selectedRecipes.includes(recipe.id)}
+                  />
+                </Table.Cell>
                 <Table.Cell>
                   <Link to={`${match.url}/${recipe.id}`}>{recipe.name}</Link>
                 </Table.Cell>
@@ -124,6 +163,11 @@ const Recipes = ({ match }) => {
           })}
         </Table.Body>
       </Table>
+      <TotalsModal
+        isOpen={!!totals}
+        onClose={() => setTotals(null)}
+        data={totals}
+      />
     </>
   );
 };
