@@ -59,73 +59,79 @@ const RecipeDetail = ({ match }) => {
           Edit
         </Button>
       </PageHeader>
-      <div>
-        <DetailRow>
-          <DetailRowInner>
-            <p>Brew Date</p>
-            <DetailRowData>{recipe.brewDate}</DetailRowData>
-          </DetailRowInner>
-          <DetailRowInner>
-            <p>ABV</p>
-            <DetailRowData>{recipe.abv}</DetailRowData>
-          </DetailRowInner>
-          <DetailRowInner>
-            <p>IBU</p>
-            <DetailRowData>{recipe.ibu}</DetailRowData>
-          </DetailRowInner>
-        </DetailRow>
-        {recipe.description && (
-          <Section heading="Description">
-            <p>{recipe.description}</p>
-          </Section>
-        )}
-        <Section heading="Basics">
-          <List>
-            {basicsFields.map((field) => {
-              return (
-                <ListItem key={field}>
-                  <div>{formatLabel(field)}</div>
-                  <div>{recipe[field]}</div>
-                </ListItem>
-              );
-            })}
-          </List>
-        </Section>
-        <Section heading="Method">
-          <List>
-            {methodFields.map((field) => {
-              return (
-                <ListItem key={field}>
-                  <div>{formatLabel(field)}</div>
-                  <div>{recipe[field]}</div>
-                </ListItem>
-              );
-            })}
-          </List>
-        </Section>
 
-        <Section heading="Ingredients">
-          <List>
-            {Object.entries(groupIngredients(recipe.ingredients)).map(
-              ([type, ingredients]) => {
+      <DetailRow>
+        <DetailRowInner>
+          <p>Brew Date</p>
+          <DetailRowData>{recipe.brewDate}</DetailRowData>
+        </DetailRowInner>
+        <DetailRowInner>
+          <p>ABV</p>
+          <DetailRowData>{recipe.abv}</DetailRowData>
+        </DetailRowInner>
+        <DetailRowInner>
+          <p>IBU</p>
+          <DetailRowData>{recipe.ibu}</DetailRowData>
+        </DetailRowInner>
+      </DetailRow>
+
+      <Container>
+        <Inner>
+          {recipe.description && (
+            <Section heading="Description">
+              <p>{recipe.description}</p>
+            </Section>
+          )}
+          <Section heading="Basics">
+            <List>
+              {basicsFields.map((field) => {
                 return (
-                  <List key={type}>
-                    <TypeLabel>{ingredientTypes.get(type)}</TypeLabel>
-                    {ingredients.map((ingredient) => {
-                      return (
-                        <ListItem key={ingredient.id}>
-                          <div>{formatLabel(ingredient?.item?.name)}</div>
-                          <div>{ingredient.amount}</div>
-                        </ListItem>
-                      );
-                    })}
-                  </List>
+                  <ListItem key={field}>
+                    <div>{formatLabel(field)}</div>
+                    <div>{recipe[field]}</div>
+                  </ListItem>
                 );
-              }
-            )}
-          </List>
-        </Section>
-      </div>
+              })}
+            </List>
+          </Section>
+          <Section heading="Method">
+            <List>
+              {methodFields.map((field) => {
+                return (
+                  <ListItem key={field}>
+                    <div>{formatLabel(field)}</div>
+                    <div>{recipe[field]}</div>
+                  </ListItem>
+                );
+              })}
+            </List>
+          </Section>
+        </Inner>
+
+        <Inner>
+          <Section heading="Ingredients">
+            <List>
+              {Object.entries(groupIngredients(recipe.ingredients)).map(
+                ([type, ingredients]) => {
+                  return (
+                    <List key={type}>
+                      <TypeLabel>{ingredientTypes.get(type)}</TypeLabel>
+                      {ingredients.map((ingredient) => {
+                        return (
+                          <ListItem key={ingredient.id}>
+                            <div>{formatLabel(ingredient?.item?.name)}</div>
+                            <div>{ingredient.amount}</div>
+                          </ListItem>
+                        );
+                      })}
+                    </List>
+                  );
+                }
+              )}
+            </List>
+          </Section>
+        </Inner>
+      </Container>
     </div>
   );
 };
@@ -133,6 +139,17 @@ const RecipeDetail = ({ match }) => {
 RecipeDetail.propTypes = {
   match: PropTypes.object,
 };
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+
+const Inner = styled.div`
+  min-width: 300px;
+  width: 47%;
+`;
 
 const Heading = styled.h2`
   text-transform: uppercase;
@@ -179,7 +196,6 @@ const Section = ({ children, heading }) => {
 };
 
 const SectionContainer = styled.div`
-  width: 50%;
   margin: 20px 0;
 `;
 export default RecipeDetail;
