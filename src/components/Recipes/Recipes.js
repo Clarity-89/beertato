@@ -68,8 +68,9 @@ const Recipes = ({ match }) => {
 
     recipes.forEach((recipe) => {
       recipe.ingredients.forEach((ingredient) => {
-        sum[ingredient.item.name] =
-          (sum[ingredient.item.name] || 0) + ingredient.amount;
+        const { type, name } = ingredient.item;
+        sum[type] = sum[type] || {};
+        sum[type][name] = (sum[type]?.[name] || 0) + ingredient.amount;
       });
     });
 
