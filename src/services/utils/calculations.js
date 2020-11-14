@@ -1,4 +1,5 @@
 import { YEAST } from "../../constants";
+import { parse } from "graphql";
 
 export const getAbv = (og, fg) => {
   return parseFloat(((og - fg) * 105 * 1.25).toFixed(2));
@@ -12,6 +13,11 @@ export const getAbv = (og, fg) => {
 const getAA = (hop) => {
   try {
     const data = JSON.parse(hop.data);
+    if (typeof data.alpha_acid_composition === "string") {
+      const [a, b] = data.alpha_acid_composition.replace("%", "").split("-");
+      return (parseInt(a, 10) + parseInt(b, 10)) / 2;
+      return parseFloat(data.alpha_acid_composition);
+    }
     return data.alpha_acid_composition;
   } catch (e) {
     console.error("error parsing hop data", e);
