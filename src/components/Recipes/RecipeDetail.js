@@ -11,6 +11,7 @@ import { List } from "../../styled/List";
 import { GET_RECIPE } from "../../queries";
 import { formatLabel } from "../../services/utils/strings";
 import { ingredientTypes, HOP } from "../../constants";
+import { getTiming } from "../../services/utils/format";
 
 const basicsFields = [
   "volume",
@@ -33,6 +34,7 @@ const groupIngredients = (ingredients) => {
     return { ...acc, [type]: acc[type] ? [...acc[type], curr] : [curr] };
   }, {});
 };
+
 /**
  *
  * RecipeDetail
@@ -125,7 +127,12 @@ const RecipeDetail = ({ match }) => {
                           <ListItem key={ingredient.id}>
                             <div>{formatLabel(ingredient?.item?.name)}</div>
                             {ingredient.item.type === HOP && (
-                              <div>{ingredient.timing}</div>
+                              <div>
+                                {getTiming(
+                                  recipe.boilDuration,
+                                  ingredient.timing
+                                )}
+                              </div>
                             )}
                             <div>{ingredient.amount}</div>
                           </ListItem>
