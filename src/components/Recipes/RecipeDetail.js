@@ -10,7 +10,7 @@ import { PageHeader } from "../../styled/Layout/Layout";
 import { List } from "../../styled/List";
 import { GET_RECIPE } from "../../queries";
 import { formatLabel } from "../../services/utils/strings";
-import { ingredientTypes } from "../../constants";
+import { ingredientTypes, HOP } from "../../constants";
 
 const basicsFields = [
   "volume",
@@ -115,11 +115,18 @@ const RecipeDetail = ({ match }) => {
                 ([type, ingredients]) => {
                   return (
                     <List key={type}>
-                      <TypeLabel>{ingredientTypes.get(type)}</TypeLabel>
+                      <TypeHeader>
+                        <TypeLabel>{ingredientTypes.get(type)}</TypeLabel>
+                        {type === HOP && <TypeLabel>Timing</TypeLabel>}
+                        <TypeLabel>Amount</TypeLabel>
+                      </TypeHeader>
                       {ingredients.map((ingredient) => {
                         return (
                           <ListItem key={ingredient.id}>
                             <div>{formatLabel(ingredient?.item?.name)}</div>
+                            {ingredient.item.type === HOP && (
+                              <div>{ingredient.timing}</div>
+                            )}
                             <div>{ingredient.amount}</div>
                           </ListItem>
                         );
@@ -184,6 +191,11 @@ const DetailRowInner = styled.div`
 const DetailRowData = styled.div`
   font-weight: bold;
   line-height: 1.5;
+`;
+
+const TypeHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Section = ({ children, heading }) => {
