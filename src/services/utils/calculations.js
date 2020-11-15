@@ -16,7 +16,6 @@ const getAA = (hop) => {
     if (typeof data.alpha_acid_composition === "string") {
       const [a, b] = data.alpha_acid_composition.replace("%", "").split("-");
       return (parseInt(a, 10) + parseInt(b, 10)) / 2;
-      return parseFloat(data.alpha_acid_composition);
     }
     return data.alpha_acid_composition;
   } catch (e) {
