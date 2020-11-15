@@ -8,6 +8,7 @@ const defaultEdited = { id: 0, item: null, amount: 0 };
 
 export const InventoryTable = ({ items, type, updateItem, deleteItem }) => {
   const [edited, setEdited] = useState(defaultEdited);
+  const [toDelete, setToDelete] = useState(null);
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 
   const changeAmount = (_, { value }) => {
@@ -74,22 +75,20 @@ export const InventoryTable = ({ items, type, updateItem, deleteItem }) => {
                       Save
                     </Button>
                   )}
-                  <Button negative onClick={() => setIsConfirmOpen(true)}>
+                  <Button
+                    negative
+                    onClick={() => {
+                      setIsConfirmOpen(true);
+                      setToDelete(id);
+                    }}
+                  >
                     Delete
                   </Button>
                   <Confirm
                     open={isConfirmOpen}
                     onCancel={() => setIsConfirmOpen(false)}
                     onConfirm={() => {
-                      deleteItem(id);
-                      setIsConfirmOpen(false);
-                    }}
-                  />
-                  <Confirm
-                    open={isConfirmOpen}
-                    onCancel={() => setIsConfirmOpen(false)}
-                    onConfirm={() => {
-                      deleteItem(id);
+                      deleteItem(toDelete);
                       setIsConfirmOpen(false);
                     }}
                   />
