@@ -23,7 +23,7 @@ services:
   api:
     build: .
     image: bt:latest
-    command: .bin/api_start.sh
+    command: /api_start.sh
     env_file:
       - .env
     ports:

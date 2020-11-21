@@ -21,4 +21,4 @@ RUN apt-get update && apt-get install -f -y postgresql-client
 
 EXPOSE 5000
 
-CMD ["/bin/serve_static.sh"]
+CMD ["/serve_static.sh"]
