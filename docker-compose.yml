@@ -18,15 +18,15 @@ services:
     env_file:
       - .env
     ports:
-      - "${WEB_PORT}:5000"
+      - "3001:5000"
 
   api:
     build: .
     image: bt:latest
-    command: /api_start.sh
+    command: .bin/api_start.sh
     env_file:
       - .env
     ports:
-      - "${API_PORT}:3005"
+      - "3005:3005"
     depends_on:
       - db
