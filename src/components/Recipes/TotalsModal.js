@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Modal } from "semantic-ui-react";
-import { ingredientTypes } from "../../constants";
 import styled from "@emotion/styled";
+import { ingredientTypes } from "../../constants";
 
 const TotalsModal = ({ isOpen, onClose, data }) => {
   return (
