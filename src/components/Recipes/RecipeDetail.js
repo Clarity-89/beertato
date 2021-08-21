@@ -118,23 +118,38 @@ const RecipeDetail = ({ match }) => {
                   return (
                     <List key={type}>
                       <TypeHeader>
-                        <TypeLabel>{ingredientTypes.get(type)}</TypeLabel>
-                        {type === HOP && <TypeLabel>Timing</TypeLabel>}
-                        <TypeLabel>Amount</TypeLabel>
+                        <TypeLabel width={type === HOP ? "33.3%" : "50%"}>
+                          {ingredientTypes.get(type)}
+                        </TypeLabel>
+                        {type === HOP && (
+                          <TypeLabel width={"33.3%"} textAlign={"center"}>
+                            Timing
+                          </TypeLabel>
+                        )}
+                        <TypeLabel width={type === HOP ? "33.3%" : "50%"}>
+                          Amount
+                        </TypeLabel>
                       </TypeHeader>
                       {ingredients.map((ingredient) => {
                         return (
                           <ListItem key={ingredient.id}>
-                            <div>{formatLabel(ingredient?.item?.name)}</div>
+                            <ItemValue width={type === HOP ? "33.3%" : "50%"}>
+                              {formatLabel(ingredient?.item?.name)}
+                            </ItemValue>
                             {ingredient.item.type === HOP && (
-                              <div>
+                              <ItemValue
+                                width={type === HOP ? "33.3%" : "50%"}
+                                textAlign={"center"}
+                              >
                                 {getTiming(
                                   recipe.boilDuration,
                                   ingredient.timing
                                 )}
-                              </div>
+                              </ItemValue>
                             )}
-                            <div>{ingredient.amount}</div>
+                            <ItemValue width={type === HOP ? "33.3%" : "50%"}>
+                              {ingredient.amount}
+                            </ItemValue>
                           </ListItem>
                         );
                       })}
@@ -178,7 +193,16 @@ const ListItem = styled.li`
   border-bottom: 1px solid;
 `;
 
-const TypeLabel = styled.p`
+const ItemValue = styled.div`
+  width: ${({ width }) => width};
+  text-align: ${({ textAlign }) => textAlign || "left"};
+
+  &:last-of-type {
+    text-align: right;
+  }
+`;
+
+const TypeLabel = styled(ItemValue)`
   font-weight: bold;
   padding-top: 10px;
 `;

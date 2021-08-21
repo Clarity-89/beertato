@@ -1,8 +1,8 @@
 export const getTiming = (boilTime, timing) => {
   if (timing === boilTime) {
     return "End";
-  } else if (timing === 0) {
+  } else if (!timing) {
     return "Start";
   }
-  return timing;
+  return `${timing} mins`;
 };
