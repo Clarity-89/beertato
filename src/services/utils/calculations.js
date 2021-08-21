@@ -1,5 +1,4 @@
 import { YEAST } from "../../constants";
-import { parse } from "graphql";
 
 export const getAbv = (og, fg) => {
   return parseFloat(((og - fg) * 105 * 1.25).toFixed(2));
