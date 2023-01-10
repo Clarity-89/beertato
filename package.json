@@ -23,7 +23,7 @@
     "express": "^4.16.4",
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "knex": "^0.21.17",
     "knex-migrate": "^1.7.1",
     "match-sorter": "^4.2.0",
