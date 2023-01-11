@@ -24,7 +24,7 @@
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
     "jsonwebtoken": "^8.5.1",
-    "knex": "^0.21.17",
+    "knex": "^2.4.0",
     "knex-migrate": "^1.7.1",
     "match-sorter": "^4.2.0",
     "merge-graphql-schemas": "^1.5.8",
